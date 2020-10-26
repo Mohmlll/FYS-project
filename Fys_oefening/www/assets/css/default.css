@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+}
+
+
 
 .header, nav, footer, section, div {
     box-sizing: border-box;
@@ -38,7 +43,6 @@
 
 }
 .header__title{
-    color: white;
 
 }
 /*
