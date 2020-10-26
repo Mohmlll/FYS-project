@@ -117,22 +117,18 @@ body {
 }
 .info1, .info2{
     padding: 10%;
-    height: 40%;
-    order: 1;
     background-color: white;
-    min-width: 100%;
     border-radius: 25px;
     margin: auto;
-    min-height: 300px;
+    width: 80%;
+    height: 20%;
 }
-.info1{
-    order: 1;
 
+.container__main{
+    flex-wrap: wrap;
+    display: flex;
 }
-.info2{
-    order: 2;
 
-}
 .stap1_img{
 
     width: 50px;
