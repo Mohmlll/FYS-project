@@ -8,13 +8,6 @@ container
         margin-left: auto;
         margin-right: auto;
     }
-@media screen and (max-width: 500px){
-    .header h1{
-        font-size: 60px;
-    }
-    .menu{
-        min-height: 100px;
-    }
 }
 @media screen and (min-width: 1000px){
     .left__ad{
@@ -28,16 +21,30 @@ container
     }
 }
 
-
-}
-
-@media screen and (min-width: 650px) {
-    .info1, .info2{
-        width: 45%;
+@media screen and (min-width: 600px) {
+    .info1, .info2 {
+        height: 20%;
+        background-color: white;
+        min-width: 45%;
+        border-radius: 25px;
     }
-
+    .container__main{
+        flex-wrap: wrap;
+        display: flex;
+    }
 }
-
+@media screen and (max-width: 600px){
+    .info1, .info2 {
+        height: 20%;
+        background-color: white;
+        min-width: 100%;
+        border-radius: 25px;
+    }
+    .container__main{
+        flex-wrap: wrap;
+        display: flex;
+    }
+}
 /* Menu */
 @media screen and (min-width: 1000px) {
     .menu a {
