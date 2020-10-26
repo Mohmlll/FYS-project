@@ -62,34 +62,33 @@ body {
 
 }
 
-.container__main{
+.container__main{ flex-wrap: wrap;
+    display: flex;
     width: 100%;
     order: 1;
     background-color: #ff7b68;
     height: 80%;
-    min-height: 1000px;
+    padding: 50px;
+
 }
 .left__ad{
     width: 0;
     order: 0;
     background-color: red;
-    height: 80%;
-    min-height: 1000px;
 
 }
 .right__ad{
     width: 0;
     order: 2;
     background-color: red;
-    height: 80%;
-    min-height: 1000px;
+
 }
 .bottom__container{
     width: 100%;
     order: 3;
     background-color: blue;
     height: 20%;
-    min-height: 300px;
+
 
 
 }
@@ -114,10 +113,9 @@ body {
 
 }
 .info1, .info2{
-    padding: 10%;
+    margin: 25px auto 0;
     background-color: white;
     border-radius: 25px;
-    margin: auto;
     width: 80%;
     height: 20%;
 }
