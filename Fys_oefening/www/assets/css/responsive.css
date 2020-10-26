@@ -33,8 +33,7 @@ container
 
 
 
-
-
+/* Menu */
 @media screen and (min-width: 1000px) {
     .menu a {
         float: right;
@@ -53,7 +52,8 @@ container
     }
 
     .uitklappen .space {
-        height: 10%;
+        width: 100%;
+        height: 6%;
     }
 
     .uitklappen a {
