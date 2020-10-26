@@ -1,0 +1,91 @@
+
+/**
+container
+ */
+@media screen and (min-width: 1000px) {
+    .container {
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+@media screen and (max-width: 500px){
+    .header h1{
+        font-size: 60px;
+    }
+    .menu{
+        min-height: 100px;
+    }
+}
+@media screen and (min-width: 1000px){
+    .left__ad{
+        width: 12.5%;
+    }
+    .right__ad {
+        width: 12.5%;
+    }
+    .container__main{
+        width: 75%;
+    }
+}
+
+
+}
+
+
+
+
+
+@media screen and (min-width: 1000px) {
+    .menu a {
+        float: right;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .menu a {
+        display: none;
+    }
+    .header {
+        min-height: 64px;
+    }
+    .uitklappen {
+        height: 100%;
+    }
+
+    .uitklappen .space {
+        height: 10%;
+    }
+
+    .uitklappen a {
+        float: none;
+        display: block;
+        text-align: center;
+        font-size: 5vw;
+    }
+
+    .hamburgermenu {
+        display: inline-block;
+        float: right;
+        margin: 5px;
+    }
+
+    .top_menu, .center_menu, .bottom_menu {
+        width: 35px;
+        height: 5px;
+        background-color: white;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    .uitklappen .top_menu {
+        transform: translateY(12px) rotate(135deg);
+    }
+
+    .uitklappen .center_menu {
+        opacity: 0;
+    }
+
+    .uitklappen .bottom_menu {
+        transform: translateY(-12px) rotate(-135deg);
+    }
+}
