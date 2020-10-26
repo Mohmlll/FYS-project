@@ -105,7 +105,7 @@
     width: 95%;
     order: 0;
     padding: 10%;
-    background-color: black;
+    background-color: white;
     margin: auto;
     border-top: 1px white;
     border-radius: 25px;
@@ -115,7 +115,7 @@
     height: 40%;
     height: 400px;
     order: 1;
-    background-color: black;
+    background-color: white;
     width: 45%;
     margin: auto;
     padding-left: 5%;
@@ -127,7 +127,7 @@
     order: 2;
     width: 45%;
     height: 400px;
-    background-color: black;
+    background-color: white;
     border-radius: 25px;
     margin: auto;
 }
