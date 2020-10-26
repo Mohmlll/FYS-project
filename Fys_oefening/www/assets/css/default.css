@@ -17,8 +17,9 @@ body {
     opacity: 0.8;
     overflow: hidden;
     width: 100%;
-
+    position: static;
 }
+
 
 .menu a {
     padding: 15px;
@@ -71,7 +72,7 @@ body {
     min-height: 1000px;
 }
 .left__ad{
-    width: 0%;
+    width: 0;
     order: 0;
     background-color: red;
     height: 80%;
@@ -79,7 +80,7 @@ body {
 
 }
 .right__ad{
-    width: 0%;
+    width: 0;
     order: 2;
     background-color: red;
     height: 80%;
@@ -105,7 +106,6 @@ body {
 }
 .welkombox{
     height: 60%;
-    height: 600px;
     width: 95%;
     order: 0;
     padding: 10%;
@@ -117,10 +117,9 @@ body {
 }
 .info1{
     height: 40%;
-    height: 400px;
     order: 1;
     background-color: white;
-    width: 45%;
+    width: 90%;
     margin: auto;
     padding-left: 5%;
     border-radius: 25px;
@@ -129,7 +128,7 @@ body {
     padding-right: 5%;
     height: 40%;
     order: 2;
-    width: 45%;
+    width: 90%;
     height: 400px;
     background-color: white;
     border-radius: 25px;
