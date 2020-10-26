@@ -1,7 +1,3 @@
-body {
-    margin: 0;
-}
-
 
 .header, nav, footer, section, div {
     box-sizing: border-box;
@@ -41,8 +37,9 @@ body {
     text-align: center;
 
 }
-.header h1{
-   text-align: center;
+.header__title{
+    color: white;
+
 }
 /*
  *
