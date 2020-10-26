@@ -31,7 +31,12 @@ container
 
 }
 
+@media screen and (min-width: 650px) {
+    .info1, .info2{
+        width: 45%;
+    }
 
+}
 
 /* Menu */
 @media screen and (min-width: 1000px) {
