@@ -21,13 +21,19 @@ body {
     z-index: 2;
 }
 
+.menu img{
+    height: 64.44px;
+}
 
-.menu a {
+
+.menu .menu_groot a {
     padding: 15px;
     font-size: 30px;
     text-decoration: none;
     color: whitesmoke;
 }
+
+
 
 .menu a:hover {
     color: red;
@@ -200,7 +206,6 @@ about us card
 }
 
 .info1, .info2 {
-    padding: 5%;
     margin: 5% auto;
     background-color: white;
     border-radius: 25px;
@@ -208,6 +213,9 @@ about us card
     height: 20%;
 }
 
+.info1 p, .info2 p{
+    margin: 10%;
+}
 .container__main {
     flex-wrap: wrap;
     display: flex;
@@ -229,11 +237,17 @@ about us card
 
 .stap1_img {
 
-    width: 50px;
-    height: 50px;
-    background-color: black;
+    width: 100%;
+
+
 }
 
+.stap1_img img{
+    margin-top: 20%;
+    width: 100%;
+
+
+}
 /*
 *footer
  */
