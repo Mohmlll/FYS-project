@@ -191,7 +191,7 @@ about us card
  *
  */
 
-.welkombox, .uitleg_video, .info1, .info2, .inlog-box, .flip_card {
+.welkombox, .uitleg_video, .info1, .info2, .inlog-box, .flip_card_front, .flip_card_back {
     -webkit-box-shadow: 12px 10px 15px 0px rgba(0, 0, 0, 0.75);
 }
 
