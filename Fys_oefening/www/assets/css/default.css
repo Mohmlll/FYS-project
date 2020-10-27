@@ -185,7 +185,7 @@ about us card
     width: 100%;
     max-width: 650px;
     order: 0;
-    padding: 5%;
+    padding: 0 5% 5%;
     background-color: white;
     margin: auto;
     border-top: 1px white;
@@ -196,6 +196,7 @@ about us card
 
 .welkombox p {
     max-width: 75ch;
+
 }
 
 .uitleg_video{
