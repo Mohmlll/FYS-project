@@ -2,6 +2,19 @@
 /**
 container
  */
+@media screen and (max-width: 650px) {
+    .container__main{
+        padding-top: 50px;
+    }
+
+}
+@media screen and (min-width: 650px){
+    .container__main{
+        padding: 50px;
+    }
+
+}
+
 @media screen and (min-width: 1000px) {
     .container {
         width: 1000px;
@@ -9,7 +22,7 @@ container
         margin-right: auto;
     }
 }
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 800px){
     .left__ad, .right__ad {
         width: 12.5%;
         max-height: 80%;
@@ -20,7 +33,7 @@ container
         width: 75%;
     }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
     .container__main{
     }
     .left__ad, .right__ad{

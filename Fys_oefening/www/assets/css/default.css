@@ -3,10 +3,10 @@ body {
 }
 
 
-
 .header, nav, footer, section, div {
     box-sizing: border-box;
 }
+
 /*
  *
  * menubalk
@@ -50,59 +50,117 @@ header {
  */
 
 /*
+about us card
+ */
+
+
+.flip_card {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 13rem;
+    width: 9rem;
+    margin: auto;
+    padding-top: 50px;
+
+
+}
+.flip_card_front, .flip_card_back{
+    box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, 0.15);;
+    background-color: white;
+    margin: auto;
+    border-radius: 10px;
+    border-top: solid 6px purple;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /*safari*/
+
+}
+
+
+
+.flip_card_inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+
+.flip_card:hover .flip_card_inner{
+    transform: rotateY(180deg);
+}
+
+.flip_card_front {
+    background-color: white;
+    color: black;
+}
+.flip_card_back {
+    background-color: white;
+    color: black;
+    transform: rotateY(180deg);
+}
+/*
  *
  * container indeling homepagina
  *
  */
-.container{
+.container {
     flex-wrap: wrap;
     display: flex;
     max-height: 100%;
-
+    
 }
 
-.container__main{ flex-wrap: wrap;
-    display: flex;
-    width: 100%;
-    order: 1;
-    background-color: #ff7b68;
-    height: 80%;
-    padding: 50px;
 
-}
-.left__ad{
+.left__ad {
     width: 0;
     order: 0;
     background-color: red;
 
 }
-.right__ad{
+
+.right__ad {
     width: 0;
     order: 2;
     background-color: red;
 
 }
-.bottom__container{
+
+.bottom__container {
     width: 100%;
     order: 3;
     background-color: blue;
     height: 20%;
 
 
-
 }
+
 /*
  *
  * containermain
  *
  */
-.container__main{
+.container__main {
     flex-wrap: wrap;
     display: flex;
+    width: 100%;
+    order: 1;
+    background-color: #ff7b68;
+    height: 80%;
 }
-.welkombox{
+
+.welkombox {
     height: 60%;
-    width: 95%;
+    width: 100%;
+    max-width: 650px;
     order: 0;
     padding: 10%;
     background-color: white;
@@ -110,8 +168,14 @@ header {
     border-top: 1px white;
     border-radius: 25px;
 
+
 }
-.info1, .info2{
+
+.welkombox p {
+    max-width: 75ch;
+}
+
+.info1, .info2 {
     margin: 25px auto 0;
     background-color: white;
     border-radius: 25px;
@@ -119,22 +183,23 @@ header {
     height: 20%;
 }
 
-.container__main{
+.container__main {
     flex-wrap: wrap;
     display: flex;
 }
 
-.stap1_img{
+.stap1_img {
 
     width: 50px;
     height: 50px;
     background-color: black;
 }
+
 /*
 *footer
  */
 
-.footer{
+.footer {
     width: 100%;
     min-height: 100px;
     background-color: black;
