@@ -68,7 +68,6 @@ about us card
 .flip_card_front, .flip_card_back{
     box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, 0.15);;
     background-color: white;
-    margin: auto;
     border-radius: 10px;
     border-top: solid 6px purple;
     border-right: 0;
@@ -81,8 +80,26 @@ about us card
     -webkit-backface-visibility: hidden; /*safari*/
 
 }
-
-
+.aboutus_fname{
+    margin-bottom: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    border-radius: 30px;
+    border-top: solid 2px purple;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+}
+.aboutus_foto{
+    width: 85%;
+    height: 85%;
+    margin-top: 5%;
+    border-radius: 90px;
+    box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, 0.15);
+}
 
 .flip_card_inner{
     position: relative;
@@ -113,6 +130,11 @@ about us card
  * container indeling homepagina
  *
  */
+
+.banner_ad_left, .banner_ad_right{
+    width: 100%;
+
+}
 .container {
     flex-wrap: wrap;
     display: flex;
@@ -133,14 +155,14 @@ about us card
 .left__ad{
     width: 0;
     order: 0;
-    background-color: red;
+    background-color: white;
 
 }
 
 .right__ad{
     width: 0;
     order: 2;
-    background-color: red;
+    background-color: white;
 
 }
 
