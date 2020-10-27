@@ -149,7 +149,7 @@ about us card
     order: 1;
     background-color: #ff7b68;
     height: 80%;
-    padding: 20px;
+    padding: 5%;
 }
 
 .left__ad{
@@ -178,21 +178,14 @@ about us card
  * containermain
  *
  */
-.container__main {
-    flex-wrap: wrap;
-    display: flex;
-    width: 100%;
-    order: 1;
-    background-color: #ff7b68;
-    height: 80%;
-}
+
 
 .welkombox {
     height: 60%;
     width: 100%;
     max-width: 650px;
     order: 0;
-    padding: 10%;
+    padding: 5%;
     background-color: white;
     margin: auto;
     border-top: 1px white;
@@ -213,7 +206,8 @@ about us card
     margin: auto;
 }
 .info1, .info2 {
-    margin: 25px auto 0;
+    padding: 5%;
+    margin: 5% auto;
     background-color: white;
     border-radius: 25px;
     width: 80%;
