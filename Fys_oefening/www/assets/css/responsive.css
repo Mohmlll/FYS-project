@@ -50,6 +50,13 @@ container
         margin: 0;
     }
 }
+
+@media screen and (min-width: 450px) and (max-width: 600px) {
+    .uitleg_video {
+        height: 300px;
+    }
+}
+
 @media screen and (min-width: 600px){
     .info1, .info2 {
         width: 45%;
@@ -57,6 +64,12 @@ container
     }
     .inlog-box{
         margin: auto;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .uitleg_video {
+        height: 200px;
     }
 }
 /* Menu */
