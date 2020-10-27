@@ -58,8 +58,8 @@ about us card
 .flip_card {
     background-color: transparent;
     perspective: 1000px;
-    height: 13rem;
-    width: 9rem;
+    height: 12rem;
+    width: 8rem;
     margin: auto;
     padding-top: 50px;
 
@@ -149,21 +149,21 @@ about us card
     order: 1;
     background-color: #ff7b68;
     height: 80%;
-    padding: 50px;
+    padding: 5%;
 }
 
 .left__ad{
     width: 0;
     order: 0;
     background-color: white;
-
+    margin-right: 1%;
 }
 
 .right__ad{
     width: 0;
     order: 2;
     background-color: white;
-
+    margin-left: 1%;
 }
 
 .bottom__container{
@@ -178,21 +178,14 @@ about us card
  * containermain
  *
  */
-.container__main {
-    flex-wrap: wrap;
-    display: flex;
-    width: 100%;
-    order: 1;
-    background-color: #ff7b68;
-    height: 80%;
-}
+
 
 .welkombox {
     height: 60%;
     width: 100%;
     max-width: 650px;
     order: 0;
-    padding: 10%;
+    padding: 5%;
     background-color: white;
     margin: auto;
     border-top: 1px white;
@@ -213,7 +206,8 @@ about us card
     margin: auto;
 }
 .info1, .info2 {
-    margin: 25px auto 0;
+    padding: 5%;
+    margin: 5% auto;
     background-color: white;
     border-radius: 25px;
     width: 80%;
@@ -226,7 +220,7 @@ about us card
 }
 
 .uitleg_video {
-    height: 390px;
+    height: 378px;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 20px 15px;
