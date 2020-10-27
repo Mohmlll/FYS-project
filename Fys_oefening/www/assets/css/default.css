@@ -271,10 +271,10 @@ about us card
 
 
 .footer_main {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+
+    border-radius: 15px;
     background-color: gray; padding: ;
-    margin: 0.5% auto auto auto;
+    margin: 0.5% auto 0.5% auto;
     order: 1;
     padding: 2px;
 
