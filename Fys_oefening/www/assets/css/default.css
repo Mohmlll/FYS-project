@@ -195,6 +195,10 @@ about us card
     -webkit-box-shadow: 12px 10px 15px 0px rgba(0, 0, 0, 0.75);
 }
 
+.footer_main, .container__main {
+    box-shadow: -1px 2px 9px -1px rgba(0,0,0,0.26);
+}
+
 .welkombox {
     height: 60%;
     width: 100%;
@@ -259,7 +263,6 @@ about us card
 }
 
 
-
 .stap1_img img {
     width: 100%;
     margin-bottom: 7%;
@@ -273,15 +276,21 @@ about us card
 .footer_main {
 
     border-radius: 15px;
-    background-color: gray; padding: ;
+    background-color: lightgray;
     margin: 0.5% auto 0.5% auto;
     order: 1;
-    padding: 2px;
+    padding: 10px;
+    text-align: center;
 
 }
-.left_empty_footer{
+.footer_main p {
+    margin: auto;
+
+}
+.left_empty_footer {
     order: 0;
 }
-.right_empty_footer{
+
+.right_empty_footer {
     order: 2;
 }
