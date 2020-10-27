@@ -161,6 +161,8 @@ about us card
     order: 1;
     background-color: #ff7b68;
     height: 80%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .left__ad {
@@ -180,7 +182,6 @@ about us card
 .bottom__container {
     width: 100%;
     order: 3;
-    background-color: blue;
     height: 20%;
 }
 
@@ -268,11 +269,19 @@ about us card
 *footer
  */
 
-.footer {
-    width: 100%;
-    min-height: 100px;
-    background-color: black;
-    border-top: 1px solid black;
-    margin: auto;
 
+.footer_main {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: gray; padding: ;
+    margin: 0.5% auto auto auto;
+    order: 1;
+    padding: 2px;
+
+}
+.left_empty_footer{
+    order: 0;
+}
+.right_empty_footer{
+    order: 2;
 }
