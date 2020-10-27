@@ -11,6 +11,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -23,6 +24,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -50,10 +52,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="409" y="631" key="FileChooserDialogImpl/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1603730538505" />
-    <state x="1975" y="0" width="592" height="1407" key="dock-window-1" timestamp="1603718024804">
+    <state x="1645" y="0" width="922" height="1407" key="dock-window-1" timestamp="1603794773746">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1975" y="0" width="592" height="1407" key="dock-window-1/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1603718024804" />
+    <state x="1645" y="0" width="922" height="1407" key="dock-window-1/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1603794773746" />
     <state x="1783" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1603708193166">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
