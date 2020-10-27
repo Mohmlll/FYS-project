@@ -46,8 +46,10 @@
     background: transparent;
 }
 
-.login {
+.login_button, .register_button{
     position: relative;
+    width: 60%;
+    padding: 5%;
     cursor: pointer;
     display: block;
     margin: auto;
@@ -55,6 +57,7 @@
     border: 0;
     outline: none;
     border-radius: 30px;
+
 }
 
 .passwordCheckbox {
