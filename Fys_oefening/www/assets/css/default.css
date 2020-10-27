@@ -1,5 +1,7 @@
 body {
     margin: 0;
+    font-family: 'Playfair Display', serif;
+
 }
 
 
@@ -200,6 +202,10 @@ about us card
 
 }
 
+.welkombox h1 {
+    color: deepskyblue;
+}
+
 .welkombox p {
     max-width: 75ch;
 
@@ -211,6 +217,12 @@ about us card
     border-radius: 25px;
     width: 80%;
     height: 20%;
+    text-align: center;
+
+}
+
+.info1 b, .info2 b {
+    color: deepskyblue;
 }
 
 .info1 p, .info2 p{
@@ -235,19 +247,17 @@ about us card
     height: 100%;
 }
 
-.stap1_img {
-
-    width: 100%;
-
-
-}
-
 .stap1_img img{
     margin-top: 20%;
     width: 100%;
-
-
 }
+
+.stap2_gif img{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 /*
 *footer
  */
