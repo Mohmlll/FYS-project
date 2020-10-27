@@ -56,85 +56,46 @@ header {
  * body
  *
  */
-
-/*
-about us card
- */
-
-
-.flip_card {
-    background-color: transparent;
-    perspective: 1000px;
-    height: 9.111rem;
-    width: 8rem;
-    margin: 50px auto;
-
-
-}
-
-.flip_card_front, .flip_card_back {
-    box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, 0.15);;
+.dropbtn {
     background-color: white;
-    border-radius: 10px;
-    border-top: solid 6px purple;
-    border-right: 0;
-    border-left: 0;
-    border-bottom: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden; /*safari*/
-
+    padding: 5px;
+    border: solid 1px gray;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.aboutus_fname {
-    margin-bottom: 0;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    right: 0;
-    background-color: white;
-    border-radius: 30px;
-    border-top: solid 2px purple;
-    border-right: 0;
-    border-left: 0;
-    border-bottom: 0;
+.dropbtn:hover, .dropbtn:focus {
+    background-color: lightgray;
 }
 
-.aboutus_foto {
-    width: 85%;
-    height: 85%;
-    margin-top: 5%;
-    border-radius: 90px;
-    box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, 0.15);
-}
-
-.flip_card_inner {
+.dropdown {
     position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-
+    display: inline-block;
 }
 
-.flip_card:hover .flip_card_inner {
-    transform: rotateY(180deg);
-}
-
-.flip_card_front {
+.dropdown-content {
+    display: none;
+    position: absolute;
     background-color: white;
-    color: black;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-bottom: solid 1px lightgray;
+    border-radius: 5px;
 }
 
-.flip_card_back {
-    background-color: white;
+.dropdown-content a {
     color: black;
-    transform: rotateY(180deg);
+    width: 60px;
+    border: solid 1px lightgray;
+    padding: 6px;
+    text-decoration: none;
+    display: block;
 }
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
 
 /*
  *
@@ -191,12 +152,13 @@ about us card
  *
  */
 
-.welkombox, .uitleg_video, .info1, .info2, .inlog-box, .flip_card_front, .flip_card_back {
+.welkombox, .uitleg_video, .info1, .info2, .inlog-box, .flip_card_front,
+.flip_card_back ,.post_latest, .forum_topics__options {
     -webkit-box-shadow: 12px 10px 15px 0px rgba(0, 0, 0, 0.75);
 }
 
 .footer_main, .container__main {
-    box-shadow: -1px 2px 9px -1px rgba(0,0,0,0.26);
+    box-shadow: -1px 2px 9px -1px rgba(0, 0, 0, 0.26);
 }
 
 .welkombox {
@@ -274,7 +236,6 @@ about us card
 
 
 .footer_main {
-
     border-radius: 15px;
     background-color: lightgray;
     margin: 0.5% auto 0.5% auto;
@@ -283,10 +244,12 @@ about us card
     text-align: center;
 
 }
+
 .footer_main p {
     margin: auto;
 
 }
+
 .left_empty_footer {
     order: 0;
 }
