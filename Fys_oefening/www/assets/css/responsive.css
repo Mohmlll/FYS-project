@@ -26,19 +26,15 @@ container
     .left__ad, .right__ad {
         width: 12.5%;
         max-height: 80%;
-
         overflow: hidden;
     }
     .container__main{
-        width: 75%;
+        width: 73%;
     }
 }
 @media screen and (max-width: 800px) {
-    .container__main{
-    }
     .left__ad, .right__ad{
         display: none;
-
     }
 
 }
