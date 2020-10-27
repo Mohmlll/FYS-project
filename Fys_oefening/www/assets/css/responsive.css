@@ -49,6 +49,9 @@ container
 /* Menu */
 @media screen and (min-width: 1000px) {
     .menu a {
+        float: left;
+    }
+    .menu_groot {
         float: right;
     }
 }
