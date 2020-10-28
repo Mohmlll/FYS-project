@@ -1,13 +1,14 @@
-.header__title{
+.header__title {
 
 }
 
-.forum_main{
+.forum_main {
     width: 72%;
     order: 0;
     margin-right: 2%;
 }
-.forum_topics__options{
+
+.forum_topics__options {
     width: 26%;
     order: 1;
     border-radius: 25px;
@@ -15,13 +16,14 @@
     padding: 2.5%;
 }
 
-.forum_filter{
+.forum_filter {
     list-style-type: none;
     padding: 0;
     margin: 10% 0 0 0;
 
 }
-.forum_filter a{
+
+.forum_filter a {
     border: 1px solid #ddd;
     margin-top: -1px;
     background-color: #f6f6f6;
@@ -30,46 +32,50 @@
     font-size: 13px;
 
 }
-.forum_topics__options,.forum_main {
+
+.forum_topics__options, .forum_main {
 
 
 }
-.post_latest{
+
+.post_latest {
     width: 89%;
     margin: 0 0 5% 0;
     height: 18%;
     background-color: white;
     border-radius: 15px;
-    padding: 5% ;
-    overflow:hidden;
+    padding: 5%;
+    overflow: hidden;
 
 }
+
 .post_latest p {
     max-width: 70ch;
 }
 
-.front_post_title{
+.front_post_title {
     font-size: 16px;
 }
 
-.latest_repley_info{
+.latest_repley_info {
     font-size: 8px;
 }
 
-.post_latest_content{
+.post_latest_content {
     font-size: 12px;
 }
 
-.forum_main_options{
-    padding:5%;
+.forum_main_options {
+    padding: 5%;
     width: 85%;
     height: 8%;
 }
 
-.forum_search{
+.forum_search {
     width: 90%;
 }
-.start_discussion_button{
+
+.start_discussion_button {
 
     position: relative;
     display: inline-block;
@@ -79,7 +85,7 @@
     border: 2px solid red;
 }
 
-.mark_read_button{
+.mark_read_button {
     float: right;
     margin: auto;
     border: 2px solid red;
@@ -140,21 +146,22 @@ button.topic_button:active::before {
 
 }
 
-.forum_page_selector{
+.forum_page_selector {
     align-content: center;
     margin: 15% auto;
     text-align: center;
 
 }
 
-.forum_page_number{
+.forum_page_number {
     font-size: 1.4em;
 }
+
 .forum_page_selector a {
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
-    background-color:white ;
+    background-color: white;
     border-radius: 50%;
     border: solid 1px black;
     margin: auto;
@@ -165,15 +172,17 @@ button.topic_button:active::before {
     color: black;
 }
 
-.form_create_post p, .form_create_post label{
+.form_create_post p, .form_create_post label {
     font-size: 14px;
 
 }
-.form_create_title{
-margin-bottom: 5%   ;
- width: 70%;
+
+.form_create_title {
+    margin-bottom: 5%;
+    width: 70%;
 }
-.create_post{
+
+.create_post {
     padding: 5%;
     width: 100%;
     background-color: white;
@@ -182,15 +191,21 @@ margin-bottom: 5%   ;
 
 .form_create_description {
     width: 90%;
-    margin-bottom: 5%;
+
 }
-.create_post_footer{
+
+.create_post_footer {
     width: 100%;
 
 }
-.container_create_post{
+
+.container_create_post {
     width: 100%;
     border-radius: 25px;
     padding: 5%;
     background: white;
+}
+
+.create_post_tags {
+    margin-bottom: 5%;
 }
