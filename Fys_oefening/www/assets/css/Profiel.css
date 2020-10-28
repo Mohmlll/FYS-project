@@ -1,0 +1,62 @@
+
+/*
+Profiel Overzicht
+ */
+
+.eigen_gegevens_overzicht, .voorkeuren_user {
+    text-align: center;
+    width: 100%;
+    background-color: white;
+    border-radius: 25px;
+
+}
+
+.voorkeuren_user {
+    margin-top: 10%;
+}
+.container__main h1 {
+    color: deepskyblue;
+    text-align: center;
+    width: 100%;
+}
+
+.button {
+    border-radius: 4px;
+    background-color: #ff7b68;
+    border: none;
+    color: deepskyblue;
+    text-align: right;
+    font-size: 28px;
+    padding: 20px;
+    width: 100%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
