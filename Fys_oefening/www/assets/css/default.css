@@ -17,10 +17,10 @@ body {
 .menu {
     background-color: black;
     opacity: 0.8;
-    overflow: hidden;
     width: 100%;
     position: fixed;
     z-index: 2;
+    font-size: 30px;
 }
 
 .menu img {
@@ -30,7 +30,6 @@ body {
 
 .menu .menu_groot a {
     padding: 15px;
-    font-size: 30px;
     text-decoration: none;
     color: whitesmoke;
 }
@@ -38,6 +37,42 @@ body {
 
 .menu a:hover {
     color: red;
+}
+
+.taal {
+    display: inline-block;
+    position: relative;
+    margin-top: -50px;
+}
+
+.taal_inhoud {
+    display: none;
+    position: absolute;
+}
+
+.taal button {
+    color: white;
+    background-color: black;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+
+}
+
+.taal button:hover {
+    color: red;
+}
+
+.taal a {
+    color: white;
+    text-decoration: none;
+}
+
+.taal:hover .taal_inhoud {
+    display: block;
+    background-color: black;
+    padding: 10px;
+    border-radius: 0 0 0 20px;
 }
 
 /*
