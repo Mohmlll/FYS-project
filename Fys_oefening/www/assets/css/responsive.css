@@ -122,12 +122,33 @@ container
     .taal {
         float: right;
     }
+
+    .taal:hover .taal_inhoud {
+        border-radius: 0 0 0 20px;
+    }
 }
 
 @media screen and (max-width: 1000px){
-    .menu a {
+    .menu .menu_groot a {
         display: none;
     }
+
+    .menu img {
+        display: none;
+    }
+
+    .uitklappen .menu_groot a{
+        display: block;
+    }
+
+    .taal:hover .taal_inhoud {
+        border-radius: 0 0 20px 0;
+    }
+
+    .uitklappen .taal {
+        display: none;
+    }
+
     .header {
         min-height: 64px;
     }
