@@ -56,14 +56,17 @@
     <div class="container__main">
         <div class="forum_main">
             <div class="forum_main_options">
-                <div class="dropdown" id="myDropdown">
-                    <button class="dropbtn">Latest first ↓</button>
-                    <div class="dropdown-content">
-                        <a href="#home">Hot</a>
-                        <a href="#about">Top</a>
-                    </div>
+                <form>
+                    <label for="volgorde">
+                        <select id="volgorde">
+                            <option value="#">Latest</option>
+                            <option value="#">Hot</option>
+                            <option value="#">Top</option>
+                        </select>
+                    </label>
+                </form>
 
-                </div>
+
                 <button class="mark_read_button" > Mark all as read</button>
             </div>
             <div class="post_latest">
