@@ -165,3 +165,9 @@ button.topic_button:active::before {
     color: black;
 }
 
+
+.create_post{
+    width: 100%;
+    background-color: white;
+    border-radius: 25px;
+}
