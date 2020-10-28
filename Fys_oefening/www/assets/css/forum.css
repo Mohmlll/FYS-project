@@ -165,9 +165,32 @@ button.topic_button:active::before {
     color: black;
 }
 
+.form_create_post p, .form_create_post label{
+    font-size: 14px;
 
+}
+.form_create_title{
+margin-bottom: 5%   ;
+ width: 70%;
+}
 .create_post{
+    padding: 5%;
     width: 100%;
     background-color: white;
+
+}
+
+.form_create_description {
+    width: 90%;
+    margin-bottom: 5%;
+}
+.create_post_footer{
+    width: 100%;
+
+}
+.container_create_post{
+    width: 100%;
     border-radius: 25px;
+    padding: 5%;
+    background: white;
 }
