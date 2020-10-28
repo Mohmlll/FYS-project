@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Home | TravelBud</title>
+
+    <!-- Stylesheets -->
+    <link href="assets/css/default.css" rel="stylesheet"/>
+    <link href="assets/css/responsive.css" rel="stylesheet"/>
+    <link href="assets/css/forum.css" rel="stylesheet"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+
+    <!-- Javascript -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</head>
+
+<body>
+<div class="menu" id="responsivemenu">
+    <div class="hamburgermenu">
+        <div class="top_menu"></div>
+        <div class="center_menu"></div>
+        <div class="bottom_menu"></div>
+    </div>
+    <div class="space"></div>
+
+
+    <div class="logomemu"><a href="index.html"><img src="assets/img/Travelbud%20transparant%20logo.png"></a></div>
+
+    <div class="menu_groot">
+        <a href="index.html">Home</a>
+        <a href="AboutUs.html">Over ons</a>
+        <a href="LogIn.html">Aanmelden</a>
+    </div>
+</div>
+<header>
+    <h2 class="header__title">
+        Fys project website
+    </h2>
+
+</header>
+
+<div class="container">
+    <div class="container__main">
+        <div class="forum_main">
+            <div class="forum_main_options">
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Latest first ↓</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#home">Hot</a>
+                        <a href="#about">Top</a>
+                    </div>
+                    <script>
+                        /* When the user clicks on the button,
+                            toggle between hiding and showing the dropdown content */
+                        function myFunction() {
+                            document.getElementById("myDropdown").classList.toggle("show");
+                        }
+
+                        // Close the dropdown if the user clicks outside of it
+                        window.onclick = function(event) {
+                            if (!event.target.matches('.dropbtn')) {
+                                var dropdowns = document.getElementsByClassName("dropdown_content");
+                                var i;
+                                for (i = 0; i < dropdowns.length; i++) {
+                                    var openDropdown = dropdowns[i];
+                                    if (openDropdown.classList.contains('show')) {
+                                        openDropdown.classList.remove('show');
+                                    }
+                                }
+                            }
+                        }
+                    </script>
+                </div>
+                <button class="mark_read_button" > Mark all as read</button>
+            </div>
+            <div class="post_latest">
+                <p class="front_post_title">Post Title</p>
+                <p class="latest_repley_info">latest repley from lorem xx minutes ago</p>
+                <hr>
+                <p class="post_latest_content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at dolore facere,
+                    hic id minima omnis praesentium! Commodi dolorem ducimus excepturi molestiae molestias nemo
+                    provident quo tempore temporibus, vel vero.
+                </p>
+            </div>
+            <div class="post_latest">
+                <p class="front_post_title">Post Title</p>
+                <p class="latest_repley_info">latest repley from lorem xx minutes ago</p>
+                <hr>
+                <p class="post_latest_content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at dolore facere,
+                    hic id minima omnis praesentium! Commodi dolorem ducimus excepturi molestiae molestias nemo
+                    provident quo tempore temporibus, vel vero.
+                </p>
+            </div>
+            <div class="post_latest">
+                <p class="front_post_title">Post Title</p>
+                <p class="latest_repley_info">latest repley from lorem xx minutes ago</p>
+                <hr>
+                <p class="post_latest_content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at dolore facere,
+                    hic id minima omnis praesentium! Commodi dolorem ducimus excepturi molestiae molestias nemo
+                    provident quo tempore temporibus, vel vero.
+                </p>
+            </div>
+            <div class="post_latest">
+                <p class="front_post_title">Post Title</p>
+                <p class="latest_repley_info">latest repley from lorem xx minutes ago</p>
+                <hr>
+                <p class="post_latest_content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at dolore facere,
+                    hic id minima omnis praesentium! Commodi dolorem ducimus excepturi molestiae molestias nemo
+                    provident quo tempore temporibus, vel vero.
+                </p>
+            </div>
+        </div>
+        <div class="forum_topics__options">
+            <button class="start_discussion_button"> Start New Discussion</button>
+            <hr>
+            <input type="text" class="forum_search" onkeyup="myFunction()" placeholder="Search on forum.." title="=Search on forum">
+            <ul id="forum_filter" class="forum_filter">
+                <li class="filter_option"><a href="#">All Dicussion</a></li>
+                <li class="filter_option"><a href="#">Following</a></li>
+            </ul>
+            <hr>
+            <button class="topic_button">Topic 1</button>
+            <button class="topic_button">Topic 2</button>
+            <button class="topic_button">Topic 3</button>
+            <button class="topic_button">Topic 4</button>
+            <button class="topic_button">Topic 5</button>
+            <button class="topic_button">Topic 6</button>
+            <button class="topic_button">Topic 7</button>
+
+        </div>
+    </div>
+    <div class="left__ad">
+        <img class="banner_ad_left" src="assets/img/Banner_add2.png"  alt="AD">
+    </div>
+    <div class="right__ad">
+        <img class="banner_ad_right" src="assets/img/Banner_add2.png"  alt="AD">
+    </div>
+    <div class="bottom__container">
+        <div class="left_empty_footer"></div>
+        <div class="footer_main">
+            <hr>
+            <p>Copyright Covid-B</p>
+        </div>
+        <div class="right_empty_footer"></div>
+    </div>
+</div>
+</body>
+</html>

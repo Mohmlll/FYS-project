@@ -4,15 +4,19 @@ container
  */
 @media screen and (max-width: 650px) {
     .container__main{
-        padding-top: 50px;
+        padding: 2%;
     }
-
+    .uitleg_video{
+        padding: 10px 5px;
+    }
 }
 @media screen and (min-width: 650px){
     .container__main{
-        padding: 50px;
+        padding: 3%;
     }
-
+    .uitleg_video{
+        padding: 20px 15px;
+    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -31,20 +35,23 @@ container
     .container__main{
         width: 73%;
     }
+    .footer_main{
+        width: 73%;
+    }
+    .left_empty_footer, .right_empty_footer2{
+        width: 12.5%;
+    }
+
+
 }
 @media screen and (max-width: 800px) {
     .left__ad, .right__ad{
         display: none;
     }
+    .left_empty_footer, .right_empty_footer2{
+       display: none;
+    }
 
-}
-@media screen and (max-width: 600px) {
-    .info1, .info2 {
-        min-width: 45%;
-    }
-    .inlog-box{
-        margin: 0;
-    }
 }
 
 @media screen and (min-width: 450px) and (max-width: 600px) {
@@ -53,20 +60,53 @@ container
     }
 }
 
-@media screen and (min-width: 600px){
-    .info1, .info2 {
-        width: 45%;
-        height: 20%;
+@media screen and (max-width: 600px) {
+    .info1 {
+        min-width: 85%;
+        margin: 5% 5% 5% 5%;
     }
     .inlog-box{
-        margin: auto;
+        margin: 0;
+    }
+    .info2{
+        min-width: 85%;
+        margin: auto 5% 5% 5%;
     }
 }
 
+
+@media screen and (min-width: 600px) {
+    .info1, .info2 {
+        width: 45%;
+        height: 20%;
+        margin: 5% auto;
+    }
+
+    .inlog-box {
+        margin: auto;
+    }
+    .info1 p, .info2 p {
+        font-size: 14px;
+    }
+
+
+}
+
+@media screen and (min-width: 450px) and (max-width: 600px) {
+    .info1 p, .info2 p {
+        font-size: 15px;
+    }
+
+}
 @media screen and (max-width: 450px){
     .uitleg_video {
         height: 200px;
     }
+    .info1 p, .info2 p {
+        font-size: 16px;
+    }
+
+
 }
 /* Menu */
 @media screen and (min-width: 1000px) {
