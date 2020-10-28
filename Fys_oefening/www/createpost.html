@@ -34,6 +34,15 @@
         <a href="forum_homepage.html">Forum</a>
         <a href="#">Profiel</a>
     </div>
+
+    <div class="taal">
+        <button class="taalbutton">Taal</button>
+        <div class="taal_inhoud">
+            <a href="#">NL</a>
+            <a href="#">EN</a>
+        </div>
+    </div>
+
 </div>
 <header>
     <h1 class="header__title">
@@ -46,29 +55,57 @@
     <div class="container__main">
         <div class="container_create_post">
             <div class="create_post">
-                <h1>Create post</h1>
-
+                <h4>Maak een post</h4>
+                <form>
+                    <label for="volgorde">
+                        <select id="volgorde">
+                            <option value="#">test</option>
+                            <option value="#"></option>
+                            <option value="#"></option>
+                        </select>
+                    </label>
+                </form>
                 <form action="" method="POST">
 
                     <div class="form_create_post">
-                        <label >Title <span class="require">*</span></label>
+                        <label >Titel <span class="require">*</span></label>
                         <input type="text" class="form_create_title" name="title" />
                     </div>
 
                     <div class="form_create_post">
 
-                        <p><span class="require">*</span> Description </p>
+                        <p><span class="require">*</span> Omschrijving </p>
                         <textarea rows="5" class="form_create_description" name="description" ></textarea>
                     </div>
-
-                    <div class="form_create_post">
-                        <button type="submit" class="btn btn-primary">
-                            Create
+                    <div class="create_post_tags">
+                        <label >Tags:<span class="require"></span></label>
+                        <button class="">
+                            Wintersport
                         </button>
                         <button class="btn btn-default">
-                            Cancel
+                            off-topic
+                        </button>
+                        <form>
+                            <label for="volgorde">
+                                <select id="">
+                                    <option value="#">Meer</option>
+                                    <option value="#">Tropische vakantie</option>
+                                    <option value="#">Backpacke</option>
+                                </select>
+                            </label>
+                        </form>
+
+                    </div>
+
+                    <div class="form_create_post_buttons">
+                        <button onclick="location.href='forum_homepage.html'" type="submit" class="btn btn-primary">
+                            Create
+                        </button>
+                        <button onclick="location.href='forum_homepage.html'" class="btn btn-default">
+                            Annuleer
                         </button>
                     </div>
+
                 </form>
             </div>
             <div class="create_post_footer">

@@ -182,7 +182,7 @@ margin-bottom: 5%   ;
 
 .form_create_description {
     width: 90%;
-    margin-bottom: 5%;
+
 }
 .create_post_footer{
     width: 100%;
@@ -193,4 +193,7 @@ margin-bottom: 5%   ;
     border-radius: 25px;
     padding: 5%;
     background: white;
+}
+.create_post_tags{
+    margin-bottom: 5%;
 }
