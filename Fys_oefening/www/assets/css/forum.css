@@ -26,8 +26,14 @@
     height: 18%;
     background-color: white;
     border-radius: 15px;
-    padding: 2%;
+    padding: 5% ;
+    overflow:hidden;
+
 }
+.post_latest p {
+    max-width: 70ch;
+}
+
 .front_post_title{
     font-size: 16px;
 }
@@ -48,34 +54,22 @@
 }
 
 .start_discussion_button{
-    margin-top: 200px;
+
 
 }
 
-.topics__option_split{
-    margin-bottom: 60%;
-}
-
-* {
-    box-sizing: border-box;
-}
-*::before, *::after {
-    box-sizing: border-box;
-}
 .topic_button {
     padding: 10px;
     position: relative;
     display: inline-block;
     cursor: pointer;
     outline: none;
-    margin: 5% 2% 8% 2%;
-    vertical-align: middle;
-    font-size: 1.5rem;
+    margin: 5% 2% 10% 2%;
     color: black;
     font-family: inherit;
-    border: 2px solid darkgreen;
+    border: 2px solid red;
     border-radius: 1em;
-    background: mediumspringgreen;
+    background: white;
     transform-style: preserve-3d;
     transition: all 175ms cubic-bezier(0, 0, 1, 1);
 }
@@ -89,16 +83,16 @@ button.topic_button::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: darkseagreen;
+    background: #d81E05;
     border-radius: inherit;
-    box-shadow: 0 0 0 2px darkslategrey, 0 0.75em 0 0 darkslategrey;
+    box-shadow: 0 0 0 2px black, 0 0.75em 0 0 black;
     transform: translate3d(0, 0.75em, -1em);
     transition: all 175ms cubic-bezier(0, 0, 1, 1);
 }
 
 
 button.topic_button:hover {
-    background: darkseagreen;
+    background: yellow;
     transform: translate(0, 0.375em);
 }
 
