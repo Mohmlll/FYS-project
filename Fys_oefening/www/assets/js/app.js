@@ -25,6 +25,15 @@ $(document).ready(function () {
         }
     })
 
-
+    $(".dropdown").on("click", function (e) {
+        e.preventDefault()
+        var x = document.getElementById("myDropdown");
+        if (x.className === "dropdown") {
+            x.className += " uitschuiven";
+        } else {
+            x.className = "dropdown";
+        }
+        console.log(x.className)
+    })
 });
 

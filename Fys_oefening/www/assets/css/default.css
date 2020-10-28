@@ -64,17 +64,32 @@ header {
     border-radius: 5px;
 }
 
-.dropbtn:hover, .dropbtn:focus {
-    background-color: lightgray;
-}
-
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
-.dropdown-content {
+.dropdown a {
     display: none;
+}
+
+.dropdown-content a {
+    color: black;
+    width: 60px;
+    border: solid 1px lightgray;
+    padding: 6px;
+    text-decoration: none;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: lightgray;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.dropdown-content {
     position: absolute;
     background-color: white;
     overflow: auto;
@@ -84,19 +99,10 @@ header {
     border-radius: 5px;
 }
 
-.dropdown-content a {
-    color: black;
-    width: 60px;
-    border: solid 1px lightgray;
-    padding: 6px;
-    text-decoration: none;
+.uitschuiven  a{
     display: block;
+    float: none;
 }
-
-.dropdown a:hover {background-color: #ddd;}
-
-.show {display: block;}
-
 /*
  *
  * container indeling homepagina
