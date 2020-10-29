@@ -13,6 +13,7 @@
     background-color: white;
     border-radius: 25px;
     padding: 8%;
+    margin-bottom: 10%;
 
 }
 .forum_filter {
@@ -32,12 +33,12 @@
 
 
 .post_latest {
-    width: 89%;
     height: 18%;
     background-color: white;
     border-radius: 15px;
     padding: 5%;
     overflow: hidden;
+    margin: 0 4% 4% 0;
 }
 
 .post_latest p {
