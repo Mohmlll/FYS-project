@@ -4,7 +4,11 @@ body {
 
 }
 
-label{
+button, table {
+    font-family: 'Playfair Display', serif;
+}
+
+label {
 
 }
 

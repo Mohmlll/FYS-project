@@ -141,6 +141,10 @@ container
     .taal:hover .taal_inhoud {
         border-radius: 0 0 0 20px;
     }
+
+    .voorkeuren_user, .voorkeuren_user table, {
+        font-size: 20px;
+    }
 }
 
 @media screen and (max-width: 1000px) {

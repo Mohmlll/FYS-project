@@ -4,6 +4,7 @@ forummain
 .forum_main {
     width: 68%;
     order: 0;
+    height: 80%;
 }
 /*
 right menu
@@ -13,15 +14,16 @@ right menu
 .forum_rightmenu {
     width: 32%;
     order: 1;
+    height: 80%;
 }
 
 .forum_main_options {
     padding: 2%;
     width: 100%;
-    height: 8%;
     background-color: white;
     border-radius: 25px;
     margin-bottom: 3%;
+    height: 5%;
 }
 
 .start_post_button {
@@ -163,8 +165,11 @@ right menu - aanbevolen
 
 .forum_page_selector {
     align-content: center;
-    margin: 15% auto;
+    margin: auto;
     text-align: center;
+    width: 100%;
+    order:3;
+    height: 4%;
 
 }
 
