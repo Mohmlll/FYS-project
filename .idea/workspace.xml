@@ -31,19 +31,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -57,7 +44,8 @@
       <workItem from="1603875266331" duration="16223000" />
       <workItem from="1603969656761" duration="13000" />
       <workItem from="1603972077988" duration="2603000" />
-      <workItem from="1603980942679" duration="5103000" />
+      <workItem from="1603980942679" duration="6662000" />
+      <workItem from="1603996265649" duration="1816000" />
     </task>
     <servers />
   </component>
@@ -81,9 +69,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1771" y="314" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1603989759050" />
-    <state x="-1710" y="-23" width="2533" height="1127" maximized="true" key="dock-window-1" timestamp="1603993872183">
-      <screen x="-2560" y="0" width="2560" height="1040" />
+    <state x="-459" y="-22" width="2533" height="837" maximized="true" key="dock-window-1" timestamp="1603997902999">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="-459" y="-22" width="2533" height="837" maximized="true" key="dock-window-1/-2560.0.2560.1040/0.0.2560.1400@-2560.0.2560.1040" timestamp="1603997902999" />
     <state x="-1710" y="-23" width="2533" height="1127" maximized="true" key="dock-window-1/-2560.0.2560.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603993872183" />
     <state x="2012" y="0" width="555" height="1407" key="dock-window-1/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1603981644740" />
     <state x="1617" y="0" width="950" height="1407" key="dock-window-2" timestamp="1603806005852">
