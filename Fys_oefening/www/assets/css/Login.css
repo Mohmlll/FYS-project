@@ -54,9 +54,12 @@
     display: block;
     margin: auto;
     background: linear-gradient(to right, #ff7b68, #ffffff);
-    border: 0;
     outline: none;
     border-radius: 30px;
+    border: solid 1px #ff7b68;
+}
+.login_button:hover, .register_button:hover {
+    background: linear-gradient(to right, red, #ffffff);
 }
 
 .passwordCheckbox {
