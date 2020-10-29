@@ -9,14 +9,7 @@ forummain
 right menu
  */
 
-.topic_button{
-    display: inline-block;
-    cursor: pointer;
-    background-color: red;
-    color: white;
-    width: 100%;
 
-}
 .forum_rightmenu {
     width: 32%;
     order: 1;
@@ -38,10 +31,9 @@ right menu
     background-color: red;
     color: white;
     float: right;
-    width: 25%;
-    height: 3em;
-    border-radius: 5%;
     margin-right: 2%;
+    width: 25%;
+    border-radius: 25px;
 }
 
 

@@ -69,7 +69,7 @@
         </div>
         <div class="forum_main">
 
-            <div class="post_latest">
+            <div class="post_latest tropisch">
                 <p class="front_post_title">Tropische vakantie | Backpacken </p>
                <div class="post_profiel_foto"><a href="forum_homepage.html">
                     <img src=assets/img/AboutUsFotos/Dylan.png>
@@ -81,7 +81,7 @@
                     om eindelijk te ontstressen. Helaas kan niemand...
                 </p>
             </div>
-            <div class="post_latest">
+            <div class="post_latest wintersport">
                 <p class="front_post_title">Wintersport | Actief</p>
                 <div class="post_profiel_foto">
                     <a href="forum_homepage.html"><img src=assets/img/AboutUsFotos/Dylan.png></a>
@@ -92,8 +92,8 @@
                     op wintersport vakantie in...
                 </p>
             </div>
-            <div class="post_latest">
-                <p class="front_post_title">Post Title</p>
+            <div class="post_latest backpacke explorer">
+                <p class="front_post_title">Backpacke | Explorer</p>
                 <div class="post_profiel_foto">
                     <a href="forum_homepage.html"> <img src=assets/img/AboutUsFotos/Dylan.png></a>
                 </div>
@@ -103,8 +103,8 @@
                     hic id minima omnis praesentium! Commodi dolorem...
                 </p>
             </div>
-            <div class="post_latest">
-                <p class="front_post_title">Post Title</p>
+            <div class="post_latest resort relaxer">
+                <p class="front_post_title">Resort | Relaxer</p>
                 <div class="post_profiel_foto">
                     <a href="forum_homepage.html"><img src=assets/img/AboutUsFotos/Dylan.png></a>
                 </div>
@@ -159,15 +159,20 @@
             <div class="forum_topics__options">
 
                 <input type="text" class="forum_search" placeholder="Search on forum.." title="=Search on forum">
-                <ul id="forum_filter" class="forum_filter">
-                    <li class="filter_option"><a href="#">All Dicussion</a></li>
-                    <li class="filter_option"><a href="#">Following</a></li>
-                </ul>
+
                 <hr class="topics__option_split">
-                <button class="topic_button">WinterSport</button>
-                <button class="topic_button">Tropische Vakantie</button>
-                <button class="topic_button">Backpacke</button>
-                <button class="topic_button">Ontspanne</button>
+                <div id="myBtnContainer">
+                    <button class="btn" onclick="filterSelection('all')">All</button>
+                    <button class="btn" onclick="filterSelection('volgend')">Volgend</button>
+                    <button class="btn active" onclick="filterSelection('explorer')">Explorer</button>
+                    <button class="btn" onclick="filterSelection('sportieveling')">Sportieveling</button>
+                    <button class="btn" onclick="filterSelection('relaxer')">Relaxer</button>
+                    <button class="btn" onclick="filterSelection('partygoer')">Partygoer</button>
+                    <button class="btn" onclick="filterSelection('backgoer')">Backgoer</button>
+                    <button class="btn" onclick="filterSelection('wintersport')">Wintersport</button>
+                    <button class="btn" onclick="filterSelection('tropisch')">Tropisch</button>
+                    <button class="btn" onclick="filterSelection('resort')">Resort</button>
+                </div>
 
             </div>
         </div>
@@ -189,5 +194,50 @@
         <div class="right_empty_footer"></div>
     </div>
 </div>
+<script>
+    filterSelection("all")
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("filterDiv");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+    }
+
+    function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+        }
+    }
+
+    function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+                arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+        }
+        element.className = arr1.join(" ");
+    }
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function(){
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+</script>
+
 </body>
 </html>

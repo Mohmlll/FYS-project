@@ -3,13 +3,6 @@ body {
     font-family: 'Playfair Display', serif;
 
 }
-button{
-    display: inline-block;
-    cursor: pointer;
-    background-color: red;
-    color: white;
-    border-radius: 30%;
-}
 
 label{
 
@@ -54,6 +47,7 @@ label{
     display: inline-block;
     position: relative;
     margin-top: -50px;
+
 }
 
 .taal_inhoud {
@@ -68,6 +62,7 @@ label{
     font-size: 30px;
     font-family: 'Playfair Display', serif;
     cursor: pointer;
+
 
 }
 
