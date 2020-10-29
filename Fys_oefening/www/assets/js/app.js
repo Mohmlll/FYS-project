@@ -24,5 +24,6 @@ $(document).ready(function () {
             registreer.style.left = "450px";
         }
     })
+
 });
 

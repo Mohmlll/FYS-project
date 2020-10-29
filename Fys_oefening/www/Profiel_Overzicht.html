@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>About | Travelbud</title>
+    <title>Profiel | Travelbud</title>
 
     <!-- Stylesheets -->
     <link href="assets/css/default.css" rel="stylesheet"/>
@@ -103,9 +103,6 @@
                     </div>
 
 
-                </div>
-
-
                 <div id="Lopende_Matches" class="tabcontent">
                     <h1>Lopende Matches</h1>
                     <p>Paris is the capital of France.</p>
@@ -124,6 +121,8 @@
             
         </div>
 
+
+        <!--
         <div class="profiel_bewerken">
             <p>Profiel bewerken</p>
         </div>
@@ -162,12 +161,9 @@
 </div>
 
 <script>
-    function openinhoudt(evt, cityName) {
+    function openinhoudt(live, live_kopje) {
         // Declare all variables
         var i, tabcontent, tablinks;
-
-        //Open profiel automatisch
-        document.getElementById("standaard_Openen").click();
 
         // Get all elements with class="tabcontent" and hide them
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -182,9 +178,11 @@
         }
 
         // Show the current tab, and add an "active" class to the button that opened the tab
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
+        document.getElementById(live_kopje).style.display = "block";
+        live.currentTarget.className += " active";
     }
+    //Open profiel automatisch
+    document.getElementById("standaard_Openen").click();
 </script>
 
 
