@@ -31,6 +31,19 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -43,7 +56,8 @@
       <workItem from="1603789181151" duration="15132000" />
       <workItem from="1603875266331" duration="16223000" />
       <workItem from="1603969656761" duration="13000" />
-      <workItem from="1603972077988" duration="1250000" />
+      <workItem from="1603972077988" duration="2603000" />
+      <workItem from="1603980942679" duration="1745000" />
     </task>
     <servers />
   </component>
