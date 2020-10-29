@@ -54,28 +54,46 @@
 <div class="container">
     <div class="container__main">
 
-        <div class="buttonpagina">
+        <div class="buttonpagina_totaal">
             <!-- Tab links -->
             <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                <button class="tablinks" onclick="openinhoudt(event, 'Profiel')" id="standaard_Openen">Profiel</button>
+                <button class="tablinks" onclick="openinhoudt(event, 'Lopende_Matches')">Lopende Matches</button>
+                <button class="tablinks" onclick="openinhoudt(event, 'Inkomende_Matches')">Inkomende Matches</button>
+                <button class="tablinks" onclick="openinhoudt(event, 'Uitgaande_Matches')">Uitgaande Matches</button>
             </div>
 
-            <!-- Tab content -->
-            <div id="London" class="tabcontent">
-                <h3>London</h3>
-                <p>London is the capital city of England.</p>
-            </div>
+            <div class="button_inhoudt">
 
-            <div id="Paris" class="tabcontent">
-                <h3>Paris</h3>
-                <p>Paris is the capital of France.</p>
-            </div>
 
-            <div id="Tokyo" class="tabcontent">
-                <h3>Tokyo</h3>
-                <p>Tokyo is the capital of Japan.</p>
+                <!-- Tab content -->
+                <div id="Profiel" class="tabcontent">
+                    <h1>Profiel</h1>
+
+                    <div class="voorkeuren_user">
+                        <p>Voorkeuren:</p>
+                        <p>Klimaat - Tropisch</p>
+                        <p>Activiteit - Backpacken</p>
+                        <p>Leeftijd - 20 | 30 jaar</p>
+                    </div>
+                </div>
+
+
+
+                <div id="Lopende_Matches" class="tabcontent">
+                    <h3>Lopende Matches</h3>
+                    <p>Paris is the capital of France.</p>
+                </div>
+
+                <div id="Inkomende_Matches" class="tabcontent">
+                    <h3>Inkomende Matches</h3>
+                    <p>Tokyo is the capital of Japan.</p>
+                </div>
+
+                <div id="Uitgaande_Matches" class="tabcontent">
+                    <h3>Uitgaande Matches</h3>
+                    <p>Tokyo is the capital of Japan.</p>
+                </div>
             </div>
         </div>
 
@@ -102,6 +120,7 @@
     </div>
 
 
+
     <div class="left__ad">
         <img class="banner_ad_left" src="assets/img/Banner_add2.png" alt="AD">
     </div>
@@ -117,5 +136,33 @@
         <div class="right_empty_footer"></div>
     </div>
 </div>
+
+<script>
+    function openinhoudt(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        //Open profiel automatisch
+        document.getElementsByClassName("standaard_Openen").click();
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+
 </body>
 </html>
