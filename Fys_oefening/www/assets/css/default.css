@@ -162,7 +162,7 @@ header {
 
 .welkombox, .uitleg_video, .info1, .info2, .inlog-box, .flip_card_front,
 .flip_card_back, .post_latest, .forum_topics__options, .container_create_post {
-    -webkit-box-shadow: 12px 10px 15px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 12px 10px 15px 0 rgba(0, 0, 0, 0.75);
 }
 
 .footer_main, .container__main {
