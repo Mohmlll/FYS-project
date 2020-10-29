@@ -44,7 +44,7 @@
     </div>
 
 </div>
-<header>
+<<header>
     <h1 class="header__title">
         TravelBud
     </h1>
@@ -103,47 +103,25 @@
                     </div>
 
 
-                <div id="Lopende_Matches" class="tabcontent">
-                    <h1>Lopende Matches</h1>
-                    <p>Paris is the capital of France.</p>
+                    <div id="Lopende_Matches" class="tabcontent">
+                        <h1>Lopende Matches</h1>
+                        <p>Paris is the capital of France.</p>
+                    </div>
+
+                    <div id="Inkomende_Matches" class="tabcontent">
+                        <h1>Inkomende Matches</h1>
+                        <p>Tokyo is the capital of Japan.</p>
+                    </div>
+
+                    <div id="Uitgaande_Matches" class="tabcontent">
+                        <h1>Uitgaande Matches</h1>
+                        <p>Tokyo is the capital of Japan.</p>
+                    </div>
                 </div>
 
-                <div id="Inkomende_Matches" class="tabcontent">
-                    <h1>Inkomende Matches</h1>
-                    <p>Tokyo is the capital of Japan.</p>
-                </div>
-
-                <div id="Uitgaande_Matches" class="tabcontent">
-                    <h1>Uitgaande Matches</h1>
-                    <p>Tokyo is the capital of Japan.</p>
-                </div>
             </div>
-            
         </div>
-
-
-        <!--
-        <div class="profiel_bewerken">
-            <p>Profiel bewerken</p>
-        </div>
-
-
-
-        <!--
-        <button class="button"><span>Bewerken! </span></button>
-        -->
-
-        <!--
-        <div class="voorkeuren_user">
-            <p>Voorkeuren:</p>
-            <p>Klimaat - Tropisch</p>
-            <p>Activiteit - Backpacken</p>
-            <p>Leeftijd - 20 | 30 jaar</p>
-        </div>
-        -->
     </div>
-
-
     <div class="left__ad">
         <img class="banner_ad_left" src="assets/img/Banner_add2.png" alt="AD">
     </div>
@@ -159,32 +137,6 @@
         <div class="right_empty_footer"></div>
     </div>
 </div>
-
-<script>
-    function openinhoudt(live, live_kopje) {
-        // Declare all variables
-        var i, tabcontent, tablinks;
-
-        // Get all elements with class="tabcontent" and hide them
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-
-        // Get all elements with class="tablinks" and remove the class "active"
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-
-        // Show the current tab, and add an "active" class to the button that opened the tab
-        document.getElementById(live_kopje).style.display = "block";
-        live.currentTarget.className += " active";
-    }
-    //Open profiel automatisch
-    document.getElementById("standaard_Openen").click();
-</script>
-
-
 </body>
 </html>
+
