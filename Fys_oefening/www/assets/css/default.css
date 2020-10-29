@@ -3,7 +3,17 @@ body {
     font-family: 'Playfair Display', serif;
 
 }
+button{
+    display: inline-block;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border-radius: 30%;
+}
 
+label{
+
+}
 
 .header, nav, footer, section, div {
     box-sizing: border-box;
@@ -163,7 +173,8 @@ header {
  */
 
 .welkombox, .uitleg_video, .info1, .info2, .inlog-box, .flip_card_front,
-.flip_card_back, .post_latest, .forum_topics__options, .container_create_post, .forum_aanbevolen {
+.flip_card_back, .post_latest, .forum_topics__options,
+.container_create_post, .forum_aanbevolen, .forum_main_options {
     -webkit-box-shadow: 12px 10px 15px 0 rgba(0, 0, 0, 0.75);
 }
 

@@ -55,8 +55,7 @@
 <div class="container">
     <div class="container__main">
         <div class="forum_main_options">
-            <button class="start_post_button" onclick="location.href='createpost.html'"> Start New Discussion
-            </button>
+            <button class="start_post_button" onclick="location.href='createpost.html'"> New Post</button>
             <form>
                 <label for="volgorde">
                     <select id="volgorde">
@@ -72,7 +71,10 @@
 
             <div class="post_latest">
                 <p class="front_post_title">Tropische vakantie | Backpacken </p>
-                <p class="latest_repley_info">latest repley from Marvin xx minutes ago</p>
+               <div class="post_profiel_foto"><a href="forum_homepage.html">
+                    <img src=assets/img/AboutUsFotos/Dylan.png>
+                </a>
+               </div>
                 <hr>
                 <p class="post_latest_content">
                     Hey TravelBuds! Het is zover... ik ben nodig toe aan een heerlijke tropische vakantie,
@@ -81,7 +83,9 @@
             </div>
             <div class="post_latest">
                 <p class="front_post_title">Wintersport | Actief</p>
-                <p class="latest_repley_info">latest repley from Dylan xx minutes ago</p>
+                <div class="post_profiel_foto">
+                    <a href="forum_homepage.html"><img src=assets/img/AboutUsFotos/Dylan.png></a>
+                </div>
                 <hr>
                 <p class="post_latest_content">
                     TravelBuds! Ik heb jullie hard nodig. Ik zoek een enthousiaste erveren snowboarder om samen met mij
@@ -90,7 +94,9 @@
             </div>
             <div class="post_latest">
                 <p class="front_post_title">Post Title</p>
-                <p class="latest_repley_info">latest repley from lorem xx minutes ago</p>
+                <div class="post_profiel_foto">
+                    <a href="forum_homepage.html"> <img src=assets/img/AboutUsFotos/Dylan.png></a>
+                </div>
                 <hr>
                 <p class="post_latest_content">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at dolore facere,
@@ -99,7 +105,9 @@
             </div>
             <div class="post_latest">
                 <p class="front_post_title">Post Title</p>
-                <p class="latest_repley_info">latest repley from lorem xx minutes ago</p>
+                <div class="post_profiel_foto">
+                    <a href="forum_homepage.html"><img src=assets/img/AboutUsFotos/Dylan.png></a>
+                </div>
                 <hr>
                 <p class="post_latest_content">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at dolore facere,
@@ -107,21 +115,48 @@
                 </p>
             </div>
             <div class="forum_page_selector">
-                <a href="#" class="previous_round">&#8249;</a>
+                <a href="forum_homepage.html" class="previous_round">&#8249;</a>
                 <span class="forum_page_number">1</span>
                 <a href="#" class="next_round">&#8250;</a>
             </div>
         </div>
         <div class="forum_rightmenu">
             <div class="forum_aanbevolen">
+                <div class="aanbevolen_profiel">
+                    <p>Aanbevolen Matches</p>
+                    <hr>
+                    <a href="#"><div class="aanbevolen_match">
+                        <div class="aanbevolen_profiel_foto">
+                        <img src=assets/img/AboutUsFotos/Mohammed.png>
+                        </div>
+                        <form  class="aanbevolen_profiel_info">
+                        <span class="aanbevolen_vnaam">Mohammed</span>
+                        <span class="aanbevolen_anaam">Malloul</span>
+                        </form>
+                        </div></a>
+                    <a href="#"><div class="aanbevolen_match">
+                        <div class="aanbevolen_profiel_foto">
+                            <img src=assets/img/AboutUsFotos/Dylan.png>
+                        </div>
+                        <form  class="aanbevolen_profiel_info">
+                            <span class="aanbevolen_vnaam">Dylan</span>
+                            <span class="aanbevolen_anaam">Kroon</span>
+                        </form>
+                    </div></a>
+                    <a href="#"><div class="aanbevolen_match">
+                        <div class="aanbevolen_profiel_foto">
+                            <img src=assets/img/AboutUsFotos/Berkay.png>
+                        </div>
+                        <form  class="aanbevolen_profiel_info">
+                            <span class="aanbevolen_vnaam">Berkay</span>
+                            <span class="aanbevolen_anaam">Ozturk</span>
+                        </form>
+                    </div></a>
+                </div>
 
-                <button class="topic_button">WinterSport</button>
-                <button class="topic_button">Tropische Vakantie</button>
-                <button class="topic_button">Backpacke</button>
-                <button class="topic_button">Ontspanne</button>
             </div>
-            <div class="forum_topics__options">
 
+            <div class="forum_topics__options">
 
                 <input type="text" class="forum_search" placeholder="Search on forum.." title="=Search on forum">
                 <ul id="forum_filter" class="forum_filter">
@@ -133,6 +168,7 @@
                 <button class="topic_button">Tropische Vakantie</button>
                 <button class="topic_button">Backpacke</button>
                 <button class="topic_button">Ontspanne</button>
+
             </div>
         </div>
 
