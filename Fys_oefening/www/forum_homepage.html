@@ -9,7 +9,6 @@
     <link href="assets/css/default.css" rel="stylesheet"/>
     <link href="assets/css/responsive.css" rel="stylesheet"/>
     <link href="assets/css/forum.css" rel="stylesheet"/>
-
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
 
@@ -55,21 +54,22 @@
 
 <div class="container">
     <div class="container__main">
+        <div class="forum_main_options">
+            <button class="start_post_button" onclick="location.href='createpost.html'"> Start New Discussion
+            </button>
+            <form>
+                <label for="volgorde">
+                    <select id="volgorde">
+                        <option value="#">Latest</option>
+                        <option value="#">Hot</option>
+                        <option value="#">Top</option>
+                    </select>
+                </label>
+            </form>
+
+        </div>
         <div class="forum_main">
-            <div class="forum_main_options">
-                <form>
-                    <label for="volgorde">
-                        <select id="volgorde">
-                            <option value="#">Latest</option>
-                            <option value="#">Hot</option>
-                            <option value="#">Top</option>
-                        </select>
-                    </label>
-                </form>
 
-
-                <button class="mark_read_button"> Mark all as read</button>
-            </div>
             <div class="post_latest">
                 <p class="front_post_title">Tropische vakantie | Backpacken </p>
                 <p class="latest_repley_info">latest repley from Marvin xx minutes ago</p>
@@ -121,9 +121,8 @@
                 <button class="topic_button">Ontspanne</button>
             </div>
             <div class="forum_topics__options">
-                <button class="start_discussion_button" onclick="location.href='createpost.html'"> Start New Discussion
-                </button>
-                <hr>
+
+
                 <input type="text" class="forum_search" placeholder="Search on forum.." title="=Search on forum">
                 <ul id="forum_filter" class="forum_filter">
                     <li class="filter_option"><a href="#">All Dicussion</a></li>
