@@ -219,6 +219,8 @@ right menu - aanbevolen
 }
 
 .create_post_tags {
-    margin-bottom: 5%;
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
 
 }
