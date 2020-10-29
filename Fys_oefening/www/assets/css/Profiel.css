@@ -3,7 +3,9 @@
 Profiel Overzicht
  */
 
-
+.voorkeuren_user table{
+    font-family: 'Playfair Display', serif;
+}
 
 .buttonpagina_totaal {
     width: 100%;
@@ -25,7 +27,11 @@ Profiel Overzicht
 
 
 }
-
+.voorkeuren_user table{
+    margin: auto;
+    width: 50%;
+    align-content: center;
+}
 .tab button {
     background-color: inherit;
     float: left;
