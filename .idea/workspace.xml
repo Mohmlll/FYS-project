@@ -31,19 +31,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -57,7 +44,8 @@
       <workItem from="1603875266331" duration="16223000" />
       <workItem from="1603969656761" duration="13000" />
       <workItem from="1603972077988" duration="2603000" />
-      <workItem from="1603980942679" duration="5103000" />
+      <workItem from="1603980942679" duration="6662000" />
+      <workItem from="1603996265649" duration="1816000" />
     </task>
     <servers />
   </component>
@@ -65,6 +53,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1506" y="538" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603996101650">
+      <screen x="-1920" y="363" width="1920" height="1040" />
+    </state>
+    <state x="-1506" y="538" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.363.1920.1040@-1920.363.1920.1040" timestamp="1603996101650" />
     <state x="409" y="631" key="FileChooserDialogImpl" timestamp="1603917342758">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
