@@ -8,14 +8,18 @@
     margin-right: 2%;
 }
 
-.forum_topics__options {
+.forum_rightmenu {
     width: 26%;
     order: 1;
-    border-radius: 25px;
-    background-color: white;
     padding: 2.5%;
 }
+.forum_topics__options, .forum_aanbevolen{
+    width: 100%;
+    background-color: white;
+    border-radius: 25px;
+    margin: auto auto 10% auto;
 
+}
 .forum_filter {
     list-style-type: none;
     padding: 0;
