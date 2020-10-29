@@ -44,7 +44,8 @@
     </div>
 
 </div>
-<<header>
+<
+<header>
     <h1 class="header__title">
         TravelBud
     </h1>
@@ -92,33 +93,29 @@
                                 <td>Noord-Holland</td>
                             </tr>
                         </table>
-
-
                         <br>
-
                         <p>Voorkeuren:</p>
                         <p>Klimaat - Tropisch</p>
                         <p>Activiteit - Backpacken</p>
                         <p>Leeftijd - 20 | 30 jaar</p>
                     </div>
-
-
-                    <div id="Lopende_Matches" class="tabcontent">
-                        <h1>Lopende Matches</h1>
-                        <p>Paris is the capital of France.</p>
-                    </div>
-
-                    <div id="Inkomende_Matches" class="tabcontent">
-                        <h1>Inkomende Matches</h1>
-                        <p>Tokyo is the capital of Japan.</p>
-                    </div>
-
-                    <div id="Uitgaande_Matches" class="tabcontent">
-                        <h1>Uitgaande Matches</h1>
-                        <p>Tokyo is the capital of Japan.</p>
-                    </div>
                 </div>
 
+
+                <div id="Lopende_Matches" class="tabcontent">
+                    <h3>Lopende Matches</h3>
+                    <p>Paris is the capital of France.</p>
+                </div>
+
+                <div id="Inkomende_Matches" class="tabcontent">
+                    <h3>Inkomende Matches</h3>
+                    <p>Tokyo is the capital of Japan.</p>
+                </div>
+
+                <div id="Uitgaande_Matches" class="tabcontent">
+                    <h3>Uitgaande Matches</h3>
+                    <p>Tokyo is the capital of Japan.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -136,6 +133,31 @@
         </div>
         <div class="right_empty_footer"></div>
     </div>
+<script>
+    function openinhoudt(live, live_kopje) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(live_kopje).style.display = "block";
+        live.currentTarget.className += " active";
+    }
+
+    //Open profiel automatisch
+    document.getElementById("standaard_Openen").click();
+</script>
 </div>
 </body>
 </html>
