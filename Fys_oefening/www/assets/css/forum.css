@@ -26,16 +26,19 @@ right menu
 
 .start_post_button {
     position: relative;
-    display: inline-block;
     cursor: pointer;
-    background-color: red;
-    color: white;
     float: right;
     margin-right: 2%;
-    width: 25%;
-    border-radius: 25px;
-}
+    padding: 10px;
+    background: linear-gradient(to right, #ff7b68, #ffffff);
+    border: solid 1px #ff7b68;
+    outline: none;
+    border-radius: 10px;
 
+}
+.start_post_button:hover {
+    background: linear-gradient(to right, red, #ffffff);
+}
 
 .forum_topics__options, .forum_aanbevolen{
     width: 100%;
@@ -182,45 +185,4 @@ right menu - aanbevolen
 .forum_page_selector a:hover {
     background-color: #ddd;
     color: black;
-}
-
-.form_create_post p, .form_create_post label {
-    font-size: 14px;
-
-}
-
-.form_create_title {
-    margin-bottom: 5%;
-    width: 70%;
-}
-
-.create_post {
-    padding: 5%;
-    width: 100%;
-    background-color: white;
-
-}
-
-.form_create_description {
-    width: 90%;
-
-}
-
-.create_post_footer {
-    width: 100%;
-
-}
-
-.container_create_post {
-    width: 100%;
-    border-radius: 25px;
-    padding: 5%;
-    background: white;
-}
-
-.create_post_tags {
-    width: 100%;
-    flex-wrap: wrap;
-    display: flex;
-
 }

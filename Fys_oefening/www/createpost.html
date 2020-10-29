@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Home | TravelBud</title>
+    <title>Create Post | TravelBud</title>
 
     <!-- Stylesheets -->
     <link href="assets/css/default.css" rel="stylesheet"/>
     <link href="assets/css/responsive.css" rel="stylesheet"/>
-    <link href="assets/css/forum.css" rel="stylesheet"/>
+    <link href="assets/css/createPost.css" rel="stylesheet"/>
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
@@ -79,34 +79,32 @@
                     </div>
                     <div class="create_post_tags">
 
-                        <div class="tags">
-                            <button><img src=assets/img/plus_PNG113.png width="10px">Explorer</img></button>
-                            <button><img src=assets/img/plus_PNG113.png width="10px">Sportieveling</img></button>
-                            <button><img src=assets/img/plus_PNG113.png width="10px">Relaxer</img></button>
-                            <button><img src=assets/img/plus_PNG113.png width="10px">Partygoer</img></button>
-                            <button><img src=assets/img/plus_PNG113.png width="10px">Wintersport</img></button>
-                            <button><img src=assets/img/plus_PNG113.png width="10px">Tropische</img></button>
-                            <button><img src=assets/img/plus_PNG113.png width="10px">Backpacker</img></button>
-                            <button><img src=assets/img/plus_PNG113.png width="10px">Resort</img></button>
+                        <div class="create_post_tags">
+                            <button class="tag_button" id="tag_explorer"><img src=assets/img/plus_PNG113.png width="10px">Explorer</img></button>
+                            <button class="tag_button" id="tag_sportieveling"><img src=assets/img/plus_PNG113.png width="10px">Sportieveling</img></button>
+                            <button class="tag_button" id="tag_relaxer"><img src=assets/img/plus_PNG113.png width="10px">Relaxer</img></button>
+                            <button class="tag_button" id="tag_partygoer"><img src=assets/img/plus_PNG113.png width="10px">Partygoer</img></button>
+                            <button class="tag_button" id="tag_wintersport"><img src=assets/img/plus_PNG113.png width="10px">Wintersport</img></button>
+                            <button class="tag_button" id="tag_tropisch"><img src=assets/img/plus_PNG113.png width="10px">Tropische</img></button>
+                            <button class="tag_button" id="tag_backpacker"><img src=assets/img/plus_PNG113.png width="10px">Backpacker</img></button>
+                            <button class="tag_button" id="tag_resort"><img src=assets/img/plus_PNG113.png width="10px">Resort</img></button>
                         </div>
 
                     </div>
 
+
                     <div class="form_create_post_buttons">
-                        <button onclick="location.href='forum_homepage.html'" type="submit" class="btn btn-primary">
-                            Create
-                        </button>
-                        <button onclick="location.href='forum_homepage.html'" class="btn btn-default">
-                            Annuleer
-                        </button>
+                        <button onclick="location.href='forum_homepage.html'" type="submit">Create</button>
+                        <button onclick="location.href='index.html'" type="submit">Annuleer</button>
                     </div>
 
                 </form>
+                <div class="create_post_footer">
+                    <input type="checkbox" class="notify_post"
+                           required><span> stuur mij een notificatie op bij reactie</span>
+                </div>
             </div>
-            <div class="create_post_footer">
-                <input type="checkbox" class="notify_post"
-                       required><span> stuur mij een notificatie op bij reactie</span>
-            </div>
+
         </div>
     </div>
     <div class="left__ad">
