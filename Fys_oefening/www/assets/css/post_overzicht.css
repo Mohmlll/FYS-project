@@ -1,0 +1,207 @@
+
+/*
+forummain
+ */
+.forum_main {
+    width: 68%;
+    order: 0;
+    height: 80%;
+}
+/*
+right menu
+ */
+
+
+.forum_rightmenu {
+    width: 30%;
+    order: 1;
+
+}
+
+.forum_aanbevolen{
+    width: 100%;
+    background-color: white;
+    border-radius: 25px;
+    padding: 8%;
+    margin-bottom: 10%;
+
+}
+
+/*
+right menu - aanbevolen
+ */
+
+.aanbevolen_profiel{
+    width: 100%;
+
+}
+.aanbevolen_match{
+    flex-wrap: wrap;
+    display: flex;
+    margin-bottom: 5%;
+
+}
+.aanbevolen_profiel hr{
+    width: 100%;
+}
+
+.aanbevolen_profiel_info{
+    width: 55%;
+    order: 1;
+    margin-left: 5%;
+    display: block;
+}
+
+.aanbevolen_profiel_foto{
+    width: 25%;
+    order: 0;
+
+
+}
+.aanbevolen_profiel_foto img{
+    width: 100%;
+    border-radius: 50%;
+    border: solid 1px black;
+
+}
+.aanbevolen_vnaam{
+    width: 80%;
+
+    font-size: 14px;
+}
+.aanbevolen_anaam{
+    width: 80%;
+
+    font-size: 14px;
+}
+
+.forum_filter {
+    list-style-type: none;
+    padding: 0;
+    margin: 10% 0 0 0;
+}
+
+.forum_filter button {
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    background-color: #f6f6f6;
+    padding: 5px;
+    display: block;
+    font-size: 13px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.post_profiel_foto {
+    width: 12%;
+    border-radius: 50%;
+
+}
+
+.post_profiel_foto img{
+    width: 100%;
+    border-radius: 50%;
+    border: solid 1px black;
+}
+
+.front_post_title {
+    width: 88%;
+    font-size: 19px;
+}
+
+.post_latest {
+    flex-wrap: wrap;
+    display: flex;
+    height: 18%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 5%;
+    overflow: hidden;
+    margin: 0 4% 4% 0;
+}
+.post_latest hr{
+    width: 100%;
+}
+
+.post_latest p {
+    max-width: 70ch;
+}
+
+
+.post_latest_content {
+    font-size: 16px;
+    margin-bottom: 18%;
+
+}
+
+/*
+post tags
+ */
+
+.post_tags{
+    width: 100%;
+    margin-bottom: 5%;
+
+}
+.tag_button{
+    background-color: white;
+    margin-right: 0.2%;
+    font-size: 13px;
+    padding: 3px;
+}
+
+/*
+contact popup
+ */
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}

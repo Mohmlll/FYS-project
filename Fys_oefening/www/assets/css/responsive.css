@@ -142,7 +142,7 @@ container
         border-radius: 0 0 0 20px;
     }
 
-    .voorkeuren_user, .voorkeuren_user table, {
+    .voorkeuren_user, .voorkeuren_user table {
         font-size: 20px;
     }
 }
