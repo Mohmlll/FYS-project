@@ -54,9 +54,10 @@ Profiel Overzicht
 }
 
 .tabcontent {
-    display: none;
+    flex-wrap: wrap;
+    display: flex;
     padding: 6px 12px;
-    border: 0px solid #ccc;
+    border: 0 solid #ccc;
     border-top: none;
     animation: fadeEffect 1.2s;
 }
@@ -97,4 +98,31 @@ Profiel Overzicht
 
 }
 
+.info_user{
+    width: 50%;
+    order: 0;
+    border-right: 1px solid black;
+    min-height: 150px;
 
+}
+.info_user table tr td{
+    font-size: 22px;
+}
+.foto_user{
+    float: right;
+    order: 1;
+    width: 23%;
+    margin-bottom: -2%;
+
+}
+.foto_user img{
+    width: 100%;
+    border-radius: 25px;
+    border: solid 1px black;
+}
+
+.voorkeuren_user{
+
+    order: 3;
+    align-content: center;
+}
