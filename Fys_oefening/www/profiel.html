@@ -16,6 +16,13 @@
     <!-- Javascript -->
     <script src="assets/vendors/jquery/jquery-3.4.1.min.js"></script>
     <script src="assets/js/app.js"></script>
+    <script>
+        function myFunction() {
+            var popup = document.getElementById("myContact_button");
+            popup.classList.toggle("show");
+        }
+    </script>
+
 </head>
 
 <body>
@@ -105,6 +112,9 @@
                         <p>Klimaat - xxx</p>
                         <p>Activiteit - xxx</p>
                         <p>Leeftijd - xx | xx jaar</p>
+                        <div class="contact_button" onclick="myFunction()">Contact me!
+                            <span class="popuptext" id="myContact_button">Verzoek verzonden...</span>
+                        </div>
                     </div>
                 </div>
 
