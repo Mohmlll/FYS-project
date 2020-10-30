@@ -154,14 +154,19 @@ post tags
 contact popup
  */
 
-.popup {
+.contact_button {
     position: relative;
     display: inline-block;
     cursor: pointer;
+    padding: 2%;
+    background: linear-gradient(to right, #ff7b68, #ffffff);
+    border: solid 1px #ff7b68;
+    outline: none;
+    border-radius: 30px;
 }
 
 
-.popup .popuptext {
+.contact_button .popuptext {
     visibility: hidden;
     width: 160px;
     background-color: #555;
@@ -173,11 +178,12 @@ contact popup
     z-index: 1;
     bottom: 125%;
     left: 50%;
-    margin-left: -60px;
+    margin-left: -75px;
+
 }
 
 
-.popup .popuptext::after {
+.contact_button .popuptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -189,7 +195,7 @@ contact popup
 }
 
 
-.popup .show {
+.contact_button .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s

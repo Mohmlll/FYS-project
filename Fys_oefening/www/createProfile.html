@@ -8,7 +8,7 @@
     <!-- Stylesheets -->
     <link href="assets/css/default.css" rel="stylesheet"/>
     <link href="assets/css/responsive.css" rel="stylesheet"/>
-    <link href="assets/css/forum.css" rel="stylesheet"/>
+    <link href="assets/css/createProfile.css" rel="stylesheet"/>
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
@@ -53,6 +53,23 @@
 <div class="container">
     <div class="container__main">
         <div class="welkombox">
+            <h1>Vul hier de onderstaande velden in.</h1>
+
+            <form id="profile" class="input">
+
+                <label>
+                    <p>Soort vakantieganger:</p>
+                    <select class="soort_vakantieganger">
+                        <option value="#">Latest</option>
+                        <option value="#">Hot</option>
+                        <option value="#">Top</option>
+                    </select>
+                    <p>Type hier iets leuks over jezelf:</p>
+                    <input type="password" class="tekstbox" placeholder="Gebruikersnaam" required>
+                    <input type="text" class="tekstbox" placeholder="Wachtwoord" required>
+                    <button type="submit" onclick="location.href='forum_homepage.html'" class="login_button">Log in</button>
+                </label>
+            </form>
 
         </div>
 

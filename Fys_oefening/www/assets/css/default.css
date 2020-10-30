@@ -51,7 +51,6 @@ label {
     display: inline-block;
     position: relative;
     margin-top: -50px;
-
 }
 
 .taal_inhoud {
@@ -66,8 +65,7 @@ label {
     font-size: 30px;
     font-family: 'Playfair Display', serif;
     cursor: pointer;
-
-
+    padding: 0 20px;
 }
 
 .taal button:hover {
@@ -77,6 +75,7 @@ label {
 .taal a {
     color: white;
     text-decoration: none;
+    padding-left: 15px;
 }
 
 .taal:hover .taal_inhoud {
@@ -123,7 +122,7 @@ header {
  */
 
 .banner_ad_left, .banner_ad_right {
-    width: 100%;
+width: 100%;
 
 }
 
@@ -148,15 +147,15 @@ header {
 .left__ad {
     width: 0;
     order: 0;
-    background-color: white;
+
     margin-right: 1%;
 }
 
 .right__ad {
     width: 0;
     order: 2;
-    background-color: white;
     margin-left: 1%;
+
 }
 
 .bottom__container {

@@ -23,7 +23,7 @@ container
 
 @media screen and (min-width: 1000px) {
     .container {
-        width: 1000px;
+        width: 1200px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -37,7 +37,7 @@ container
     }
 
     .container__main {
-        width: 73%;
+        width: 73.0%;
     }
 
     .footer_main {
