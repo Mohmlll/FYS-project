@@ -104,7 +104,34 @@
 
                 <div id="Lopende_Matches" class="tabcontent">
                     <h3>Lopende Matches</h3>
-                    <p>Paris is the capital of France.</p>
+
+                    <div class="eerste_match">
+                        <div class="foto_eerste_match">
+                            <img src="assets/img/AboutUsFotos/Dylan.png">
+                        </div>
+
+                        <div class="tekst_eerste_match">
+                            <p>Match Tropische vakantie | Backpacken</p>
+                        </div>
+
+                        
+
+
+                    </div>
+
+                    <div class="eerste_match">
+                        <div class="foto_eerste_match">
+                            <img src="assets/img/AboutUsFotos/Marvin_.png">
+                        </div>
+
+                        <div class="tekst_eerste_match">
+                            <p>Match Wintersport | Actief</p>
+                        </div>
+
+
+                    </div>
+
+
                 </div>
 
                 <div id="Inkomende_Matches" class="tabcontent">
@@ -133,31 +160,31 @@
         </div>
         <div class="right_empty_footer"></div>
     </div>
-<script>
-    function openinhoudt(live, live_kopje) {
-        // Declare all variables
-        var i, tabcontent, tablinks;
+    <script>
+        function openinhoudt(live, live_kopje) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
 
-        // Get all elements with class="tabcontent" and hide them
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(live_kopje).style.display = "block";
+            live.currentTarget.className += " active";
         }
 
-        // Get all elements with class="tablinks" and remove the class "active"
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-
-        // Show the current tab, and add an "active" class to the button that opened the tab
-        document.getElementById(live_kopje).style.display = "block";
-        live.currentTarget.className += " active";
-    }
-
-    //Open profiel automatisch
-    document.getElementById("standaard_Openen").click();
-</script>
+        //Open profiel automatisch
+        document.getElementById("standaard_Openen").click();
+    </script>
 </div>
 </body>
 </html>
