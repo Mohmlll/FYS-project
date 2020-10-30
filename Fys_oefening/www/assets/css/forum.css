@@ -161,7 +161,16 @@ right menu - aanbevolen
     width: 100%;
 }
 
-
+.post_latest button{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding: 1%;
+    background: linear-gradient(to right, #ff7b68, #ffffff);
+    border: solid 1px #ff7b68;
+    outline: none;
+    border-radius: 30px;
+}
 
 .forum_page_selector {
     align-content: center;
