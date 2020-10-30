@@ -67,4 +67,24 @@ Profiel Overzicht
 }
 
 
+.eerste_match {
+    border-top: solid 1px black;
+
+}
+
+.foto_eerste_match img, .tekst_eerste_match {
+    margin: 10px 0;
+
+}
+
+.foto_eerste_match img {
+    width: 100px;
+    height: auto;
+    border-radius: 25px;
+    padding-top: 10px
+}
+
+.tekst_eerste_match {
+
+}
 
