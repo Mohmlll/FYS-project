@@ -4,6 +4,10 @@
 
 }
 
+.create_post_tags button img {
+    width: 10px;
+}
+
 .form_create_title {
     margin-bottom: 5%;
     width: 70%;

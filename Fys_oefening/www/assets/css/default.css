@@ -249,6 +249,10 @@ width: 100%;
     margin-bottom: 7%;
 }
 
+iframe {
+    border: 0;
+}
+
 /*
 *footer
  */

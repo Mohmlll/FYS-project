@@ -2,8 +2,6 @@
 forummain
  */
 .forum_main {
-    width: 68%;
-    order: 0;
     height: 80%;
 }
 /*
@@ -12,14 +10,15 @@ right menu
 
 
 .forum_rightmenu {
-    width: 32%;
-    order: 1;
+    flex-wrap: wrap;
+    display: flex;
     height: 80%;
 }
 
 .forum_main_options {
+    flex-wrap: wrap;
+    display: flex;
     padding: 2%;
-    width: 100%;
     background-color: white;
     border-radius: 25px;
     margin-bottom: 3%;
@@ -43,7 +42,6 @@ right menu
 }
 
 .forum_topics__options, .forum_aanbevolen{
-    width: 100%;
     background-color: white;
     border-radius: 25px;
     padding: 8%;

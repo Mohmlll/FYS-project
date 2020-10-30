@@ -10,8 +10,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -68,7 +68,7 @@
       <workItem from="1603980942679" duration="6662000" />
       <workItem from="1603996265649" duration="6793000" />
       <workItem from="1604005092218" duration="646000" />
-      <workItem from="1604044804076" duration="10781000" />
+      <workItem from="1604044804076" duration="13144000" />
     </task>
     <servers />
   </component>
@@ -92,12 +92,12 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1771" y="314" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1603989759050" />
-    <state x="-2608" y="-16" width="2270" height="1119" maximized="true" key="dock-window-1" timestamp="1604063704355">
-      <screen x="-2560" y="0" width="2560" height="1040" />
+    <state x="1809" y="0" width="754" height="1407" key="dock-window-1" timestamp="1604061965136">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="-2608" y="-16" width="2270" height="1119" maximized="true" key="dock-window-1/-2560.0.2560.1040/0.0.2560.1400@-2560.0.2560.1040" timestamp="1604063704355" />
-    <state x="717" y="88" width="2533" height="837" key="dock-window-1/-2560.0.2560.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1604063032013" />
-    <state x="1809" y="0" width="758" height="1407" key="dock-window-1/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1604052997224" />
+    <state x="-2608" y="-16" width="2270" height="1119" maximized="true" key="dock-window-1/-2560.0.2560.1040/0.0.2560.1400@-2560.0.2560.1040" timestamp="1604055169357" />
+    <state x="717" y="88" width="2533" height="837" key="dock-window-1/-2560.0.2560.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1604001940141" />
+    <state x="1809" y="0" width="754" height="1407" key="dock-window-1/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1604061965136" />
     <state x="1617" y="0" width="950" height="1407" key="dock-window-2" timestamp="1603806005852">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
