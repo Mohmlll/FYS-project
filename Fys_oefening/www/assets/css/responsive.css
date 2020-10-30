@@ -31,21 +31,21 @@ container
 
 @media screen and (min-width: 800px) {
     .left__ad, .right__ad {
-        width: 15%;
+        width: 12.5%;
         max-height: 80%;
         overflow: hidden;
     }
 
     .container__main {
-        width: 68.0%;
+        width: 73.0%;
     }
 
     .footer_main {
-        width: 70%;
+        width: 73%;
     }
 
     .left_empty_footer, .right_empty_footer2 {
-        width: 15%;
+        width: 12.5%;
     }
 
 

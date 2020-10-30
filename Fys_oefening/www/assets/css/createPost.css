@@ -7,6 +7,12 @@
 .form_create_title {
     margin-bottom: 5%;
     width: 70%;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
 }
 
 .create_post {
