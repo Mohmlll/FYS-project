@@ -83,11 +83,15 @@ Profiel Overzicht
     max-height: 620px;
 }
 
-#Inkomende_Matches {
+#Inkomende_Matches, #Uitgaande_Matches {
     width: 100%;
     align-content: center;
     overflow: auto;
     max-height: 500px;
+}
+
+#Inkomende_Matches table, #Uitgaande_Matches table{
+    margin: auto;
 }
 
 .eerste_match {
