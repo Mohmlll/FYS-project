@@ -54,9 +54,10 @@ Profiel Overzicht
 }
 
 .tabcontent {
-    display: none;
+    flex-wrap: wrap;
+    display: flex;
     padding: 6px 12px;
-    border: 0px solid #ccc;
+    border: 0 solid #ccc;
     border-top: none;
     animation: fadeEffect 1.2s;
 }
@@ -117,4 +118,94 @@ Profiel Overzicht
     padding: 20px;
 }
 
+.info_user{
+    width: 50%;
+    order: 0;
+    border-right: 1px solid black;
+    min-height: 150px;
 
+}
+.info_user table tr td{
+    font-size: 22px;
+}
+.foto_user{
+    float: right;
+    order: 1;
+    width: 23%;
+    margin-bottom: -2%;
+
+}
+.foto_user img{
+    width: 100%;
+    border-radius: 25px;
+    border: solid 1px black;
+}
+
+.voorkeuren_user{
+
+    order: 3;
+    align-content: center;
+}
+
+/*
+contact button
+ */
+
+
+.contact_button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding: 2%;
+    background: linear-gradient(to right, #ff7b68, #ffffff);
+    border: solid 1px #ff7b68;
+    outline: none;
+    border-radius: 30px;
+}
+
+
+.contact_button .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -75px;
+
+}
+
+
+.contact_button .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+
+.contact_button .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}

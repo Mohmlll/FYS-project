@@ -58,16 +58,71 @@
             <form id="profile" class="input">
 
                 <label>
-                    <p>Soort vakantieganger:</p>
-                    <select class="soort_vakantieganger">
-                        <option value="#">Latest</option>
-                        <option value="#">Hot</option>
-                        <option value="#">Top</option>
-                    </select>
-                    <p>Type hier iets leuks over jezelf:</p>
-                    <input type="password" class="tekstbox" placeholder="Gebruikersnaam" required>
-                    <input type="text" class="tekstbox" placeholder="Wachtwoord" required>
-                    <button type="submit" onclick="location.href='forum_homepage.html'" class="login_button">Log in</button>
+                    <table>
+                        <tr>
+                            <td>Foto van jezelf:</td>
+                            <td><input type="file" class="tekstbox" placeholder="Foto" required></td>
+                        </tr>
+                        <tr>
+                            <td>Voornaam:</td>
+                            <td><input type="text" class="tekstbox" placeholder="Voornaam" required></td>
+                        </tr>
+                        <tr>
+                            <td>Achternaam:</td>
+                            <td><input type="text" class="tekstbox" placeholder="Achternaam" required></td>
+                        </tr>
+                        <tr>
+                            <td>Geslacht:</td>
+                            <td>
+                                <input type="radio" id="man" required>
+                                <label for="man">Man</label>
+                                <br>
+                                <input type="radio" id="vrouw" required>
+                                <label for="vrouw">Vrouw</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Geboortedatum:</td>
+                            <td><input type="date" class="tekstbox" placeholder="Geboortedatum" required></td>
+                        </tr>
+                        <tr>
+                            <td>Woonplaats:</td>
+                            <td><input type="text" class="tekstbox" placeholder="Woonplaats" required></td>
+                        </tr>
+                        <tr>
+                            <td>Telefoonnummer:</td>
+                            <td><input type="tel" class="tekstbox" placeholder="Telefoonnummer" required></td>
+                        </tr>
+                        <tr>
+                            <td>E-mailadres:</td>
+                            <td><input type="email" class="tekstbox" placeholder="E-mailadres" required></td>
+                        </tr>
+                        <tr>
+                            <td>Soort vakantieganger:</td>
+                            <td>
+                                <select class="soort_vakantieganger">
+                                    <option value="#">Explorer</option>
+                                    <option value="#">Sportieveling</option>
+                                    <option value="#">Relaxer</option>
+                                    <option value="#">Partygoer</option>
+                                    <option value="#">Backgoer</option>
+                                    <option value="#">Wintersport</option>
+                                    <option value="#">Tropisch</option>
+                                    <option value="#">Resort</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Vertel hier iets leuks over jezelf: <br><br></td>
+                            <td>
+                                <textarea class="tekstbox">
+
+                                </textarea>
+                            </td>
+                        </tr>
+
+                    </table>
+                    <button type="submit" onclick="location.href='Profiel_Overzicht.html'" class="gegevens_opslaan">Sla de gegevens op.</button>
                 </label>
             </form>
 

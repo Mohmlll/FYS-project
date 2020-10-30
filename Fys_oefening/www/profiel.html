@@ -16,6 +16,13 @@
     <!-- Javascript -->
     <script src="assets/vendors/jquery/jquery-3.4.1.min.js"></script>
     <script src="assets/js/app.js"></script>
+    <script>
+        function myFunction() {
+            var popup = document.getElementById("myContact_button");
+            popup.classList.toggle("show");
+        }
+    </script>
+
 </head>
 
 <body>
@@ -58,10 +65,10 @@
         <div class="buttonpagina_totaal">
             <!-- Tab links -->
             <div class="tab">
-                <button class="tablinks" onclick="openinhoudt(event, 'Profiel')" id="standaard_Openen">Profiel</button>
-                <button class="tablinks" onclick="openinhoudt(event, 'Lopende_Matches')">Lopende Matches</button>
-                <button class="tablinks" onclick="openinhoudt(event, 'Inkomende_Matches')">Inkomende Matches</button>
-                <button class="tablinks" onclick="openinhoudt(event, 'Uitgaande_Matches')">Uitgaande Matches</button>
+                <button class="tablinks" onclick="openinhoudt(event, 'Profiel')" id="standaard_Openen">Profiel xxx
+                </button>
+
+
             </div>
 
             <div class="button_inhoudt">
@@ -69,53 +76,48 @@
 
                 <!-- Tab content -->
                 <div id="Profiel" class="tabcontent">
-                    <h1>Profiel</h1>
-
-                    <div class="voorkeuren_user">
+                    <h1>xxx's Profiel</h1>
+                    <div class="foto_user">
+                        <img src="assets/img/AboutUsFotos/Dylan.png">
+                    </div>
+                    <div class="info_user">
                         <table>
                             <tr>
                                 <td>Naam</td>
-                                <td>Marvin</td>
+                                <td>xxx</td>
                             </tr>
 
                             <tr>
                                 <td>Geboortejaar</td>
-                                <td>1997</td>
+                                <td>xxxx</td>
                             </tr>
 
                             <tr>
                                 <td>Geslacht</td>
-                                <td>Man</td>
+                                <td>xxx</td>
                             </tr>
 
                             <tr>
                                 <td>Provincie</td>
-                                <td>Noord-Holland</td>
+                                <td>xxx</td>
                             </tr>
                         </table>
+                    </div>
+                    <hr>
+
+                    <div class="voorkeuren_user">
+
                         <br>
                         <p>Voorkeuren:</p>
-                        <p>Klimaat - Tropisch</p>
-                        <p>Activiteit - Backpacken</p>
-                        <p>Leeftijd - 20 | 30 jaar</p>
+                        <p>Klimaat - xxx</p>
+                        <p>Activiteit - xxx</p>
+                        <p>Leeftijd - xx | xx jaar</p>
+                        <div class="contact_button" onclick="myFunction()">Contact me!
+                            <span class="popuptext" id="myContact_button">Verzoek verzonden...</span>
+                        </div>
                     </div>
                 </div>
 
-
-                <div id="Lopende_Matches" class="tabcontent">
-                    <h3>Lopende Matches</h3>
-                    <p>Paris is the capital of France.</p>
-                </div>
-
-                <div id="Inkomende_Matches" class="tabcontent">
-                    <h3>Inkomende Matches</h3>
-                    <p>Tokyo is the capital of Japan.</p>
-                </div>
-
-                <div id="Uitgaande_Matches" class="tabcontent">
-                    <h3>Uitgaande Matches</h3>
-                    <p>Tokyo is the capital of Japan.</p>
-                </div>
             </div>
         </div>
     </div>
