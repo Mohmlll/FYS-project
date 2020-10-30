@@ -82,7 +82,26 @@ container
         min-width: 85%;
         margin: auto 5% 5% 5%;
     }
+    .forum_main{
+        width: 100%;
+        order: 0;
+    }
+    .forum_rightmenu{
+        width: 90%;
+        order: 1;
+    }
+    .aanbevolen_profiel{
+        width: 40%;
+    }
+    .forum_topics__options, .forum_aanbevolen{
+        width: 40%;
+        margin: 0 auto auto auto;
+    }
+    .forum_main_options{
+        width: 100%;
+    }
 }
+
 
 
 @media screen and (min-width: 600px) {
@@ -99,8 +118,21 @@ container
     .info1 p, .info2 p {
         font-size: 14px;
     }
+    .forum_main{
+        order: 0;
+        width: 68%;
+    }
+    .forum_rightmenu{
+        width: 32%;
+        order: 1;
+    }
+    .aanbevolen_profiel,.forum_main_options{
+        width: 100%;
+    }
+    .forum_topics__options, .forum_aanbevolen{
+        width: 100%;
 
-
+    }
 }
 
 @media screen and (min-width: 450px) and (max-width: 600px) {
