@@ -27,7 +27,7 @@
     </div>
     <div class="space"></div>
 
-    <div class="logomemu"><a href="index.html"><img src="assets/img/Logo_website.png" alt="Corendon TravelBud"></a></div>
+    <div class="logomemu"><a href="index.html"><img src="assets/img/Logo_website.png"></a></div>
 
     <div class="menu_groot">
         <a href="index_loggedin.html">Home</a>
@@ -70,42 +70,60 @@
 
                 <div id="Profiel" class="tabcontent">
 
-                    <a href="Profiel_Bewerken.html">
+                    <a href="Profiel_Overzicht.html">
 
-                     <div class="contact_button" onclick="myFunction()">Bewerk Profiel!
-
-
-                    </div></a>
+                        <div
+                                class="contact_button" onclick="myFunction()">Complete!
+                        </div>
+                    </a>
 
                     <h1>Profiel</h1>
 
 
-
                     <div class="foto_user">
-                        <img src="assets/img/AboutUsFotos/Mohammed.png" alt="gebruikersfoto">
+                        <img src="assets/img/AboutUsFotos/Mohammed.png">
+                        <input type="file" class="tekstbox">
                     </div>
                     <div class="info_user">
                         <table>
                             <tr>
                                 <td>Naam</td>
                                 <td>Marvin</td>
+                                <td><label>
+                                    <input type="text" class="tekstbox" placeholder="Naam" required>
+                                </label></td>
                             </tr>
 
                             <tr>
                                 <td>Geboortejaar</td>
                                 <td>1997</td>
+                                <td><label>
+                                    <input type="date" class="tekstbox" placeholder="Jaar" required>
+                                </label></td>
                             </tr>
 
                             <tr>
                                 <td>Geslacht</td>
                                 <td>Man</td>
+                                <td>
+                                    <div class="radiobutton">
+                                        <input type="radio" id="man" required>
+                                        <label for="man">Man</label>
+                                        <br>
+                                        <input type="radio" id="vrouw" required>
+                                        <label for="vrouw">Vrouw</label>
+                                    </div>
+
+                                </td>
                             </tr>
 
                             <tr>
                                 <td>Woonplaats</td>
                                 <td>Amsterdam</td>
+                                <td><label>
+                                    <input type="text" class="tekstbox" placeholder="Woonplaats" required>
+                                </label></td>
                             </tr>
-
                         </table>
                     </div>
                     <hr>
@@ -115,8 +133,46 @@
                         <br>
                         <p>Voorkeuren:</p>
                         <p>Klimaat - Tropisch</p>
+                        <label>
+                            <select class="soort_klimaat">
+                                <option value="#">Tropisch</option>
+                                <option value="#">Sub-Tropisch</option>
+                                <option value="#">Droog</option>
+                                <option value="#">Gematigd</option>
+                                <option value="#">Land</option>
+                                <option value="#">Pool</option>
+                                <option value="#">mediterraan</option>
+                                <option value="#">Regenwoud</option>
+                                <option value="#">Savanne</option>
+                                <option value="#">Woestijn</option>
+                                <option value="#">Steppe</option>
+                            </select>
+                        </label>
+
                         <p>Activiteit - Backpacken</p>
+                        <label>
+                                <select class="soort_vakantieganger">
+                                    <option value="#">Explorer</option>
+                                    <option value="#">Sportieveling</option>
+                                    <option value="#">Relaxer</option>
+                                    <option value="#">Partygoer</option>
+                                    <option value="#">Backgoer</option>
+                                    <option value="#">Wintersport</option>
+                                    <option value="#">Tropisch</option>
+                                    <option value="#">Resort</option>
+                                </select>
+                        </label>
+
                         <p>Leeftijd - 20 | 30 jaar</p>
+                        <label>
+                            <select class="soort_leeftijdsvoorkeur">
+                                <option value="#">20 | 30</option>
+                                <option value="#">31 | 40</option>
+                                <option value="#">41 | 50</option>
+                                <option value="#">51 | 60</option>
+                                <option value="#">60+</option>
+                            </select>
+                        </label>
                     </div>
                 </div>
 
@@ -126,7 +182,7 @@
 
                     <div class="eerste_match">
                         <div class="foto_eerste_match">
-                            <img src="assets/img/AboutUsFotos/Dylan.png" alt="match">
+                            <img src="assets/img/AboutUsFotos/Dylan.png">
                         </div>
 
                         <div class="tekst_eerste_match">
@@ -135,11 +191,13 @@
                         </div>
 
 
+
+
                     </div>
 
                     <div class="eerste_match">
                         <div class="foto_eerste_match">
-                            <img src="assets/img/AboutUsFotos/Marvin_.png" alt="match">
+                            <img src="assets/img/AboutUsFotos/Marvin_.png">
                         </div>
 
                         <div class="tekst_eerste_match">
@@ -152,7 +210,7 @@
 
                     <div class="eerste_match">
                         <div class="foto_eerste_match">
-                            <img src="assets/img/AboutUsFotos/Mohammed.png" alt="match">
+                            <img src="assets/img/AboutUsFotos/Mohammed.png">
                         </div>
 
                         <div class="tekst_eerste_match">
@@ -174,7 +232,7 @@
                             <tr>
                                 <td>
                                     <div class="foto_berkay_inkomend">
-                                        <img src="assets/img/AboutUsFotos/Berkay.png" alt="match">
+                                        <img src="assets/img/AboutUsFotos/Berkay.png">
                                     </div>
                                 </td>
                             </tr>
@@ -194,27 +252,27 @@
                     </div>
 
                     <div class="inkomend_aanvraag">
-                      <table>
-                          <tr>
-                              <td>
-                                  <div class="foto_marvin_inkomend">
-                                      <img src="assets/img/AboutUsFotos/Marvin_.png" alt="match">
-                                  </div>
-                              </td>
-                          </tr>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="foto_marvin_inkomend">
+                                        <img src="assets/img/AboutUsFotos/Marvin_.png">
+                                    </div>
+                                </td>
+                            </tr>
 
-                          <tr>
-                              <td>
-                                  <button class="accepteer">
-                                      Accepteer
-                                  </button>
+                            <tr>
+                                <td>
+                                    <button class="accepteer">
+                                        Accepteer
+                                    </button>
 
-                                  <button class="weiger">
-                                      Weiger
-                                  </button>
-                              </td>
-                          </tr>
-                      </table>
+                                    <button class="weiger">
+                                        Weiger
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
 
                     <div class="inkomend_aanvraag">
@@ -222,7 +280,7 @@
                             <tr>
                                 <td>
                                     <div class="foto_dylan_inkomend">
-                                        <img src="assets/img/AboutUsFotos/Dylan.png" alt="match">
+                                        <img src="assets/img/AboutUsFotos/Dylan.png">
                                     </div>
                                 </td>
                             </tr>
@@ -240,6 +298,7 @@
                             </tr>
                         </table>
                     </div>
+
 
 
                 </div>
@@ -252,7 +311,7 @@
                             <tr>
                                 <td>
                                     <div class="foto_mo_uitgaand">
-                                        <img src="assets/img/AboutUsFotos/Mohammed.png" alt="match">
+                                        <img src="assets/img/AboutUsFotos/Mohammed.png">
                                     </div>
                                 </td>
                             </tr>
@@ -268,10 +327,12 @@
                     </div>
 
 
+
                 </div>
             </div>
         </div>
     </div>
+
 
 
     <div class="left__ad">
