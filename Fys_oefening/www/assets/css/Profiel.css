@@ -69,9 +69,24 @@ Profiel Overzicht
 
 
 
+
+.inkomende_aanvraag_berkay, .inkomende_aanvraag_marvin {
+    border-top: 1px solid black;
+    margin-bottom: 10px;
+}
+
+
+
 #Lopende_Matches {
     overflow: auto;
     max-height: 620px;
+}
+
+#Inkomende_Matches {
+    width: 100%;
+    align-content: center;
+    overflow: auto;
+    max-height: 500px;
 }
 
 .eerste_match {
@@ -91,10 +106,15 @@ Profiel Overzicht
     padding-top: 15px
 }
 
-.foto_eerst_inkomende_match img{
+.foto_eerst_inkomende_match img, .foto_berkay_inkomend img, .foto_marvin_inkomend img, .foto_dylan_inkomend img, .foto_mo_uitgaand img{
     width: 100px;
     height: auto;
+    border-radius: 25px;
+}
 
+.inkomend_aanvraag {
+    border-top: 2px solid black;
+    padding: 20px;
 }
 
 
