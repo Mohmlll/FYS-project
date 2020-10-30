@@ -67,6 +67,13 @@ Profiel Overzicht
 }
 
 
+
+
+#Lopende_Matches {
+    overflow: auto;
+    max-height: 620px;
+}
+
 .eerste_match {
     border-top: solid 1px black;
 
@@ -81,10 +88,13 @@ Profiel Overzicht
     width: 100px;
     height: auto;
     border-radius: 25px;
-    padding-top: 10px
+    padding-top: 15px
 }
 
-.tekst_eerste_match {
+.foto_eerst_inkomende_match img{
+    width: 100px;
+    height: auto;
 
 }
+
 
