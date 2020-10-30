@@ -70,42 +70,60 @@
 
                 <div id="Profiel" class="tabcontent">
 
-                    <a href="Profiel_Bewerken.html">
+                    <a href="Profiel_Overzicht.html">
 
-                     <div class="contact_button" onclick="myFunction()">Bewerk Profiel!
-
-
-                    </div></a>
+                        <div
+                                class="contact_button" onclick="myFunction()">Complete!
+                        </div>
+                    </a>
 
                     <h1>Profiel</h1>
 
 
-
                     <div class="foto_user">
                         <img src="assets/img/AboutUsFotos/Mohammed.png">
+                        <input type="file" class="tekstbox">
                     </div>
                     <div class="info_user">
                         <table>
                             <tr>
                                 <td>Naam</td>
                                 <td>Marvin</td>
+                                <td><label>
+                                    <input type="text" class="tekstbox" placeholder="Naam" required>
+                                </label></td>
                             </tr>
 
                             <tr>
                                 <td>Geboortejaar</td>
                                 <td>1997</td>
+                                <td><label>
+                                    <input type="date" class="tekstbox" placeholder="Jaar" required>
+                                </label></td>
                             </tr>
 
                             <tr>
                                 <td>Geslacht</td>
                                 <td>Man</td>
+                                <td>
+                                    <div class="radiobutton">
+                                        <input type="radio" id="man" required>
+                                        <label for="man">Man</label>
+                                        <br>
+                                        <input type="radio" id="vrouw" required>
+                                        <label for="vrouw">Vrouw</label>
+                                    </div>
+
+                                </td>
                             </tr>
 
                             <tr>
                                 <td>Woonplaats</td>
                                 <td>Amsterdam</td>
+                                <td><label>
+                                    <input type="text" class="tekstbox" placeholder="Woonplaats" required>
+                                </label></td>
                             </tr>
-
                         </table>
                     </div>
                     <hr>
@@ -115,8 +133,46 @@
                         <br>
                         <p>Voorkeuren:</p>
                         <p>Klimaat - Tropisch</p>
+                        <label>
+                            <select class="soort_klimaat">
+                                <option value="#">Tropisch</option>
+                                <option value="#">Sub-Tropisch</option>
+                                <option value="#">Droog</option>
+                                <option value="#">Gematigd</option>
+                                <option value="#">Land</option>
+                                <option value="#">Pool</option>
+                                <option value="#">mediterraan</option>
+                                <option value="#">Regenwoud</option>
+                                <option value="#">Savanne</option>
+                                <option value="#">Woestijn</option>
+                                <option value="#">Steppe</option>
+                            </select>
+                        </label>
+
                         <p>Activiteit - Backpacken</p>
+                        <label>
+                                <select class="soort_vakantieganger">
+                                    <option value="#">Explorer</option>
+                                    <option value="#">Sportieveling</option>
+                                    <option value="#">Relaxer</option>
+                                    <option value="#">Partygoer</option>
+                                    <option value="#">Backgoer</option>
+                                    <option value="#">Wintersport</option>
+                                    <option value="#">Tropisch</option>
+                                    <option value="#">Resort</option>
+                                </select>
+                        </label>
+
                         <p>Leeftijd - 20 | 30 jaar</p>
+                        <label>
+                            <select class="soort_leeftijdsvoorkeur">
+                                <option value="#">20 | 30</option>
+                                <option value="#">31 | 40</option>
+                                <option value="#">41 | 50</option>
+                                <option value="#">51 | 60</option>
+                                <option value="#">60+</option>
+                            </select>
+                        </label>
                     </div>
                 </div>
 
@@ -133,6 +189,8 @@
                             <p>Match Tropische vakantie | Backpacken</p>
                             <p>Email: dylan.kroon@hva.nl</p>
                         </div>
+
+
 
 
                     </div>
@@ -242,6 +300,7 @@
                     </div>
 
 
+
                 </div>
 
                 <div id="Uitgaande_Matches" class="tabcontent">
@@ -268,10 +327,12 @@
                     </div>
 
 
+
                 </div>
             </div>
         </div>
     </div>
+
 
 
     <div class="left__ad">
