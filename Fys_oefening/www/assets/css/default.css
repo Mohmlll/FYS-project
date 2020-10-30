@@ -51,7 +51,6 @@ label {
     display: inline-block;
     position: relative;
     margin-top: -50px;
-
 }
 
 .taal_inhoud {
@@ -66,8 +65,7 @@ label {
     font-size: 30px;
     font-family: 'Playfair Display', serif;
     cursor: pointer;
-
-
+    padding: 0 20px;
 }
 
 .taal button:hover {
@@ -77,6 +75,7 @@ label {
 .taal a {
     color: white;
     text-decoration: none;
+    padding-left: 15px;
 }
 
 .taal:hover .taal_inhoud {
