@@ -28,7 +28,7 @@
     <div class="space"></div>
 
 
-    <div class="logomemu"><a href="index.html"><img src="assets/img/Logo_website.png"></a></div>
+    <div class="logomemu"><a href="index.html"><img src="assets/img/Logo_website.png" alt="Corendon TravelBud"></a></div>
 
     <div class="menu_groot">
         <a href="index.html">Home</a>
@@ -61,41 +61,49 @@
                     <table>
                         <tr>
                             <td>Foto van jezelf:</td>
-                            <td><input type="file" class="tekstbox" placeholder="Foto" required></td>
+                            <td><input type="file" class="tekstbox" placeholder="Foto" ></td>
                         </tr>
                         <tr>
                             <td>Voornaam:</td>
-                            <td><input type="text" class="tekstbox" placeholder="Voornaam" required></td>
+                            <td><input type="text" class="tekstbox" placeholder="Voornaam" ></td>
                         </tr>
                         <tr>
                             <td>Achternaam:</td>
-                            <td><input type="text" class="tekstbox" placeholder="Achternaam" required></td>
+                            <td><input type="text" class="tekstbox" placeholder="Achternaam" ></td>
                         </tr>
                         <tr>
                             <td>Geslacht:</td>
                             <td>
-                                <input type="radio" id="man" required>
+                                <input type="radio" id="man" >
                                 <label for="man">Man</label>
                                 <br>
-                                <input type="radio" id="vrouw" required>
+                                <input type="radio" id="vrouw" >
                                 <label for="vrouw">Vrouw</label>
                             </td>
                         </tr>
                         <tr>
                             <td>Geboortedatum:</td>
-                            <td><input type="date" class="tekstbox" placeholder="Geboortedatum" required></td>
+                            <td><input type="date" class="tekstbox" placeholder="Geboortedatum" ></td>
                         </tr>
                         <tr>
                             <td>Woonplaats:</td>
-                            <td><input type="text" class="tekstbox" placeholder="Woonplaats" required></td>
+                            <td><input type="text" class="tekstbox" placeholder="Woonplaats" ></td>
                         </tr>
                         <tr>
                             <td>Telefoonnummer:</td>
-                            <td><input type="tel" class="tekstbox" placeholder="Telefoonnummer" required></td>
+                            <td>
+                                <input type="tel" class="tekstbox" id="telefoon" placeholder="Telefoonnummer" pattern="[0-9]{2}-[0-9]{8}" required>
+                                <div id="geenTelefoon">
+                                    <p>
+                                        Vul hier een nummer in met de volgende volgorde: <br>
+                                        xx-xxxxxxxx
+                                    </p>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td>E-mailadres:</td>
-                            <td><input type="email" class="tekstbox" placeholder="E-mailadres" required></td>
+                            <td><input type="email" class="tekstbox" id="email" pattern=".+@hva.nl" placeholder="E-mailadres" required></td>
                         </tr>
                         <tr>
                             <td>Soort vakantieganger:</td>
@@ -122,7 +130,7 @@
                         </tr>
 
                     </table>
-                    <button type="submit" onclick="location.href='Profiel_Overzicht.html'" class="gegevens_opslaan">Sla de gegevens op.</button>
+                    <button type="submit" class="gegevens_opslaan">Sla de gegevens op.</button>
                 </label>
             </form>
 
