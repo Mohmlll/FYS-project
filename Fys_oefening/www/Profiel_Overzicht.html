@@ -69,43 +69,74 @@
 
 
                 <div id="Profiel" class="tabcontent">
-                    <h1>Profiel</h1>
-                    <div class="foto_user">
-                        <img src="assets/img/AboutUsFotos/Mohammed.png">
-                    </div>
-                    <div class="info_user">
-                        <table>
-                            <tr>
-                                <td>Naam</td>
-                                <td>Marvin</td>
-                            </tr>
 
-                            <tr>
-                                <td>Geboortejaar</td>
-                                <td>1997</td>
-                            </tr>
+                    <form id="profile" class="input">
+                        <label>
+                            <table>
+                                <tr>
+                                    <td>Foto van jezelf:</td>
+                                    <td>
+                                        <img src="assets/img/AboutUsFotos/Mohammed.png">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Voornaam:</td>
+                                    <td><p>Marvin</p></td>
+                                </tr>
+                                <tr>
+                                    <td>Achternaam:</td>
+                                    <td><p>Hesselman</p></td>
+                                </tr>
+                                <tr>
+                                    <td>Geslacht:</td>
+                                    <td><p>Man</p></td>
+                                </tr>
+                                <tr>
+                                    <td>Geboortedatum:</td>
+                                    <td><input type="date" class="tekstbox" placeholder="Geboortedatum" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Woonplaats:</td>
+                                    <td><p>Amsterdam</p></td>
+                                </tr>
+                                <tr>
+                                    <td>Telefoonnummer:</td>
+                                    <td><p>31612345678</p></td>
+                                </tr>
+                                <tr>
+                                    <td>E-mailadres:</td>
+                                    <td><p>marvin.hesselman@hva.nl</p></td>
+                                </tr>
+                                <tr>
+                                    <td>Soort vakantieganger:</td>
+                                    <td>
+                                        <select class="soort_vakantieganger">
+                                            <option value="#">Explorer</option>
+                                            <option value="#">Sportieveling</option>
+                                            <option value="#">Relaxer</option>
+                                            <option value="#">Partygoer</option>
+                                            <option value="#">Backgoer</option>
+                                            <option value="#">Wintersport</option>
+                                            <option value="#">Tropisch</option>
+                                            <option value="#">Resort</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Vertel hier iets leuks over jezelf: <br><br></td>
+                                    <td>
+                                <textarea class="tekstbox">
 
-                            <tr>
-                                <td>Geslacht</td>
-                                <td>Man</td>
-                            </tr>
+                                </textarea>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td>Provincie</td>
-                                <td>Noord-Holland</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <hr>
+                            </table>
+                            <button type="submit" onclick="location.href='Profiel_Overzicht.html'" class="gegevens_opslaan">Bewerken</button>
+                        </label>
+                    </form>
 
-                    <div class="voorkeuren_user">
 
-                        <br>
-                        <p>Voorkeuren:</p>
-                        <p>Klimaat - Tropisch</p>
-                        <p>Activiteit - Backpacken</p>
-                        <p>Leeftijd - 20 | 30 jaar</p>
-                    </div>
                 </div>
 
 
