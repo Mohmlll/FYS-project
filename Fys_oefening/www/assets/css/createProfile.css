@@ -44,3 +44,12 @@
     border-radius: 30px;
     border: solid 1px #ff7b68;
 }
+
+table p {
+    font-size: 12px;
+}
+
+table #geenTelefoon {
+    display: none;
+    color: red;
+}
