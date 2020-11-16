@@ -81,31 +81,31 @@
                                 </tr>
                                 <tr>
                                     <td>Voornaam:</td>
-                                    <td><input type="text" class="tekstbox" placeholder="Marvin" required readonly></td>
+                                    <td><input type="text" class="tekstbox" id="profiel_input1" placeholder="Marvin" required readonly></td>
                                 </tr>
                                 <tr>
                                     <td>Achternaam:</td>
-                                    <td><input type="text" class="tekstbox" placeholder="Hesselman" required readonly></td>
+                                    <td><input type="text" class="tekstbox" id="profiel_input2" placeholder="Hesselman" required readonly></td>
                                 </tr>
                                 <tr>
                                     <td>Geslacht:</td>
-                                    <td><input type="text" class="tekstbox" placeholder="Man" required readonly></td>
+                                    <td><input type="text" class="tekstbox" id="profiel_input3" placeholder="Man" required readonly></td>
                                 </tr>
                                 <tr>
                                     <td>Geboortedatum:</td>
-                                    <td><input type="text" class="tekstbox" placeholder="13-06-1997" required readonly></td>
+                                    <td><input type="text" class="tekstbox" id="profiel_input4" placeholder="13-06-1997" required readonly></td>
                                 </tr>
                                 <tr>
                                     <td>Woonplaats:</td>
-                                    <td><input type="text" class="tekstbox" placeholder="Amsterdam" required readonly></td>
+                                    <td><input type="text" class="tekstbox" id="profiel_input5" placeholder="Amsterdam" required readonly></td>
                                 </tr>
                                 <tr>
                                     <td>Telefoonnummer:</td>
-                                    <td><input type="tel" class="tekstbox" placeholder="06-12345678" required readonly></td>
+                                    <td><input type="tel" class="tekstbox" id="profiel_input6" placeholder="06-12345678" required readonly></td>
                                 </tr>
                                 <tr>
                                     <td>E-mailadres:</td>
-                                    <td><input type="email" class="tekstbox" placeholder="marvin.hesselman@hva.nl" required readonly></td>
+                                    <td><input type="email" class="tekstbox" id="profiel_input7" placeholder="marvin.hesselman@hva.nl" required readonly></td>
                                 </tr>
                                 <tr>
                                     <td>Soort vakantieganger:</td>
@@ -125,12 +125,13 @@
                                 <tr>
                                     <td>iets leuks over jezelf: <br><br></td>
                                     <td>
-                                <textarea class="tekstbox" placeholder="blabla" readonly></textarea>
+                                <textarea class="tekstbox" placeholder="blabla" id="profiel_input8" readonly></textarea>
                                     </td>
                                 </tr>
 
                             </table>
-                            <button type="submit" onclick="location.href='Profiel_Overzicht.html'" class="gegevens_opslaan">Bewerken</button>
+                            <button type="submit" class="gegevens_bewerken" id="gegevens_bewerken">Bewerken</button>
+                            <button type="submit" class="gegevens_bewerken" id="gegevens_opslaan">Opslaan</button>
                         </label>
                     </form>
 

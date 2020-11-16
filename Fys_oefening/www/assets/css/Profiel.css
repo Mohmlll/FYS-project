@@ -285,3 +285,6 @@ table .radiobutton {
 #profile img {
     width: 35%;
 }
+#gegevens_opslaan{
+    display: none;
+}
