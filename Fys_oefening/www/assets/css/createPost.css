@@ -85,3 +85,24 @@
     background: linear-gradient(to right, red, #ffffff);
 
 }
+
+.tag_div {
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tag_div input:checked + span {
+    background-color: red;
+}
+
+.tag_div input {
+    display: none;
+}
+
+.tag_div span {
+    padding: 8px;
+}
+
+
