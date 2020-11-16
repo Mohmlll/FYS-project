@@ -50,37 +50,20 @@ $(document).ready(function (qualifiedName, value) {
 
     $('.gegevens_bewerken').on("click", function (bewerken) {
         bewerken.preventDefault();
-        var readonlycheck = document.getElementById("profiel_input1").hasAttribute("readonly");
+        var readonlycheck = document.getElementById("profiel_input").hasAttribute("readonly");
 
         if (readonlycheck) {
-            //$(".tekstbox").removeAttr("readonly");
-            document.getElementById("profiel_input1").readOnly = false;
-            document.getElementById("profiel_input2").readOnly = false;
-            document.getElementById("profiel_input3").readOnly = false;
-            document.getElementById("profiel_input4").readOnly = false;
-            document.getElementById("profiel_input5").readOnly = false;
-            document.getElementById("profiel_input6").readOnly = false;
-            document.getElementById("profiel_input7").readOnly = false;
-            document.getElementById("profiel_input8").readOnly = false;
+            $(".profiel_input").attr("readonly", false);
             document.getElementById("gegevens_opslaan").style.display = "block";
             document.getElementById("gegevens_bewerken").style.display = "none";
 
-            console.log("false");
-        }else{
-            //$(".tekstbox").setAttribute("readonly") ;
-            document.getElementById("profiel_input1").readOnly = true;
-            document.getElementById("profiel_input2").readOnly = true;
-            document.getElementById("profiel_input3").readOnly = true;
-            document.getElementById("profiel_input4").readOnly = true;
-            document.getElementById("profiel_input5").readOnly = true;
-            document.getElementById("profiel_input6").readOnly = true;
-            document.getElementById("profiel_input7").readOnly = true;
-            document.getElementById("profiel_input8").readOnly = false;
+        } else {
+
+            $(".profiel_input").attr("readonly", true);
             document.getElementById("gegevens_bewerken").style.display = "block";
             document.getElementById("gegevens_opslaan").style.display = "none";
-            console.log("true");
-        }
 
+        }
 
 
     })
