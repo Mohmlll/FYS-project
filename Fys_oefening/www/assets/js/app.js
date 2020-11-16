@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function (qualifiedName, value) {
     $(".hamburgermenu").on("click", function (e) {
         e.preventDefault();
         var x = document.getElementById("responsivemenu");
@@ -48,6 +48,25 @@ $(document).ready(function () {
         }
     })
 
+    $('.gegevens_bewerken').on("click", function (bewerken) {
+        bewerken.preventDefault();
+        var readonlycheck = document.getElementById("profiel_input").hasAttribute("readonly");
+
+        if (readonlycheck) {
+            $(".profiel_input").attr("readonly", false);
+            document.getElementById("gegevens_opslaan").style.display = "block";
+            document.getElementById("gegevens_bewerken").style.display = "none";
+
+        } else {
+
+            $(".profiel_input").attr("readonly", true);
+            document.getElementById("gegevens_bewerken").style.display = "block";
+            document.getElementById("gegevens_opslaan").style.display = "none";
+
+        }
+
+
+    })
 });
 
 //onclick="location.href='Profiel_Overzicht.html'"

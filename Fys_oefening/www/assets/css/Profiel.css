@@ -2,7 +2,7 @@
 Profiel Overzicht
  */
 
-.tekstbox {
+.profiel_input {
     width: 90%;
     padding: 10px 0;
     margin: 5px 0;
@@ -284,4 +284,7 @@ table .radiobutton {
 
 #profile img {
     width: 35%;
+}
+#gegevens_opslaan{
+    display: none;
 }
