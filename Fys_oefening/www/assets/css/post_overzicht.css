@@ -1,78 +1,83 @@
-
 /*
 forummain
  */
 .forum_main {
-    width: 68%;
     order: 0;
     height: 80%;
 }
+
 /*
 right menu
  */
 
 
 .forum_rightmenu {
-    width: 30%;
     order: 1;
 
 }
 
-.forum_aanbevolen{
-    width: 100%;
+.forum_aanbevolen {
     background-color: white;
     border-radius: 25px;
     padding: 8%;
     margin-bottom: 10%;
-
 }
 
 /*
 right menu - aanbevolen
  */
 
-.aanbevolen_profiel{
+.aanbevolen_profiel {
     width: 100%;
-
 }
-.aanbevolen_match{
+
+.aanbevolen_match {
     flex-wrap: wrap;
     display: flex;
     margin-bottom: 5%;
 
 }
-.aanbevolen_profiel hr{
+
+.aanbevolen_profiel hr {
     width: 100%;
 }
 
-.aanbevolen_profiel_info{
+.aanbevolen_profiel_info {
     width: 55%;
     order: 1;
     margin-left: 5%;
     display: block;
 }
 
-.aanbevolen_profiel_foto{
+.aanbevolen_profiel_foto {
     width: 25%;
     order: 0;
 
-
 }
-.aanbevolen_profiel_foto img{
+
+.aanbevolen_profiel_foto img {
     width: 100%;
     border-radius: 50%;
     border: solid 1px black;
 
 }
-.aanbevolen_vnaam{
-    width: 80%;
 
+.aanbevolen_vnaam {
+    width: 80%;
     font-size: 14px;
 }
-.aanbevolen_anaam{
-    width: 80%;
 
+.aanbevolen_anaam {
+    width: 80%;
     font-size: 14px;
+}
+
+/*
+forum filter
+ */
+
+.forum_search {
+    width: 100%;
 }
 
 .forum_filter {
@@ -98,7 +103,7 @@ right menu - aanbevolen
 
 }
 
-.post_profiel_foto img{
+.post_profiel_foto img {
     width: 100%;
     border-radius: 50%;
     border: solid 1px black;
@@ -106,7 +111,6 @@ right menu - aanbevolen
 
 .front_post_title {
     width: 88%;
-    font-size: 19px;
 }
 
 .post_latest {
@@ -117,9 +121,10 @@ right menu - aanbevolen
     border-radius: 15px;
     padding: 5%;
     overflow: hidden;
-    margin: 0 4% 4% 0;
+    margin: 0 4% 0 0;
 }
-.post_latest hr{
+
+.post_latest hr {
     width: 100%;
 }
 
@@ -138,12 +143,13 @@ right menu - aanbevolen
 post tags
  */
 
-.post_tags{
+.post_tags {
     width: 100%;
     margin-bottom: 5%;
 
 }
-.tag_button{
+
+.tag_button {
     background-color: white;
     margin-right: 0.2%;
     font-size: 13px;
@@ -203,11 +209,19 @@ contact popup
 
 
 @-webkit-keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

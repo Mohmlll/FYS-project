@@ -47,7 +47,11 @@ container
     .left_empty_footer, .right_empty_footer2 {
         width: 12.5%;
     }
-
+    .flip_cards{
+        width: 60%;
+        margin-right: 20%;
+        margin-left: 20%;
+    }
 
 }
 
@@ -58,6 +62,10 @@ container
 
     .left_empty_footer, .right_empty_footer2 {
         display: none;
+    }
+    .flip_cards{
+        width: 100%;
+        margin: auto;
     }
 
 }
@@ -82,26 +90,35 @@ container
         min-width: 85%;
         margin: auto 5% 5% 5%;
     }
-    .forum_main{
+
+    .forum_main {
+        width: 68%;
+
+    }
+
+    .front_post_title {
+        font-size: 12px;
+    }
+
+    .forum_rightmenu {
+        width: 32%;
+    }
+
+    .forum_aanbevolen span, .forum_aanbevolen p {
+        font-size: 12px;
+    }
+
+    .forum_topics__options p {
+        font-size: 10px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .forum_main_options {
         width: 100%;
-        order: 0;
-    }
-    .forum_rightmenu{
-        width: 90%;
-        order: 1;
-    }
-    .aanbevolen_profiel{
-        width: 40%;
-    }
-    .forum_topics__options, .forum_aanbevolen{
-        width: 40%;
-        margin: 0 auto auto auto;
-    }
-    .forum_main_options{
-        width: 100%;
+
     }
 }
-
 
 
 @media screen and (min-width: 600px) {
@@ -118,20 +135,32 @@ container
     .info1 p, .info2 p {
         font-size: 14px;
     }
-    .forum_main{
+
+    .forum_main {
         order: 0;
         width: 68%;
     }
-    .forum_rightmenu{
+
+    .front_post_title {
+        font-size: 19px;
+    }
+
+    .forum_rightmenu {
         width: 32%;
         order: 1;
     }
-    .aanbevolen_profiel,.forum_main_options{
+
+    .aanbevolen_profiel, .forum_main_options {
         width: 100%;
     }
-    .forum_topics__options, .forum_aanbevolen{
+
+    .forum_topics__options, .forum_aanbevolen {
         width: 100%;
 
+    }
+    .forum_topics__options p {
+        margin: 0;
+        padding: 0;
     }
 }
 
