@@ -288,3 +288,23 @@ table .radiobutton {
 #gegevens_opslaan{
     display: none;
 }
+
+.tag_div {
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    float: left;
+}
+
+.tag_div input:checked + span {
+    background-color: red;
+}
+
+.tag_div input {
+    display: none;
+}
+
+.tag_div span {
+    padding: 8px;
+}
