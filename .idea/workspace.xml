@@ -68,6 +68,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="93" y="182" key="#SQL_Dialects" timestamp="1605788612795">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="93" y="182" key="#SQL_Dialects/0.0.1280.680@0.0.1280.680" timestamp="1605788612795" />
     <state x="-1506" y="538" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603996101650">
       <screen x="-1920" y="363" width="1920" height="1040" />
     </state>
@@ -100,10 +104,11 @@
     <state x="2376" y="188" key="new project wizard/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1605361299798" />
     <state x="342" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1603973003626" />
     <state x="456" y="188" key="new project wizard/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1604228408708" />
-    <state x="-777" y="238" width="672" height="504" key="search.everywhere.popup" timestamp="1604053934565">
-      <screen x="-2560" y="0" width="2560" height="1040" />
+    <state x="892" y="156" width="672" height="330" key="search.everywhere.popup" timestamp="1605788329304">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="-777" y="238" width="672" height="504" key="search.everywhere.popup/-2560.0.2560.1040/0.0.2560.1400@-2560.0.2560.1040" timestamp="1604053934565" />
+    <state x="892" y="156" width="672" height="330" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1605788329304" />
     <state x="1783" y="320" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1603708193166" />
   </component>
 </project>
