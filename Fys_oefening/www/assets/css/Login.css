@@ -15,7 +15,7 @@
 
 .inlog-box {
     width: 380px;
-    height: 480px;
+    height: 600px;
     position: relative;
     background: #fff;
     padding: 5px;
@@ -27,7 +27,7 @@
 .input {
     position: absolute;
     margin-left: -20px;
-    padding-top: 15%;
+    padding-top: 1%;
     height: 60%;
     width: 80%;
     transition: .5s;
@@ -145,4 +145,8 @@ input:checked + .slider:before {
 .inputAlert {
     display: none;
     color: red;
+}
+
+.inputAlert p {
+    font-size: 10px;
 }
