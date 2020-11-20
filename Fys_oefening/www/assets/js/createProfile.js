@@ -12,24 +12,6 @@ $(document).ready(function (qualifiedName, value) {
             document.getElementById("telefoon").style.borderColor = "black";
             document.getElementById("geenTelefoon").style.display = "none";
         }
-
-
-        var voornaam = document.getElementById('voornaam').value;
-        var achternaam = document.getElementById('achternaam').value;
-        var geboorteDatum = document.getElementById('geboortedatum').value;
-        var woonplaats = document.getElementById('woonplaats').value;
-        var telefoonNummer = document.getElementById('telefoon').value;
-        var bio = document.getElementById('bio').value;
-
-        FYSCloud.API.queryDatabase(
-            "INSERT INTO gebruiker(voornaam, achternaam, geboorte_datum, woonplaats, telefoon_nummer, bio )" +
-            "VALUES(?,?,?,?,?,?)",
-            [voornaam, achternaam, geboorteDatum, woonplaats, telefoonNummer, bio]
-        ).done(function (data) {
-            console.log(data);
-        }).fail(function (reason) {
-            console.log(reason);
-        })
     })
 
     function datum() {
@@ -40,9 +22,8 @@ $(document).ready(function (qualifiedName, value) {
         var jaar = vandaag.getFullYear() - minimaleLeeftijd;
         vandaag = jaar + "-" + maand + "-" + dag;
         document.getElementById("geboortedatum").setAttribute("max", vandaag);
-
     }
-
+    console.log(window.userId)
     datum();
 
 
