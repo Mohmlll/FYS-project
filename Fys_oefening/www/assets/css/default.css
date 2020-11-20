@@ -280,3 +280,15 @@ iframe {
 .right_empty_footer {
     order: 2;
 }
+
+/*
+vertaling
+ */
+
+[data-translate] {
+    visibility: hidden;
+}
+
+[data-translate][translated] {
+    visibility: visible;
+}
