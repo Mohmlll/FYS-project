@@ -25,29 +25,6 @@ $(document).ready(function (qualifiedName, value) {
         }
     })
 
-    $(".gegevens_opslaan").on("click", function (gegevens) {
-        gegevens.preventDefault();
-        var email = $("#email").is(":valid");
-        var telefoon = $("#telefoon").is(":valid");
-        if (email && telefoon) {
-            location.href = "Profiel_Overzicht.html";
-        } else {
-            if (!email) {
-                document.getElementById("email").style.borderColor = "red";
-            } else {
-                document.getElementById("email").style.borderColor = "black";
-            }
-
-            if (!telefoon) {
-                document.getElementById("telefoon").style.borderColor = "red";
-                document.getElementById("geenTelefoon").style.display = "block";
-            } else {
-                document.getElementById("telefoon").style.borderColor = "black";
-                document.getElementById("geenTelefoon").style.display = "none";
-            }
-        }
-    })
-
     $('.gegevens_bewerken').on("click", function (bewerken) {
         bewerken.preventDefault();
         var readonlycheck = document.getElementById("profiel_input").hasAttribute("readonly");
@@ -68,6 +45,7 @@ $(document).ready(function (qualifiedName, value) {
                 document.getElementById("explorer").style.display = "block";
             }
         }
+        //onclick="location.href='Profiel_Overzicht.html'"
     })
     $(".tag_div label").click(function(tag){
         tag.preventDefault();
@@ -78,4 +56,3 @@ $(document).ready(function (qualifiedName, value) {
 
 });
 
-//onclick="location.href='Profiel_Overzicht.html'"

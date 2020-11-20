@@ -12,6 +12,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -39,6 +40,19 @@
       <recent name="C:\Users\moham\Documents\Git-Fork\team-3\Fys_oefening\www" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -62,6 +76,8 @@
       <workItem from="1605361210914" duration="89000" />
       <workItem from="1605517492483" duration="12603000" />
       <workItem from="1605533676827" duration="13000" />
+      <workItem from="1605785549069" duration="1255000" />
+      <workItem from="1605864659267" duration="6245000" />
     </task>
     <servers />
   </component>
