@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
     <title>Forum | TravelBud</title>
 
     <!-- Stylesheets -->
     <link href="assets/css/default.css" rel="stylesheet"/>
-    <link href="assets/css/responsive.css" rel="stylesheet"/>
-    <link href="assets/css/forum.css" rel="stylesheet"/>
+    <link href="assets/css/pages/responsive.css" rel="stylesheet"/>
+    <link href="assets/css/pages/forum.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
 
     <!-- Javascript -->
     <script src="assets/vendors/jquery/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.fys.cloud/fyscloud/0.0.3/fyscloud.bundle.min.js"></script>
+    <script src="assets/js/config.js"></script>
     <script src="assets/js/app.js"></script>
 </head>
 
@@ -27,12 +29,13 @@
     <div class="space"></div>
 
 
-    <div class="logomemu"><a href="index.html"><img src="assets/img/Logo_website.png" alt="Corendon TravelBud"></a></div>
+    <div class="logomemu"><a href="index.html"><img alt="Corendon TravelBud" src="assets/img/Logo_website.png"></a>
+    </div>
 
     <div class="menu_groot">
-        <a href="index_loggedin.html">Home</a>
-        <a href="AboutUs_loggedin.html">Over ons</a>
-        <a href="Profiel_Overzicht.html">Profiel</a>
+        <a href="index.html">Home</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="profiel-overzicht.html">Profiel</a>
         <a href="index.html">Uitloggen</a>
     </div>
 
@@ -55,7 +58,7 @@
 <div class="container">
     <div class="container__main">
         <div class="forum_main_options">
-            <button class="start_post_button" onclick="location.href='createpost.html'"> New Post</button>
+            <button class="start_post_button" onclick="location.href='post-aanmaken.html'"> New Post</button>
             <form>
                 <label for="volgorde">
                     <select id="volgorde">
@@ -166,7 +169,7 @@
             <div class="forum_topics__options">
                 <p>Filter:</p>
 
-                <input type="text" class="forum_search" placeholder="Search on forum.." title="=Search on forum">
+                <input class="forum_search" placeholder="Search on forum.." title="=Search on forum" type="text">
 
                 <hr>
 
@@ -186,19 +189,19 @@
 
         </div>
         <div class="forum_page_selector">
-            <a href="forum_homepage.html" class="previous_round">&#8249;</a>
+            <a class="previous_round" href="forum-homepagina.html">&#8249;</a>
             <span class="forum_page_number">1</span>
-            <a href="#" class="next_round">&#8250;</a>
+            <a class="next_round" href="#">&#8250;</a>
         </div>
     </div>
     <div class="left__ad">
         <a href="https://www.corendon.nl/">
-            <img class="banner_ad_left" src="assets/img/advertentie2.png" alt="AD">
+            <img alt="AD" class="banner_ad_left" src="assets/img/advertentie2.png">
         </a>
     </div>
     <div class="right__ad">
         <a href="https://www.corendon.nl/">
-            <img class="banner_ad_right" src="assets/img/advertentie2.png" alt="AD">
+            <img alt="AD" class="banner_ad_right" src="assets/img/advertentie2.png">
         </a>
     </div>
 

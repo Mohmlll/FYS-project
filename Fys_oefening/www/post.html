@@ -2,19 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
     <title>Forum | TravelBud</title>
 
     <!-- Stylesheets -->
     <link href="assets/css/default.css" rel="stylesheet"/>
-    <link href="assets/css/responsive.css" rel="stylesheet"/>
-    <link href="assets/css/post_overzicht.css   " rel="stylesheet"/>
+    <link href="assets/css/pages/responsive.css" rel="stylesheet"/>
+    <link href="assets/css/pages/post-overzicht.css   " rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
 
     <!-- Javascript -->
     <script src="assets/vendors/jquery/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.fys.cloud/fyscloud/0.0.3/fyscloud.bundle.min.js"></script>
+    <script src="assets/js/config.js"></script>
     <script src="assets/js/app.js"></script>
+
 </head>
 
 <body>
@@ -27,13 +30,14 @@
     <div class="space"></div>
 
 
-    <div class="logomemu"><a href="index.html"><img src="assets/img/Logo_website.png" alt="Corendon TravelBud"></a></div>
+    <div class="logomemu"><a href="index.html"><img alt="Corendon TravelBud" src="assets/img/Logo_website.png"></a>
+    </div>
 
     <div class="menu_groot">
-        <a href="index_loggedin.html">Home</a>
-        <a href="AboutUs_loggedin.html">Over ons</a>
-        <a href="forum_homepage.html">Forum</a>
-        <a href="Profiel_Overzicht.html">Profiel</a>
+        <a href="index.html">Home</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="forum-homepagina.html">Forum</a>
+        <a href="profiel-overzicht.html">Profiel</a>
         <a href="index.html">Uitloggen</a>
     </div>
 
@@ -61,7 +65,7 @@
             <div class="post_latest tropisch">
                 <p class="front_post_title">Tropische vakantie | Backpacken </p>
                 <div class="post_profiel_foto"><a href="profiel.html">
-                    <img src=assets/img/AboutUsFotos/Dylan.png alt="Profielfoto">
+                    <img alt="Profielfoto" src=assets/img/AboutUsFotos/Dylan.png>
                 </a>
                 </div>
                 <hr>
@@ -69,19 +73,22 @@
                     Hey TravelBuds! Het is zover... ik ben nodig toe aan een heerlijke tropische vakantie,
                     om eindelijk te ontstressen. Helaas kan niemand...
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi dolore doloremque eaque in
-                    minus nam nihil nostrum qui quisquam reprehenderit rerum, similique, soluta tenetur velit. Facilis minima nisi perspiciatis?
+                    minus nam nihil nostrum qui quisquam reprehenderit rerum, similique, soluta tenetur velit. Facilis
+                    minima nisi perspiciatis?
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa delectus doloremque excepturi
 
 
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium at consequatur delectus eius error est excepturi,
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium at consequatur delectus eius
+                    error est excepturi,
                     illo in iste laudantium officia quam quidem totam? Aspernatur expedita id porro repellat tenetur.
-                    maxime non officiis, placeat quibusdam quis ratione rem sapiente veniam voluptatem? Illum inventore ipsa itaque labore quod.
+                    maxime non officiis, placeat quibusdam quis ratione rem sapiente veniam voluptatem? Illum inventore
+                    ipsa itaque labore quod.
 
                 </p>
                 <div class="post_tags">
                     <label>Tags: </label>
-                <button class="tag_button" id="tag_tropisch">Tropisch</button>
-                <button class="tag_button" id="tag_backpacker">Backpacker</button>
+                    <button class="tag_button" id="tag_tropisch">Tropisch</button>
+                    <button class="tag_button" id="tag_backpacker">Backpacker</button>
                 </div>
                 <div class="contact_button" onclick="myFunction()">Contact me!
                     <span class="popuptext" id="myContact_button">Verzoek verzonden...</span>
@@ -103,7 +110,7 @@
                     <a href="profiel.html">
                         <div class="aanbevolen_match">
                             <div class="aanbevolen_profiel_foto">
-                                <img src=assets/img/AboutUsFotos/Mohammed.png alt="Profielfoto">
+                                <img alt="Profielfoto" src=assets/img/AboutUsFotos/Mohammed.png>
                             </div>
                             <form class="aanbevolen_profiel_info">
                                 <span class="aanbevolen_vnaam">Mohammed</span>
@@ -115,7 +122,7 @@
                     <a href="profiel.html">
                         <div class="aanbevolen_match">
                             <div class="aanbevolen_profiel_foto">
-                                <img src=assets/img/AboutUsFotos/Dylan.png alt="Profielfoto">
+                                <img alt="Profielfoto" src=assets/img/AboutUsFotos/Dylan.png>
                             </div>
                             <form class="aanbevolen_profiel_info">
                                 <span class="aanbevolen_vnaam">Dylan</span>
@@ -126,7 +133,7 @@
                     <a href="profiel.html">
                         <div class="aanbevolen_match">
                             <div class="aanbevolen_profiel_foto">
-                                <img src=assets/img/AboutUsFotos/Berkay.png alt="Profielfoto">
+                                <img alt="Profielfoto" src=assets/img/AboutUsFotos/Berkay.png>
                             </div>
                             <form class="aanbevolen_profiel_info">
                                 <span class="aanbevolen_vnaam">Berkay</span>
@@ -143,12 +150,12 @@
     </div>
     <div class="left__ad">
         <a href="https://www.corendon.nl/">
-            <img class="banner_ad_left" src="assets/img/advertentie2.png" alt="AD">
+            <img alt="AD" class="banner_ad_left" src="assets/img/advertentie2.png">
         </a>
     </div>
     <div class="right__ad">
         <a href="https://www.corendon.nl/">
-            <img class="banner_ad_right" src="assets/img/advertentie2.png" alt="AD">
+            <img alt="AD" class="banner_ad_right" src="assets/img/advertentie2.png">
         </a>
     </div>
 

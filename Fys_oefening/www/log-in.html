@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
     <meta charset="UTF-8">
 
     <title>Login | Travelbud</title>
@@ -11,8 +11,8 @@
 
     <!-- Stylesheets -->
     <link href="assets/css/default.css" rel="stylesheet"/>
-    <link href="assets/css/responsive.css" rel="stylesheet"/>
-    <link href="assets/css/Login.css" rel="stylesheet"/>
+    <link href="assets/css/pages/responsive.css" rel="stylesheet"/>
+    <link href="assets/css/pages/log-in.css" rel="stylesheet"/>
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
@@ -21,7 +21,7 @@
     <script src="https://cdn.fys.cloud/fyscloud/0.0.3/fyscloud.bundle.min.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/config.js"></script>
-    <script src="assets/js/registreer.js"></script>
+    <script src="assets/js/pages/registreer.js"></script>
 </head>
 <body>
 <div class="menu" id="responsivemenu">
@@ -32,18 +32,18 @@
     </div>
     <div class="space"></div>
 
-    <div class="logomemu"><a href="index.html"><img src="assets/img/Logo_website.png" alt="Corendon TravelBud"></a>
+    <div class="logomemu"><a href="index.html"><img alt="Corendon TravelBud" src="assets/img/Logo_website.png"></a>
     </div>
 
     <div class="menu_groot">
         <a href="index.html">Home</a>
-        <a href="AboutUs.html">Over ons</a>
+        <a href="over-ons.html">Over ons</a>
     </div>
 
     <div class="taal">
         <select class="taalbutton">
-            <option  value="nl">NL</option>
-            <option  value="en">EN</option>
+            <option value="nl">NL</option>
+            <option value="en">EN</option>
         </select>
     </div>
 
@@ -57,74 +57,74 @@
     <div class="container__main">
         <div class="inlog-box">
             <div class="button-box">
-                <label for="inlogRegistreer" class="switch">
-                    <input type="checkbox" id="inlogRegistreer">
+                <label class="switch" for="inlogRegistreer">
+                    <input id="inlogRegistreer" type="checkbox">
                     <span class="slider rond">
                                 <div class="inlogSlider">Inloggen</div>
                                 <div class="registreerSlider">Registreren</div>
                         </span>
                 </label>
             </div>
-            <form id="login" class="input">
+            <form class="input" id="login">
                 <label>
-                    <input type="text" class="tekstbox" placeholder="Gebruikersnaam" required>
-                    <input type="password" class="tekstbox" placeholder="Wachtwoord" required>
-                    <input type="checkbox" class="passwordCheckbox"><span> Wachtwoord herinneren</span>
-                    <button type="submit" onclick="location.href='forum_homepage.html'" class="login_button">Log in
+                    <input class="tekstbox" placeholder="Gebruikersnaam" required type="text">
+                    <input class="tekstbox" placeholder="Wachtwoord" required type="password">
+                    <input class="passwordCheckbox" type="checkbox"><span> Wachtwoord herinneren</span>
+                    <button class="login_button" onclick="location.href='forum-homepagina.html'" type="submit">Log in
                     </button>
                 </label>
             </form>
-            <form id="register" class="input">
+            <form class="input" id="register">
                 <label>
-                    <input type="text" class="tekstbox" placeholder="Gebruikersnaam" id="gebruikersnaam" required>
+                    <input class="tekstbox" id="gebruikersnaam" placeholder="Gebruikersnaam" required type="text">
                     <div class="inputAlert" id="geenGebruikersNaam">
                         <p>
                             Vul hier een gebruikersnaam in met 4 tot en met 25 karakters <br>
 
                         </p>
                     </div>
-                    <input type="text" class="tekstbox" id="emailadres" placeholder="E-mail" required>
+                    <input class="tekstbox" id="emailadres" placeholder="E-mail" required type="text">
                     <div class="inputAlert" id="geenEmailAdres">
                         <p>
                             Vul hier een geldig e-mailadres in <br>
 
                         </p>
                     </div>
-                    <input type="password" class="tekstbox" id="wachtwoord" placeholder="Wachtwoord" required>
+                    <input class="tekstbox" id="wachtwoord" placeholder="Wachtwoord" required type="password">
                     <div class="inputAlert" id="geenWachtwoord">
                         <p>
                             Vul hier een geldig wachtwoord in volgens de voorwaarde <br>
 
                         </p>
                     </div>
-                    <input type="password" class="tekstbox" id="wachtwoordCheck" placeholder="Wachtwoord herhalen"
-                           required>
+                    <input class="tekstbox" id="wachtwoordCheck" placeholder="Wachtwoord herhalen" required
+                           type="password">
                     <div class="inputAlert" id="geenWachtwoordCheck">
                         <p>
                             wachtwoorden komen niet overeen <br>
 
                         </p>
                     </div>
-                    <input type="checkbox" class="passwordCheckbox" id="voorwaardeCheck" required><span> Accepteer voorwaarden</span>
+                    <input class="passwordCheckbox" id="voorwaardeCheck" required type="checkbox"><span> Accepteer voorwaarden</span>
                     <div class="inputAlert" id="geenVoorwaardeCheck">
                         <p>
-                           Accepteer de voorwaarden <br>
+                            Accepteer de voorwaarden <br>
 
                         </p>
                     </div>
-                    <button type="submit" class="register_button" data-translate="register.button">Registreer</button>
+                    <button class="register_button" data-translate="register.button" type="submit">Registreer</button>
                 </label>
             </form>
         </div>
     </div>
     <div class="left__ad">
         <a href="https://www.corendon.nl/">
-            <img class="banner_ad_left" src="assets/img/advertentie2.png" alt="AD">
+            <img alt="AD" class="banner_ad_left" src="assets/img/advertentie2.png">
         </a>
     </div>
     <div class="right__ad">
         <a href="https://www.corendon.nl/">
-            <img class="banner_ad_right" src="assets/img/advertentie2.png" alt="AD">
+            <img alt="AD" class="banner_ad_right" src="assets/img/advertentie2.png">
         </a>
     </div>
     <div class="bottom__container">

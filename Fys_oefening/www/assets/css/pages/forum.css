@@ -4,6 +4,7 @@ forummain
 .forum_main {
     height: 80%;
 }
+
 /*
 right menu
  */
@@ -37,11 +38,12 @@ right menu
     border-radius: 10px;
 
 }
+
 .start_post_button:hover {
     background: linear-gradient(to right, red, #ffffff);
 }
 
-.forum_topics__options, .forum_aanbevolen{
+.forum_topics__options, .forum_aanbevolen {
     background-color: white;
     border-radius: 25px;
     padding: 8%;
@@ -53,45 +55,50 @@ right menu
 right menu - aanbevolen
  */
 
-.aanbevolen_profiel{
+.aanbevolen_profiel {
     width: 100%;
 
 }
-.aanbevolen_match{
+
+.aanbevolen_match {
     flex-wrap: wrap;
     display: flex;
     margin-bottom: 5%;
 
 }
-.aanbevolen_profiel hr{
+
+.aanbevolen_profiel hr {
     width: 100%;
 }
 
-.aanbevolen_profiel_info{
+.aanbevolen_profiel_info {
     width: 55%;
     order: 1;
     margin-left: 5%;
     display: block;
 }
 
-.aanbevolen_profiel_foto{
+.aanbevolen_profiel_foto {
     width: 25%;
     order: 0;
 
 
 }
-.aanbevolen_profiel_foto img{
+
+.aanbevolen_profiel_foto img {
     width: 100%;
     border-radius: 50%;
     border: solid 1px black;
 
 }
-.aanbevolen_vnaam{
+
+.aanbevolen_vnaam {
     width: 80%;
 
     font-size: 14px;
 }
-.aanbevolen_anaam{
+
+.aanbevolen_anaam {
     width: 80%;
 
     font-size: 14px;
@@ -120,7 +127,7 @@ right menu - aanbevolen
 
 }
 
-.post_profiel_foto img{
+.post_profiel_foto img {
     width: 100%;
     border-radius: 50%;
     border: solid 1px black;
@@ -141,7 +148,8 @@ right menu - aanbevolen
     overflow: hidden;
     margin: 0 4% 4% 0;
 }
-.post_latest hr{
+
+.post_latest hr {
     width: 100%;
 }
 
@@ -159,7 +167,7 @@ right menu - aanbevolen
     width: 100%;
 }
 
-.post_latest button{
+.post_latest button {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -175,7 +183,7 @@ right menu - aanbevolen
     margin: auto;
     text-align: center;
     width: 100%;
-    order:3;
+    order: 3;
     height: 4%;
 
 }
