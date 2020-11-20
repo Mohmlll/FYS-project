@@ -27,10 +27,10 @@ $(document).ready(function (qualifiedName, value) {
 
     $(".register_button").on("click", function (gegevens) {
         gegevens.preventDefault();
-        var gebruikersnaamValid = $("gebruikersnaam").is(":valid");
-        var emailAdresValid = $("emailadres").is(":valid");
-        var wachtwoordValid= $("wachtwoord").is(":valid");
-        var wachtwoordCheckValid = $("wachtwoordCheck").is(":valid");
+        var gebruikersnaamValid = $("#gebruikersnaam").is(":valid");
+        var emailAdresValid = $("#emailadres").is(":valid");
+        var wachtwoordValid= $("#wachtwoord").is(":valid");
+        var wachtwoordCheckValid = $("#wachtwoordCheck").is(":valid");
 
         if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && wachtwoordCheckValid) {
             location.href = "createProfile.html";
