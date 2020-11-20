@@ -44,7 +44,7 @@ $(document).ready(function (qualifiedName, value) {
                 [gebruikersNaam, emailAdres, wachtwoord]
             ).done(function (data) {
                 console.log(data);
-                location.href = "createProfile.html";
+                location.href = "profiel-aanmaken.html";
             }).fail(function (reason) {
                 console.log(reason);
             })

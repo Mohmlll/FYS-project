@@ -7,8 +7,8 @@
 
     <!-- Stylesheets -->
     <link href="assets/css/default.css" rel="stylesheet"/>
-    <link href="assets/css/responsive.css" rel="stylesheet"/>
-    <link href="assets/css/Profiel.css" rel="stylesheet"/>
+    <link href="assets/css/pages/responsive.css" rel="stylesheet"/>
+    <link href="assets/css/pages/profiel.css" rel="stylesheet"/>
 
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
@@ -30,9 +30,9 @@
     <div class="logomemu"><a href="index.html"><img src="assets/img/Logo_website.png"></a></div>
 
     <div class="menu_groot">
-        <a href="index_loggedin.html">Home</a>
-        <a href="AboutUs_loggedin.html">Over ons</a>
-        <a href="forum_homepage.html">Forum</a>
+        <a href="index.html">Home</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="forum-homepagina.html">Forum</a>
         <a href="index.html">Uitloggen</a>
     </div>
 
@@ -69,111 +69,121 @@
 
 
                 <div id="Profiel" class="tabcontent">
+                    <form id="profile" class="input">
 
-                    <a href="Profiel_Overzicht.html">
-
-                        <div
-                                class="contact_button" onclick="myFunction()">Complete!
-                        </div>
-                    </a>
-
-                    <h1>Profiel</h1>
-
-
-                    <div class="foto_user">
-                        <img src="assets/img/AboutUsFotos/Mohammed.png">
-                        <input type="file" class="tekstbox">
-                    </div>
-                    <div class="info_user">
-                        <table>
-                            <tr>
-                                <td>Naam</td>
-                                <td>Marvin</td>
-                                <td><label>
-                                    <input type="text" class="tekstbox" placeholder="Naam" required>
-                                </label></td>
-                            </tr>
-
-                            <tr>
-                                <td>Geboortejaar</td>
-                                <td>1997</td>
-                                <td><label>
-                                    <input type="date" class="tekstbox" placeholder="Jaar" required>
-                                </label></td>
-                            </tr>
-
-                            <tr>
-                                <td>Geslacht</td>
-                                <td>Man</td>
-                                <td>
-                                    <div class="radiobutton">
-                                        <input type="radio" id="man" required>
-                                        <label for="man">Man</label>
-                                        <br>
-                                        <input type="radio" id="vrouw" required>
-                                        <label for="vrouw">Vrouw</label>
-                                    </div>
-
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Woonplaats</td>
-                                <td>Amsterdam</td>
-                                <td><label>
-                                    <input type="text" class="tekstbox" placeholder="Woonplaats" required>
-                                </label></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <hr>
-
-                    <div class="voorkeuren_user">
-
-                        <br>
-                        <p>Voorkeuren:</p>
-                        <p>Klimaat - Tropisch</p>
                         <label>
-                            <select class="soort_klimaat">
-                                <option value="#">Tropisch</option>
-                                <option value="#">Sub-Tropisch</option>
-                                <option value="#">Droog</option>
-                                <option value="#">Gematigd</option>
-                                <option value="#">Land</option>
-                                <option value="#">Pool</option>
-                                <option value="#">mediterraan</option>
-                                <option value="#">Regenwoud</option>
-                                <option value="#">Savanne</option>
-                                <option value="#">Woestijn</option>
-                                <option value="#">Steppe</option>
-                            </select>
-                        </label>
+                            <table>
+                                <tr>
+                                    <td>Foto van jezelf:</td>
+                                    <td>
+                                        <img src="assets/img/AboutUsFotos/Mohammed.png">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Voornaam:</td>
+                                    <td><input type="text" class="profiel_input" id="profiel_input" placeholder="Marvin" required readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>Achternaam:</td>
+                                    <td><input type="text" class="profiel_input" placeholder="Hesselman" required readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>Geslacht:</td>
+                                    <td><input type="text" class="profiel_input"  placeholder="Man" required readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>Geboortedatum:</td>
+                                    <td><input type="text" class="profiel_input"  placeholder="13-06-1997" required readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>Woonplaats:</td>
+                                    <td><input type="text" class="profiel_input"  placeholder="Amsterdam" required readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>Telefoonnummer:</td>
+                                    <td><input type="tel" class="profiel_input"  placeholder="06-12345678" required readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>E-mailadres:</td>
+                                    <td><input type="email" class="profiel_input" placeholder="marvin.hesselman@hva.nl" required readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>Soort vakantieganger:</td>
+                                    <td>
+                                        <div class="create_post_tags">
+                                            <div class="tag_div" id="explorer">
+                                                <label for="tag_explorer">
+                                                    <input type="checkbox" class="tag_button" id="tag_explorer">
+                                                    <span>Explorer</span>
+                                                </label>
+                                            </div>
 
-                        <p>Activiteit - Backpacken</p>
-                        <label>
-                                <select class="soort_vakantieganger">
-                                    <option value="#">Explorer</option>
-                                    <option value="#">Sportieveling</option>
-                                    <option value="#">Relaxer</option>
-                                    <option value="#">Partygoer</option>
-                                    <option value="#">Backgoer</option>
-                                    <option value="#">Wintersport</option>
-                                    <option value="#">Tropisch</option>
-                                    <option value="#">Resort</option>
-                                </select>
-                        </label>
+                                            <div class="tag_div">
+                                                <label for="tag_sportieveling">
+                                                    <input type="checkbox" class="tag_button" id="tag_sportieveling">
+                                                    <span>Sportieveling</span>
+                                                </label>
+                                            </div>
 
-                        <p>Leeftijd - 20 | 30 jaar</p>
-                        <label>
-                            <select class="soort_leeftijdsvoorkeur">
-                                <option value="#">20 | 30</option>
-                                <option value="#">31 | 40</option>
-                                <option value="#">41 | 50</option>
-                                <option value="#">51 | 60</option>
-                                <option value="#">60+</option>
-                            </select>
+                                            <div class="tag_div">
+                                                <label for="tag_relaxer">
+                                                    <input type="checkbox" class="tag_button" id="tag_relaxer">
+                                                    <span>Relaxer</span>
+                                                </label>
+                                            </div>
+
+                                            <div class="tag_div">
+                                                <label for="tag_partygoer">
+                                                    <input type="checkbox" class="tag_button" id="tag_partygoer">
+                                                    <span>Partygoer</span>
+                                                </label>
+                                            </div>
+
+                                            <div class="tag_div">
+                                                <label for="tag_wintersport">
+                                                    <input type="checkbox" class="tag_button" id="tag_wintersport">
+                                                    <span>Wintersport</span>
+                                                </label>
+                                            </div>
+
+                                            <div class="tag_div">
+                                                <label for="tag_tropisch">
+                                                    <input type="checkbox" class="tag_button" id="tag_tropisch">
+                                                    <span>Tropische</span>
+                                                </label>
+                                            </div>
+
+                                            <div class="tag_div">
+                                                <label for="tag_backpacker">
+                                                    <input type="checkbox" class="tag_button" id="tag_backpacker">
+                                                    <span>Backpacker</span>
+                                                </label>
+                                            </div>
+
+                                            <div class="tag_div">
+                                                <label for="tag_resort">
+                                                    <input type="checkbox" class="tag_button" id="tag_resort">
+                                                    <span>Resort</span>
+                                                </label>
+                                            </div>
+
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>iets leuks over jezelf: <br><br></td>
+                                    <td>
+                                <textarea class="tekstbox" placeholder="blabla" id="profiel_input8" readonly></textarea>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <button type="submit" class="gegevens_bewerken" id="gegevens_bewerken">Bewerken</button>
+                            <button type="submit" class="gegevens_bewerken" id="gegevens_opslaan">Opslaan</button>
                         </label>
-                    </div>
+                    </form>
+
                 </div>
 
 
@@ -252,27 +262,27 @@
                     </div>
 
                     <div class="inkomend_aanvraag">
-                        <table>
-                            <tr>
-                                <td>
-                                    <div class="foto_marvin_inkomend">
-                                        <img src="assets/img/AboutUsFotos/Marvin_.png">
-                                    </div>
-                                </td>
-                            </tr>
+                      <table>
+                          <tr>
+                              <td>
+                                  <div class="foto_marvin_inkomend">
+                                      <img src="assets/img/AboutUsFotos/Marvin_.png">
+                                  </div>
+                              </td>
+                          </tr>
 
-                            <tr>
-                                <td>
-                                    <button class="accepteer">
-                                        Accepteer
-                                    </button>
+                          <tr>
+                              <td>
+                                  <button class="accepteer">
+                                      Accepteer
+                                  </button>
 
-                                    <button class="weiger">
-                                        Weiger
-                                    </button>
-                                </td>
-                            </tr>
-                        </table>
+                                  <button class="weiger">
+                                      Weiger
+                                  </button>
+                              </td>
+                          </tr>
+                      </table>
                     </div>
 
                     <div class="inkomend_aanvraag">

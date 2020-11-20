@@ -20,7 +20,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Fys_oefening/www/assets/css/responsive.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/responsive.css" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1jPRx8FS1MwrtP201rON92sqaa6" />
   <component name="ProjectViewState">
@@ -32,7 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../voorbeeldFase3" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -93,14 +93,14 @@
       <screen x="-1920" y="363" width="1920" height="1040" />
     </state>
     <state x="-1506" y="538" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.363.1920.1040@-1920.363.1920.1040" timestamp="1603996101650" />
-    <state x="370" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605872305911">
+    <state x="370" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605882754695">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="370" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1605872305911" />
-    <state x="409" y="631" key="FileChooserDialogImpl" timestamp="1605006618087">
+    <state x="370" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1605882754695" />
+    <state x="409" y="631" key="FileChooserDialogImpl" timestamp="1605880527517">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="409" y="631" key="FileChooserDialogImpl/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1605006618087" />
+    <state x="409" y="631" key="FileChooserDialogImpl/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1605880527517" />
     <state x="93" y="100" width="1438" height="1207" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1604001959096">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
