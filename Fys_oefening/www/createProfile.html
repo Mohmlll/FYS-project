@@ -15,6 +15,9 @@
 
     <!-- Javascript -->
     <script src="assets/vendors/jquery/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.fys.cloud/fyscloud/0.0.3/fyscloud.bundle.min.js"></script>
+
+    <script src="assets/js/config.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/createProfile.js"></script>
 </head>
@@ -66,11 +69,11 @@
                         </tr>
                         <tr>
                             <td>Voornaam:</td>
-                            <td><input type="text" class="tekstbox" placeholder="Voornaam" ></td>
+                            <td><input type="text" class="tekstbox" id="voornaam" placeholder="Voornaam" ></td>
                         </tr>
                         <tr>
                             <td>Achternaam:</td>
-                            <td><input type="text" class="tekstbox" placeholder="Achternaam" ></td>
+                            <td><input type="text" class="tekstbox" id="achternaam" placeholder="Achternaam" ></td>
                         </tr>
                         <tr>
                             <td>Geslacht:</td>
@@ -88,7 +91,7 @@
                         </tr>
                         <tr>
                             <td>Woonplaats:</td>
-                            <td><input type="text" class="tekstbox" placeholder="Woonplaats" ></td>
+                            <td><input type="text" class="tekstbox" id="woonplaats" placeholder="Woonplaats" ></td>
                         </tr>
                         <tr>
                             <td>Telefoonnummer:</td>
@@ -101,10 +104,6 @@
                                     </p>
                                 </div>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>E-mailadres:</td>
-                            <td><input type="email" class="tekstbox" id="email" pattern=".+@hva.nl" placeholder="E-mailadres" required></td>
                         </tr>
                         <tr>
                             <td>Soort vakantieganger:</td>
@@ -124,7 +123,7 @@
                         <tr>
                             <td>Vertel hier iets leuks over jezelf: <br><br></td>
                             <td>
-                                <textarea class="tekstbox">
+                                <textarea class="tekstbox" id="bio">
 
                                 </textarea>
                             </td>
