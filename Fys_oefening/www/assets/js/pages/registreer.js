@@ -33,21 +33,7 @@ $(document).ready(function (qualifiedName, value) {
         var wachtwoordCheckValid = $("#wachtwoordCheck").is(":valid");
 
         if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && wachtwoordCheckValid) {
-
-            var gebruikersNaam = document.getElementById('gebruikersnaam').value;
-            var emailAdres = document.getElementById('emailadres').value;
-            var wachtwoord = document.getElementById('wachtwoord').value;
-
-            FYSCloud.API.queryDatabase(
-                "INSERT INTO gebruiker(gebruikers_naam, emailadres, wachtwoord)" +
-                "VALUES(?,?,?)",
-                [gebruikersNaam, emailAdres, wachtwoord]
-            ).done(function (data) {
-                console.log(data);
-                location.href = "profiel-aanmaken.html";
-            }).fail(function (reason) {
-                console.log(reason);
-            })
+            location.href = "#";
         }
         if (!gebruikersnaamValid) {
             document.getElementById("gebruikersnaam").style.borderColor = "red";
