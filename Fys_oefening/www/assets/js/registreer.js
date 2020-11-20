@@ -33,7 +33,21 @@ $(document).ready(function (qualifiedName, value) {
         var wachtwoordCheckValid = $("#wachtwoordCheck").is(":valid");
 
         if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && wachtwoordCheckValid) {
-            location.href = "createProfile.html";
+
+            var gebruikersNaam = document.getElementById('gebruikersnaam').value;
+            var emailAdres = document.getElementById('emailadres').value;
+            var wachtwoord = document.getElementById('wachtwoord').value;
+
+            FYSCloud.API.queryDatabase(
+                "INSERT INTO gebruiker(gebruikers_naam, emailadres, wachtwoord)" +
+                "VALUES(?,?,?)",
+                [gebruikersNaam, emailAdres, wachtwoord]
+            ).done(function (data) {
+                console.log(data);
+                location.href = "createProfile.html";
+            }).fail(function (reason) {
+                console.log(reason);
+            })
         }
         if (!gebruikersnaamValid) {
             document.getElementById("gebruikersnaam").style.borderColor = "red";
@@ -63,22 +77,6 @@ $(document).ready(function (qualifiedName, value) {
             document.getElementById("wachtwoordCheck").style.borderColor = "black";
             document.getElementById("geenWachtwoordCheck").style.display = "none";
         }
-
-
-        var gebruikersNaam = document.getElementById('gebruikersnaam').value;
-        var emailAdres = document.getElementById('emailadres').value;
-        var wachtwoord = document.getElementById('wachtwoord').value;
-        var wachtwoordCheck = document.getElementById('wachtwoordCheck').value;
-
-        FYSCloud.API.queryDatabase(
-            "INSERT INTO gebruiker(gebruikers_naam, emailadres, wachtwoord)" +
-            "VALUES(?,?,?)",
-            [gebruikersNaam, emailAdres, wachtwoord]
-        ).done(function (data) {
-            console.log(data);
-        }).fail(function (reason) {
-            console.log(reason);
-        })
 
     })
 
