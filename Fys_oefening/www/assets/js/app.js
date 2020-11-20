@@ -1,6 +1,5 @@
-
 $(document).ready(function () {
-    var userId = 1000
+
     $(".register_button").on("click", function (gegevens) {
         gegevens.preventDefault();
         var gebruikersnaamValid = $("#gebruikersnaam").is(":valid");
@@ -41,15 +40,14 @@ $(document).ready(function () {
 
         //(voornaam, achternaam, geboortedatum, woonplaats, telefoonnummeer, bio)
         FYSCloud.API.queryDatabase(
-            "UPDATE gebruiker SET voornaam = ?, achternaam = ?, geboorte_datum = ?, woonplaats = ?, telefoon_nummer = ?, bio = ? WHERE idgebruiker = ?",
-            [voornaam, achternaam, geboorteDatum, woonplaats, telefoonNummer, bio, userId]
+            "UPDATE gebruiker SET voornaam = ?, achternaam = ?, geboorte_datum = ?, woonplaats = ?, telefoon_nummer = ?, bio = ? WHERE gebruikerid= ?",
+            [voornaam, achternaam, geboorteDatum, woonplaats, telefoonNummer, bio, sessionStorage.getItem("userId")]
         ).done(function (data) {
             console.log(data);
         }).fail(function (reason) {
             console.log(reason);
         })
     })
-
 
 
     var initialLanguage = "en";

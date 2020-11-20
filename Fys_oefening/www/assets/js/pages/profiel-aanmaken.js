@@ -23,6 +23,7 @@ $(document).ready(function (qualifiedName, value) {
         vandaag = jaar + "-" + maand + "-" + dag;
         document.getElementById("geboortedatum").setAttribute("max", vandaag);
     }
+
     console.log(window.userId)
     datum();
 
