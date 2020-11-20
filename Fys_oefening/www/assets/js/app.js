@@ -77,22 +77,16 @@ $(document).ready(function (qualifiedName, value) {
     })
 
     console.log("Dit word uitgevoerd");
-
-    var voornaam = 'Mo'
-    var achternaam = "Malloul"
-    var geboorteDatum = "1997-03-04"
-    var emailAdres = "mohammed.malloul@hotmail.com"
-    var huisdierMee = 1;
-
     FYSCloud.API.queryDatabase(
-        "INSERT INTO gebruiker(voornaam, achternaam, geboorte_datum, emailadres, huisdieren_mee)"+
+        "INSERT INTO gebruiker(,voornaam, achternaam, geboorte_datum, geslacht, woonplaats, telefoon_nummerb,bio )" +
         "VALUES(?,?,?,?,?)",
-        [voornaam, achternaam, geboorteDatum,emailAdres, huisdierMee]
-    ).done(function(data) {
+        [voornaam, achternaam, geboorteDatum, emailAdres, huisdierMee]
+    ).done(function (data) {
         console.log(data);
-    }).fail(function(reason) {
+    }).fail(function (reason) {
         console.log(reason);
-    });
+    })
+
 
 });
 
