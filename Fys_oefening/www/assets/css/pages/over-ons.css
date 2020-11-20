@@ -1,16 +1,16 @@
-
 /*
 about us card
  */
 
 
-.flip_cards{
+.flip_cards {
     flex-wrap: wrap;
     display: flex;
     order: 1;
 
 
 }
+
 .flip_card {
     perspective: 1000px;
     height: 9.111rem;

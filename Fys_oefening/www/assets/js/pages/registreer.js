@@ -29,7 +29,7 @@ $(document).ready(function (qualifiedName, value) {
         gegevens.preventDefault();
         var gebruikersnaamValid = $("#gebruikersnaam").is(":valid");
         var emailAdresValid = $("#emailadres").is(":valid");
-        var wachtwoordValid= $("#wachtwoord").is(":valid");
+        var wachtwoordValid = $("#wachtwoord").is(":valid");
         var wachtwoordCheckValid = $("#wachtwoordCheck").is(":valid");
 
         if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && wachtwoordCheckValid) {
@@ -80,6 +80,5 @@ $(document).ready(function (qualifiedName, value) {
 
     })
 
-    
 
 });

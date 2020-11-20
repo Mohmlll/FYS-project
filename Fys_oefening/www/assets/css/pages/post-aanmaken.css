@@ -50,6 +50,7 @@
     margin-bottom: 5%;
 
 }
+
 .tag_button {
     background-color: white;
     margin-right: 0.2%;
@@ -57,6 +58,7 @@
     padding: 3px;
 
 }
+
 .tag_button:active {
     background-color: red;
     margin-right: 0.2%;
@@ -64,12 +66,13 @@
     color: white;
 
 }
-.tag_button img{
+
+.tag_button img {
     float: left;
     margin-right: 2px;
 }
 
-.form_create_post_buttons button{
+.form_create_post_buttons button {
     position: relative;
     padding: 2%;
     cursor: pointer;
@@ -80,7 +83,7 @@
     border-radius: 30px;
 }
 
-.form_create_post_buttons button:hover{
+.form_create_post_buttons button:hover {
 
     background: linear-gradient(to right, red, #ffffff);
 

@@ -122,7 +122,7 @@ header {
  */
 
 .banner_ad_left, .banner_ad_right {
-width: 100%;
+    width: 100%;
 
 }
 
@@ -172,7 +172,7 @@ width: 100%;
 
 .welkombox, .uitleg_video, .info1, .info2, .inlog-box, .flip_card_front,
 .flip_card_back, .post_latest, .forum_topics__options,
-.container_create_post, .forum_aanbevolen, .forum_main_options,.buttonpagina_totaal  {
+.container_create_post, .forum_aanbevolen, .forum_main_options, .buttonpagina_totaal {
     -webkit-box-shadow: 12px 10px 15px 0 rgba(0, 0, 0, 0.75);
 }
 

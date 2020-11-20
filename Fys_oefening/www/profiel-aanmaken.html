@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
     <title>Home | TravelBud</title>
 
     <!-- Stylesheets -->
@@ -32,7 +32,8 @@
     <div class="space"></div>
 
 
-    <div class="logomemu"><a href="index.html"><img src="assets/img/Logo_website.png" alt="Corendon TravelBud"></a></div>
+    <div class="logomemu"><a href="index.html"><img alt="Corendon TravelBud" src="assets/img/Logo_website.png"></a>
+    </div>
 
     <div class="menu_groot">
         <a href="index.html">Home</a>
@@ -59,44 +60,46 @@
         <div class="welkombox">
             <h1>Vul hier de onderstaande velden in.</h1>
 
-            <form id="profile" class="input">
+            <form class="input" id="profile">
 
                 <label>
                     <table>
                         <tr>
                             <td>Foto van jezelf:</td>
-                            <td><input type="file" class="tekstbox" placeholder="Foto" ></td>
+                            <td><input class="tekstbox" placeholder="Foto" type="file"></td>
                         </tr>
                         <tr>
                             <td>Voornaam:</td>
-                            <td><input type="text" class="tekstbox" id="voornaam" placeholder="Voornaam" ></td>
+                            <td><input class="tekstbox" id="voornaam" placeholder="Voornaam" type="text"></td>
                         </tr>
                         <tr>
                             <td>Achternaam:</td>
-                            <td><input type="text" class="tekstbox" id="achternaam" placeholder="Achternaam" ></td>
+                            <td><input class="tekstbox" id="achternaam" placeholder="Achternaam" type="text"></td>
                         </tr>
                         <tr>
                             <td>Geslacht:</td>
                             <td>
-                                <input type="radio" id="man" >
+                                <input id="man" type="radio">
                                 <label for="man">Man</label>
                                 <br>
-                                <input type="radio" id="vrouw" >
+                                <input id="vrouw" type="radio">
                                 <label for="vrouw">Vrouw</label>
                             </td>
                         </tr>
                         <tr>
                             <td>Geboortedatum:</td>
-                            <td><input type="date" class="tekstbox" id="geboortedatum" placeholder="Geboortedatum" min="function.datum()" ></td>
+                            <td><input class="tekstbox" id="geboortedatum" min="function.datum()" placeholder="Geboortedatum"
+                                       type="date"></td>
                         </tr>
                         <tr>
                             <td>Woonplaats:</td>
-                            <td><input type="text" class="tekstbox" id="woonplaats" placeholder="Woonplaats" ></td>
+                            <td><input class="tekstbox" id="woonplaats" placeholder="Woonplaats" type="text"></td>
                         </tr>
                         <tr>
                             <td>Telefoonnummer:</td>
                             <td>
-                                <input type="tel" class="tekstbox" id="telefoon" placeholder="Telefoonnummer" pattern="[0-9]{2}-[0-9]{8}" required>
+                                <input class="tekstbox" id="telefoon" pattern="[0-9]{2}-[0-9]{8}" placeholder="Telefoonnummer"
+                                       required type="tel">
                                 <div id="geenTelefoon">
                                     <p>
                                         Vul hier een nummer in met de volgende volgorde: <br>
@@ -130,7 +133,7 @@
                         </tr>
 
                     </table>
-                    <button type="submit" class="gegevens_opslaan">Sla de gegevens op.</button>
+                    <button class="gegevens_opslaan" type="submit">Sla de gegevens op.</button>
                 </label>
             </form>
 
@@ -140,12 +143,12 @@
 
     <div class="left__ad">
         <a href="https://www.corendon.nl/">
-            <img class="banner_ad_left" src="assets/img/advertentie2.png" alt="AD">
+            <img alt="AD" class="banner_ad_left" src="assets/img/advertentie2.png">
         </a>
     </div>
     <div class="right__ad">
         <a href="https://www.corendon.nl/">
-            <img class="banner_ad_right" src="assets/img/advertentie2.png" alt="AD">
+            <img alt="AD" class="banner_ad_right" src="assets/img/advertentie2.png">
         </a>
     </div>
 
