@@ -33,7 +33,7 @@ $(document).ready(function (qualifiedName, value) {
         var wachtwoordCheckValid = $("#wachtwoordCheck").is(":valid");
 
         if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && wachtwoordCheckValid) {
-            location.href = "#";
+            location.href = "profiel-aanmaken.html";
         }
         if (!gebruikersnaamValid) {
             document.getElementById("gebruikersnaam").style.borderColor = "red";

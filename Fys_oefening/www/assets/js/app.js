@@ -42,7 +42,7 @@ $(document).ready(function () {
         //(voornaam, achternaam, geboortedatum, woonplaats, telefoonnummeer, bio)
         FYSCloud.API.queryDatabase(
             "UPDATE gebruiker SET voornaam = ?, achternaam = ?, geboorte_datum = ?, woonplaats = ?, telefoon_nummer = ?, bio = ? WHERE idgebruiker = ?",
-            [voornaam, achternaam, geboorteDatum, woonplaats, telefoonNummer, bio, userId]
+            [voornaam, achternaam, geboorteDatum, woonplaats, telefoonNummer, bio, sessionStorage.getItem("userId")]
         ).done(function (data) {
             console.log(data);
         }).fail(function (reason) {
