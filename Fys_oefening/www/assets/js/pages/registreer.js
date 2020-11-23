@@ -21,7 +21,19 @@ $(document).ready(function (qualifiedName, value) {
         var inlogWachtwoordValid = $("#inlogWachtwoord").is(":valid");
 
         if (inlogNaamValid && inlogWachtwoordValid){
+            var gebruikersnaam = document.getElementById("inlogNaam").value;
+            var wachtwoord = document.getElementById("inlogWachtwoord").value;
 
+            FYSCloud.API.queryDatabase(
+                "SELECT gebruikerid FROM gebruiker WHERE gebruikers_naam = ? and wachtwoord = ?",
+                [gebruikersnaam, wachtwoord]
+            ).done(function (data) {
+                console.log(data);
+                console.log(data.length);
+            }).fail(function (reason) {
+                console.log(reason);
+                console.log("fout");
+            })
         }else{
             if (!inlogNaamValid) {
                 document.getElementById("inlogNaam").style.borderColor = "red";
@@ -104,26 +116,6 @@ $(document).ready(function (qualifiedName, value) {
                 document.getElementById("geenVoorwaardeCheck").style.display = "none";
             }
         }
-    })
-
-    $(".login_button").on("click", function (login) {
-        login.preventDefault()
-        var gebruikersnaam = document.getElementById("gebruikersnaam_bestaand").value;
-        var wachtwoord = document.getElementById("wachtwoord_bestaand").value;
-
-        FYSCloud.API.queryDatabase(
-            "SELECT gebruikerid FROM gebruiker WHERE gebruikers_naam = ? and wachtwoord = ?",
-            [gebruikersnaam, wachtwoord]
-        ).done(function (data) {
-            console.log(data);
-            console.log(data.length);
-            console.log(data.gebruikerid)
-        }).fail(function (reason) {
-            console.log(reason);
-            console.log("fout");
-        })
-
-
     })
 
 
