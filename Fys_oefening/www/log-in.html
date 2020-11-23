@@ -67,8 +67,20 @@
             </div>
             <form class="input" id="login">
                 <label>
-                    <input class="tekstbox" placeholder="Gebruikersnaam" required type="text">
-                    <input class="tekstbox" placeholder="Wachtwoord" required type="password">
+                    <input class="tekstbox" id="inlogNaam" placeholder="Gebruikersnaam" required type="text">
+                    <div class="inputAlert" id="geenInlogNaam">
+                        <p>
+                            Vul hier een geldig wachtwoord in volgens de voorwaarde <br>
+
+                        </p>
+                    </div>
+                    <input class="tekstbox" id="inlogWachtwoord" placeholder="Wachtwoord" required type="password">
+                    <div class="inputAlert" id="geenInlogWachtwoord">
+                        <p>
+                            Vul hier een geldig wachtwoord in volgens de voorwaarde <br>
+
+                        </p>
+                    </div>
                     <input class="passwordCheckbox" type="checkbox"><span> Wachtwoord herinneren</span>
                     <button class="login_button" onclick="location.href='forum-homepagina.html'" type="submit">Log in
                     </button>

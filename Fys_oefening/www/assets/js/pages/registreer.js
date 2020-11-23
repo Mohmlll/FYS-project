@@ -24,6 +24,31 @@ $(document).ready(function (qualifiedName, value) {
             registreer.style.left = "450px";
         }
     })
+    $(".login_button").on("click", function (gegevens) {
+        gegevens.preventDefault();
+        var inlogNaamValid = $("#inlogNaam").is(":valid");
+        var inlogWachtwoordValid = $("#inlogWachtwoord").is(":valid");
+
+        if (inlogNaamValid && inlogWachtwoordValid){
+
+        }else{
+            if (!inlogNaamValid) {
+                document.getElementById("inlogNaam").style.borderColor = "red";
+                document.getElementById("geenInlogNaam").style.display = "block";
+            } else {
+                document.getElementById("inlogNaam").style.borderColor = "black";
+                document.getElementById("geenInlogNaam").style.display = "none";
+            }
+            if (!inlogWachtwoordValid) {
+                document.getElementById("inlogWachtwoord").style.borderColor = "red";
+                document.getElementById("geenInlogWachtwoord").style.display = "block";
+            } else {
+                document.getElementById("inlogWachtwoord").style.borderColor = "black";
+                document.getElementById("geenInlogWachtwoord").style.display = "none";
+            }
+        }
+
+    })
 
     $(".register_button").on("click", function (gegevens) {
         gegevens.preventDefault();
