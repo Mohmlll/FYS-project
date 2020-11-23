@@ -1,14 +1,5 @@
 $(document).ready(function (qualifiedName, value) {
-    $(".hamburgermenu").on("click", function (e) {
-        e.preventDefault();
-        var x = document.getElementById("responsivemenu");
-        if (x.className === "menu") {
-            x.className += " uitklappen";
-        } else {
-            x.className = "menu";
-        }
-        console.log(x.className)
-    })
+
 
     $(".button-box").on("change", function (e) {
         e.preventDefault();
@@ -46,8 +37,7 @@ $(document).ready(function (qualifiedName, value) {
                 console.log(data);
                 sessionStorage.setItem("userId", data.insertId)
                 console.log(sessionStorage.getItem("userId"));
-                location.href = "profiel-aanmaken.html";
-                location.href = "#";
+                //location.href = "profiel-aanmaken.html";
             }).fail(function (reason) {
                 console.log(reason);
             })
@@ -81,7 +71,24 @@ $(document).ready(function (qualifiedName, value) {
                 document.getElementById("geenWachtwoordCheck").style.display = "none";
             }
         }
+    })
 
+    $(".login_button").on("click", function (login) {
+        login.preventDefault()
+        var gebruikersnaam = document.getElementById("gebruikersnaam_bestaand").value;
+        var wachtwoord = document.getElementById("wachtwoord_bestaand").value;
+
+        FYSCloud.API.queryDatabase(
+            "SELECT gebruikerid FROM gebruiker WHERE gebruikers_naam = ? and wachtwoord = ?",
+            [gebruikersnaam, wachtwoord]
+        ).done(function (data) {
+            console.log(data);
+            console.log(data.length);
+            console.log(data.gebruikerid)
+        }).fail(function (reason) {
+            console.log(reason);
+            console.log("fout");
+        })
 
 
     })
