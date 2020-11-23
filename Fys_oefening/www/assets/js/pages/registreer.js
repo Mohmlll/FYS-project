@@ -15,6 +15,31 @@ $(document).ready(function (qualifiedName, value) {
             registreer.style.left = "450px";
         }
     })
+    $(".login_button").on("click", function (gegevens) {
+        gegevens.preventDefault();
+        var inlogNaamValid = $("#inlogNaam").is(":valid");
+        var inlogWachtwoordValid = $("#inlogWachtwoord").is(":valid");
+
+        if (inlogNaamValid && inlogWachtwoordValid){
+
+        }else{
+            if (!inlogNaamValid) {
+                document.getElementById("inlogNaam").style.borderColor = "red";
+                document.getElementById("geenInlogNaam").style.display = "block";
+            } else {
+                document.getElementById("inlogNaam").style.borderColor = "black";
+                document.getElementById("geenInlogNaam").style.display = "none";
+            }
+            if (!inlogWachtwoordValid) {
+                document.getElementById("inlogWachtwoord").style.borderColor = "red";
+                document.getElementById("geenInlogWachtwoord").style.display = "block";
+            } else {
+                document.getElementById("inlogWachtwoord").style.borderColor = "black";
+                document.getElementById("geenInlogWachtwoord").style.display = "none";
+            }
+        }
+
+    })
 
     $(".register_button").on("click", function (gegevens) {
         gegevens.preventDefault();
@@ -22,8 +47,9 @@ $(document).ready(function (qualifiedName, value) {
         var emailAdresValid = $("#emailadres").is(":valid");
         var wachtwoordValid = $("#wachtwoord").is(":valid");
         var wachtwoordCheckValid = $("#wachtwoordCheck").is(":valid");
+        var voorwaardeCheckValid = $("#voorwaardeCheck").is(":valid");
 
-        if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && wachtwoordCheckValid) {
+        if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && wachtwoordCheckValid && voorwaardeCheckValid) {
 
             var gebruikersNaam = document.getElementById('gebruikersnaam').value;
             var emailAdres = document.getElementById('emailadres').value;
@@ -69,6 +95,13 @@ $(document).ready(function (qualifiedName, value) {
             } else {
                 document.getElementById("wachtwoordCheck").style.borderColor = "black";
                 document.getElementById("geenWachtwoordCheck").style.display = "none";
+            }
+            if (!voorwaardeCheckValid) {
+                document.getElementById("voorwaardeCheck").style.borderColor = "red";
+                document.getElementById("geenVoorwaardeCheck").style.display = "block";
+            } else {
+                document.getElementById("voorwaardeCheck").style.borderColor = "black";
+                document.getElementById("geenVoorwaardeCheck").style.display = "none";
             }
         }
     })
