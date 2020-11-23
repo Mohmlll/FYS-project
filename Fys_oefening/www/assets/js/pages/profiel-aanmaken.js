@@ -3,15 +3,33 @@ $(document).ready(function (qualifiedName, value) {
         gegevens.preventDefault();
         var telefoon = $("#telefoon").is(":valid");
         if (telefoon) {
-            location.href = "#";
-        }
-        if (!telefoon) {
-            document.getElementById("telefoon").style.borderColor = "red";
-            document.getElementById("geenTelefoon").style.display = "block";
+            console.log(sessionStorage.getItem("userId"));
+            var voornaam = document.getElementById('voornaam').value;
+            var achternaam = document.getElementById('achternaam').value;
+            var geboorteDatum = document.getElementById('geboortedatum').value;
+            var woonplaats = document.getElementById('woonplaats').value;
+            var telefoonNummer = document.getElementById('telefoon').value;
+            var bio = document.getElementById('bio').value;
+
+            //(voornaam, achternaam, geboortedatum, woonplaats, telefoonnummeer, bio)
+            FYSCloud.API.queryDatabase(
+                "UPDATE gebruiker SET voornaam = ?, achternaam = ?, geboorte_datum = ?, woonplaats = ?, telefoon_nummer = ?, bio = ? WHERE gebruikerid = ?",
+                [voornaam, achternaam, geboorteDatum, woonplaats, telefoonNummer, bio, sessionStorage.getItem("userId")]
+            ).done(function (data) {
+                console.log(data);
+            }).fail(function (reason) {
+                console.log(reason);
+            })
         } else {
-            document.getElementById("telefoon").style.borderColor = "black";
-            document.getElementById("geenTelefoon").style.display = "none";
+            if (!telefoon) {
+                document.getElementById("telefoon").style.borderColor = "red";
+                document.getElementById("geenTelefoon").style.display = "block";
+            } else {
+                document.getElementById("telefoon").style.borderColor = "black";
+                document.getElementById("geenTelefoon").style.display = "none";
+            }
         }
+
     })
 
     function datum() {
@@ -23,9 +41,9 @@ $(document).ready(function (qualifiedName, value) {
         vandaag = jaar + "-" + maand + "-" + dag;
         document.getElementById("geboortedatum").setAttribute("max", vandaag);
     }
-
-    console.log(window.userId)
     datum();
+    console.log(sessionStorage.getItem("userId"));
+
 
 
 })

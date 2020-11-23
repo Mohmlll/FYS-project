@@ -33,36 +33,56 @@ $(document).ready(function (qualifiedName, value) {
         var wachtwoordCheckValid = $("#wachtwoordCheck").is(":valid");
 
         if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && wachtwoordCheckValid) {
-            location.href = "profiel-aanmaken.html";
-        }
-        if (!gebruikersnaamValid) {
-            document.getElementById("gebruikersnaam").style.borderColor = "red";
-            document.getElementById("geenGebruikersNaam").style.display = "block";
+
+            var gebruikersNaam = document.getElementById('gebruikersnaam').value;
+            var emailAdres = document.getElementById('emailadres').value;
+            var wachtwoord = document.getElementById('wachtwoord').value;
+
+            FYSCloud.API.queryDatabase(
+                "INSERT INTO gebruiker( gebruikers_naam, emailadres, wachtwoord)" +
+                "VALUES( ?,?,?)",
+                [ gebruikersNaam, emailAdres, wachtwoord]
+            ).done(function (data) {
+                console.log(data);
+                sessionStorage.setItem("userId", data.insertId)
+                console.log(sessionStorage.getItem("userId"));
+                location.href = "profiel-aanmaken.html";
+                location.href = "#";
+            }).fail(function (reason) {
+                console.log(reason);
+            })
         } else {
-            document.getElementById("gebruikersnaam").style.borderColor = "black";
-            document.getElementById("geenGebruikersNaam").style.display = "none";
+            if (!gebruikersnaamValid) {
+                document.getElementById("gebruikersnaam").style.borderColor = "red";
+                document.getElementById("geenGebruikersNaam").style.display = "block";
+            } else {
+                document.getElementById("gebruikersnaam").style.borderColor = "black";
+                document.getElementById("geenGebruikersNaam").style.display = "none";
+            }
+            if (!emailAdresValid) {
+                document.getElementById("emailadres").style.borderColor = "red";
+                document.getElementById("geenEmailAdres").style.display = "block";
+            } else {
+                document.getElementById("emailadres").style.borderColor = "black";
+                document.getElementById("geenEmailAdres").style.display = "none";
+            }
+            if (!wachtwoordValid) {
+                document.getElementById("wachtwoord").style.borderColor = "red";
+                document.getElementById("geenWachtwoord").style.display = "block";
+            } else {
+                document.getElementById("wachtwoord").style.borderColor = "black";
+                document.getElementById("geenWachtwoord").style.display = "none";
+            }
+            if (!wachtwoordCheckValid) {
+                document.getElementById("wachtwoordCheck").style.borderColor = "red";
+                document.getElementById("geenWachtwoordCheck").style.display = "block";
+            } else {
+                document.getElementById("wachtwoordCheck").style.borderColor = "black";
+                document.getElementById("geenWachtwoordCheck").style.display = "none";
+            }
         }
-        if (!emailAdresValid) {
-            document.getElementById("emailadres").style.borderColor = "red";
-            document.getElementById("geenEmailAdres").style.display = "block";
-        } else {
-            document.getElementById("emailadres").style.borderColor = "black";
-            document.getElementById("geenEmailAdres").style.display = "none";
-        }
-        if (!wachtwoordValid) {
-            document.getElementById("wachtwoord").style.borderColor = "red";
-            document.getElementById("geenWachtwoord").style.display = "block";
-        } else {
-            document.getElementById("wachtwoord").style.borderColor = "black";
-            document.getElementById("geenWachtwoord").style.display = "none";
-        }
-        if (!wachtwoordCheckValid) {
-            document.getElementById("wachtwoordCheck").style.borderColor = "red";
-            document.getElementById("geenWachtwoordCheck").style.display = "block";
-        } else {
-            document.getElementById("wachtwoordCheck").style.borderColor = "black";
-            document.getElementById("geenWachtwoordCheck").style.display = "none";
-        }
+
+
 
     })
 
