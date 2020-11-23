@@ -1,3 +1,4 @@
+
 $(document).ready(function (qualifiedName, value) {
 
 
@@ -25,11 +26,12 @@ $(document).ready(function (qualifiedName, value) {
             var wachtwoord = document.getElementById("inlogWachtwoord").value;
 
             FYSCloud.API.queryDatabase(
-                "SELECT gebruikerid FROM gebruiker WHERE gebruikers_naam = ? and wachtwoord = ?",
+                "SELECT gebruikerid, gebruikers_naam FROM gebruiker WHERE gebruikers_naam = ? and wachtwoord = ?",
                 [gebruikersnaam, wachtwoord]
             ).done(function (data) {
                 console.log(data);
-                console.log(data.length);
+                console.log(data[0]["gebruikerid"])
+                console.log(data[0]["gebruikers_naam"])
             }).fail(function (reason) {
                 console.log(reason);
                 console.log("fout");
