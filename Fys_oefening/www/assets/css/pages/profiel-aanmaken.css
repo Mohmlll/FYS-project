@@ -53,3 +53,11 @@ table #geenTelefoon {
     color: red;
     display: none;
 }
+.inputAlert {
+    display: none;
+    color: red;
+}
+
+.inputAlert p {
+    font-size: 12px;
+}

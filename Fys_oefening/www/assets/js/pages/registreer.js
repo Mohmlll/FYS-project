@@ -31,8 +31,9 @@ $(document).ready(function (qualifiedName, value) {
         var emailAdresValid = $("#emailadres").is(":valid");
         var wachtwoordValid = $("#wachtwoord").is(":valid");
         var wachtwoordCheckValid = $("#wachtwoordCheck").is(":valid");
+        var voorwaardeCheckValid = $("#voorwaardeCheck").is(":valid");
 
-        if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && wachtwoordCheckValid) {
+        if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && wachtwoordCheckValid && voorwaardeCheckValid) {
 
             var gebruikersNaam = document.getElementById('gebruikersnaam').value;
             var emailAdres = document.getElementById('emailadres').value;
@@ -79,6 +80,13 @@ $(document).ready(function (qualifiedName, value) {
             } else {
                 document.getElementById("wachtwoordCheck").style.borderColor = "black";
                 document.getElementById("geenWachtwoordCheck").style.display = "none";
+            }
+            if (!voorwaardeCheckValid) {
+                document.getElementById("voorwaardeCheck").style.borderColor = "red";
+                document.getElementById("geenVoorwaardeCheck").style.display = "block";
+            } else {
+                document.getElementById("voorwaardeCheck").style.borderColor = "black";
+                document.getElementById("geenVoorwaardeCheck").style.display = "none";
             }
         }
 

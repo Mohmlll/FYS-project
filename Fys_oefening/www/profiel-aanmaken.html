@@ -65,15 +65,28 @@
                     <table>
                         <tr>
                             <td>Foto van jezelf:</td>
-                            <td><input class="tekstbox" placeholder="Foto" type="file"></td>
+                            <td><input type="file" id="profilePicture" /></td>
+
                         </tr>
                         <tr>
                             <td>Voornaam:</td>
-                            <td><input class="tekstbox" id="voornaam" placeholder="Voornaam" type="text"></td>
+                            <td><input class="tekstbox" id="voornaam" placeholder="Voornaam" type="text">
+                                <div class="inputAlert" id="geenVoornaam">
+                                    <p>
+                                        Vul hier je voornaam in <br>
+
+                                    </p>
+                                </div></td>
                         </tr>
                         <tr>
                             <td>Achternaam:</td>
-                            <td><input class="tekstbox" id="achternaam" placeholder="Achternaam" type="text"></td>
+                            <td><input class="tekstbox" id="achternaam" placeholder="Achternaam" type="text">
+                                <div class="inputAlert" id="geenAchternaam">
+                                    <p>
+                                        Vul hier je achternaam in<br>
+
+                                    </p>
+                                </div></td>
                         </tr>
                         <tr>
                             <td>Geslacht:</td>
@@ -83,16 +96,34 @@
                                 <br>
                                 <input id="vrouw" type="radio">
                                 <label for="vrouw">Vrouw</label>
-                            </td>
+
+                                <div class="inputAlert" id="geenGeslacht">
+                                    <p>
+                                        Selecteer geslacht <br>
+
+                                    </p>
+                                </div></td>
                         </tr>
                         <tr>
                             <td>Geboortedatum:</td>
                             <td><input class="tekstbox" id="geboortedatum" min="function.datum()" placeholder="Geboortedatum"
-                                       type="date"></td>
+                                       type="date">
+                                <div class="inputAlert" id="geenGeboorteDatum">
+                                    <p>
+                                       Selecteer een geldig geboorte datum <br>
+
+                                    </p>
+                                </div></td>
                         </tr>
                         <tr>
                             <td>Woonplaats:</td>
-                            <td><input class="tekstbox" id="woonplaats" placeholder="Woonplaats" type="text"></td>
+                            <td><input class="tekstbox" id="woonplaats" placeholder="Woonplaats" type="text">
+                                <div class="inputAlert" id="geenWoonplaats">
+                                    <p>
+                                        Vul je woonplaats hier in <br>
+
+                                    </p>
+                                </div></td>
                         </tr>
                         <tr>
                             <td>Telefoonnummer:</td>
@@ -110,7 +141,7 @@
                         <tr>
                             <td>Soort vakantieganger:</td>
                             <td>
-                                <select class="soort_vakantieganger">
+                                <select class="soort_vakantieganger" id="soortVakantieGanger">
                                     <option value="#">Explorer</option>
                                     <option value="#">Sportieveling</option>
                                     <option value="#">Relaxer</option>
@@ -120,12 +151,18 @@
                                     <option value="#">Tropisch</option>
                                     <option value="#">Resort</option>
                                 </select>
+                                <div class="inputAlert" id="geenSoortVakantieGanger">
+                                    <p>
+                                        Geef de soort vakantie ganger dat je bent aan <br>
+
+                                    </p>
+                                </div>
                             </td>
                         </tr>
                         <tr>
                             <td>Vertel hier iets leuks over jezelf: <br><br></td>
                             <td>
-                                <textarea class="tekstbox" id="bio">
+                                <textarea class="tekstbox" id="bio" placeholder="Optioneel">
 
                                 </textarea>
                             </td>
