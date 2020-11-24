@@ -37,7 +37,7 @@ $(document).ready(function (qualifiedName, value) {
                 console.log(reason);
                 console.log("fout");
             })
-        }else{
+        } else{
             if (!inlogNaamValid) {
                 document.getElementById("inlogNaam").style.borderColor = "red";
                 document.getElementById("geenInlogNaam").style.display = "block";

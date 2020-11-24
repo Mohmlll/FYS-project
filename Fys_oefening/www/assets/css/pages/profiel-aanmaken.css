@@ -49,10 +49,10 @@ table p {
     font-size: 12px;
 }
 
-table #geenTelefoon {
-    color: red;
-    display: none;
+#man {
+    border-color: red;
 }
+
 .inputAlert {
     display: none;
     color: red;

@@ -5,15 +5,18 @@ $(document).ready(function (qualifiedName, value) {
         var telefoonValid = $("#telefoon").is(":valid");
         var voornaamValid = $("#voornaam").is(":valid");
         var achternaamValid = $("#achternaam").is(":valid");
-        // var geslachtValid = $("#geslacht").is(":valid");
+        //var geslachtValid = $("#geslacht").is(":valid");
         var geboorteDatumValid = $("#geboortedatum").is(":valid");
         var woonplaatsValid = $("#woonplaats").is(":valid");
         //var soortVakantieGangerValid = $("#soortVakantieGanger").is(":valid");
+        var geslachtMan = document.getElementById("man").checked;
+        var geslachtVrouw = document.getElementById("vrouw").checked;
 
         if (voornaamValid && achternaamValid && geboorteDatumValid && woonplaatsValid && telefoonValid) {
             console.log(sessionStorage.getItem("userId"));
             var voornaam = document.getElementById('voornaam').value;
             var achternaam = document.getElementById('achternaam').value;
+            var geslachtValue = document.getElementsByClassName("geslacht").value;
             var geboorteDatum = document.getElementById('geboortedatum').value;
             var woonplaats = document.getElementById('woonplaats').value;
             var telefoonNummer = document.getElementById('telefoon').value;
@@ -21,8 +24,8 @@ $(document).ready(function (qualifiedName, value) {
 
             //(voornaam, achternaam, geboortedatum, woonplaats, telefoonnummeer, bio)
             FYSCloud.API.queryDatabase(
-                "UPDATE gebruiker SET voornaam = ?, achternaam = ?, geboorte_datum = ?, woonplaats = ?, telefoon_nummer = ?, bio = ? WHERE gebruikerid = ?",
-                [voornaam, achternaam, geboorteDatum, woonplaats, telefoonNummer, bio, sessionStorage.getItem("userId")]
+                "UPDATE gebruiker SET voornaam = ?, achternaam = ?, geslacht = ?, geboorte_datum = ?, woonplaats = ?, telefoon_nummer = ?, bio = ? WHERE gebruikerid = ?",
+                [voornaam, achternaam, geslachtValue, geboorteDatum, woonplaats, telefoonNummer, bio, sessionStorage.getItem("userId")]
             ).done(function (data) {
                 console.log(data);
                 location.href = "index.html";
@@ -43,6 +46,11 @@ $(document).ready(function (qualifiedName, value) {
             } else {
                 document.getElementById("achternaam").style.borderColor = "black";
                 document.getElementById("geenAchternaam").style.display = "none";
+            }
+            if (!geslachtMan && !geslachtVrouw) {
+                document.getElementById("geenGeslacht").style.display = "block";
+            } else {
+                document.getElementById("geenGeslacht").style.display = "none";
             }
             //if (!geslachtValid) {
             //    document.getElementById("").style.borderColor = "red";
