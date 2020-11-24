@@ -32,6 +32,7 @@ $(document).ready(function (qualifiedName, value) {
                 console.log(data);
                 console.log(data[0]["gebruikerid"])
                 console.log(data[0]["gebruikers_naam"])
+                location.href = 'forum-homepagina.html';
             }).fail(function (reason) {
                 console.log(reason);
                 console.log("fout");
@@ -77,7 +78,7 @@ $(document).ready(function (qualifiedName, value) {
                 console.log(data);
                 sessionStorage.setItem("userId", data.insertId)
                 console.log(sessionStorage.getItem("userId"));
-                //location.href = "profiel-aanmaken.html";
+                location.href = "profiel-aanmaken.html";
             }).fail(function (reason) {
                 console.log(reason);
             })
