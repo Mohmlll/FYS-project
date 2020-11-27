@@ -206,3 +206,7 @@ right menu - aanbevolen
     background-color: #ddd;
     color: black;
 }
+
+.button_new_post{
+    width: 100%;
+}
