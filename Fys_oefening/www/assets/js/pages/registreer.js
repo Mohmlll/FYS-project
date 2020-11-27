@@ -1,5 +1,4 @@
-
-$(document).ready(function (qualifiedName, value) {
+$(document).ready(function () {
 
 
     $(".button-box").on("change", function (e) {
@@ -21,7 +20,7 @@ $(document).ready(function (qualifiedName, value) {
         var inlogNaamValid = $("#inlogNaam").is(":valid");
         var inlogWachtwoordValid = $("#inlogWachtwoord").is(":valid");
 
-        if (inlogNaamValid && inlogWachtwoordValid){
+        if (inlogNaamValid && inlogWachtwoordValid) {
             var gebruikersnaam = document.getElementById("inlogNaam").value;
             var wachtwoord = document.getElementById("inlogWachtwoord").value;
 
@@ -37,7 +36,7 @@ $(document).ready(function (qualifiedName, value) {
                 console.log(reason);
                 console.log("fout");
             })
-        }else{
+        } else {
             if (!inlogNaamValid) {
                 document.getElementById("inlogNaam").style.borderColor = "red";
                 document.getElementById("geenInlogNaam").style.display = "block";
@@ -73,7 +72,7 @@ $(document).ready(function (qualifiedName, value) {
             FYSCloud.API.queryDatabase(
                 "INSERT INTO gebruiker( gebruikers_naam, emailadres, wachtwoord)" +
                 "VALUES( ?,?,?)",
-                [ gebruikersNaam, emailAdres, wachtwoord]
+                [gebruikersNaam, emailAdres, wachtwoord]
             ).done(function (data) {
                 console.log(data);
                 sessionStorage.setItem("userId", data.insertId)

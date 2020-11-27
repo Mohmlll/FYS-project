@@ -1,4 +1,4 @@
-$(document).ready(function (qualifiedName, value) {
+$(document).ready(function () {
 
     $(".tag_div label").click(function (tag) {
         tag.preventDefault();

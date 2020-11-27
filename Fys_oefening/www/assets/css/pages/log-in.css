@@ -144,11 +144,3 @@ input:checked + .slider:before {
     float: right;
 }
 
-.inputAlert {
-    display: none;
-    color: red;
-}
-
-.inputAlert p {
-    font-size: 12px;
-}

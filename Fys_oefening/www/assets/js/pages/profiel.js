@@ -1,4 +1,4 @@
-$(document).ready(function (qualifiedName, value) {
+$(document).ready(function () {
 
 
     $('.gegevens_bewerken').on("click", function (bewerken) {

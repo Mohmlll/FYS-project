@@ -18,6 +18,7 @@
     <script src="https://cdn.fys.cloud/fyscloud/0.0.3/fyscloud.bundle.min.js"></script>
     <script src="assets/js/config.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/pages/forum-post.js"></script>
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/f7a7c0104b.js"></script>
 </head>
 
@@ -66,15 +67,30 @@
                     <div class="form_create_post">
                         <label>Titel <span class="require">*</span></label>
                         <label>
-                            <input class="form_create_title" name="title" type="text"/>
+                            <div class="inputAlert" id="geenTitel">
+                                <p>
+                                    Vul hier een titel in <br>
+
+                                </p>
+                            </div>
+                            <input class="form_create_title" id="post_titel_id" name="title" type="text"/>
+
                         </label>
+
                     </div>
 
                     <div class="form_create_post">
 
                         <p><span class="require">*</span> Omschrijving </p>
                         <label>
-                            <textarea class="form_create_description" name="description" rows="5"></textarea>
+                            <div class="inputAlert" id="geenContent">
+                                <p>
+                                    Omschrijving van post mist<br>
+
+                                </p>
+                            </div>
+                            <textarea class="form_create_description" id="post_content_id" name="description"
+                                      rows="5"></textarea>
                         </label>
                     </div>
                     <div class="create_post_tags">
@@ -146,7 +162,9 @@
                     </div>
 
                     <div class="form_create_post_buttons">
-                        <button onclick="location.href='forum-homepagina.html'" type="submit">Create</button>
+                        <button id="post_aanmakenId"  type="submit">
+                            Create
+                        </button>
                         <button onclick="location.href='forum-homepagina.html'" type="submit">Annuleer</button>
                     </div>
 

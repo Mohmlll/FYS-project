@@ -280,3 +280,12 @@ iframe {
 .right_empty_footer {
     order: 2;
 }
+
+.inputAlert {
+    display: none;
+    color: red;
+}
+
+.inputAlert p {
+    font-size: 12px;
+}

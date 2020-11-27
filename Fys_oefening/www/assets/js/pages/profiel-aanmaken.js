@@ -1,4 +1,4 @@
-$(document).ready(function (qualifiedName, value) {
+$(document).ready(function () {
     $(".gegevens_opslaan").on("click", function (gegevens) {
         gegevens.preventDefault();
 
@@ -20,7 +20,7 @@ $(document).ready(function (qualifiedName, value) {
             var bio = document.getElementById('bio').value;
 
             //(voornaam, achternaam, geboortedatum, woonplaats, telefoonnummeer, bio)
-            FYSCloud.API.queryDatabase(
+                FYSCloud.API.queryDatabase(
                 "UPDATE gebruiker SET voornaam = ?, achternaam = ?, geboorte_datum = ?, woonplaats = ?, telefoon_nummer = ?, bio = ? WHERE gebruikerid = ?",
                 [voornaam, achternaam, geboorteDatum, woonplaats, telefoonNummer, bio, sessionStorage.getItem("userId")]
             ).done(function (data) {

@@ -32,7 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../david's exmaple website" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -92,11 +92,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="370" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1605882754695" />
-    <state x="2329" y="631" key="FileChooserDialogImpl" timestamp="1605954995065">
-      <screen x="1920" y="0" width="2560" height="1400" />
+    <state x="409" y="631" key="FileChooserDialogImpl" timestamp="1606474267302">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="2329" y="631" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1605954995065" />
-    <state x="409" y="631" key="FileChooserDialogImpl/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1605006618087" />
+    <state x="409" y="631" key="FileChooserDialogImpl/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1606474267302" />
     <state x="246" y="271" width="1438" height="1100" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605886563821">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -110,26 +110,31 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1606127929584" />
-    <state x="1256" y="0" width="935" height="958" key="dock-window-1" timestamp="1605872934241">
+    <state x="1273" y="0" width="1294" height="1407" key="dock-window-1" timestamp="1606476298363">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-2608" y="-16" width="2270" height="1119" maximized="true" key="dock-window-1/-2560.0.2560.1040/0.0.2560.1400@-2560.0.2560.1040" timestamp="1604055169357" />
     <state x="717" y="88" width="2533" height="837" key="dock-window-1/-2560.0.2560.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1604001940141" />
-    <state x="1256" y="0" width="935" height="958" key="dock-window-1/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1605872934241" />
-    <state x="1617" y="0" width="950" height="1407" key="dock-window-2" timestamp="1603806005852">
+    <state x="1273" y="0" width="1294" height="1407" key="dock-window-1/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1606476298363" />
+    <state x="1273" y="0" width="1294" height="1407" key="dock-window-2" timestamp="1606477442554">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1617" y="0" width="950" height="1407" key="dock-window-2/-2560.0.2560.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1603806005852" />
-    <state x="1627" y="415" width="585" height="592" key="find.popup" timestamp="1606131129569">
+    <state x="1273" y="0" width="1294" height="1407" key="dock-window-2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1606477442554" />
+    <state x="1627" y="415" width="585" height="592" key="find.popup" timestamp="1606478333523">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1627" y="415" width="585" height="592" key="find.popup/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1606131129569" />
+    <state x="1627" y="415" width="585" height="592" key="find.popup/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1606478333523" />
     <state x="2376" y="188" key="new project wizard" timestamp="1605361299798">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2376" y="188" key="new project wizard/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1605361299798" />
     <state x="342" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1603973003626" />
     <state x="456" y="188" key="new project wizard/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1604228408708" />
+    <state x="1696" y="476" key="refactoring.ChangeSignatureDialog" timestamp="1606477805947">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1696" y="476" key="refactoring.ChangeSignatureDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1606477805947" />
     <state x="892" y="156" width="672" height="330" key="search.everywhere.popup" timestamp="1605788329304">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
