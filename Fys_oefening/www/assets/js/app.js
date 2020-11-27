@@ -27,7 +27,7 @@ $(document).ready(function () {
         "    <a href=\"over-ons.html\">Over ons</a>" +
         "    <a class=\"js-logged-out\" href=\"log-in.html\">Aanmelden</a>" +
         "    <a class=\"js-logged-in\" href=\"profiel-overzicht.html\">Profiel</a>" +
-        "    <a class=\"js-logged-in\" href=\"forum-homepagina.htmll\">Forum</a>" +
+        "    <a class=\"js-logged-in\" href=\"forum-homepagina.html\">Forum</a>" +
         "    <a class=\"js-logged-in\" href=\"index.html\">Uitloggen</a>" +
         "</div>" +
         "<div class=\"taal\">" +
