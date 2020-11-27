@@ -24,7 +24,16 @@ $(document).ready(function () {
 
             //(voornaam, achternaam, geboortedatum, woonplaats, telefoonnummeer, bio)
             FYSCloud.API.queryDatabase(
-                "UPDATE gebruiker SET voornaam = ?, achternaam = ?, geslacht = ?, geboorte_datum = ?, woonplaats = ?, telefoon_nummer = ?, bio = ? WHERE gebruikerid = ?",
+                "UPDATE gebruiker SET status = 'volledig_profiel' WHERE gebruikerid = ?",
+                [sessionStorage.getItem("userId")]
+            ).done(function (data) {
+                console.log(data);
+            }).fail(function (reason) {
+                console.log(reason);
+            })
+
+            FYSCloud.API.queryDatabase(
+                "INSERT INTO gebruiker_profiel SET voornaam = ?, achternaam = ?, geslacht = ?, geboorte_datum = ?, woonplaats = ?, telefoon_nummer = ?, bio = ?, gebruikerid = ?",
                 [voornaam, achternaam, geslachtValue, geboorteDatum, woonplaats, telefoonNummer, bio, sessionStorage.getItem("userId")]
             ).done(function (data) {
                 console.log(data);
