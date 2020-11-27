@@ -32,7 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Programming Java/Testing" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -43,6 +43,19 @@
       <recent name="C:\Users\moham\Documents\Git-Fork\team-3\Fys_oefening\www\assets\js\pages" />
       <recent name="C:\Users\moham\Documents\Git-Fork\team-3\Fys_oefening\www\assets\css\pages" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -74,6 +87,11 @@
       <workItem from="1606121985607" duration="1917000" />
       <workItem from="1606124096308" duration="12832000" />
       <workItem from="1606206870665" duration="4907000" />
+      <workItem from="1606211904767" duration="65000" />
+      <workItem from="1606214465165" duration="36000" />
+      <workItem from="1606234895145" duration="602000" />
+      <workItem from="1606396550081" duration="80000" />
+      <workItem from="1606470877314" duration="7278000" />
     </task>
     <servers />
   </component>
@@ -89,14 +107,16 @@
       <screen x="-1920" y="363" width="1920" height="1040" />
     </state>
     <state x="-1506" y="538" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.363.1920.1040@-1920.363.1920.1040" timestamp="1603996101650" />
-    <state x="370" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605882754695">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="278" y="334" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606477999714">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="278" y="334" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606477999714" />
     <state x="370" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1605882754695" />
-    <state x="2329" y="631" key="FileChooserDialogImpl" timestamp="1605954995065">
-      <screen x="1920" y="0" width="2560" height="1400" />
+    <state x="307" y="469" key="FileChooserDialogImpl" timestamp="1606214498962">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2329" y="631" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1605954995065" />
+    <state x="307" y="469" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606214498962" />
     <state x="409" y="631" key="FileChooserDialogImpl/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1605006618087" />
     <state x="246" y="271" width="1438" height="1100" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605886563821">
       <screen x="0" y="0" width="1920" height="1040" />

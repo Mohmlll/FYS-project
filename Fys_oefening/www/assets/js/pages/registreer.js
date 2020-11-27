@@ -26,13 +26,22 @@ $(document).ready(function (qualifiedName, value) {
             var wachtwoord = document.getElementById("inlogWachtwoord").value;
 
             FYSCloud.API.queryDatabase(
-                "SELECT gebruikerid, gebruikers_naam FROM gebruiker WHERE gebruikers_naam = ? and wachtwoord = ?",
+                "SELECT gebruikerid, gebruikers_naam, status, COUNT(*) FROM gebruiker WHERE gebruikers_naam = ? and wachtwoord = ?",
                 [gebruikersnaam, wachtwoord]
             ).done(function (data) {
                 console.log(data);
-                console.log(data[0]["gebruikerid"])
-                console.log(data[0]["gebruikers_naam"])
-                location.href = 'forum-homepagina.html';
+                if (data[0]["COUNT(*)"] === 1 && data[0]["status"] === "volledig_profiel") {
+                    console.log(data[0]["gebruikerid"])
+                    console.log(data[0]["gebruikers_naam"])
+                    location.href = 'forum-homepagina.html';
+                } else if (data[0]["COUNT(*)"] === 1 && data[0]["status"] === "geenGegevens") {
+                    console.log(data[0]["gebruikerid"])
+                    console.log(data[0]["gebruikers_naam"])
+                    console.log("geen gegevens")
+                    location.href = 'profiel-aanmaken.html';
+                } else {
+                    document.getElementById("verkeerdWachtwoord").style.display = "block";
+                }
             }).fail(function (reason) {
                 console.log(reason);
                 console.log("fout");
@@ -69,14 +78,15 @@ $(document).ready(function (qualifiedName, value) {
             var gebruikersNaam = document.getElementById('gebruikersnaam').value;
             var emailAdres = document.getElementById('emailadres').value;
             var wachtwoord = document.getElementById('wachtwoord').value;
+            var status = "geenGegevens";
 
             FYSCloud.API.queryDatabase(
-                "INSERT INTO gebruiker( gebruikers_naam, emailadres, wachtwoord)" +
-                "VALUES( ?,?,?)",
-                [ gebruikersNaam, emailAdres, wachtwoord]
+                "INSERT INTO gebruiker( gebruikers_naam, emailadres, wachtwoord, status)" +
+                "VALUES(?,?,?,?)",
+                [ gebruikersNaam, emailAdres, wachtwoord, status]
             ).done(function (data) {
                 console.log(data);
-                sessionStorage.setItem("userId", data.insertId)
+                sessionStorage.setItem("userId", data.insertId);
                 console.log(sessionStorage.getItem("userId"));
                 location.href = "profiel-aanmaken.html";
             }).fail(function (reason) {
