@@ -29,6 +29,8 @@ $(document).ready(function () {
                 [gebruikersnaam, wachtwoord]
             ).done(function (data) {
                 console.log(data);
+                sessionStorage.setItem("userId", data[0]["gebruikerid"])
+                console.log(sessionStorage.getItem("userId"));
                 if (data[0]["COUNT(*)"] === 1 && data[0]["status"] === "volledig_profiel") {
                     console.log(data[0]["gebruikerid"])
                     console.log(data[0]["gebruikers_naam"])

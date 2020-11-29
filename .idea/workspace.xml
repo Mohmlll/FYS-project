@@ -32,7 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Programming Java/Testing" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../OOP1/Practicumopdracht 3" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -80,7 +80,7 @@
       <workItem from="1606396550081" duration="80000" />
       <workItem from="1606470877314" duration="9535000" />
       <workItem from="1606573192164" duration="61000" />
-      <workItem from="1606644460978" duration="2454000" />
+      <workItem from="1606644460978" duration="3659000" />
     </task>
     <servers />
   </component>
@@ -101,9 +101,10 @@
     </state>
     <state x="278" y="334" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606477999714" />
     <state x="370" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1605882754695" />
-    <state x="307" y="469" key="FileChooserDialogImpl" timestamp="1606214498962">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2329" y="431" key="FileChooserDialogImpl" timestamp="1606648403637">
+      <screen x="1920" y="-200" width="2560" height="1400" />
     </state>
+    <state x="2329" y="431" key="FileChooserDialogImpl/0.0.1920.1040/1920.-200.2560.1400@1920.-200.2560.1400" timestamp="1606648403637" />
     <state x="2329" y="631" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1605954995065" />
     <state x="307" y="469" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606214498962" />
     <state x="409" y="631" key="FileChooserDialogImpl/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1605006618087" />
@@ -135,9 +136,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1627" y="415" width="585" height="592" key="find.popup/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1606478333523" />
-    <state x="2376" y="188" key="new project wizard" timestamp="1605361299798">
-      <screen x="1920" y="0" width="2560" height="1400" />
+    <state x="2376" y="-12" key="new project wizard" timestamp="1606648594338">
+      <screen x="1920" y="-200" width="2560" height="1400" />
     </state>
+    <state x="2376" y="-12" key="new project wizard/0.0.1920.1040/1920.-200.2560.1400@1920.-200.2560.1400" timestamp="1606648594338" />
     <state x="2376" y="188" key="new project wizard/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1605361299798" />
     <state x="342" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1603973003626" />
     <state x="456" y="188" key="new project wizard/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1604228408708" />
