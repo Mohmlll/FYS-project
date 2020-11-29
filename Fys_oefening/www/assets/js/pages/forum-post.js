@@ -1,7 +1,7 @@
 $(document).ready(function () {
     console.log(sessionStorage.getItem("userId"));
 
-    var noOfTemplates = 5;
+    var noOfTemplates = 4;
     var nieuwePost = document.getElementById("forum_main_id");
     var template;
 
@@ -26,7 +26,7 @@ $(document).ready(function () {
             appendTitel = data[0]['titel']
             appendPost = data[0]['post']
             console.log(appendPost, appendTitel)
-            costumElement = makeAnElement(appendTitel, appendPost)
+            let costumElement = makeAnElement(appendTitel, appendPost)
             nieuwePost.appendChild(costumElement);
         }).fail(function (reason) {
             console.log(reason);
