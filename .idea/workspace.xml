@@ -44,19 +44,6 @@
       <recent name="C:\Users\moham\Documents\Git-Fork\team-3\Fys_oefening\www\assets\css\pages" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -91,7 +78,9 @@
       <workItem from="1606214465165" duration="36000" />
       <workItem from="1606234895145" duration="602000" />
       <workItem from="1606396550081" duration="80000" />
-      <workItem from="1606470877314" duration="8961000" />
+      <workItem from="1606470877314" duration="9535000" />
+      <workItem from="1606573192164" duration="61000" />
+      <workItem from="1606644460978" duration="2454000" />
     </task>
     <servers />
   </component>
