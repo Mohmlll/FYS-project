@@ -30,6 +30,10 @@ label {
     font-size: 30px;
 }
 
+.menu .js-uitloggen {
+    cursor: pointer;
+}
+
 .menu img {
     height: 40px;
     margin: 10px;

@@ -100,7 +100,8 @@
       <workItem from="1606573192164" duration="61000" />
       <workItem from="1606644460978" duration="3659000" />
       <workItem from="1606649602828" duration="3673000" />
-      <workItem from="1606727340888" duration="1574000" />
+      <workItem from="1606727340888" duration="12635000" />
+      <workItem from="1606749412192" duration="1508000" />
     </task>
     <servers />
   </component>
@@ -153,12 +154,11 @@
     <state x="2329" y="631" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1605954995065" />
     <state x="307" y="469" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606214498962" />
     <state x="409" y="631" key="FileChooserDialogImpl/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1605006618087" />
-    <state x="409" y="631" key="FileChooserDialogImpl/0.0.2560.1400/-1920.7.1920.1040@0.0.2560.1400" timestamp="1606672253430" />
-    <state x="246" y="271" width="1438" height="1100" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605886563821">
+    <state x="246" y="271" width="1438" height="1100" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606750202673">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="712" y="-18" width="1438" height="897" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-2560.0.2560.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1604001940141" />
-    <state x="246" y="271" width="1438" height="1100" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605886563821" />
+    <state x="246" y="271" width="1438" height="1100" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606750202673" />
     <state x="1771" y="314" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1603989759050">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -193,11 +193,12 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1696" y="476" key="refactoring.ChangeSignatureDialog/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1606477805947" />
-    <state x="892" y="156" width="672" height="330" key="search.everywhere.popup" timestamp="1605788329304">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="1338" y="239" width="1008" height="505" key="search.everywhere.popup" timestamp="1606734531493">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-777" y="238" width="672" height="504" key="search.everywhere.popup/-2560.0.2560.1040/0.0.2560.1400@-2560.0.2560.1040" timestamp="1604053934565" />
     <state x="892" y="156" width="672" height="330" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1605788329304" />
+    <state x="1338" y="239" width="1008" height="505" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606734531493" />
     <state x="1783" y="320" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1603708193166" />
   </component>
 </project>
