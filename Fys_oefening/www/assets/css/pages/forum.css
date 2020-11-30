@@ -149,10 +149,12 @@ right menu - aanbevolen
 }
 
 .post_content {
-
+    display: none;
+    overflow: auto;
 
 }
-.expand{
+
+.expand {
     display: block;
 }
 
