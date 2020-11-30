@@ -121,23 +121,9 @@ right menu - aanbevolen
     cursor: pointer;
 }
 
-.post_profiel_foto {
-    width: 12%;
-    border-radius: 50%;
-
-}
-
-.post_profiel_foto img {
-    width: 100%;
-    border-radius: 50%;
-    border: solid 1px black;
-}
-
-.front_post_title {
-    width: 88%;
-    font-size: 16px;
-}
-
+/*
+post
+ */
 .post {
     height: 18%;
     background-color: white;
@@ -148,22 +134,47 @@ right menu - aanbevolen
 
 }
 
-.post_content {
+.post_profiel_foto {
+    width: 10%;
+    border-radius: 50%;
+    order: 0;
+}
 
+.post_profiel_foto img {
+    width: 100%;
+    border-radius: 50%;
+    border: solid 1px black;
+}
+
+.front_post_title {
+    padding-left: 5%;
+    width: 69%;
+    font-size: 16px;
+    order: 1;
+}
+.button_new_post{
+    order: 2;
+    width: 15%;
+}
+.expand_post_button {
+    display: inline-block;
+    cursor: pointer;
+    background: linear-gradient(to right, #ff7b68, #ffffff);
+    border: solid 1px #ff7b68;
+    outline: none;
+    border-radius: 30px;
+    width: 100%;
 
 }
-.expand{
-    display: block;
-}
+
 
 .post_header {
     width: 100%;
-    padding: 15px;
     border: none;
     outline: none;
-    background-color: white;
+    flex-wrap: wrap;
+    display: flex;
 }
-
 
 .post hr {
     width: 100%;
@@ -174,21 +185,18 @@ right menu - aanbevolen
     font-size: 12px;
 }
 
+.post_content {
+    display: none;
+    overflow: auto;
+}
+
+.expand {
+    display: block;
+}
+
 .forum_search {
     width: 100%;
 }
-
-.post button {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    padding: 1%;
-    background: linear-gradient(to right, #ff7b68, #ffffff);
-    border: solid 1px #ff7b68;
-    outline: none;
-    border-radius: 30px;
-}
-
 
 .forum_page_selector {
     align-content: center;
@@ -217,8 +225,4 @@ right menu - aanbevolen
 .forum_page_selector a:hover {
     background-color: #ddd;
     color: black;
-}
-
-.button_new_post {
-    width: 100%;
 }

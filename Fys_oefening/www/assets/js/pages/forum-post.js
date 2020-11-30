@@ -6,11 +6,23 @@ $(document).ready(function () {
     var template;
 
 
-    function makeAnElement(text1, text2) {
+    function makeAnElement(titel, content) {
         template = document.importNode(document.getElementById("post_template").content, true);
-        template.getElementById("post_header_titel").innerText = text1;
-        // template.getElementById("post_profiel_img").innerText = text2;
-        template.getElementById("post_content").innerText = text2;
+        let post_header_titel = template.getElementById("post_header_titel")
+        let content_text_div = template.getElementById("post_content")
+        let content_text = template.getElementById("content_text")
+        let btn = template.getElementById("post_header")
+
+        post_header_titel.innerHTML = titel
+        content_text.innerHTML = content
+
+        btn.addEventListener('click', (event) => {
+            if (content_text_div.className === "post_content") {
+                content_text_div.className += " expand";
+            } else {
+                content_text_div.className = "post_content";
+            }
+        })
         return template.firstElementChild
     }
 
@@ -33,23 +45,5 @@ $(document).ready(function () {
             console.log("fout");
         })
     }
-
-    $("#loll").on('click', function (expand) {
-        expand.preventDefault();
-        console.log("test");
-        var postContent = document.getElementById("post_content");
-        if (postContent.className === "post_content") {
-            postContent.className += " expand";
-        } else {
-            postContent.className = "post_content";
-            console.log("test");
-        }
-        console.log(postContent.className);
-        console.log("test");
-
-    })
-
-
-
 
 });
