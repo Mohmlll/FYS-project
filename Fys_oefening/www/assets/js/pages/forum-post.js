@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     function makeAnElement(text1, text2) {
         template = document.importNode(document.getElementById("post_template").content, true);
-        template.getElementById("post").innerText = text1;
+        template.getElementById("post_header_titel").innerText = text1;
         // template.getElementById("post_profiel_img").innerText = text2;
         template.getElementById("post_content").innerText = text2;
         return template.firstElementChild
@@ -20,7 +20,7 @@ $(document).ready(function () {
 
         FYSCloud.API.queryDatabase(
             "SELECT titel, post  FROM forum_post WHERE idgebruiker = ?",
-             [i]
+            [i]
         ).done(function (data) {
             console.log(data)
             appendTitel = data[0]['titel']
@@ -33,5 +33,23 @@ $(document).ready(function () {
             console.log("fout");
         })
     }
+
+    $("#loll").on('click', function (expand) {
+        expand.preventDefault();
+        console.log("test");
+        var postContent = document.getElementById("post_content");
+        if (postContent.className === "post_content") {
+            postContent.className += " expand";
+        } else {
+            postContent.className = "post_content";
+            console.log("test");
+        }
+        console.log(postContent.className);
+        console.log("test");
+
+    })
+
+
+
 
 });
