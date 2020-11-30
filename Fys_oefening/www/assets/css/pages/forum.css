@@ -138,36 +138,47 @@ right menu - aanbevolen
     font-size: 16px;
 }
 
-.post_latest {
-    flex-wrap: wrap;
-    display: flex;
+.post {
     height: 18%;
     background-color: white;
     border-radius: 15px;
     padding: 5%;
-    overflow: hidden;
     margin: 0 4% 4% 0;
+    outline: none;
+
 }
 
-.post_latest hr {
+.post_content {
+
+
+}
+.expand{
+    display: block;
+}
+
+.post_header {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+
+.post hr {
     width: 100%;
 }
 
-.post_latest p {
+.post p {
     max-width: 70ch;
-}
-
-
-.post_latest_content {
     font-size: 12px;
 }
-
 
 .forum_search {
     width: 100%;
 }
 
-.post_latest button {
+.post button {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -177,6 +188,7 @@ right menu - aanbevolen
     outline: none;
     border-radius: 30px;
 }
+
 
 .forum_page_selector {
     align-content: center;
@@ -207,6 +219,6 @@ right menu - aanbevolen
     color: black;
 }
 
-.button_new_post{
+.button_new_post {
     width: 100%;
 }
