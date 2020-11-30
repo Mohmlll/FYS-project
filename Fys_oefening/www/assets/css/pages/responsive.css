@@ -187,7 +187,7 @@ container
 }
 
 /* Menu */
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
     .menu a {
         margin: auto;
     }
@@ -211,7 +211,7 @@ container
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     .menu .menu_groot a {
         display: none;
     }

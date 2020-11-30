@@ -26,7 +26,7 @@ $(document).ready(function () {
             appendTitel = data[0]['titel']
             appendPost = data[0]['post']
             console.log(appendPost, appendTitel)
-            costumElement = makeAnElement(appendTitel, appendPost)
+            let costumElement = makeAnElement(appendTitel, appendPost)
             nieuwePost.appendChild(costumElement);
         }).fail(function (reason) {
             console.log(reason);

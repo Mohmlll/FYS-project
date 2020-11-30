@@ -19,17 +19,29 @@
     <script src="assets/js/config.js"></script>
     <script src="assets/js/app.js"></script>
     <script>
-        function myFunction() {
-            var popup = document.getElementById("myContact_button");
-            popup.classList.toggle("show");
-        }
+        // function myFunction() {
+        //     var popup = document.getElementById("myContact_button");
+        //     popup.classList.toggle("show");
+        // }
     </script>
 
 </head>
 
 <body>
 
-<div class="menu" id="responsivemenu"></div>
+<div class="menu" id="responsivemenu">
+    <div class="hamburgermenu" id="hamburgermenu"></div>
+    <div class="space"></div>
+    <div class="logomemu"><a href="index.html"><img alt="Corendon TravelBud" src="assets/img/Logo_website.png"></a></div>
+    <div class="menu_groot" id="menu_groot"></div>
+    <div class="taal">
+        <button class="taalbutton">Taal</button>
+        <div class="taal_inhoud">
+            <a href="#">NL</a>
+            <a href="#">EN</a>
+        </div>
+    </div>
+</div>
 
 <header>
     <h1 class="header__title">
@@ -91,7 +103,7 @@
                         <p>Klimaat - xxx</p>
                         <p>Activiteit - xxx</p>
                         <p>Leeftijd - xx | xx jaar</p>
-                        <div class="contact_button" onclick="myFunction()">Contact me!
+                        <div class="contact_button">Contact me!
                             <span class="popuptext" id="myContact_button">Verzoek verzonden...</span>
                         </div>
                     </div>
@@ -118,31 +130,6 @@
         </div>
         <div class="right_empty_footer"></div>
     </div>
-    <script>
-        function openinhoudt(live, live_kopje) {
-            // Declare all variables
-            var i, tabcontent, tablinks;
-
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            // Get all elements with class="tablinks" and remove the class "active"
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            // Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(live_kopje).style.display = "block";
-            live.currentTarget.className += " active";
-        }
-
-        //Open profiel automatisch
-        document.getElementById("standaard_Openen").click();
-    </script>
 </div>
 </body>
 </html>

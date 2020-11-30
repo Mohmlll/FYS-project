@@ -23,4 +23,26 @@ $(document).ready(function () {
         }
 
     })
+
+    function openinhoudt(live, live_kopje) {
+        var i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(live_kopje).style.display = "block";
+        live.currentTarget.className += " active";
+    }
+
+    openinhoudt()
+
+    //Open profiel automatisch
+    document.getElementById("standaard_Openen").click();
 });

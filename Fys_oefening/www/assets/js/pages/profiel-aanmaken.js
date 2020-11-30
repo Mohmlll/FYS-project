@@ -5,7 +5,6 @@ $(document).ready(function () {
         var telefoonValid = $("#telefoon").is(":valid");
         var voornaamValid = $("#voornaam").is(":valid");
         var achternaamValid = $("#achternaam").is(":valid");
-        //var geslachtValid = $("#geslacht").is(":valid");
         var geboorteDatumValid = $("#geboortedatum").is(":valid");
         var woonplaatsValid = $("#woonplaats").is(":valid");
         //var soortVakantieGangerValid = $("#soortVakantieGanger").is(":valid");
@@ -89,13 +88,6 @@ $(document).ready(function () {
                 document.getElementById("telefoon").style.borderColor = "black";
                 document.getElementById("geenTelefoon").style.display = "none";
             }
-            //if (!Valid) {
-            //    document.getElementById("").style.borderColor = "red";
-            //    document.getElementById("").style.display = "block";
-            //} else {
-            //    document.getElementById("").style.borderColor = "black";
-            //   document.getElementById("").style.display = "none";
-            // }
         }
 
     })

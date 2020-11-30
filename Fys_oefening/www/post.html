@@ -22,7 +22,19 @@
 
 <body>
 
-<div class="menu" id="responsivemenu"></div>
+<div class="menu" id="responsivemenu">
+    <div class="hamburgermenu" id="hamburgermenu"></div>
+    <div class="space"></div>
+    <div class="logomemu"><a href="index.html"><img alt="Corendon TravelBud" src="assets/img/Logo_website.png"></a></div>
+    <div class="menu_groot" id="menu_groot"></div>
+    <div class="taal">
+        <button class="taalbutton">Taal</button>
+        <div class="taal_inhoud">
+            <a href="#">NL</a>
+            <a href="#">EN</a>
+        </div>
+    </div>
+</div>
 
 <header>
     <h2 class="header__title">
@@ -64,16 +76,10 @@
                     <button class="tag_button" id="tag_tropisch">Tropisch</button>
                     <button class="tag_button" id="tag_backpacker">Backpacker</button>
                 </div>
-                <div class="contact_button" onclick="myFunction()">Contact me!
+                <div class="contact_button">Contact me!
                     <span class="popuptext" id="myContact_button">Verzoek verzonden...</span>
                 </div>
             </div>
-            <script>
-                function myFunction() {
-                    var popup = document.getElementById("myContact_button");
-                    popup.classList.toggle("show");
-                }
-            </script>
 
         </div>
         <div class="forum_rightmenu">
