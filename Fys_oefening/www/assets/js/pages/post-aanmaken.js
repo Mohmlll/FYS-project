@@ -9,9 +9,9 @@ $(document).ready(function () {
             var postContent = document.getElementById("post_content_id").value;
 
             FYSCloud.API.queryDatabase(
-                "INSERT INTO forum_post (post, titel )" +
-                "VALUES(?,?)",
-                [postContent, titel]
+                "INSERT INTO forum_post (post, titel, idgebruiker )" +
+                "VALUES(?,?,?)",
+                [postContent, titel, sessionStorage.getItem("userId")]
             ).done(function (data) {
                 console.log(data);
                 location.href = 'forum-homepagina.html';

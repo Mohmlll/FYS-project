@@ -103,6 +103,7 @@ $(document).ready(function () {
     }
 
     datum();
+    console.log(datum())
     console.log(sessionStorage.getItem("userId"));
 
 
