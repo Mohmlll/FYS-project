@@ -30,6 +30,9 @@ $(document).ready(function () {
             }
         }).fail(function (reason) {
             console.log(reason);
+            document.getElementById("logged_out").style.display = "block";
+            document.getElementById("logged_in").style.display = "none";
+            console.log("geen database")
         })
     }
 
