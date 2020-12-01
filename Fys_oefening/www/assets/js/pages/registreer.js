@@ -84,7 +84,7 @@ $(document).ready(function () {
             FYSCloud.API.queryDatabase(
                 "INSERT INTO gebruiker( gebruikers_naam, emailadres, wachtwoord, status)" +
                 "VALUES(?,?,?,?)",
-                [ gebruikersNaam, emailAdres, wachtwoord, status]
+                [gebruikersNaam, emailAdres, wachtwoord, status]
             ).done(function (data) {
                 console.log(data);
                 sessionStorage.setItem("userId", data.insertId);

@@ -7,21 +7,23 @@
         padding: 20px 15px;
     }
 }
+
 @media screen and (max-width: 800px) {
-.left__ad, .right__ad {
-    display: none;
+    .left__ad, .right__ad {
+        display: none;
+    }
+
+    .left_empty_footer, .right_empty_footer2 {
+        display: none;
+    }
+
+    .flip_cards {
+        width: 100%;
+        margin: auto;
+    }
+
 }
 
-.left_empty_footer, .right_empty_footer2 {
-    display: none;
-}
-
-.flip_cards {
-    width: 100%;
-    margin: auto;
-}
-
-}
 @media screen and (min-width: 600px) {
     .info1, .info2 {
         width: 45%;

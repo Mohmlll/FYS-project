@@ -29,7 +29,8 @@
 <div class="menu" id="responsivemenu">
     <div class="hamburgermenu" id="hamburgermenu"></div>
     <div class="space"></div>
-    <div class="logomemu"><a href="index.html"><img alt="Corendon TravelBud" src="assets/img/Logo_website.png"></a></div>
+    <div class="logomemu"><a href="index.html"><img alt="Corendon TravelBud" src="assets/img/Logo_website.png"></a>
+    </div>
     <div class="menu_groot" id="menu_groot">
         <div class="logged_out" id="logged_out"></div>
         <div class="logged_in" id="logged_in"></div>
@@ -59,38 +60,43 @@
                     <table>
                         <tr>
                             <td>Foto van jezelf:</td>
-                            <td><input type="file" id="profilePicture" /></td>
+                            <td><input id="profilePicture" type="file"/></td>
 
                         </tr>
                         <tr>
                             <td>Voornaam:</td>
-                            <td><input class="tekstbox" id="voornaam" pattern="[a-zA-Z]+" placeholder="Voornaam" type="text" required>
+                            <td><input class="tekstbox" id="voornaam" pattern="[a-zA-Z]+" placeholder="Voornaam"
+                                       required type="text">
                                 <div class="inputAlert" id="geenVoornaam">
                                     <p>
                                         Vul hier je voornaam in <br>
 
                                     </p>
-                                </div></td>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td>Achternaam:</td>
-                            <td><input class="tekstbox" id="achternaam" pattern="[a-zA-Z]+" placeholder="Achternaam" type="text" required>
+                            <td><input class="tekstbox" id="achternaam" pattern="[a-zA-Z]+" placeholder="Achternaam"
+                                       required type="text">
                                 <div class="inputAlert" id="geenAchternaam">
                                     <p>
                                         Vul hier je achternaam in<br>
 
                                     </p>
-                                </div></td>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td>Geslacht:</td>
                             <td>
                                 <label>
-                                    <input id="man" class="geslacht" type="radio" value="man" name="geslacht" required> Man
+                                    <input class="geslacht" id="man" name="geslacht" required type="radio" value="man">
+                                    Man
                                 </label>
                                 <br>
                                 <label>
-                                    <input id="vrouw" class="geslacht" type="radio" value="vrouw" name="geslacht"> Vrouw
+                                    <input class="geslacht" id="vrouw" name="geslacht" type="radio" value="vrouw"> Vrouw
                                 </label>
 
                                 <div class="inputAlert" id="geenGeslacht">
@@ -103,29 +109,33 @@
                         </tr>
                         <tr>
                             <td>Geboortedatum:</td>
-                            <td><input class="tekstbox" id="geboortedatum"  placeholder="Geboortedatum"
-                                       type="date" required>
+                            <td><input class="tekstbox" id="geboortedatum" placeholder="Geboortedatum"
+                                       required type="date">
                                 <div class="inputAlert" id="geenGeboorteDatum">
                                     <p>
-                                       Selecteer een geldig geboorte datum <br>
+                                        Selecteer een geldig geboorte datum <br>
 
                                     </p>
-                                </div></td>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td>Woonplaats:</td>
-                            <td><input class="tekstbox" id="woonplaats" pattern="[a-zA-Z]+" placeholder="Woonplaats" type="text" required>
+                            <td><input class="tekstbox" id="woonplaats" pattern="[a-zA-Z]+" placeholder="Woonplaats"
+                                       required type="text">
                                 <div class="inputAlert" id="geenWoonplaats">
                                     <p>
                                         Vul je woonplaats hier in <br>
 
                                     </p>
-                                </div></td>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td>Telefoonnummer:</td>
                             <td>
-                                <input class="tekstbox" id="telefoon" pattern="[0-9]{2}-[0-9]{8}" placeholder="Telefoonnummer"
+                                <input class="tekstbox" id="telefoon" pattern="[0-9]{2}-[0-9]{8}"
+                                       placeholder="Telefoonnummer"
                                        required type="tel">
                                 <div class="inputAlert" id="geenTelefoon">
                                     <p>

@@ -158,10 +158,12 @@ post
     font-size: 16px;
     order: 1;
 }
-.button_new_post{
+
+.button_new_post {
     order: 2;
     width: 15%;
 }
+
 .expand_post_button {
     display: inline-block;
     cursor: pointer;
@@ -186,7 +188,7 @@ post
     width: 100%;
 }
 
-#content_text{
+#content_text {
     max-width: 70ch;
     font-size: 12px;
     overflow: hidden;
@@ -232,6 +234,7 @@ post
     background-color: #ddd;
     color: black;
 }
-#post_template{
+
+#post_template {
     order: 0;
 }

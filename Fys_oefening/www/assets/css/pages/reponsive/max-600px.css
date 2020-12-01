@@ -105,10 +105,11 @@ forum
  */
 
 @media screen and (max-width: 600px) {
-    .forum_topics__options{
+    .forum_topics__options {
         width: 48%;
     }
-    .forum_aanbevolen{
-       width: 48%;
+
+    .forum_aanbevolen {
+        width: 48%;
     }
 }
