@@ -36,6 +36,7 @@ $(document).ready(function () {
         })
     }
 
+
     menuSelectie()
 
     document.getElementById("hamburgermenu").innerHTML =
@@ -78,5 +79,7 @@ $(document).ready(function () {
         popup.classList.toggle("show");
     })
 
+    document.getElementById("profielFoto").setAttribute("src", "https://dev-is106-3.fys.cloud/uploads/" + sessionStorage.getItem("userId") + ".png");
+    console.log("src", "https://dev-is106-3.fys.cloud/uploads/" + sessionStorage.getItem("userId") + "test.png");
 
 });

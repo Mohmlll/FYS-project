@@ -61,3 +61,8 @@ table p {
 .inputAlert p {
     font-size: 12px;
 }
+
+#imagePreview {
+    margin-top: 2px;
+    max-width: 100%;
+}
