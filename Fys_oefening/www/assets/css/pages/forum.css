@@ -180,18 +180,20 @@ post
     width: 100%;
 }
 
-.post p {
+#content_text{
     max-width: 70ch;
     font-size: 12px;
+    overflow: hidden;
 }
 
 .post_content {
     display: none;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .expand {
     display: block;
+    background-color: ;
 }
 
 .forum_search {

@@ -14,7 +14,7 @@ $(document).ready(function () {
                 [postContent, titel]
             ).done(function (data) {
                 console.log(data);
-                location.href = '#';
+                location.href = 'forum-homepagina.html';
             }).fail(function (reason) {
                 console.log(reason);
                 console.log("fout");
