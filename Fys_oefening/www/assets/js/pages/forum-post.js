@@ -1,7 +1,6 @@
 $(document).ready(function () {
     console.log(sessionStorage.getItem("userId"));
 
-    var noOfTemplates = 4;
     var nieuwePost = document.getElementById("forum_main_id");
     var template;
 
@@ -28,22 +27,25 @@ $(document).ready(function () {
 
     var appendTitel;
     var appendPost;
-    for (var i = 0; i < noOfTemplates; i++) {
 
-        FYSCloud.API.queryDatabase(
-            "SELECT titel, post  FROM forum_post WHERE idgebruiker = ?",
-            [i]
-        ).done(function (data) {
-            console.log(data)
-            appendTitel = data[0]['titel']
-            appendPost = data[0]['post']
+    FYSCloud.API.queryDatabase(
+        "SELECT titel, post FROM forum_post"
+    ).done(function (data) {
+        var noOfTemplates = data.length;
+        console.log(noOfTemplates)
+        for (let i = 0; i < noOfTemplates; i++) {
+            console.log(data[i])
+            appendTitel = data[i]['titel']
+            appendPost = data[i]['post']
             console.log(appendPost, appendTitel)
             let costumElement = makeAnElement(appendTitel, appendPost)
             nieuwePost.appendChild(costumElement);
-        }).fail(function (reason) {
-            console.log(reason);
-            console.log("fout");
-        })
-    }
+        }
+    }).fail(function (reason) {
+        console.log(reason);
+        console.log("fout");
+    })
+
+
 
 });
