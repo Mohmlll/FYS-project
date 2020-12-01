@@ -1,7 +1,7 @@
 $(document).ready(function () {
     console.log(sessionStorage.getItem("userId"));
 
-    var noOfTemplates = 4;
+    var noOfTemplates = 7;
     var nieuwePost = document.getElementById("forum_main_id");
     var template;
 

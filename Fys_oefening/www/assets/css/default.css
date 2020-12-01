@@ -176,7 +176,7 @@ header {
 
 .welkombox, .uitleg_video, .info1, .info2, .inlog-box, .flip_card_front,
 .flip_card_back, .post_latest, .forum_topics__options,
-.container_create_post, .forum_aanbevolen, .forum_main_options, .buttonpagina_totaal {
+.container_create_post, .forum_aanbevolen, .forum_main_options, .buttonpagina_totaal, .forum_main {
     -webkit-box-shadow: 12px 10px 15px 0 rgba(0, 0, 0, 0.75);
 }
 

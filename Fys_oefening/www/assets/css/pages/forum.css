@@ -3,6 +3,12 @@ forummain
  */
 .forum_main {
     height: 80%;
+    background-color: indianred;
+    border-radius: 15px;
+    padding: 2%;
+    flex-wrap: wrap;
+    display: flex;
+    margin: auto auto 5% auto;
 }
 
 /*
@@ -13,7 +19,7 @@ right menu
 .forum_rightmenu {
     flex-wrap: wrap;
     display: flex;
-    height: 80%;
+
 }
 
 .forum_main_options {
@@ -46,8 +52,8 @@ right menu
 .forum_topics__options, .forum_aanbevolen {
     background-color: white;
     border-radius: 25px;
-    padding: 8%;
-    margin-bottom: 10%;
+    padding: 20px;
+    margin-bottom: 5%;
 
 }
 
@@ -129,7 +135,7 @@ post
     background-color: white;
     border-radius: 15px;
     padding: 5%;
-    margin: 0 4% 4% 0;
+    margin: auto auto 4% auto;
     outline: none;
 
 }
@@ -193,7 +199,6 @@ post
 
 .expand {
     display: block;
-    background-color: ;
 }
 
 .forum_search {
@@ -201,12 +206,11 @@ post
 }
 
 .forum_page_selector {
-    align-content: center;
     margin: auto;
     text-align: center;
     width: 100%;
-    order: 3;
     height: 4%;
+    order: 1;
 
 }
 
@@ -227,4 +231,7 @@ post
 .forum_page_selector a:hover {
     background-color: #ddd;
     color: black;
+}
+#post_template{
+    order: 0;
 }

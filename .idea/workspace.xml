@@ -29,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -38,7 +38,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/responsive.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/reponsive/responsive.css" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1jPRx8FS1MwrtP201rON92sqaa6" />
   <component name="ProjectViewState">
@@ -54,12 +54,13 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\moham\Documents\Git-Fork\team-3\Fys_oefening\www" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\moham\Documents\Git-Fork\team-3\Fys_oefening\www\assets\css\pages\reponsive" />
       <recent name="C:\Users\moham\Documents\Git-Fork\team-3\Fys_oefening\www\assets\js\pages" />
       <recent name="C:\Users\moham\Documents\Git-Fork\team-3\Fys_oefening\www\assets\css\pages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\moham\Documents\Git-Fork\team-3\Fys_oefening\www" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
