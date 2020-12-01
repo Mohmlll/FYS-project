@@ -11,6 +11,7 @@ $(document).ready(function () {
         var geslachtMan = document.getElementById("man").checked;
         var geslachtVrouw = document.getElementById("vrouw").checked;
 
+
         if (voornaamValid && achternaamValid && geboorteDatumValid && woonplaatsValid && telefoonValid) {
             console.log(sessionStorage.getItem("userId"));
             var voornaam = document.getElementById('voornaam').value;
@@ -36,7 +37,24 @@ $(document).ready(function () {
                 [voornaam, achternaam, geslachtValue, geboorteDatum, woonplaats, telefoonNummer, bio, sessionStorage.getItem("userId")]
             ).done(function (data) {
                 console.log(data);
-                location.href = "index.html";
+                FYSCloud.Utils
+                    .getDataUrl($("#profilePicture"))
+                    .done(function(data) {
+                        if (data.isImage) {
+                            FYSCloud.API.uploadFile(
+                                sessionStorage.getItem("userId") + ".png",
+                                data.url
+                            ).done(function(data) {
+                                console.log(data);
+                                location.href = "index.html";
+                            }).fail(function(reason) {
+                                console.log(reason);
+                            });
+                        }
+                    }).fail(function(reason) {
+                    console.log(reason);
+                });
+
             }).fail(function (reason) {
                 console.log(reason);
             })
@@ -92,6 +110,8 @@ $(document).ready(function () {
 
     })
 
+
+
     function datum() {
         var minimaleLeeftijd = 18
         var vandaag = new Date();
@@ -100,6 +120,7 @@ $(document).ready(function () {
         var jaar = vandaag.getFullYear() - minimaleLeeftijd;
         vandaag = jaar + "-" + maand + "-" + dag;
         document.getElementById("geboortedatum").setAttribute("max", vandaag);
+        return vandaag
     }
 
     datum();
@@ -124,5 +145,20 @@ $(document).ready(function () {
         });
 
     });
+
+    $("#profilePicture").on("change", function (foto) {
+
+        FYSCloud.Utils
+            .getDataUrl($("#profilePicture"))
+            .done(function(data) {
+                if(data.isImage) {
+                    $("#imagePreview").attr("src", data.url);
+                    console.log("test")
+                }
+            }).fail(function(reason) {
+            console.log(reason);
+        });
+    })
+
 
 });

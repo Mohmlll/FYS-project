@@ -293,3 +293,7 @@ iframe {
 .inputAlert p {
     font-size: 12px;
 }
+
+#profielFoto {
+    width: 100%;
+}

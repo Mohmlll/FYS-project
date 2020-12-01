@@ -45,4 +45,5 @@ $(document).ready(function () {
 
     //Open profiel automatisch
     document.getElementById("standaard_Openen").click();
+
 });
