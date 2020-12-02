@@ -118,13 +118,19 @@ $(document).ready(function () {
         var dag = vandaag.getDate();
         var maand = vandaag.getMonth() + 1;
         var jaar = vandaag.getFullYear() - minimaleLeeftijd;
+        if (dag < 10) {
+            dag = "0" + dag;
+        }
+        if (maand < 10) {
+            maand = "0" + maand;
+        }
         vandaag = jaar + "-" + maand + "-" + dag;
         document.getElementById("geboortedatum").setAttribute("max", vandaag);
+        console.log(document.getElementById("geboortedatum").getAttribute("max"));
         return vandaag
     }
 
     datum();
-    console.log(datum())
     console.log(sessionStorage.getItem("userId"));
 
 
