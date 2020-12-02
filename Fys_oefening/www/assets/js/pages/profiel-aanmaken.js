@@ -21,6 +21,25 @@ $(document).ready(function () {
             var woonplaats = document.getElementById('woonplaats').value;
             var telefoonNummer = document.getElementById('telefoon').value;
             var bio = document.getElementById('bio').value;
+            var foto = document.getElementById("profilePicture").value;
+            var fotoStatus;
+            var isFoto;
+
+            FYSCloud.Utils
+                .getDataUrl($("#profilePicture"))
+                .done(function(data) {
+                    if (data.isImage) {
+                        isFoto = true;
+                    }
+                }).fail(function(reason) {
+                console.log(reason);
+            });
+
+            if (foto !== "" && isFoto) {
+                fotoStatus = "foto";
+            } else  {
+                fotoStatus = "geenFoto";
+            }
 
             //(voornaam, achternaam, geboortedatum, woonplaats, telefoonnummeer, bio)
             FYSCloud.API.queryDatabase(
@@ -33,8 +52,8 @@ $(document).ready(function () {
             })
 
             FYSCloud.API.queryDatabase(
-                "INSERT INTO gebruiker_profiel SET voornaam = ?, achternaam = ?, geslacht = ?, geboorte_datum = ?, woonplaats = ?, telefoon_nummer = ?, bio = ?, gebruikerid = ?",
-                [voornaam, achternaam, geslachtValue, geboorteDatum, woonplaats, telefoonNummer, bio, sessionStorage.getItem("userId")]
+                "INSERT INTO gebruiker_profiel SET profiel_foto = ?, voornaam = ?, achternaam = ?, geslacht = ?, geboorte_datum = ?, woonplaats = ?, telefoon_nummer = ?, bio = ?, gebruikerid = ?",
+                [fotoStatus, voornaam, achternaam, geslachtValue, geboorteDatum, woonplaats, telefoonNummer, bio, sessionStorage.getItem("userId")]
             ).done(function (data) {
                 console.log(data);
                 FYSCloud.Utils
