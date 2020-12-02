@@ -1,61 +1,64 @@
 $(document).ready(function () {
     console.log(sessionStorage.getItem("userId"));
-    var profilePlacement = document.getElementById("Profiel");
-    var templateProfile;
-
-    function makeAnProfile(voornaam, achternaam, geslacht, geboorteDatum, woonplaats, telefoonnr, emailAdres, bio) {
-        templateProfile = document.importNode(document.getElementById("profiel_template").content, true);
-        let voornaamInput = templateProfile.getElementById("profiel_input_voornaam");
-        let achternaamInput = templateProfile.getElementById("profiel_input_achternaam");
-        //let geslachtInput = templateProfile.getElementById("profiel_input_geslacht");
-        let geboorteDatumInput = templateProfile.getElementById("profiel_input_geboortedatum");
-        let woonplaatsInput = templateProfile.getElementById("profiel_input_woonplaats");
-        let telefoonnrInput = templateProfile.getElementById("profiel_input_telefoonnr");
-        let emailAdresInput = templateProfile.getElementById("profiel_input_email");
-        let bioInput = templateProfile.getElementById("profiel_input_bio");
-
-        voornaamInput.innerHTML = voornaam;
-        achternaamInput.innerHTML = achternaam;
-        //geslachtInput.innerHTML = geslacht;
-        geboorteDatumInput.innerHTML = geboorteDatum;
-        woonplaatsInput.innerHTML = woonplaats;
-        telefoonnrInput.innerHTML = telefoonnr;
-        emailAdresInput.innerHTML = emailAdres;
-        bioInput.innerHTML = bio;
-
-        return templateProfile.firstElementChild
+    function date() {
+        var minimaleLeeftijd = 18
+        var vandaag = new Date();
+        var dag = vandaag.getDate();
+        var maand = vandaag.getMonth() + 1;
+        var jaar = vandaag.getFullYear() - minimaleLeeftijd;
+        if (dag < 10) {
+            dag = "0" + dag;
+        }
+        if (maand < 10) {
+            maand = "0" + maand;
+        }
+        vandaag = jaar + "-" + maand + "-" + dag;
+        document.getElementById("profiel_input_geboortedatum").setAttribute("max", vandaag);
+        console.log(document.getElementById("profiel_input_geboortedatum").getAttribute("max"));
+        return vandaag
     }
 
-    var appendVoornaam;
-    var appendAchternaam;
-    //var appendGeslacht;
-    var appendGeboorteDatum;
-    var appendWoonplaats;
-    var appendTelefoonnr;
-    //var appendEmailAdres;
-    var appendBio;
+
 
     FYSCloud.API.queryDatabase(
-        "SELECT gebruikerid, profiel_foto, voornaam, achternaam, geslacht, geboorte_datum, woonplaats, telefoon_nummer, interesse, bio FROM gebruiker_profiel",
+        "SELECT profiel_foto, voornaam, achternaam, DATE (geboorte_datum), woonplaats, telefoon_nummer, interesse, bio FROM gebruiker_profiel WHERE gebruikerid = ?",
         [sessionStorage.getItem('userId')]
     ).done(function (data) {
         console.log(data)
-        appendVoornaam = data[0]['vooraam']
-        appendAchternaam = data[0]['achternaam']
-        //appendGeslacht = data[0]['geslacht']
-        appendGeboorteDatum = data[0]['geboorte_datum']
-        appendWoonplaats = data[0]['woonplaats']
-        appendTelefoonnr = data[0]['telefoon_nummer']
-        //appendEmailAdres = data[0]['email_adres']
-        appendBio = data[0]['bio']
-        console.log(appendAchternaam, appendVoornaam, appendGeboorteDatum, appendWoonplaats, appendTelefoonnr, appendBio)
-        let profielElement = makeAnProfile(appendAchternaam, appendVoornaam, appendGeboorteDatum, appendWoonplaats, appendTelefoonnr, appendBio)
-        profilePlacement.appendChild(profielElement);
+        var datum = data[0]["DATE (geboorte_datum)"];
+        datum = datum.slice(0,10);
+        document.getElementById("profiel_input_voornaam").setAttribute("placeholder", data[0]["voornaam"]);
+        document.getElementById("profiel_input_achternaam").setAttribute("placeholder", data[0]["achternaam"]);
+        document.getElementById("profiel_input_geboortedatum").setAttribute("placeholder", datum);
+        document.getElementById("profiel_input_woonplaats").setAttribute("placeholder", data[0]["woonplaats"]);
+        document.getElementById("profiel_input_telefoonnr").setAttribute("placeholder", data[0]["telefoon_nummer"]);
+        document.getElementById("profiel_input_bio").setAttribute("placeholder", data[0]["bio"]);
+        $('#gegevens_bewerken').on("click", function (bewerken) {
+            bewerken.preventDefault();
+            document.getElementById("profiel_input_geboortedatum").setAttribute("type", "date");
+            date();
+        })
+        $("#gegevens_opslaan").on("click", function (opslaan) {
+            opslaan.preventDefault();
+            document.getElementById("profiel_input_geboortedatum").setAttribute("type", "text");
+            document.getElementById("profiel_input_geboortedatum").setAttribute("placeholder", datum);
 
+        })
     }).fail(function (reason) {
         console.log(reason);
         console.log("fout");
     })
+    FYSCloud.API.queryDatabase(
+        "SELECT emailadres FROM gebruiker WHERE gebruikerid = ?",
+        [sessionStorage.getItem('userId')]
+    ).done(function (data) {
+        console.log(data)
+        document.getElementById("profiel_input_email").setAttribute("placeholder", data[0]["emailadres"]);
+    }).fail(function (reason) {
+        console.log(reason);
+        console.log("fout");
+    })
+
 
 
 });
