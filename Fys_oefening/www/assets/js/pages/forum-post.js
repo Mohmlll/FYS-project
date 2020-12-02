@@ -5,15 +5,18 @@ $(document).ready(function () {
     var template;
 
 
-    function makeAnElement(titel, content) {
+    function makeAnElement(titel, content, foto, postId) {
         template = document.importNode(document.getElementById("post_template").content, true);
         let post_header_titel = template.getElementById("post_header_titel")
+        template.getElementById("post_profiel_img").setAttribute("src", "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png")
         let content_text_div = template.getElementById("post_content")
         let content_text = template.getElementById("content_text")
         let btn = template.getElementById("post_header")
 
         post_header_titel.innerHTML = titel
         content_text.innerHTML = content
+
+
 
         btn.addEventListener('click', (event) => {
             if (content_text_div.className === "post_content") {
@@ -27,24 +30,33 @@ $(document).ready(function () {
 
     var appendTitel;
     var appendPost;
+    var appendPhoto;
 
     FYSCloud.API.queryDatabase(
-        "SELECT titel, post FROM forum_post"
+        "SELECT idgebruiker, titel, post FROM forum_post"
     ).done(function (data) {
         var noOfTemplates = data.length;
         console.log(noOfTemplates)
         for (let i = 0; i < noOfTemplates; i++) {
             console.log(data[i])
+            var postId = data[i]['idgebruiker'];
+            var photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
+            if (photoUrl !== undefined) {
+                appendPhoto = photoUrl;
+            }
             appendTitel = data[i]['titel']
             appendPost = data[i]['post']
-            console.log(appendPost, appendTitel)
-            let costumElement = makeAnElement(appendTitel, appendPost)
+            console.log(appendPost, appendTitel, appendPhoto,postId)
+            let costumElement = makeAnElement(appendTitel, appendPost, appendPhoto,postId )
             nieuwePost.appendChild(costumElement);
         }
     }).fail(function (reason) {
         console.log(reason);
         console.log("fout");
     })
+    // document.getElementById("profielFoto").setAttribute("src",
+    //     "https://dev-is106-3.fys.cloud/uploads/" + sessionStorage.getItem("userId") + ".png");
+    // console.log("src", "https://dev-is106-3.fys.cloud/uploads/" + sessionStorage.getItem("userId") + "test.png");
 
 
 });
