@@ -75,6 +75,7 @@ $(document).ready(function () {
     })
 
     $(".contact_button").on("click", function (contact) {
+        contact.preventDefault();
         var popup = document.getElementById("myContact_button");
         popup.classList.toggle("show");
     })

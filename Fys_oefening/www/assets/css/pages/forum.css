@@ -146,6 +146,7 @@ post
     order: 0;
 }
 
+
 .post_profiel_foto img {
     width: 100%;
     border-radius: 50%;
@@ -157,11 +158,6 @@ post
     width: 69%;
     font-size: 16px;
     order: 1;
-}
-
-.button_new_post {
-    order: 2;
-    width: 15%;
 }
 
 .expand_post_button {
