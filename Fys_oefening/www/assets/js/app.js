@@ -19,7 +19,7 @@ $(document).ready(function () {
                 document.getElementById("logged_out").style.display = "block";
                 document.getElementById("logged_in").style.display = "none";
                 console.log("1")
-            } else if (id !== null && data[0]["status"] === "volledig_profiel"){
+            } else if (id !== null && data[0]["status"] === "volledig_profiel") {
                 document.getElementById("logged_out").style.display = "none";
                 document.getElementById("logged_in").style.display = "block";
                 console.log("2")

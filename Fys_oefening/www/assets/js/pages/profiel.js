@@ -1,49 +1,61 @@
 $(document).ready(function () {
+    console.log(sessionStorage.getItem("userId"));
+    var profilePlacement = document.getElementById("Profiel");
+    var templateProfile;
 
+    function makeAnProfile(voornaam, achternaam, geslacht, geboorteDatum, woonplaats, telefoonnr, emailAdres, bio) {
+        templateProfile = document.importNode(document.getElementById("profiel_template").content, true);
+        let voornaamInput = templateProfile.getElementById("profiel_input_voornaam");
+        let achternaamInput = templateProfile.getElementById("profiel_input_achternaam");
+        //let geslachtInput = templateProfile.getElementById("profiel_input_geslacht");
+        let geboorteDatumInput = templateProfile.getElementById("profiel_input_geboortedatum");
+        let woonplaatsInput = templateProfile.getElementById("profiel_input_woonplaats");
+        let telefoonnrInput = templateProfile.getElementById("profiel_input_telefoonnr");
+        let emailAdresInput = templateProfile.getElementById("profiel_input_email");
+        let bioInput = templateProfile.getElementById("profiel_input_bio");
 
-    $('.gegevens_bewerken').on("click", function (bewerken) {
-        bewerken.preventDefault();
-        var readonlycheck = document.getElementById("profiel_input").hasAttribute("readonly");
-        var explorer = $("#tag_explorer").is(":checked");
+        voornaamInput.innerHTML = voornaam;
+        achternaamInput.innerHTML = achternaam;
+        //geslachtInput.innerHTML = geslacht;
+        geboorteDatumInput.innerHTML = geboorteDatum;
+        woonplaatsInput.innerHTML = woonplaats;
+        telefoonnrInput.innerHTML = telefoonnr;
+        emailAdresInput.innerHTML = emailAdres;
+        bioInput.innerHTML = bio;
 
-        if (readonlycheck) {
-            $(".profiel_input").attr("readonly", false);
-            document.getElementById("gegevens_opslaan").style.display = "block";
-            document.getElementById("gegevens_bewerken").style.display = "none";
-            document.getElementById("explorer").style.display = "block";
-
-        } else {
-            $(".profiel_input").attr("readonly", true);
-            document.getElementById("gegevens_bewerken").style.display = "block";
-            document.getElementById("gegevens_opslaan").style.display = "none";
-            document.getElementById("explorer").style.display = "none";
-            if (explorer) {
-                document.getElementById("explorer").style.display = "block";
-            }
-        }
-
-    })
-
-    function openinhoudt(live, live_kopje) {
-        var i, tabcontent, tablinks;
-
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-
-        document.getElementById(live_kopje).style.display = "block";
-        live.currentTarget.className += " active";
+        return templateProfile.firstElementChild
     }
 
-    openinhoudt()
+    var appendVoornaam;
+    var appendAchternaam;
+    //var appendGeslacht;
+    var appendGeboorteDatum;
+    var appendWoonplaats;
+    var appendTelefoonnr;
+    //var appendEmailAdres;
+    var appendBio;
 
-    //Open profiel automatisch
-    document.getElementById("standaard_Openen").click();
+    FYSCloud.API.queryDatabase(
+        "SELECT gebruikerid, profiel_foto, voornaam, achternaam, geslacht, geboorte_datum, woonplaats, telefoon_nummer, interesse, bio FROM gebruiker_profiel",
+        [sessionStorage.getItem('userId')]
+    ).done(function (data) {
+        console.log(data)
+        appendVoornaam = data[0]['vooraam']
+        appendAchternaam = data[0]['achternaam']
+        //appendGeslacht = data[0]['geslacht']
+        appendGeboorteDatum = data[0]['geboorte_datum']
+        appendWoonplaats = data[0]['woonplaats']
+        appendTelefoonnr = data[0]['telefoon_nummer']
+        //appendEmailAdres = data[0]['email_adres']
+        appendBio = data[0]['bio']
+        console.log(appendAchternaam, appendVoornaam, appendGeboorteDatum, appendWoonplaats, appendTelefoonnr, appendBio)
+        let profielElement = makeAnProfile(appendAchternaam, appendVoornaam, appendGeboorteDatum, appendWoonplaats, appendTelefoonnr, appendBio)
+        profilePlacement.appendChild(profielElement);
+
+    }).fail(function (reason) {
+        console.log(reason);
+        console.log("fout");
+    })
+
 
 });
