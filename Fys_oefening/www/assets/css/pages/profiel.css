@@ -33,6 +33,8 @@ Profiel Overzicht
 
 .button_inhoudt {
     text-align: center;
+    margin: auto;
+    width: 50%;
 }
 
 .tab {
@@ -308,4 +310,16 @@ table .radiobutton {
 
 .tag_div span {
     padding: 8px;
+}
+
+.foto_other_user {
+    position: static;
+    margin: auto;
+    width: 100px
+    height: 100px;
+    padding-bottom: 40px;
+}
+
+.info_user {
+    filter: blur(4px);
 }
