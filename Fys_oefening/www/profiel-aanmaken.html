@@ -56,106 +56,119 @@
             <h1>Vul hier de onderstaande velden in.</h1>
 
             <form class="input" id="profile">
-
-                <label>
-                    <table>
-                        <tr>
-                            <td>Foto van jezelf:</td>
-                            <td>
-                                <div id="foto">
-                                    <label>
-                                        <input type="file" id="profilePicture">
-                                        <img src="" id="imagePreview">
-                                    </label>
-                                </div>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>Voornaam:</td>
-                            <td><input class="tekstbox" id="voornaam" pattern="[a-zA-Z]+" placeholder="Voornaam"
-                                       required type="text">
-                                <div class="inputAlert" id="geenVoornaam">
-                                    <p>
-                                        Vul hier je voornaam in <br>
-
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Achternaam:</td>
-                            <td><input class="tekstbox" id="achternaam" pattern="[a-zA-Z]+" placeholder="Achternaam"
-                                       required type="text">
-                                <div class="inputAlert" id="geenAchternaam">
-                                    <p>
-                                        Vul hier je achternaam in<br>
-
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Geslacht:</td>
-                            <td>
+                <table>
+                    <tr>
+                        <td>Foto van jezelf:</td>
+                        <td>
+                            <div id="foto">
                                 <label>
-                                    <input class="geslacht" id="man" name="geslacht" required type="radio" value="man">
-                                    Man
+                                    <input type="file" id="profilePicture">
+                                    <img src="" id="imagePreview">
                                 </label>
-                                <br>
-                                <label>
-                                    <input class="geslacht" id="vrouw" name="geslacht" type="radio" value="vrouw"> Vrouw
-                                </label>
+                            </div>
+                        </td>
 
-                                <div class="inputAlert" id="geenGeslacht">
-                                    <p>
-                                        Selecteer geslacht <br>
-
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Geboortedatum:</td>
-                            <td><input class="tekstbox" id="geboortedatum" placeholder="Geboortedatum"
-                                       required type="date" >
-                                <div class="inputAlert" id="geenGeboorteDatum">
-                                    <p>
-                                        Selecteer een geldig geboorte datum <br>
-
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Woonplaats:</td>
-                            <td><input class="tekstbox" id="woonplaats" pattern="[a-zA-Z]+" placeholder="Woonplaats"
+                    </tr>
+                    <tr>
+                        <td>Voornaam:</td>
+                        <td>
+                            <label>
+                                <input class="tekstbox" id="voornaam" pattern="[a-zA-Z]+" placeholder="Voornaam"
                                        required type="text">
-                                <div class="inputAlert" id="geenWoonplaats">
-                                    <p>
-                                        Vul je woonplaats hier in <br>
+                            </label>
+                            <div class="inputAlert" id="geenVoornaam">
+                                <p>
+                                    Vul hier je voornaam in <br>
 
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Telefoonnummer:</td>
-                            <td>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Achternaam:</td>
+                        <td>
+                            <label>
+                                <input class="tekstbox" id="achternaam" pattern="[a-zA-Z]+" placeholder="Achternaam"
+                                       required type="text">
+                            </label>
+                            <div class="inputAlert" id="geenAchternaam">
+                                <p>
+                                    Vul hier je achternaam in<br>
+
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Geslacht:</td>
+                        <td>
+                            <label>
+                                <input class="geslacht" id="man" name="geslacht" required type="radio" value="man">
+                                Man
+                            </label>
+                            <br>
+                            <label>
+                                <input class="geslacht" id="vrouw" name="geslacht" type="radio" value="vrouw"> Vrouw
+                            </label>
+
+                            <div class="inputAlert" id="geenGeslacht">
+                                <p>
+                                    Selecteer geslacht <br>
+
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Geboortedatum:</td>
+                        <td>
+                            <label>
+                                <input class="tekstbox" id="geboortedatum" placeholder="Geboortedatum"
+                                       required type="date">
+                            </label>
+                            <div class="inputAlert" id="geenGeboorteDatum">
+                                <p>
+                                    Selecteer een geldig geboorte datum <br>
+
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Woonplaats:</td>
+                        <td>
+                            <label>
+                                <input class="tekstbox" id="woonplaats" pattern="[a-zA-Z]+" placeholder="Woonplaats"
+                                       required type="text">
+                            </label>
+                            <div class="inputAlert" id="geenWoonplaats">
+                                <p>
+                                    Vul je woonplaats hier in <br>
+
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Telefoonnummer:</td>
+                        <td>
+                            <label>
                                 <input class="tekstbox" id="telefoon" pattern="[0-9]{2}-[0-9]{8}"
                                        placeholder="Telefoonnummer"
                                        required type="tel">
-                                <div class="inputAlert" id="geenTelefoon">
-                                    <p>
-                                        Vul hier een nummer in met de volgende volgorde: <br>
-                                        xx-xxxxxxxx
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Soort vakantieganger:</td>
-                            <td>
+                            </label>
+                            <div class="inputAlert" id="geenTelefoon">
+                                <p>
+                                    Vul hier een nummer in met de volgende volgorde: <br>
+                                    xx-xxxxxxxx
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Soort vakantieganger:</td>
+                        <td>
+                            <label>
                                 <select class="soort_vakantieganger" id="soortVakantieGanger">
                                     <option value="#">Explorer</option>
                                     <option value="#">Sportieveling</option>
@@ -166,26 +179,27 @@
                                     <option value="#">Tropisch</option>
                                     <option value="#">Resort</option>
                                 </select>
-                                <div class="inputAlert" id="geenSoortVakantieGanger">
-                                    <p>
-                                        Geef de soort vakantie ganger dat je bent aan <br>
+                            </label>
+                            <div class="inputAlert" id="geenSoortVakantieGanger">
+                                <p>
+                                    Geef de soort vakantie ganger dat je bent aan <br>
 
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Vertel hier iets leuks over jezelf: <br><br></td>
-                            <td>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vertel hier iets leuks over jezelf: <br><br></td>
+                        <td>
+                            <label>
                                 <textarea class="tekstbox" id="bio" placeholder="Optioneel">
-
                                 </textarea>
+                            </label>
                             </td>
                         </tr>
 
                     </table>
                     <button class="gegevens_opslaan" type="submit">Sla de gegevens op.</button>
-                </label>
             </form>
 
         </div>
