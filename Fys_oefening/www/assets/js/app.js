@@ -79,6 +79,13 @@ $(document).ready(function () {
         popup.classList.toggle("show");
     })
 
+    var forum = location.href.includes("forum-homepage");
+    if (sessionStorage.getItem("userId") === null && forum) {
+        console.log("inloggen")
+    } else {
+        console.log("niet goed")
+    }
+
 
     if (sessionStorage.getItem("userId") !== null) {
         document.getElementById("profielFoto").setAttribute("src", "https://dev-is106-3.fys.cloud/uploads/" + sessionStorage.getItem("userId") + ".png");
