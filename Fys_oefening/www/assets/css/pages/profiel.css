@@ -315,7 +315,7 @@ table .radiobutton {
 .foto_other_user {
     position: static;
     margin: auto;
-    width: 100px
+    width: 100px;
     height: 100px;
     padding-bottom: 40px;
 }
