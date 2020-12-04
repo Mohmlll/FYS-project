@@ -25,7 +25,7 @@ $(document).ready(function () {
                 content_text_div.className = "post_content";
             }
         })
-        return template.firstElementChild
+        return template.firstElementChild;
     }
 
 

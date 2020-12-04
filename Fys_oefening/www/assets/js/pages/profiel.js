@@ -59,6 +59,18 @@ $(document).ready(function () {
         console.log("fout");
     })
 
+    // var checkbox = $(".gegevens_button");
+    // checkbox.addEventListener('click', () => {
+    //     var tagDiv = $(".tag_button");
+    //     if (tagDiv.className === "tag_button") {
+    //         tagDiv.className += " zichtbaar";
+    //         console.log("goed")
+    //     } else {
+    //         tagDiv.className = "tag_button";
+    //         console.log("goed2222")
+    //     }
+    // })
+
 
 
 });

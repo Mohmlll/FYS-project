@@ -1,10 +1,5 @@
 $(document).ready(function () {
 
-    function tagCheckBox (tag){
-        tag.preventDefault();
-        if()
-
-    }
     $(".gegevens_opslaan").on("click", function (gegevens) {
         gegevens.preventDefault();
 
@@ -13,7 +8,6 @@ $(document).ready(function () {
         var achternaamValid = $("#achternaam").is(":valid");
         var geboorteDatumValid = $("#geboortedatum").is(":valid");
         var woonplaatsValid = $("#woonplaats").is(":valid");
-        //var soortVakantieGangerValid = $("#soortVakantieGanger").is(":valid");
         var geslachtMan = document.getElementById("man").checked;
         var geslachtVrouw = document.getElementById("vrouw").checked;
         var tagExplorer = document.getElementById("tag_explorer").checked;
@@ -25,14 +19,7 @@ $(document).ready(function () {
         var tagBackpacker = document.getElementById("tag_backpacker").checked;
         var tagResort = document.getElementById("tag_resort").checked;
 
-        FYSCloud.API.queryDatabase(
-            "INSERT INTO interesse SET explorer = ?, sportieveling = ?, relaxer = ?, partygoer = ? , wintersport = ?, tropisch = ?, backpacker= ?, resort= ?, idgebruiker = ?",
-            [tagExplorer, tagSportieveling, tagRelaxer, tagPartygoer, tagWinterSport, tagTropisch, tagBackpacker, tagResort, sessionStorage.getItem("userId")]
-        ).done(function (data) {
-            console.log(data);
-        }).fail(function (reason) {
-            console.log(reason);
-        })
+
         if (voornaamValid && achternaamValid && geboorteDatumValid && woonplaatsValid && telefoonValid) {
             console.log(sessionStorage.getItem("userId"));
             var voornaam = document.getElementById('voornaam').value;
@@ -66,6 +53,15 @@ $(document).ready(function () {
             FYSCloud.API.queryDatabase(
                 "UPDATE gebruiker SET status = 'volledig_profiel' WHERE gebruikerid = ?",
                 [sessionStorage.getItem("userId")]
+            ).done(function (data) {
+                console.log(data);
+            }).fail(function (reason) {
+                console.log(reason);
+            })
+
+            FYSCloud.API.queryDatabase(
+                "INSERT INTO interesse SET explorer = ?, sportieveling = ?, relaxer = ?, partygoer = ? , wintersport = ?, tropisch = ?, backpacker= ?, resort= ?, idgebruiker = ?",
+                [tagExplorer, tagSportieveling, tagRelaxer, tagPartygoer, tagWinterSport, tagTropisch, tagBackpacker, tagResort, sessionStorage.getItem("userId")]
             ).done(function (data) {
                 console.log(data);
             }).fail(function (reason) {
