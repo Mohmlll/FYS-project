@@ -1,4 +1,10 @@
 $(document).ready(function () {
+
+    function tagCheckBox (tag){
+        tag.preventDefault();
+        if()
+
+    }
     $(".gegevens_opslaan").on("click", function (gegevens) {
         gegevens.preventDefault();
 
@@ -10,8 +16,23 @@ $(document).ready(function () {
         //var soortVakantieGangerValid = $("#soortVakantieGanger").is(":valid");
         var geslachtMan = document.getElementById("man").checked;
         var geslachtVrouw = document.getElementById("vrouw").checked;
+        var tagExplorer = document.getElementById("tag_explorer").checked;
+        var tagSportieveling  = document.getElementById("tag_sportieveling").checked;
+        var tagRelaxer = document.getElementById("tag_relaxer").checked;
+        var tagPartygoer = document.getElementById("tag_partygoer").checked;
+        var tagWinterSport = document.getElementById("tag_wintersport").checked;
+        var tagTropisch = document.getElementById("tag_tropisch").checked;
+        var tagBackpacker = document.getElementById("tag_backpacker").checked;
+        var tagResort = document.getElementById("tag_resort").checked;
 
-
+        FYSCloud.API.queryDatabase(
+            "INSERT INTO interesse SET explorer = ?, sportieveling = ?, relaxer = ?, partygoer = ? , wintersport = ?, tropisch = ?, backpacker= ?, resort= ?, idgebruiker = ?",
+            [tagExplorer, tagSportieveling, tagRelaxer, tagPartygoer, tagWinterSport, tagTropisch, tagBackpacker, tagResort, sessionStorage.getItem("userId")]
+        ).done(function (data) {
+            console.log(data);
+        }).fail(function (reason) {
+            console.log(reason);
+        })
         if (voornaamValid && achternaamValid && geboorteDatumValid && woonplaatsValid && telefoonValid) {
             console.log(sessionStorage.getItem("userId"));
             var voornaam = document.getElementById('voornaam').value;
