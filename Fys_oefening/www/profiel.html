@@ -63,52 +63,52 @@
         <div class="buttonpagina_totaal">
             <!-- Tab links -->
             <div class="tab">
-                <button class="tablinks" id="standaard_Openen" onclick="openinhoudt(event, 'Profiel')">Profiel xxx
+                <button class="tablinks" id="standaard_Openen" onclick="openinhoudt(event, 'Profiel')">Profiel User
                 </button>
             </div>
             <div class="button_inhoudt">
                 <!-- Tab content -->
 
                 <div class="tabcontent" id="Profiel">
-                    <h1>xxx's Profiel</h1>
-                    <div class="foto_user">
-                        <img id="profielFoto" alt="Gebruiker foto" src="assets/img/AboutUsFotos/Dylan.png">
-                    </div>
+                    <table>
+                        <tr>
+                            <td>
+                                <h1>Profiel Overzicht</h1>
+                                <h1>Naam: Dylan</h1>
+                                <div class="foto_other_user">
+                                    <img id="profielFoto" alt="Gebruiker foto" src="assets/img/AboutUsFotos/Dylan.png">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <button onclick="pop_Notification()">Ask?</button>
+
                     <div class="info_user">
                         <table>
                             <tr>
                                 <td>Naam</td>
-                                <td>xxx</td>
+                                <td>tba</td>
                             </tr>
 
                             <tr>
                                 <td>Geboortejaar</td>
-                                <td>xxxx</td>
+                                <td>tba</td>
                             </tr>
 
                             <tr>
                                 <td>Geslacht</td>
-                                <td>xxx</td>
+                                <td>tba</td>
                             </tr>
 
                             <tr>
-                                <td>Provincie</td>
-                                <td>xxx</td>
+                                <td>Voorkeuren</td>
+                                <td>tba</td>
                             </tr>
+
                         </table>
                     </div>
-                    <hr>
-                    <div class="voorkeuren_user">
 
-                        <br>
-                        <p>Voorkeuren:</p>
-                        <p>Klimaat - xxx</p>
-                        <p>Activiteit - xxx</p>
-                        <p>Leeftijd - xx | xx jaar</p>
-                        <div class="contact_button">Contact me!
-                            <span class="popuptext" id="myContact_button">Verzoek verzonden...</span>
-                        </div>
-                    </div>
                 </div>
 
             </div>
@@ -133,6 +133,13 @@
         <div class="right_empty_footer"></div>
     </div>
 </div>
+
+<script>
+    function pop_Notification() {
+        alert("De gebruiker heeft je uitnodiging ontvangen, wacht tot hij of zij deze geacccepteerd heeft")
+    }
+</script>
+
 </body>
 </html>
 

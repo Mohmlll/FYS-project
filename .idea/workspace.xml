@@ -107,9 +107,8 @@
       <workItem from="1606757403042" duration="1748000" />
       <workItem from="1606820510111" duration="179000" />
       <workItem from="1606823710938" duration="17282000" />
-      <workItem from="1606912631574" duration="14189000" />
-      <workItem from="1606994325256" duration="998000" />
-      <workItem from="1607075186302" duration="422000" />
+      <workItem from="1606912631574" duration="14115000" />
+      <workItem from="1606990199106" duration="384000" />
     </task>
     <servers />
   </component>
@@ -166,12 +165,12 @@
     <state x="2329" y="631" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1605954995065" />
     <state x="307" y="469" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606214498962" />
     <state x="409" y="631" key="FileChooserDialogImpl/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1605006618087" />
-    <state x="246" y="271" width="1438" height="1100" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606925618365">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="319" y="136" width="1918" height="1460" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606928596192">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="712" y="-18" width="1438" height="897" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-2560.0.2560.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1604001940141" />
     <state x="246" y="271" width="1438" height="1100" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606925618365" />
-    <state x="319" y="136" width="1918" height="1460" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1400/-1920.7.1920.1040@0.0.2560.1400" timestamp="1606753940581" />
+    <state x="319" y="136" width="1918" height="1460" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1400/-1920.7.1920.1040@0.0.2560.1400" timestamp="1606928596192" />
     <state x="1771" y="314" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1603989759050">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
