@@ -1,6 +1,16 @@
 $(document).ready(function () {
     console.log(sessionStorage.getItem("userId"));
 
+    var forumLogin = location.href.includes("forum-homepagina.html");
+    var postLogin = location.href.includes("post.html");
+    var postAanmakenLogin = location.href.includes("post-aanmaken.html");
+    var profielLogin = location.href.includes("profiel.html");
+    var profielAanmakenLogin = location.href.includes(("profiel-aanmaken.html"));
+    var profielOverzichtLogin = location.href.includes("profiel-overzicht.html");
+    if (sessionStorage.getItem("userId") === null && (forumLogin || postLogin || postAanmakenLogin || profielLogin || profielAanmakenLogin || profielOverzichtLogin)) {
+        location.href = "log-in.html";
+    }
+
     function menuSelectie() {
         var id = sessionStorage.getItem("userId")
         var pagina = location.href
