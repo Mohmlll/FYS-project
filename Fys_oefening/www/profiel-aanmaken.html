@@ -58,169 +58,153 @@
             <h1>Vul hier de onderstaande velden in.</h1>
 
             <form class="input" id="profile">
-
-                <label>
-                    <table>
-                        <tr>
-                            <td>Foto van jezelf:</td>
-                            <td>
-                                <div id="foto">
-                                    <label>
-                                        <input type="file" id="profilePicture">
-                                        <img src="" id="imagePreview">
-                                    </label>
-                                </div>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>Voornaam:</td>
-                            <td><input class="tekstbox" id="voornaam" pattern="[a-zA-Z]+" placeholder="Voornaam"
-                                       required type="text">
-                                <div class="inputAlert" id="geenVoornaam">
-                                    <p>
-                                        Vul hier je voornaam in <br>
-
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Achternaam:</td>
-                            <td><input class="tekstbox" id="achternaam" pattern="[a-zA-Z]+" placeholder="Achternaam"
-                                       required type="text">
-                                <div class="inputAlert" id="geenAchternaam">
-                                    <p>
-                                        Vul hier je achternaam in<br>
-
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Geslacht:</td>
-                            <td>
+                <table>
+                    <tr>
+                        <td>Foto van jezelf:</td>
+                        <td>
+                            <div id="foto">
                                 <label>
-                                    <input class="geslacht" id="man" name="geslacht" required type="radio" value="man">
-                                    Man
+                                    <input type="file" id="profilePicture">
+                                    <img src="" id="imagePreview">
                                 </label>
-                                <br>
-                                <label>
-                                    <input class="geslacht" id="vrouw" name="geslacht" type="radio" value="vrouw"> Vrouw
-                                </label>
+                            </div>
+                        </td>
 
-                                <div class="inputAlert" id="geenGeslacht">
-                                    <p>
-                                        Selecteer geslacht <br>
-
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Geboortedatum:</td>
-                            <td><input class="tekstbox" id="geboortedatum" placeholder="Geboortedatum"
-                                       required type="date" >
-                                <div class="inputAlert" id="geenGeboorteDatum">
-                                    <p>
-                                        Selecteer een geldig geboorte datum <br>
-
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Woonplaats:</td>
-                            <td><input class="tekstbox" id="woonplaats" pattern="[a-zA-Z]+" placeholder="Woonplaats"
+                    </tr>
+                    <tr>
+                        <td>Voornaam:</td>
+                        <td>
+                            <label>
+                                <input class="tekstbox" id="voornaam" pattern="[a-zA-Z]+" placeholder="Voornaam"
                                        required type="text">
-                                <div class="inputAlert" id="geenWoonplaats">
-                                    <p>
-                                        Vul je woonplaats hier in <br>
+                            </label>
+                            <div class="inputAlert" id="geenVoornaam">
+                                <p>
+                                    Vul hier je voornaam in <br>
 
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Telefoonnummer:</td>
-                            <td>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Achternaam:</td>
+                        <td>
+                            <label>
+                                <input class="tekstbox" id="achternaam" pattern="[a-zA-Z]+" placeholder="Achternaam"
+                                       required type="text">
+                            </label>
+                            <div class="inputAlert" id="geenAchternaam">
+                                <p>
+                                    Vul hier je achternaam in<br>
+
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Geslacht:</td>
+                        <td>
+                            <label>
+                                <input class="geslacht" id="man" name="geslacht" required type="radio" value="man">
+                                Man
+                            </label>
+                            <br>
+                            <label>
+                                <input class="geslacht" id="vrouw" name="geslacht" type="radio" value="vrouw"> Vrouw
+                            </label>
+
+                            <div class="inputAlert" id="geenGeslacht">
+                                <p>
+                                    Selecteer geslacht <br>
+
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Geboortedatum:</td>
+                        <td>
+                            <label>
+                                <input class="tekstbox" id="geboortedatum" placeholder="Geboortedatum"
+                                       required type="date">
+                            </label>
+                            <div class="inputAlert" id="geenGeboorteDatum">
+                                <p>
+                                    Selecteer een geldig geboorte datum <br>
+
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Woonplaats:</td>
+                        <td>
+                            <label>
+                                <input class="tekstbox" id="woonplaats" pattern="[a-zA-Z]+" placeholder="Woonplaats"
+                                       required type="text">
+                            </label>
+                            <div class="inputAlert" id="geenWoonplaats">
+                                <p>
+                                    Vul je woonplaats hier in <br>
+
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Telefoonnummer:</td>
+                        <td>
+                            <label>
                                 <input class="tekstbox" id="telefoon" pattern="[0-9]{2}-[0-9]{8}"
                                        placeholder="Telefoonnummer"
                                        required type="tel">
-                                <div class="inputAlert" id="geenTelefoon">
-                                    <p>
-                                        Vul hier een nummer in met de volgende volgorde: <br>
-                                        xx-xxxxxxxx
-                                    </p>
+                            </label>
+                            <div class="inputAlert" id="geenTelefoon">
+                                <p>
+                                    Vul hier een nummer in met de volgende volgorde: <br>
+                                    xx-xxxxxxxx
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Soort vakantieganger:</td>
+                        <td>
+                            <div class="create_post_tags">
+                                <div class="tag_div">
+                                    <label for="tag_explorer">
+                                        <input class="tag_button" id="tag_explorer" type="checkbox">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Explorer</span>
+                                    </label>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Soort vakantieganger:</td>
-                            <td>
-                                <div class="create_post_tags">
-                                    <div class="tag_div">
-                                        <label for="tag_explorer">
-                                            <input class="tag_button" id="tag_explorer" type="checkbox">
-                                            <span>Explorer</span>
-                                        </label>
-                                    </div>
 
-                                    <div class="tag_div">
-                                        <label for="tag_sportieveling">
-                                            <input class="tag_button" id="tag_sportieveling" type="checkbox">
-                                            <span>Sportieveling</span>
-                                        </label>
-                                    </div>
+                                <div class="tag_div">
+                                    <label for="tag_sportieveling">
+                                        <input class="tag_button" id="tag_sportieveling" type="checkbox">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Sportieveling</span>
+                                    </label>
+                                </div>
 
-                                    <div class="tag_div">
-                                        <label for="tag_relaxer">
-                                            <input class="tag_button" id="tag_relaxer" type="checkbox">
-                                            <span>Relaxer</span>
-                                        </label>
-                                    </div>
-
-                                    <div class="tag_div">
-                                        <label for="tag_partygoer">
-                                            <input class="tag_button" id="tag_partygoer" type="checkbox">
-                                            <span>Partygoer</span>
-                                        </label>
-                                    </div>
-
-                                    <div class="tag_div">
-                                        <label for="tag_wintersport">
-                                            <input class="tag_button" id="tag_wintersport" type="checkbox">
-                                            <span>Wintersport</span>
-                                        </label>
-                                    </div>
-
-                                    <div class="tag_div">
-                                        <label for="tag_tropisch">
-                                            <input class="tag_button" id="tag_tropisch" type="checkbox">
-                                            <span>Tropische</span>
-                                        </label>
-                                    </div>
-
-                                    <div class="tag_div">
-                                        <label for="tag_backpacker">
-                                            <input class="tag_button" id="tag_backpacker" type="checkbox">
-                                            <span>Backpacker</span>
-                                        </label>
-                                    </div>
-
-                                    <div class="tag_div">
-                                        <label for="tag_resort">
-                                            <input class="tag_button" id="tag_resort" type="checkbox">
-                                            <span>Resort</span>
-                                        </label>
-                                    </div>
-
+                                <div class="tag_div">
+                                    <label for="tag_relaxer">
+                                        <input class="tag_button" id="tag_relaxer" type="checkbox">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Relaxer</span>
+                                    </label>
                                 </div>
                                 <div class="inputAlert" id="geenSoortVakantieGanger">
                                     <p>
                                         Geef de soort vakantie ganger dat je bent aan <br>
 
                                     </p>
+                                <div class="tag_div">
+                                    <label for="tag_partygoer">
+                                        <input class="tag_button" id="tag_partygoer" type="checkbox">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Partygoer</span>
+                                    </label>
                                 </div>
                             </td>
                         </tr>
@@ -229,13 +213,59 @@
                             <td>
                                 <textarea class="tekstbox" id="bio" placeholder="Optioneel">
 
+                                <div class="tag_div">
+                                    <label for="tag_wintersport">
+                                        <input class="tag_button" id="tag_wintersport" type="checkbox">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Wintersport</span>
+                                    </label>
+                                </div>
+
+                                <div class="tag_div">
+                                    <label for="tag_tropisch">
+                                        <input class="tag_button" id="tag_tropisch" type="checkbox">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Tropische</span>
+                                    </label>
+                                </div>
+
+                                <div class="tag_div">
+                                    <label for="tag_backpacker">
+                                        <input class="tag_button" id="tag_backpacker" type="checkbox">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Backpacker</span>
+                                    </label>
+                                </div>
+
+                                <div class="tag_div">
+                                    <label for="tag_resort">
+                                        <input class="tag_button" id="tag_resort" type="checkbox">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Resort</span>
+                                    </label>
+                                </div>
+
+                            </div>
+                            <div class="inputAlert" id="geenSoortVakantieGanger">
+                                <p>
+                                    Geef de soort vakantie ganger dat je bent aan <br>
+
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vertel hier iets leuks over jezelf: <br><br></td>
+                        <td>
+                            <label>
+                                <textarea class="tekstbox" id="bio" placeholder="Optioneel">
                                 </textarea>
-                            </td>
-                        </tr>
+                            </label>
+                        </td>
+                    </tr>
 
                     </table>
                     <button class="gegevens_opslaan" type="submit">Sla de gegevens op.</button>
-                </label>
             </form>
 
         </div>
