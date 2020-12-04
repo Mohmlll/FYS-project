@@ -132,7 +132,7 @@ $(document).ready(function () {
 
 
     function datum() {
-        var minimaleLeeftijd = 18
+        var minimaleLeeftijd = 18;
         var vandaag = new Date();
         var dag = vandaag.getDate();
         var maand = vandaag.getMonth() + 1;
