@@ -11,7 +11,7 @@ $(document).ready(function () {
         var geslachtMan = document.getElementById("man").checked;
         var geslachtVrouw = document.getElementById("vrouw").checked;
         var tagExplorer = document.getElementById("tag_explorer").checked;
-        var tagSportieveling  = document.getElementById("tag_sportieveling").checked;
+        var tagSportieveling = document.getElementById("tag_sportieveling").checked;
         var tagRelaxer = document.getElementById("tag_relaxer").checked;
         var tagPartygoer = document.getElementById("tag_partygoer").checked;
         var tagWinterSport = document.getElementById("tag_wintersport").checked;
@@ -23,7 +23,14 @@ $(document).ready(function () {
             console.log(sessionStorage.getItem("userId"));
             var voornaam = document.getElementById('voornaam').value;
             var achternaam = document.getElementById('achternaam').value;
-            var geslachtValue = document.getElementsByClassName("geslacht").value;
+            var geslachtValue;
+            if (geslachtMan) {
+                geslachtValue = "Man";
+                console.log(geslachtValue);
+            } else {
+                geslachtValue = "Vrouw";
+                console.log(geslachtValue);
+            }
             var geboorteDatum = document.getElementById('geboortedatum').value;
             var woonplaats = document.getElementById('woonplaats').value;
             var telefoonNummer = document.getElementById('telefoon').value;
@@ -141,7 +148,6 @@ $(document).ready(function () {
     })
 
 
-
     function datum() {
         var minimaleLeeftijd = 18;
         var vandaag = new Date();
@@ -186,12 +192,12 @@ $(document).ready(function () {
 
         FYSCloud.Utils
             .getDataUrl($("#profilePicture"))
-            .done(function(data) {
-                if(data.isImage) {
+            .done(function (data) {
+                if (data.isImage) {
                     $("#imagePreview").attr("src", data.url);
                     console.log("test")
                 }
-            }).fail(function(reason) {
+            }).fail(function (reason) {
             console.log(reason);
         });
     })
