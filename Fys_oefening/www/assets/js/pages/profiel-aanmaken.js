@@ -31,7 +31,7 @@ $(document).ready(function () {
             // var foto = document.getElementById("profilePicture").value;
             var fotoStatus = "geenFoto";
 
-            
+
 
             //(voornaam, achternaam, geboortedatum, woonplaats, telefoonnummeer, bio)
             FYSCloud.API.queryDatabase(
