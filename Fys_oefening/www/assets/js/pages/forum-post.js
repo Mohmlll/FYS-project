@@ -41,7 +41,11 @@ $(document).ready(function () {
         for (let i = 0; i < noOfTemplates; i++) {
             console.log(data[i])
             var postId = data[i]['idgebruiker'];
-            var photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
+            var photoUrl = "https://i.imgur.com/b5TbCKd.png";
+            if (data[i]["profiel_foto"] === "foto") {
+                photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
+                console.log(data[i]["profiel_foto"])
+            }
             var img = new Image()
             img.src = photoUrl;
             appendTitel = data[i]['titel']
@@ -57,5 +61,4 @@ $(document).ready(function () {
     var img = new Image()
     img.src="https://dev-is106-3.fys.cloud/uploads/133.png"
     console.log("height = " + img.height);
-
 });
