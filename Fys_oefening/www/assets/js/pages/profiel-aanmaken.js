@@ -19,7 +19,6 @@ $(document).ready(function () {
         var tagBackpacker = document.getElementById("tag_backpacker").checked;
         var tagResort = document.getElementById("tag_resort").checked;
 
-
         if (voornaamValid && achternaamValid && geboorteDatumValid && woonplaatsValid && telefoonValid) {
             console.log(sessionStorage.getItem("userId"));
             var voornaam = document.getElementById('voornaam').value;
@@ -29,25 +28,10 @@ $(document).ready(function () {
             var woonplaats = document.getElementById('woonplaats').value;
             var telefoonNummer = document.getElementById('telefoon').value;
             var bio = document.getElementById('bio').value;
-            var foto = document.getElementById("profilePicture").value;
-            var fotoStatus;
-            var isFoto;
+            // var foto = document.getElementById("profilePicture").value;
+            var fotoStatus = "geenFoto";
 
-            FYSCloud.Utils
-                .getDataUrl($("#profilePicture"))
-                .done(function(data) {
-                    if (data.isImage) {
-                        isFoto = true;
-                    }
-                }).fail(function(reason) {
-                console.log(reason);
-            });
-
-            if (foto !== "" && isFoto) {
-                fotoStatus = "foto";
-            } else  {
-                fotoStatus = "geenFoto";
-            }
+            
 
             //(voornaam, achternaam, geboortedatum, woonplaats, telefoonnummeer, bio)
             FYSCloud.API.queryDatabase(
@@ -68,32 +52,42 @@ $(document).ready(function () {
                 console.log(reason);
             })
 
-            FYSCloud.API.queryDatabase(
-                "INSERT INTO gebruiker_profiel SET profiel_foto = ?, voornaam = ?, achternaam = ?, geslacht = ?, geboorte_datum = ?, woonplaats = ?, telefoon_nummer = ?, bio = ?, gebruikerid = ?",
-                [fotoStatus, voornaam, achternaam, geslachtValue, geboorteDatum, woonplaats, telefoonNummer, bio, sessionStorage.getItem("userId")]
-            ).done(function (data) {
-                console.log(data);
-                FYSCloud.Utils
-                    .getDataUrl($("#profilePicture"))
-                    .done(function(data) {
-                        if (data.isImage) {
-                            FYSCloud.API.uploadFile(
-                                sessionStorage.getItem("userId") + ".png",
-                                data.url
-                            ).done(function(data) {
-                                console.log(data);
-                                location.href = "index.html";
-                            }).fail(function(reason) {
+            FYSCloud.Utils
+                .getDataUrl($("#profilePicture"))
+                .done(function(data) {
+                    if (data.isImage) {
+                        fotoStatus = "foto";
+                        FYSCloud.API.queryDatabase(
+                            "INSERT INTO gebruiker_profiel SET profiel_foto = ?, voornaam = ?, achternaam = ?, geslacht = ?, geboorte_datum = ?, woonplaats = ?, telefoon_nummer = ?, bio = ?, gebruikerid = ?",
+                            [fotoStatus, voornaam, achternaam, geslachtValue, geboorteDatum, woonplaats, telefoonNummer, bio, sessionStorage.getItem("userId")]
+                        ).done(function (data) {
+                            console.log(data);
+                            FYSCloud.Utils
+                                .getDataUrl($("#profilePicture"))
+                                .done(function(data) {
+                                    if (data.isImage) {
+                                        FYSCloud.API.uploadFile(
+                                            sessionStorage.getItem("userId") + ".png",
+                                            data.url
+                                        ).done(function(data) {
+                                            console.log(data);
+                                            location.href = "index.html";
+                                        }).fail(function(reason) {
+                                            console.log(reason);
+                                        });
+                                    }
+                                }).fail(function(reason) {
                                 console.log(reason);
                             });
-                        }
-                    }).fail(function(reason) {
-                    console.log(reason);
-                });
 
-            }).fail(function (reason) {
+                        }).fail(function (reason) {
+                            console.log(reason);
+                        })
+                    }
+                }).fail(function(reason) {
                 console.log(reason);
-            })
+            });
+
         } else {
             if (!voornaamValid) {
                 document.getElementById("voornaam").style.borderColor = "red";
