@@ -1,5 +1,6 @@
 $(document).ready(function () {
     console.log(sessionStorage.getItem("userId"));
+
     function date() {
         var minimaleLeeftijd = 18
         var vandaag = new Date();
@@ -24,14 +25,13 @@ $(document).ready(function () {
     }
 
 
-
     FYSCloud.API.queryDatabase(
         "SELECT profiel_foto, voornaam, achternaam, geslacht, DATE (geboorte_datum), woonplaats, telefoon_nummer, interesse, bio FROM gebruiker_profiel WHERE gebruikerid = ?",
         [sessionStorage.getItem('userId')]
     ).done(function (data) {
         console.log(data)
         var datum = data[0]["DATE (geboorte_datum)"];
-        datum = datum.slice(0,10);
+        datum = datum.slice(0, 10);
         document.getElementById("profiel_input_voornaam").setAttribute("placeholder", data[0]["voornaam"]);
         document.getElementById("profiel_input_achternaam").setAttribute("placeholder", data[0]["achternaam"]);
         document.getElementById("profiel_input_geslacht").setAttribute("placeholder", data[0]["geslacht"]);
@@ -76,7 +76,6 @@ $(document).ready(function () {
     //         console.log("goed2222")
     //     }
     // })
-
 
 
 });

@@ -37,7 +37,7 @@ $(document).ready(function () {
             img.src = photoUrl;
             appendVoornaam = data[i]['voornaam']
             appendAchternaam = data[i]['achternaam']
-            console.log(appendVoornaam, appendAchternaam, photoUrl,postId)
+            console.log(appendVoornaam, appendAchternaam, photoUrl, postId)
             let costumElement = makeAnElement(appendVoornaam, appendAchternaam, photoUrl)
             nieuwePost.appendChild(costumElement);
         }

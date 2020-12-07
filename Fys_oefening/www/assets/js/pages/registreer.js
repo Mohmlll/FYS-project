@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
     function hashPassword(password) {
         let hash = 0, i, chr;
         for (i = 0; i < password.length; i++) {
@@ -143,6 +142,4 @@ $(document).ready(function () {
             }
         }
     })
-
-
 });

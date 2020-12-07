@@ -297,6 +297,7 @@ iframe {
 #profielFoto {
     width: 100%;
 }
+
 /*
 contact popup
  */
@@ -368,6 +369,7 @@ contact popup
         opacity: 1;
     }
 }
+
 /*
  tags
  */
@@ -386,7 +388,6 @@ contact popup
     font-size: 10px;
     padding: 3px;
 }
-
 
 
 .tag_button:active {
