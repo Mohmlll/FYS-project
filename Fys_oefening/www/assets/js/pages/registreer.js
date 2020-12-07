@@ -1,6 +1,16 @@
 $(document).ready(function () {
 
 
+    function hashPassword(password) {
+        let hash = 0, i, chr;
+        for (i = 0; i < password.length; i++) {
+            chr = password.charCodeAt(i);
+            hash = ((hash << 5) - hash) + chr;
+            hash |= 0; // Convert to 32bit integer
+        }
+        return hash;
+    }
+
     $(".button-box").on("change", function (e) {
         e.preventDefault();
         var toggle = $("#inlogRegistreer").is(":checked");
@@ -23,6 +33,8 @@ $(document).ready(function () {
         if (inlogNaamValid && inlogWachtwoordValid) {
             var gebruikersnaam = document.getElementById("inlogNaam").value;
             var wachtwoord = document.getElementById("inlogWachtwoord").value;
+            wachtwoord = hashPassword(wachtwoord);
+
 
             FYSCloud.API.queryDatabase(
                 "SELECT gebruikerid, gebruikers_naam, status, COUNT(*) FROM gebruiker WHERE gebruikers_naam = ? and wachtwoord = ?",
@@ -79,7 +91,7 @@ $(document).ready(function () {
             var gebruikersNaam = document.getElementById('gebruikersnaam').value;
             var emailAdres = document.getElementById('emailadres').value;
             var wachtwoord = document.getElementById('wachtwoord').value;
-            var status = "geenGegevens";
+            wachtwoord = hashPassword(wachtwoord);
 
             FYSCloud.API.queryDatabase(
                 "INSERT INTO gebruiker( gebruikers_naam, emailadres, wachtwoord, status)" +

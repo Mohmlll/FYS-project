@@ -31,9 +31,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="package.json" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -55,9 +56,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.15.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.10" />
+    <property name="last_opened_file_path" value="$USER_HOME$/3D Objects" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -68,6 +73,23 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\moham\Documents\Git-Fork\team-3\Fys_oefening\www" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/Fys_oefening/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -168,13 +190,35 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="373" y="581" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1400/-1920.7.1920.1040@0.0.2560.1400" timestamp="1606843881227" />
-    <state x="2329" y="431" key="FileChooserDialogImpl" timestamp="1606648403637">
-      <screen x="1920" y="-200" width="2560" height="1400" />
+    <state x="-1613" y="839" key="FileChooserDialogImpl" timestamp="1607341222242">
+      <screen x="-1920" y="370" width="1920" height="1040" />
     </state>
     <state x="2329" y="431" key="FileChooserDialogImpl/0.0.1920.1040/1920.-200.2560.1400@1920.-200.2560.1400" timestamp="1606648403637" />
     <state x="2329" y="631" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1605954995065" />
     <state x="307" y="469" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606214498962" />
     <state x="409" y="631" key="FileChooserDialogImpl/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1605006618087" />
+    <state x="-1613" y="839" key="FileChooserDialogImpl/0.0.2560.1400/-1920.370.1920.1040@-1920.370.1920.1040" timestamp="1607341222242" />
+    <state width="1229" height="279" key="GridCell.Tab.0.bottom" timestamp="1607341779604">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1229" height="279" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.370.1920.1040@0.0.2560.1400" timestamp="1607341779604" />
+    <state width="1229" height="279" key="GridCell.Tab.0.center" timestamp="1607341779604">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1229" height="279" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.370.1920.1040@0.0.2560.1400" timestamp="1607341779604" />
+    <state width="1229" height="279" key="GridCell.Tab.0.left" timestamp="1607341779604">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1229" height="279" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.370.1920.1040@0.0.2560.1400" timestamp="1607341779604" />
+    <state width="1229" height="279" key="GridCell.Tab.0.right" timestamp="1607341779604">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1229" height="279" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.370.1920.1040@0.0.2560.1400" timestamp="1607341779604" />
+    <state x="1069" y="104" width="994" height="710" key="SettingsEditor" timestamp="1607356648572">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="-1459" y="535" key="SettingsEditor/0.0.2560.1400/-1920.370.1920.1040@-1920.370.1920.1040" timestamp="1607341230897" />
+    <state x="1069" y="104" width="994" height="710" key="SettingsEditor/0.0.2560.1400/-1920.370.1920.1040@0.0.2560.1400" timestamp="1607356648572" />
     <state x="319" y="136" width="1918" height="1460" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606928596192">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -185,10 +229,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1771" y="314" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1603989759050" />
-    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606127929584">
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607345208972">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.363.1920.1040@0.0.2560.1400" timestamp="1606127929584" />
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.370.1920.1040@0.0.2560.1400" timestamp="1607345208972" />
     <state x="1273" y="0" width="1294" height="1407" key="dock-window-1" timestamp="1607077605040">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
