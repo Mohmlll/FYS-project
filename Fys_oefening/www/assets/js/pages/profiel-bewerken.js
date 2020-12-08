@@ -43,8 +43,6 @@ $(document).ready(function () {
     })
 
 
-
-
     $('#gegevens_bewerken').on("click", function (bewerken) {
         bewerken.preventDefault();
         var readonlycheck = document.getElementsByClassName("profiel_input");
@@ -132,7 +130,7 @@ $(document).ready(function () {
         }
 
         var tagExplorer = document.getElementById("tag_explorer").checked;
-        var tagSportieveling  = document.getElementById("tag_sportieveling").checked;
+        var tagSportieveling = document.getElementById("tag_sportieveling").checked;
         var tagRelaxer = document.getElementById("tag_relaxer").checked;
         var tagPartygoer = document.getElementById("tag_partygoer").checked;
         var tagWinterSport = document.getElementById("tag_wintersport").checked;

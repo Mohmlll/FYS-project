@@ -39,7 +39,6 @@ $(document).ready(function () {
             var fotoStatus = "geenFoto";
 
 
-
             //(voornaam, achternaam, geboortedatum, woonplaats, telefoonnummeer, bio)
             FYSCloud.API.queryDatabase(
                 "UPDATE gebruiker SET status = 'volledig_profiel' WHERE gebruikerid = ?",
@@ -61,7 +60,7 @@ $(document).ready(function () {
 
             FYSCloud.Utils
                 .getDataUrl($("#profilePicture"))
-                .done(function(data) {
+                .done(function (data) {
                     if (data.isImage) {
                         fotoStatus = "foto";
                         FYSCloud.API.queryDatabase(
@@ -71,19 +70,19 @@ $(document).ready(function () {
                             console.log(data);
                             FYSCloud.Utils
                                 .getDataUrl($("#profilePicture"))
-                                .done(function(data) {
+                                .done(function (data) {
                                     if (data.isImage) {
                                         FYSCloud.API.uploadFile(
                                             sessionStorage.getItem("userId") + ".png",
                                             data.url
-                                        ).done(function(data) {
+                                        ).done(function (data) {
                                             console.log(data);
                                             location.href = "index.html";
-                                        }).fail(function(reason) {
+                                        }).fail(function (reason) {
                                             console.log(reason);
                                         });
                                     }
-                                }).fail(function(reason) {
+                                }).fail(function (reason) {
                                 console.log(reason);
                             });
 
@@ -91,7 +90,7 @@ $(document).ready(function () {
                             console.log(reason);
                         })
                     }
-                }).fail(function(reason) {
+                }).fail(function (reason) {
                 console.log(reason);
             });
 

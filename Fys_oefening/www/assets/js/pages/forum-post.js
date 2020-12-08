@@ -17,7 +17,6 @@ $(document).ready(function () {
         content_text.innerHTML = content
 
 
-
         btn.addEventListener('click', (event) => {
             if (content_text_div.className === "post_content") {
                 content_text_div.className += " expand";
@@ -50,8 +49,8 @@ $(document).ready(function () {
             img.src = photoUrl;
             appendTitel = data[i]['titel']
             appendPost = data[i]['post']
-            console.log(appendPost, appendTitel, appendPhoto,postId)
-            let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, postId )
+            console.log(appendPost, appendTitel, appendPhoto, postId)
+            let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, postId)
             nieuwePost.appendChild(costumElement);
         }
     }).fail(function (reason) {
@@ -59,6 +58,6 @@ $(document).ready(function () {
         console.log("fout");
     })
     var img = new Image()
-    img.src="https://dev-is106-3.fys.cloud/uploads/133.png"
+    img.src = "https://dev-is106-3.fys.cloud/uploads/133.png"
     console.log("height = " + img.height);
 });
