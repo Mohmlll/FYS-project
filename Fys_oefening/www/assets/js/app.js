@@ -46,7 +46,6 @@ $(document).ready(function () {
         })
     }
 
-
     menuSelectie()
 
     document.getElementById("hamburgermenu").innerHTML =
