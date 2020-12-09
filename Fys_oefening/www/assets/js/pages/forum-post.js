@@ -27,7 +27,6 @@ $(document).ready(function () {
         return template.firstElementChild;
     }
 
-
     var appendTitel;
     var appendPost;
     var appendPhoto;
@@ -38,19 +37,16 @@ $(document).ready(function () {
         var noOfTemplates = data.length;
         console.log(noOfTemplates)
         for (let i = 0; i < noOfTemplates; i++) {
-            console.log(data[i])
+            console.log(data[i]);
             var postId = data[i]['idgebruiker'];
-            var photoUrl = "https://i.imgur.com/b5TbCKd.png";
-            if (data[i]["profiel_foto"] === "foto") {
-                photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
-                console.log(data[i]["profiel_foto"])
-            }
+            var photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
+            console.log(data[i]["profiel_foto"])
+            appendTitel = data[i]['titel'];
+            appendPost = data[i]['post'];
             var img = new Image()
             img.src = photoUrl;
-            appendTitel = data[i]['titel']
-            appendPost = data[i]['post']
             console.log(appendPost, appendTitel, appendPhoto, postId)
-            let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, postId)
+            let costumElement = makeAnElement(appendTitel, appendPost, photoUrl)
             nieuwePost.appendChild(costumElement);
         }
     }).fail(function (reason) {

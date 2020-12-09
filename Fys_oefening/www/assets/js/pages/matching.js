@@ -21,7 +21,7 @@ $(document).ready(function () {
         [sessionStorage.getItem("userId")]
     ).done(function (data) {
         console.log(data);
-        var backpacker = data[0]["backpacker"];
+        var backpacker = data[0]["backpacker"]; 
         var explorer = data[0]["explorer"];
         var sportieveling = data[0]["sportieveling"];
         var relaxer = data[0]["relaxer"];
