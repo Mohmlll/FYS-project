@@ -80,6 +80,7 @@ $(document).ready(function () {
             var gebruikersNaam = document.getElementById('gebruikersnaam').value;
             var emailAdres = document.getElementById('emailadres').value;
             var wachtwoord = document.getElementById('wachtwoord').value;
+            var status = "geenGegevens";
 
 
             FYSCloud.API.queryDatabase(
