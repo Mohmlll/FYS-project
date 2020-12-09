@@ -8,9 +8,7 @@ button, table {
     font-family: 'Playfair Display', serif;
 }
 
-label {
 
-}
 
 .header, nav, footer, section, div {
     box-sizing: border-box;
@@ -54,7 +52,12 @@ label {
 .taal {
     display: inline-block;
     position: relative;
-    margin-top: -50px;
+    margin-top: -38px;
+
+}
+
+#google_translate_element {
+
 }
 
 .taal_inhoud {
@@ -62,32 +65,9 @@ label {
     position: absolute;
 }
 
-.taal button {
-    color: white;
-    background-color: black;
-    border: none;
-    font-size: 30px;
-    font-family: 'Playfair Display', serif;
-    cursor: pointer;
-    padding: 0 20px;
-}
 
-.taal button:hover {
-    color: red;
-}
 
-.taal a {
-    color: white;
-    text-decoration: none;
-    padding-left: 15px;
-}
 
-.taal:hover .taal_inhoud {
-    display: block;
-    background-color: black;
-    padding: 10px;
-    border-radius: 0 0 0 20px;
-}
 
 /*
  *
