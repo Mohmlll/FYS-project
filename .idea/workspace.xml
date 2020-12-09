@@ -78,17 +78,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/Fys_oefening/package.json" />
       <command value="run" />
@@ -157,7 +146,7 @@
       <workItem from="1607262990757" duration="4768000" />
       <workItem from="1607332014358" duration="15470000" />
       <workItem from="1607414604232" duration="3848000" />
-      <workItem from="1607514145384" duration="5297000" />
+      <workItem from="1607514145384" duration="6269000" />
     </task>
     <servers />
   </component>
