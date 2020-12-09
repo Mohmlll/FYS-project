@@ -14,6 +14,7 @@
     <link href="assets/css/pages/reponsive/min-800px-max-1000px.css" rel="stylesheet"/>
     <link href="assets/css/pages/reponsive/min-600px-max-800px.css" rel="stylesheet"/>
     <link href="assets/css/pages/reponsive/min-1000px.css" rel="stylesheet"/>
+    <link href="assets/css/pages/Translate.css" rel="stylesheet"/>
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
@@ -22,6 +23,8 @@
     <script src="https://cdn.fys.cloud/fyscloud/0.0.3/fyscloud.bundle.min.js"></script>
     <script src="assets/js/config.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/pages/translate.js"></script>
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
 
 
 </head>
@@ -38,11 +41,7 @@
         <div class="logged_in" id="logged_in"></div>
     </div>
     <div class="taal">
-        <button class="taalbutton">Taal</button>
-        <div class="taal_inhoud">
-            <a href="#">NL</a>
-            <a href="#">EN</a>
-        </div>
+        <div id="google_translate_element"></div>
     </div>
 </div>
 

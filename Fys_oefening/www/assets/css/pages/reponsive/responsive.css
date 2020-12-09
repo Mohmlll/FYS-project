@@ -14,12 +14,12 @@
         float: right;
     }
 
-    .taal:hover .taal_inhoud {
-        border-radius: 0 0 0 20px;
-    }
-
     .voorkeuren_user, .voorkeuren_user table {
         font-size: 20px;
+    }
+
+    .goog-te-gadget img {
+        display: none;
     }
 }
 
@@ -36,9 +36,8 @@
         display: block;
     }
 
-    .taal:hover .taal_inhoud {
-        border-radius: 0 0 20px 0;
-    }
+
+
 
     .uitklappen .taal {
         display: none;
