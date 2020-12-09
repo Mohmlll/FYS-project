@@ -29,68 +29,30 @@ $(document).ready(function () {
         var wintersport = data[0]["wintersport"];
         var tropisch = data[0]["tropisch"];
         var resort = data[0]["resort"];
+        var noOfTemplates = 5;
 
         FYSCloud.API.queryDatabase(
-            "SELECT * FROM interesse"
+            "SELECT (if(backpacker = ?, 1, 0) + if(explorer = ?, 1, 0) + if(sportieveling = ?, 1, 0) + " +
+            "if(relaxer = ?, 1, 0) + if(partygoer = ?, 1, 0) + if(wintersport = ?, 1, 0) + if(tropisch = ?, 1, 0) + " +
+            "if(resort = ?, 1, 0)) as score, gebruikers_naam, idgebruiker FROM fys_is106_3_dev.interesse " +
+            "JOIN fys_is106_3_dev.gebruiker  ON (idgebruiker = gebruikerid) " +
+            "WHERE idgebruiker != ? ORDER BY score  DESC, gebruikers_naam LIMIT ?",
+            [backpacker, explorer, sportieveling, relaxer, partygoer, wintersport, tropisch, resort, sessionStorage.getItem("userId"), noOfTemplates]
         ).done(function (data) {
             console.log(data);
-            var maxScore = 10;
-            var scoreArray = []
-            for (let i = 0; i < data.length; i++) {
-                console.log(data[i]["idgebruiker"] + " " + sessionStorage.getItem("userId"))
-                if (data[i]["idgebruiker"] !== sessionStorage.getItem("userId")) {
-                    var puntentelling = 0;
-                    if (data[i]["backpacker"] === backpacker) {
-                        puntentelling += maxScore;
-                    }
-                    if (data[i]["explorer"] === explorer) {
-                        puntentelling += maxScore;
-                    }
-                    if (data[i]["sportieveling"] === sportieveling) {
-                        puntentelling += maxScore;
-                    }
-                    if (data[i]["relaxer"] === relaxer) {
-                        puntentelling += maxScore;
-                    }
-                    if (data[i]["partygoer"] === partygoer) {
-                        puntentelling += maxScore;
-                    }
-                    if (data[i]["wintersport"] === wintersport) {
-                        puntentelling += maxScore;
-                    }
-                    if (data[i]["tropisch"] === tropisch) {
-                        puntentelling += maxScore;
-                    }
-                    if (data[i]["resort"] === resort) {
-                        puntentelling += maxScore;
-                    }
-                    scoreArray.push([puntentelling, data[i]["idgebruiker"]]);
-                } else {
-                    console.log("hallo")
-                }
-
-            }
-            console.log(scoreArray);
-            scoreArray.sort(function (a, b) {return b[0] - a[0]} );
-            var top5 = scoreArray.slice(0, 3)
-            console.log(top5)
-
+            var gegevens = data;
             var appendVoornaam;
             var appendAchternaam;
-
-
-            var noOfTemplates = 3;
-            console.log(noOfTemplates)
-
             for (let i = 0; i < noOfTemplates; i++) {
-                console.log(top5[i][1]);
+                console.log(gegevens[i]);
                 FYSCloud.API.queryDatabase(
                     "SELECT voornaam, achternaam, gebruikerid, profiel_foto FROM gebruiker_profiel WHERE gebruikerid = ?",
-                    [top5[i][1]]
+                    [gegevens[i]["idgebruiker"]]
                 ).done(function (data) {
                     console.log(data[0]);
-                    console.log(top5[i][1]);
-                    var postId = top5[i][1];
+                    console.log(gegevens[i]);
+                    var postId = gegevens[i]["idgebruiker"];
+                    console.log(postId)
                     var photoUrl = "https://i.imgur.com/b5TbCKd.png";
                     if (data[0]["profiel_foto"] === "foto") {
                         photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
