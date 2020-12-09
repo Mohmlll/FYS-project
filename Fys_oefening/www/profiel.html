@@ -21,6 +21,7 @@
     <script src="https://cdn.fys.cloud/fyscloud/0.0.3/fyscloud.bundle.min.js"></script>
     <script src="assets/js/config.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="profiel.html"></script>
     <script>
         // function myFunction() {
         //     var popup = document.getElementById("myContact_button");
@@ -59,60 +60,132 @@
 
 <div class="container">
     <div class="container__main">
-
-        <div class="buttonpagina_totaal">
-            <!-- Tab links -->
-            <div class="tab">
-                <button class="tablinks" id="standaard_Openen" onclick="openinhoudt(event, 'Profiel')">Profiel User
-                </button>
-            </div>
-            <div class="button_inhoudt">
-                <!-- Tab content -->
-
-                <div class="tabcontent" id="Profiel">
-                    <table>
-                        <tr>
-                            <td>
-                                <h1>Profiel Overzicht</h1>
-                                <h1>Naam: Dylan</h1>
-                                <div class="foto_other_user">
-                                    <img alt="Gebruiker foto" id="profielFoto" src="assets/img/AboutUsFotos/Dylan.png">
+        <form class="profielUser" id="profile">
+            <label>
+                <table>
+                    <tr>
+                        <td id="profiel_naam"></td>
+                        <td>
+                            <img id="profielFoto" src="assets/img/AboutUsFotos/Mohammed.png">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Voornaam:</td>
+                        <td><input class="profiel_input" id="profiel_input_voornaam" readonly
+                                   type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Achternaam:</td>
+                        <td><input class="profiel_input" id="profiel_input_achternaam" readonly
+                                   type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Geslacht:</td>
+                        <td><input class="profiel_input" id="profiel_input_geslacht" readonly
+                                   type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Geboortedatum:</td>
+                        <td><input class="profiel_input" id="profiel_input_geboortedatum" readonly
+                                   type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Woonplaats:</td>
+                        <td><input class="profiel_input" id="profiel_input_woonplaats" readonly
+                                   type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Telefoonnummer:</td>
+                        <td><input class="profiel_input" id="profiel_input_telefoonnr" readonly
+                                   type="tel"></td>
+                    </tr>
+                    <tr>
+                        <td>E-mailadres:</td>
+                        <td><input class="profiel_input" id="profiel_input_email" readonly
+                                   type="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Soort vakantieganger:</td>
+                        <td>
+                            <div class="create_post_tags">
+                                <div class="tag_div" id="explorer">
+                                    <label for="tag_explorer">
+                                        <input class="tag_button" disabled id="tag_explorer"
+                                               type="checkbox">
+                                        <span>Explorer</span>
+                                    </label>
                                 </div>
-                            </td>
-                        </tr>
-                    </table>
 
-                    <button onclick="pop_Notification()">Ask?</button>
+                                <div class="tag_div" id="sportieveling">
+                                    <label for="tag_sportieveling">
+                                        <input class="tag_button" disabled id="tag_sportieveling"
+                                               type="checkbox">
+                                        <span>Sportieveling</span>
+                                    </label>
+                                </div>
 
-                    <div class="info_user">
-                        <table>
-                            <tr>
-                                <td>Naam</td>
-                                <td>tba</td>
-                            </tr>
+                                <div class="tag_div" id="relaxer">
+                                    <label for="tag_relaxer">
+                                        <input class="tag_button" disabled id="tag_relaxer" type="checkbox">
+                                        <span>Relaxer</span>
+                                    </label>
+                                </div>
 
-                            <tr>
-                                <td>Geboortejaar</td>
-                                <td>tba</td>
-                            </tr>
+                                <div class="tag_div" id="partygoer">
+                                    <label for="tag_partygoer">
+                                        <input class="tag_button" disabled id="tag_partygoer"
+                                               type="checkbox">
+                                        <span>Partygoer</span>
+                                    </label>
+                                </div>
 
-                            <tr>
-                                <td>Geslacht</td>
-                                <td>tba</td>
-                            </tr>
+                                <div class="tag_div" id="wintersport">
+                                    <label for="tag_wintersport">
+                                        <input class="tag_button" disabled id="tag_wintersport"
+                                               type="checkbox">
+                                        <span>Wintersport</span>
+                                    </label>
+                                </div>
 
-                            <tr>
-                                <td>Voorkeuren</td>
-                                <td>tba</td>
-                            </tr>
+                                <div class="tag_div" id="tropisch">
+                                    <label for="tag_tropisch">
+                                        <input class="tag_button" disabled id="tag_tropisch"
+                                               type="checkbox">
+                                        <span>Tropische</span>
+                                    </label>
+                                </div>
 
-                        </table>
-                    </div>
+                                <div class="tag_div" id="backpacker">
+                                    <label for="tag_backpacker">
+                                        <input class="tag_button" disabled id="tag_backpacker"
+                                               type="checkbox">
+                                        <span>Backpacker</span>
+                                    </label>
+                                </div>
 
-                </div>
+                                <div class="tag_div" id="resort">
+                                    <label for="tag_resort">
+                                        <input class="tag_button" disabled id="tag_resort" type="checkbox">
+                                        <span>Resort</span>
+                                    </label>
+                                </div>
 
-            </div>
-        </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>iets leuks over jezelf: <br><br></td>
+                        <td>
+                            <textarea class="tekstbox" id="profiel_input_bio" readonly></textarea>
+                        </td>
+                    </tr>
+
+                </table>
+                <button class="gegevens_button" id="gegevens_bewerken" type="submit">Bewerken</button>
+                <button class="gegevens_button" id="gegevens_opslaan" type="submit">Opslaan</button>
+            </label>
+        </form>
     </div>
     <div class="left__ad">
         <a href="https://www.corendon.nl/">
