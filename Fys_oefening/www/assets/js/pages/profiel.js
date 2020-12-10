@@ -1,5 +1,7 @@
 $(document).ready(function () {
+    console.log(sessionStorage.getItem("userId"));
 
+    import{postId} from '.profiel.js'
     FYSCloud.API.queryDatabase(
         "SELECT profiel_foto, voornaam, achternaam, geslacht, DATE (geboorte_datum), woonplaats, telefoon_nummer, interesse, bio FROM gebruiker_profiel WHERE gebruikerid = ?",
         [161]

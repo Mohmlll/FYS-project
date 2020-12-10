@@ -38,12 +38,12 @@ $(document).ready(function () {
         console.log(noOfTemplates)
         for (let i = 0; i < noOfTemplates; i++) {
             console.log(data[i]);
-            var postId = data[i]['idgebruiker'];
-            var photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
+            let postId = data[i]['idgebruiker'];
+            let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
             console.log(data[i]["profiel_foto"])
             appendTitel = data[i]['titel'];
             appendPost = data[i]['post'];
-            var img = new Image()
+            let img = new Image()
             img.src = photoUrl;
             console.log(appendPost, appendTitel, appendPhoto, postId)
             let costumElement = makeAnElement(appendTitel, appendPost, photoUrl)
