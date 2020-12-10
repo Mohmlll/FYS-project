@@ -1,12 +1,11 @@
 $(document).ready(function () {
     $("#post_aanmakenId").on("click", function (post) {
         post.preventDefault();
-        var postTitelValid = $("#post_titel_id").is(":valid");
-        var postContentValid = $("#post_content_id").is(":valid");
+        var titel = document.getElementById("post_titel_id").value;
+        var postContent = document.getElementById("post_content_id").value;
 
-        if (postTitelValid && postContentValid) {
-            var titel = document.getElementById("post_titel_id").value;
-            var postContent = document.getElementById("post_content_id").value;
+        if (titel !== "" && postContent !== "") {
+
 
             FYSCloud.API.queryDatabase(
                 "INSERT INTO forum_post (post, titel, idgebruiker )" +
@@ -20,19 +19,23 @@ $(document).ready(function () {
                 console.log("fout");
             })
         } else {
-            if (!postTitelValid) {
+            if (titel === "") {
                 document.getElementById("post_titel_id").style.borderColor = "red";
                 document.getElementById("geenTitel").style.display = "block";
+                console.log("1");
             } else {
                 document.getElementById("post_titel_id").style.borderColor = "black";
                 document.getElementById("geenTitel").style.display = "none";
+                console.log("2");
             }
-            if (!postContentValid) {
+            if (postContent === "") {
                 document.getElementById("post_content_id").style.borderColor = "red";
                 document.getElementById("geenContent").style.display = "block";
+                console.log("3");
             } else {
                 document.getElementById("post_content_id").style.borderColor = "black";
                 document.getElementById("geenContent").style.display = "none";
+                console.log("4");
             }
         }
     })

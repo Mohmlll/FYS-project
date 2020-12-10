@@ -18,8 +18,9 @@ $(document).ready(function () {
         var tagTropisch = document.getElementById("tag_tropisch").checked;
         var tagBackpacker = document.getElementById("tag_backpacker").checked;
         var tagResort = document.getElementById("tag_resort").checked;
+        var profielcheck = document.getElementById("profilePicture").files.length
 
-        if (voornaamValid && achternaamValid && geboorteDatumValid && woonplaatsValid && telefoonValid) {
+        if (voornaamValid && achternaamValid && geboorteDatumValid && woonplaatsValid && telefoonValid && profielcheck !== 0) {
             console.log(sessionStorage.getItem("userId"));
             var voornaam = document.getElementById('voornaam').value;
             var achternaam = document.getElementById('achternaam').value;
@@ -95,6 +96,13 @@ $(document).ready(function () {
             });
 
         } else {
+            if (profielcheck === 0) {
+                document.getElementById("profilePicture").style.backgroundColor = "red";
+                document.getElementById("geenFoto").style.display = "block";
+            } else {
+                document.getElementById("profilePicture").style.backgroundColor = "white";
+                document.getElementById("geenFoto").style.display = "none";
+            }
             if (!voornaamValid) {
                 document.getElementById("voornaam").style.borderColor = "red";
                 document.getElementById("geenVoornaam").style.display = "block";

@@ -32,19 +32,6 @@
     width: 100%;
 }
 
-.input button {
-    position: relative;
-    width: 60%;
-    padding: 2%;
-    cursor: pointer;
-    display: block;
-    margin: 2% auto;
-    background: linear-gradient(to right, #ff7b68, #ffffff);
-    outline: none;
-    border-radius: 30px;
-    border: solid 1px #ff7b68;
-}
-
 table p {
     font-size: 12px;
 }
