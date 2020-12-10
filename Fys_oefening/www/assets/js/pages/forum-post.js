@@ -7,12 +7,11 @@ $(document).ready(function () {
 
     function makeAnElement(titel, content, foto) {
         template = document.importNode(document.getElementById("post_template").content, true);
-        let post_header_titel = template.getElementById("post_header_titel")
-        template.getElementById("post_profiel_img").src = foto
-        let content_text_div = template.getElementById("post_content")
-        let content_text = template.getElementById("content_text")
-        let btn = template.getElementById("post_header")
-
+        let post_header_titel = template.getElementById("post_header_titel");
+        template.getElementById("post_profiel_img").src = foto;
+        let content_text_div = template.getElementById("post_content");
+        let content_text = template.getElementById("content_text");
+        let btn = template.getElementById("post_header");
         post_header_titel.innerHTML = titel
         content_text.innerHTML = content
 
@@ -27,9 +26,10 @@ $(document).ready(function () {
         return template.firstElementChild;
     }
 
-    var appendTitel;
-    var appendPost;
-    var appendPhoto;
+    let appendTitel;
+    let appendPost;
+    let appendPhoto;
+    let appendButton;
 
     FYSCloud.API.queryDatabase(
         "SELECT idgebruiker, titel, post FROM forum_post"
@@ -45,8 +45,14 @@ $(document).ready(function () {
             appendPost = data[i]['post'];
             let img = new Image()
             img.src = photoUrl;
-            console.log(appendPost, appendTitel, appendPhoto, postId)
-            let costumElement = makeAnElement(appendTitel, appendPost, photoUrl)
+            $('.post_profiel_foto').click(function () {
+                FYSCloud.URL.redirect("profiel.html", {
+                    id: postId
+                });
+            })
+            console.log("dit is een test" + postId)
+            console.log(appendPost, appendTitel, appendPhoto, postId, appendButton)
+            let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendButton)
             nieuwePost.appendChild(costumElement);
         }
     }).fail(function (reason) {
