@@ -11,12 +11,10 @@ $(document).ready(function () {
         let content_text_div = template.getElementById("post_content");
         let content_text = template.getElementById("content_text");
         let btn = template.getElementById("post_header");
-        // changes
         let contact_button = template.getElementById("contact_verzoek_button");
         contact_button.addEventListener('click', (event) => {
             FYSCloud.URL.redirect("profiel.html", {
                 id: postId
-
             })
         })
         post_header_titel.innerHTML = titel
