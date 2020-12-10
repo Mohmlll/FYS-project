@@ -70,6 +70,7 @@ right menu - aanbevolen
     flex-wrap: wrap;
     display: flex;
     margin-bottom: 5%;
+    cursor: pointer;
 
 }
 
@@ -144,6 +145,7 @@ post
     width: 10%;
     border-radius: 50%;
     order: 0;
+    cursor: pointer;
 }
 
 

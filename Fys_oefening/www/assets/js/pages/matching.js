@@ -62,6 +62,11 @@ $(document).ready(function () {
                     img.src = photoUrl;
                     appendVoornaam = data[0]['voornaam'];
                     appendAchternaam = data[0]['achternaam'];
+                    $('.aanbevolen_match').click(function (){
+                        FYSCloud.URL.redirect("profiel.html", {
+                            id: postId
+                        });
+                    })
                     console.log(appendVoornaam, appendAchternaam, photoUrl, postId);
 
                     let costumElement = makeAnElement(appendVoornaam, appendAchternaam, photoUrl);
