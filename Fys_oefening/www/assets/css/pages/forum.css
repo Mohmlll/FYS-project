@@ -2,13 +2,12 @@
 forummain
  */
 .forum_main {
-    height: 80%;
     background-color: indianred;
     border-radius: 15px;
     padding: 2%;
     flex-wrap: wrap;
     display: flex;
-    margin: auto auto 5% auto;
+    margin: 0 auto auto auto;
 }
 
 /*

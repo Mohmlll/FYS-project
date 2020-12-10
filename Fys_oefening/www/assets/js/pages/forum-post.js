@@ -4,14 +4,21 @@ $(document).ready(function () {
     var nieuwePost = document.getElementById("forum_main_id");
     var template;
 
-
-    function makeAnElement(titel, content, foto) {
+    function makeAnElement(titel, content, foto, postId) {
         template = document.importNode(document.getElementById("post_template").content, true);
         let post_header_titel = template.getElementById("post_header_titel");
         template.getElementById("post_profiel_img").src = foto;
         let content_text_div = template.getElementById("post_content");
         let content_text = template.getElementById("content_text");
         let btn = template.getElementById("post_header");
+        // changes
+        let contact_button = template.getElementById("contact_verzoek_button");
+        contact_button.addEventListener('click', (event) => {
+            FYSCloud.URL.redirect("profiel.html", {
+                id: postId
+
+            })
+        })
         post_header_titel.innerHTML = titel
         content_text.innerHTML = content
 
@@ -29,7 +36,7 @@ $(document).ready(function () {
     let appendTitel;
     let appendPost;
     let appendPhoto;
-    let appendButton;
+    let appendPostId;
 
     FYSCloud.API.queryDatabase(
         "SELECT idgebruiker, titel, post FROM forum_post"
@@ -40,26 +47,22 @@ $(document).ready(function () {
             console.log(data[i]);
             let postId = data[i]['idgebruiker'];
             let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
-            console.log(data[i]["profiel_foto"])
+            console.log(data[i]["profiel_foto"]);
             appendTitel = data[i]['titel'];
             appendPost = data[i]['post'];
-            let img = new Image()
+            appendPostId = postId;
+            let img = new Image();
             img.src = photoUrl;
-            $('.post_profiel_foto').click(function () {
-                console.log("inclick"+postId);
-                // FYSCloud.URL.redirect("profiel.html", {
-                //     id: postId
-                // });
-            })
-            console.log("dit is een test" + postId)
-            console.log(appendPost, appendTitel, appendPhoto, postId, appendButton)
-            let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendButton)
+            console.log(appendPost, appendTitel, appendPhoto, postId);
+            let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId);
             nieuwePost.appendChild(costumElement);
         }
     }).fail(function (reason) {
         console.log(reason);
         console.log("fout");
     })
+
+
     var img = new Image()
     img.src = "https://dev-is106-3.fys.cloud/uploads/133.png"
     console.log("height = " + img.height);
