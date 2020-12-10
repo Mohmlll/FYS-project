@@ -9,7 +9,6 @@ button, table {
 }
 
 
-
 .header, nav, footer, section, div {
     box-sizing: border-box;
 }
@@ -64,9 +63,6 @@ button, table {
     display: none;
     position: absolute;
 }
-
-
-
 
 
 /*
@@ -281,7 +277,6 @@ iframe {
 /*
 contact popup
  */
-
 
 
 /*
