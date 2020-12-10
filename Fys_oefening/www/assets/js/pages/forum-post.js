@@ -46,9 +46,10 @@ $(document).ready(function () {
             let img = new Image()
             img.src = photoUrl;
             $('.post_profiel_foto').click(function () {
-                FYSCloud.URL.redirect("profiel.html", {
-                    id: postId
-                });
+                console.log("inclick"+postId);
+                // FYSCloud.URL.redirect("profiel.html", {
+                //     id: postId
+                // });
             })
             console.log("dit is een test" + postId)
             console.log(appendPost, appendTitel, appendPhoto, postId, appendButton)
