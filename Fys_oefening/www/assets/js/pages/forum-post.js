@@ -6,6 +6,9 @@ $(document).ready(function () {
     function forum(filter) {
         var nieuwePost = document.getElementById("forum_main_id");
         var template;
+        if (filter === null) {
+            filter = ""
+        }
 
         function makeAnElement(titel, content, foto, postId, tag) {
             template = document.importNode(document.getElementById("post_template").content, true);
