@@ -1,28 +1,28 @@
 $(document).ready(function () {
+    var template;
+    var nieuweInkomende = document.getElementById("inkomende_aanvraag");
+    function makeAnElement(foto) {
+        template = document.importNode(document.getElementById("template_inkomende").content, true);
+        template.getElementById("match_profiel_img").src = foto;
 
+        return template.firstElementChild;
+    }
 
-    $("#contact_verzoek_button").on("click", function (gegevens) {
-        gegevens.preventDefault();
-        console.log("test");
-        let postGebruikerId;
-        FYSCloud.API.queryDatabase(
-            "SELECT idgebruiker FROM forum_post"
-        ).done(function (data) {
-            console.log(data);
-            postGebruikerId = data[0]['idgebruiker'];
-        }).fail(function (data) {
-            console.log(data)
-        })
+    let appendPhoto;
+    FYSCloud.API.queryDatabase(
+        "SELECT  gebruikerid_een = ?, gebruikerid_twee FROM matches WHERE matchstatus = 1",
+        [sessionStorage.getItem("userId")]
+    ).done(function (data) {
+        console.log(data);
+        let inkomendeGebruiker = data[0]['gebruikerid_twee'];
+        let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + inkomendeGebruiker + ".png";
+        appendPhoto = photoUrl;
+        console.log(appendPhoto);
+        let costumElement = makeAnElement(appendPhoto);
+        nieuweInkomende.appendChild(costumElement);
 
-        var matchstatus = 1;
-        FYSCloud.API.queryDatabase(
-            "INSERT INTO gebruikerid_een, gebruikerid_twee, matchstatus FROM matches"
-                [sessionStorage.getItem("userId"), postGebruikerId, matchstatus]
-        ).done(function (data) {
-            console.log(data)
-        }).fail(function (reason) {
-            console.log(reason);
-            console.log("fout");
-        })
+    }).done(function (data) {
+        console.log(data);
+        console.log("fout")
     })
 });

@@ -19,7 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd1b4a5e-81ef-4d27-bb4e-611f7a2431ec" name="Default Changelist" comment="" />
+    <list default="true" id="dd1b4a5e-81ef-4d27-bb4e-611f7a2431ec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/profiel.css" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/profiel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/profiel-overzicht.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/profiel-overzicht.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/profiel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/profiel.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
