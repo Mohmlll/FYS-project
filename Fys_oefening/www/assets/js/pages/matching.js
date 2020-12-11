@@ -1,7 +1,7 @@
 $(document).ready(function () {
     console.log(sessionStorage.getItem("userId"));
 
-    var nieuwePost = document.getElementById("aanbevolen");
+    var nieuweAanbevolen = document.getElementById("aanbevolen");
     var template;
 
     function makeAnElement(voornaam, achternaam, foto, postId) {
@@ -72,7 +72,7 @@ $(document).ready(function () {
                     console.log(appendVoornaam, appendAchternaam, photoUrl, postId,appendPostId);
 
                     let costumElement = makeAnElement(appendVoornaam, appendAchternaam, photoUrl,appendPostId);
-                    nieuwePost.appendChild(costumElement);
+                    nieuweAanbevolen.appendChild(costumElement);
                 }).fail(function (reason) {
                     console.log(reason);
                     console.log("fout");
