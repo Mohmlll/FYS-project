@@ -110,47 +110,47 @@ $(document).ready(function () {
         console.log("height = " + img.height);
     }
 
-    let filter = "";
-    forum(filter)
+    console.log(sessionStorage.getItem("filter"))
+    forum(sessionStorage.getItem("filter"))
     $("#filter_all").on("click", function () {
-        filter = ""
-        forum(filter)
+        sessionStorage.setItem("filter", "")
+        location.reload()
     })
     $("#filter_volgend").on("click", function () {
-        filter = ""
-        forum(filter)
+        sessionStorage.setItem("filter", "")
+        location.reload()
     })
     $("#filter_explorer").on("click", function () {
-
-        filter = " AND explorer = 1"
-        forum(filter)
+        sessionStorage.setItem("filter", " AND explorer = 1")
+        location.reload()
     })
     $("#filter_sportieveling").on("click", function () {
-        filter = " AND sportieveling = 1"
-        forum(filter)
+        sessionStorage.setItem("filter", " AND sportieveling = 1")
+        location.reload()
     })
     $("#filter_relaxer").on("click", function () {
-        filter = " AND relaxer = 1"
-        forum(filter)
+        sessionStorage.setItem("filter", " AND relaxer = 1")
+        location.reload()
     })
     $("#filter_partygoer").on("click", function () {
-        filter = " AND partygoer = 1"
-        forum(filter)
+        sessionStorage.setItem("filter", " AND partygoer = 1")
+        location.reload()
     })
     $("#filter_backpacker").on("click", function () {
-        filter = " AND backpacker = 1"
-        forum(filter)
+        sessionStorage.setItem("filter", " AND backpacker = 1")
+        location.reload()
     })
     $("#filter_wintersport").on("click", function () {
-        filter = " AND wintersport = 1"
-        forum(filter)
+        sessionStorage.setItem("filter", " AND wintersport = 1")
+        location.reload()
     })
     $("#filter_tropisch").on("click", function () {
-        filter = " AND tropisch = 1"
-        forum(filter)
+        sessionStorage.setItem("filter", " AND tropisch = 1")
+        location.reload()
     })
     $("#filter_resort").on("click", function () {
-        filter = " AND resort = 1"
-        forum(filter)
+        sessionStorage.setItem("filter", " AND resort = 1")
+        location.reload()
     })
+
 });
