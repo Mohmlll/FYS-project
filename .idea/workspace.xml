@@ -20,10 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd1b4a5e-81ef-4d27-bb4e-611f7a2431ec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-inkomende.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-lopende.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/profiel.css" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/profiel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-uitgaande.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel-aanmaken.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel-aanmaken.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel-bewerken.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel-bewerken.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel_overzicht.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel_overzicht.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/forum-homepagina.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/forum-homepagina.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/profiel-aanmaken.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/profiel-aanmaken.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fys_oefening/www/profiel-overzicht.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/profiel-overzicht.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fys_oefening/www/profiel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/profiel.html" afterDir="false" />
     </list>
@@ -69,16 +75,29 @@
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\moham\Documents\Git-Fork\team-3\Fys_oefening\www" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\moham\Documents\Git-fork\team-3\Fys_oefening\www\assets\js\pages\profiel" />
+      <recent name="C:\Users\moham\Documents\Git-fork\team-3\Fys_oefening\www\assets\js\pages\contact" />
       <recent name="C:\Users\moham\Documents\Git-Fork\team-3\Fys_oefening\www\assets\css\pages\reponsive" />
       <recent name="C:\Users\moham\Documents\Git-Fork\team-3\Fys_oefening\www\assets\js\pages" />
       <recent name="C:\Users\moham\Documents\Git-Fork\team-3\Fys_oefening\www\assets\css\pages" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\moham\Documents\Git-Fork\team-3\Fys_oefening\www" />
-    </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/Fys_oefening/package.json" />
       <command value="run" />
