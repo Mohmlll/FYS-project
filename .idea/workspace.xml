@@ -19,7 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd1b4a5e-81ef-4d27-bb4e-611f7a2431ec" name="Default Changelist" comment="" />
+    <list default="true" id="dd1b4a5e-81ef-4d27-bb4e-611f7a2431ec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/matching.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/matching.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/forum-homepagina.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/forum-homepagina.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/profiel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/profiel.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,19 +169,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="960" y="456" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1607628960750">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="960" y="456" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1440/-1920.370.1920.1080@0.0.2560.1440" timestamp="1607628960750" />
-    <state x="92" y="92" width="2376" height="1256" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1607629262986">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="92" y="92" width="2376" height="1256" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1440/-1920.370.1920.1080@0.0.2560.1440" timestamp="1607629262986" />
-    <state x="987" y="424" width="585" height="592" key="find.popup" timestamp="1607629537097">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="987" y="424" width="585" height="592" key="find.popup/0.0.2560.1440/-1920.370.1920.1080@0.0.2560.1440" timestamp="1607629537097" />
   </component>
 </project>

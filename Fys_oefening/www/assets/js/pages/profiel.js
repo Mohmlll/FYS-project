@@ -1,12 +1,13 @@
 $(document).ready(function () {
     console.log(sessionStorage.getItem("userId"));
     var profielId = FYSCloud.URL.queryString("id", 0);
-    console.log(profielId);
+    console.log(profielId + "check");
     FYSCloud.API.queryDatabase(
         "SELECT profiel_foto, voornaam, achternaam, geslacht, DATE (geboorte_datum), woonplaats, telefoon_nummer, interesse, bio FROM gebruiker_profiel WHERE gebruikerid = ?",
         [profielId]
     ).done(function (data) {
         console.log(data)
+
         let datum = data[0]["DATE (geboorte_datum)"];
         datum = datum.slice(0, 10);
         if (profielId !== null) {
@@ -67,6 +68,22 @@ $(document).ready(function () {
         }
     }).fail(function (reason) {
         console.log(reason);
+    })
+
+
+    $("#contact_verzoek").click(function (contact) {
+        contact.preventDefault();
+        console.log("test");
+        let matchStatusRequested = 1;
+        FYSCloud.API.queryDatabase(
+            "INSERT INTO matches SET gebruikerid_een = ?, gebruikerid_twee=?, matchstatus=?",
+            [sessionStorage.getItem("userId"), profielId, matchStatusRequested]
+        ).done(function (data) {
+            console.log(data)
+        }).fail(function (reason) {
+            console.log(reason);
+            console.log("fout");
+        })
     })
 
 });

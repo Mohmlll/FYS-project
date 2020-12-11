@@ -4,12 +4,17 @@ $(document).ready(function () {
     var nieuwePost = document.getElementById("aanbevolen");
     var template;
 
-    function makeAnElement(voornaam, achternaam, foto) {
+    function makeAnElement(voornaam, achternaam, foto, postId) {
         template = document.importNode(document.getElementById("matching_template").content, true);
         let matchVoorNaam = template.getElementById("match_vnaam")
         let matchAchterNaam = template.getElementById("match_anaam")
         template.getElementById("match_profiel_img").src = foto
-
+        let aanbevolen = template.getElementById("aanbevolen_match");
+        aanbevolen.addEventListener('click', (event) => {
+            FYSCloud.URL.redirect("profiel.html", {
+                id: postId
+            })
+        })
         matchVoorNaam.innerHTML = voornaam
         matchAchterNaam.innerHTML = achternaam
 
@@ -40,9 +45,10 @@ $(document).ready(function () {
             [backpacker, explorer, sportieveling, relaxer, partygoer, wintersport, tropisch, resort, sessionStorage.getItem("userId"), noOfTemplates]
         ).done(function (data) {
             console.log(data);
-            var gegevens = data;
-            var appendVoornaam;
-            var appendAchternaam;
+            let gegevens = data;
+            let appendVoornaam;
+            let appendAchternaam;
+            let appendPostId
             for (let i = 0; i < noOfTemplates; i++) {
                 console.log(gegevens[i]);
                 FYSCloud.API.queryDatabase(
@@ -62,14 +68,10 @@ $(document).ready(function () {
                     img.src = photoUrl;
                     appendVoornaam = data[0]['voornaam'];
                     appendAchternaam = data[0]['achternaam'];
-                    $('.aanbevolen_match').click(function () {
-                        FYSCloud.URL.redirect("profiel.html", {
-                            id: postId
-                        });
-                    })
-                    console.log(appendVoornaam, appendAchternaam, photoUrl, postId);
+                    appendPostId = postId;
+                    console.log(appendVoornaam, appendAchternaam, photoUrl, postId,appendPostId);
 
-                    let costumElement = makeAnElement(appendVoornaam, appendAchternaam, photoUrl);
+                    let costumElement = makeAnElement(appendVoornaam, appendAchternaam, photoUrl,appendPostId);
                     nieuwePost.appendChild(costumElement);
                 }).fail(function (reason) {
                     console.log(reason);
