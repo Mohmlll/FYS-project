@@ -1,15 +1,14 @@
 .Openingtekst {
     text-decoration: underline;
 }
-
-.goog-te-banner-frame.skiptranslate {
-    display: none !important;
-}
-
-.skiptranslate {
-    content: "Vraag";
-}
+/*
+* Hiermee wordt de popup geblockeerd
+ */
 
 body {
     top: 0px !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
 }
