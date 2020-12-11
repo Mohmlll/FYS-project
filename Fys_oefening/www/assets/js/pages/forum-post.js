@@ -5,16 +5,18 @@ $(document).ready(function () {
     var template;
 
 
-    function makeAnElement(titel, content, foto) {
+    function makeAnElement(titel, content, foto, tag) {
         template = document.importNode(document.getElementById("post_template").content, true);
         let post_header_titel = template.getElementById("post_header_titel")
         template.getElementById("post_profiel_img").src = foto
         let content_text_div = template.getElementById("post_content")
         let content_text = template.getElementById("content_text")
+        let content_tag = template.getElementById("tags")
         let btn = template.getElementById("post_header")
 
         post_header_titel.innerHTML = titel
         content_text.innerHTML = content
+        content_tag.innerHTML = tag
 
 
         btn.addEventListener('click', (event) => {
@@ -29,7 +31,25 @@ $(document).ready(function () {
 
     var appendTitel;
     var appendPost;
+    var appendTags;
     var appendPhoto;
+
+    FYSCloud.API.queryDatabase(
+        "SELECT * FROM post_tags"
+    ).done(function (data) {
+        console.log(data)
+        var explorer = data[0]["explorer"];
+        var sportieveling = data[0]["sportieveling"];
+        var relaxer = data[0]["relaxer"];
+        var partygoer = data[0]["partygoer"];
+        var winterSport = data[0]["winterSport"];
+        var tropisch = data[0]["tropisch"];
+        var backpacker = data[0]["backpacker"];
+        var resort = data[0]["resort"];
+    }).fail(function (reason) {
+        console.log(reason);
+        console.log("fout");
+    })
 
     FYSCloud.API.queryDatabase(
         "SELECT idgebruiker, titel, post FROM forum_post"
@@ -46,7 +66,7 @@ $(document).ready(function () {
             var img = new Image()
             img.src = photoUrl;
             console.log(appendPost, appendTitel, appendPhoto, postId)
-            let costumElement = makeAnElement(appendTitel, appendPost, photoUrl)
+            let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendTags)
             nieuwePost.appendChild(costumElement);
         }
     }).fail(function (reason) {
