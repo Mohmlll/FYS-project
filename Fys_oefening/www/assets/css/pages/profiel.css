@@ -95,7 +95,7 @@ Profiel Overzicht
 }
 
 
-.foto_gebruiker_uitgaand, .foto_gebruiker_inkomend,.foto_gebruiker_lopende {
+.foto_gebruiker_uitgaand, .foto_gebruiker_inkomend, .foto_gebruiker_lopende {
     border-top: 1px solid black;
     margin-bottom: 10px;
 }
@@ -120,7 +120,8 @@ Profiel Overzicht
     margin: 10px 0;
 
 }
-.foto_gebruiker_uitgaand img, .foto_gebruiker_inkomend img,.foto_gebruiker_lopende img{
+
+.foto_gebruiker_uitgaand img, .foto_gebruiker_inkomend img, .foto_gebruiker_lopende img {
     width: 100px;
     height: auto;
     border-radius: 25px;
@@ -241,9 +242,11 @@ table .radiobutton {
     border-radius: 30px;
     padding: 5%;
 }
-.hide_inkomende{
+
+.hide_inkomende {
     display: none;
 }
-.inkomende{
+
+.inkomende {
     display: block;
 }
