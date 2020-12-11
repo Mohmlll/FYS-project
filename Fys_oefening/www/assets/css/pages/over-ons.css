@@ -83,6 +83,11 @@ about us card
     transform: rotateY(180deg);
 }
 
+
+/*
+* Unieke layout voor de boxen op  About us
+ */
+
 .overBox {
     height: 60%;
     width: 100%;
@@ -96,10 +101,16 @@ about us card
     margin-bottom: 40px;
 }
 
+/*
+* Verder aanpassing binnen box: Header kleur
+ */
 .overBox h1 {
     color: deepskyblue;
 }
 
+/*
+* Verder aanpassing binnen box: Maximale breedte
+ */
 .overBox p {
     max-width: 75ch;
 }
