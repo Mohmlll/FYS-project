@@ -101,16 +101,10 @@ Profiel Overzicht
 }
 
 
-#Lopende_Matches {
-    overflow: auto;
-    max-height: 620px;
-}
-
 #Inkomende_Matches, #Uitgaande_Matches {
     width: 100%;
     align-content: center;
-    overflow: auto;
-    max-height: 500px;
+
 }
 
 #Inkomende_Matches table, #Uitgaande_Matches table {
@@ -126,21 +120,13 @@ Profiel Overzicht
     margin: 10px 0;
 
 }
-
-.foto_eerste_match img {
-    width: 100px;
-    height: auto;
-    border-radius: 25px;
-    padding-top: 15px
-}
-
 .foto_gebruiker_uitgaand img, .foto_gebruiker_inkomend img,.foto_gebruiker_lopende img{
     width: 100px;
     height: auto;
     border-radius: 25px;
 }
 
-.inkomend_aanvraag {
+.aanvraag {
     border-top: 2px solid black;
     padding: 20px;
 }
@@ -206,6 +192,7 @@ table .radiobutton {
     outline: none;
     border-radius: 30px;
     border: solid 1px #ff7b68;
+    text-align: center;
 
 }
 

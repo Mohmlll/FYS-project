@@ -110,7 +110,6 @@ $(document).ready(function () {
         console.log("fout");
     })
 
-
     var img = new Image()
     img.src = "https://dev-is106-3.fys.cloud/uploads/133.png"
     console.log("height = " + img.height);

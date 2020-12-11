@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log(sessionStorage.getItem("userId"));
+    let userId = sessionStorage.getItem("userId");
     let template;
     let nieuweUitgaande = document.getElementById("uitgaande_aanvraag");
 
@@ -19,16 +19,21 @@ $(document).ready(function () {
     let appendGebruikerId;
     FYSCloud.API.queryDatabase(
         "SELECT  gebruikerid_een = ?, gebruikerid_twee FROM matches WHERE matchstatus = 1",
-        [sessionStorage.getItem("userId")]
+        [userId]
     ).done(function (data) {
         console.log(data);
-        let uitgaandeGebruiker = data[0]['gebruikerid_twee'];
-        let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + uitgaandeGebruiker + ".png";
-        appendPhoto = photoUrl;
-        appendGebruikerId = data[0]['gebruikerid_twee'];
-        let costumElement = makeAnElement(appendPhoto, appendGebruikerId);
-        nieuweUitgaande.appendChild(costumElement);
-
+        var noOfTemplates = data.length;
+        console.log(noOfTemplates)
+        for (let i = 0; i < noOfTemplates; i++) {
+            let uitgaandeGebruiker = data[i]['gebruikerid_twee'];
+            if (uitgaandeGebruiker !== userId) {
+                let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + uitgaandeGebruiker + ".png";
+                appendPhoto = photoUrl;
+                appendGebruikerId = uitgaandeGebruiker
+                let costumElement = makeAnElement(appendPhoto, appendGebruikerId);
+                nieuweUitgaande.appendChild(costumElement);
+            }
+        }
     }).fail(function (data) {
         console.log(data);
         console.log("fout")
