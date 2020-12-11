@@ -1,6 +1,8 @@
 $(document).ready(function () {
     console.log(sessionStorage.getItem("userId"));
 
+    //dit is een functie waarbij een template elke keer gevuld wordt in een loop.
+    //als je een filter aan heb staan, wordt die meegegeven en daardoor komen alleen de resultaten terug die voldoen aan jouw filter
     function forum(filter) {
         var nieuwePost = document.getElementById("forum_main_id");
         var template;
@@ -37,7 +39,6 @@ $(document).ready(function () {
 
         let appendTitel;
         let appendPost;
-        let appendPhoto;
         let appendPostId;
         let appendTag = document.getElementById("tags");
         let tags = "";
@@ -110,6 +111,7 @@ $(document).ready(function () {
         console.log("height = " + img.height);
     }
 
+    //Hier voeg ik een waarde toe aan de session storage zodat je alleen maar de resultaten van de DB terug krijgt, die voldoen aan jouw filter.
     console.log(sessionStorage.getItem("filter"))
     forum(sessionStorage.getItem("filter"))
     $("#filter_all").on("click", function () {
