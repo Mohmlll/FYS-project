@@ -1,3 +1,4 @@
+//Het element en standaard-paginataal worden gedefinieerd
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
         pageLanguage: 'nl',

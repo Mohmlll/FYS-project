@@ -50,19 +50,15 @@ $(document).ready(function () {
             let appendAchternaam;
             let appendPostId
             for (let i = 0; i < noOfTemplates; i++) {
-                console.log(gegevens[i]);
                 FYSCloud.API.queryDatabase(
                     "SELECT voornaam, achternaam, gebruikerid, profiel_foto FROM gebruiker_profiel WHERE gebruikerid = ?",
                     [gegevens[i]["idgebruiker"]]
                 ).done(function (data) {
-                    console.log(data[0]);
-                    console.log(gegevens[i]);
                     var postId = gegevens[i]["idgebruiker"];
                     console.log(postId)
                     var photoUrl = "https://i.imgur.com/b5TbCKd.png";
                     if (data[0]["profiel_foto"] === "foto") {
                         photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
-                        console.log(data[0]["profiel_foto"]);
                     }
                     var img = new Image();
                     img.src = photoUrl;
