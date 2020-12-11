@@ -3,6 +3,14 @@ $(document).ready(function () {
         post.preventDefault();
         var titel = document.getElementById("post_titel_id").value;
         var postContent = document.getElementById("post_content_id").value;
+        var tagExplorer = document.getElementById("tag_explorer").checked;
+        var tagSportieveling = document.getElementById("tag_sportieveling").checked;
+        var tagRelaxer = document.getElementById("tag_relaxer").checked;
+        var tagPartygoer = document.getElementById("tag_partygoer").checked;
+        var tagWinterSport = document.getElementById("tag_wintersport").checked;
+        var tagTropisch = document.getElementById("tag_tropisch").checked;
+        var tagBackpacker = document.getElementById("tag_backpacker").checked;
+        var tagResort = document.getElementById("tag_resort").checked;
 
         if (titel !== "" && postContent !== "") {
 
@@ -13,7 +21,18 @@ $(document).ready(function () {
                 [postContent, titel, sessionStorage.getItem("userId")]
             ).done(function (data) {
                 console.log(data);
-                location.href = 'forum-homepagina.html';
+                let postId = data.insertId
+
+                FYSCloud.API.queryDatabase(
+                    "INSERT INTO post_tags SET idforum_post = ?, explorer = ?, sportieveling = ?, relaxer = ?, partygoer = ? , wintersport = ?, tropisch = ?, backpacker= ?, resort= ?, idgebruiker = ?",
+                    [postId, tagExplorer, tagSportieveling, tagRelaxer, tagPartygoer, tagWinterSport, tagTropisch, tagBackpacker, tagResort, sessionStorage.getItem("userId")]
+                ).done(function (data) {
+                    console.log(data);
+                    location.href = 'forum-homepagina.html';
+                }).fail(function (reason) {
+                    console.log(reason);
+                })
+
             }).fail(function (reason) {
                 console.log(reason);
                 console.log("fout");
@@ -40,6 +59,10 @@ $(document).ready(function () {
         }
     })
 
+    $("#post_annuleren").on("click", function (annuleren) {
+        annuleren.preventDefault();
+        location.href = "forum-homepagina.html";
+    })
 
 });
 

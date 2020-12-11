@@ -39,8 +39,8 @@ $(document).ready(function () {
         FYSCloud.API.queryDatabase(
             "SELECT (if(backpacker = ?, 1, 0) + if(explorer = ?, 1, 0) + if(sportieveling = ?, 1, 0) + " +
             "if(relaxer = ?, 1, 0) + if(partygoer = ?, 1, 0) + if(wintersport = ?, 1, 0) + if(tropisch = ?, 1, 0) + " +
-            "if(resort = ?, 1, 0)) as score, gebruikers_naam, idgebruiker FROM fys_is106_3_dev.interesse " +
-            "JOIN fys_is106_3_dev.gebruiker  ON (idgebruiker = gebruikerid) " +
+            "if(resort = ?, 1, 0)) as score, gebruikers_naam, idgebruiker FROM interesse " +
+            "JOIN gebruiker  ON (idgebruiker = gebruikerid) " +
             "WHERE idgebruiker != ? ORDER BY score  DESC, gebruikers_naam LIMIT ?",
             [backpacker, explorer, sportieveling, relaxer, partygoer, wintersport, tropisch, resort, sessionStorage.getItem("userId"), noOfTemplates]
         ).done(function (data) {

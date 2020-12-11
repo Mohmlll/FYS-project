@@ -185,7 +185,7 @@ post
     width: 100%;
 }
 
-#content_text {
+#content_text, #tags {
     max-width: 70ch;
     font-size: 12px;
     overflow: hidden;

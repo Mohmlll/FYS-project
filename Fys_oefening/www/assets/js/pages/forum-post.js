@@ -4,12 +4,13 @@ $(document).ready(function () {
     var nieuwePost = document.getElementById("forum_main_id");
     var template;
 
-    function makeAnElement(titel, content, foto, postId) {
+    function makeAnElement(titel, content, foto, postId, tag) {
         template = document.importNode(document.getElementById("post_template").content, true);
         let post_header_titel = template.getElementById("post_header_titel");
         template.getElementById("post_profiel_img").src = foto;
         let content_text_div = template.getElementById("post_content");
         let content_text = template.getElementById("content_text");
+        let content_tag = template.getElementById("tags");
         let btn = template.getElementById("post_header");
         let contact_button = template.getElementById("contact_verzoek_button");
         contact_button.addEventListener('click', (event) => {
@@ -17,8 +18,10 @@ $(document).ready(function () {
                 id: postId
             })
         })
+
         post_header_titel.innerHTML = titel
         content_text.innerHTML = content
+        content_tag.innerHTML = tag
 
 
         btn.addEventListener('click', (event) => {
@@ -35,9 +38,12 @@ $(document).ready(function () {
     let appendPost;
     let appendPhoto;
     let appendPostId;
+    let appendTag = document.getElementById("tags");
+    let tags = "";
+
 
     FYSCloud.API.queryDatabase(
-        "SELECT idgebruiker, titel, post FROM forum_post"
+        "SELECT * FROM forum_post, post_tags WHERE forum_post.idforum_post = post_tags.idforum_post"
     ).done(function (data) {
         var noOfTemplates = data.length;
         console.log(noOfTemplates)
@@ -45,15 +51,59 @@ $(document).ready(function () {
             console.log(data[i]);
             let postId = data[i]['idgebruiker'];
             let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
-            console.log(data[i]["profiel_foto"]);
+            let idForumPost = data[i]["idforum_post"]
+            console.log(idForumPost)
             appendTitel = data[i]['titel'];
             appendPost = data[i]['post'];
             appendPostId = postId;
+
+            var explorer = data[i]["explorer"];
+            var sportieveling = data[i]["sportieveling"];
+            var relaxer = data[i]["relaxer"];
+            var partygoer = data[i]["partygoer"];
+            var winterSport = data[i]["winterSport"];
+            var tropisch = data[i]["tropisch"];
+            var backpacker = data[i]["backpacker"];
+            var resort = data[i]["resort"];
+
+            if (explorer === 1) {
+                appendTag += " explorer ";
+            }
+            if (sportieveling === 1) {
+                appendTag += " sportieveling ";
+            }
+            if (relaxer === 1) {
+                appendTag += " relaxer ";
+            }
+            if (partygoer === 1) {
+                appendTag += " partygoer ";
+            }
+            if (winterSport === 1) {
+                appendTag += " winterSport ";
+            }
+            if (tropisch === 1) {
+                appendTag += " tropisch ";
+            }
+            if (backpacker === 1) {
+                appendTag += " backpacker ";
+            }
+            if (resort === 1) {
+                appendTag += " resort ";
+            }
+            if (appendTag.includes("null")) {
+                tags = appendTag.replace("null ", "")
+            } else {
+                tags = appendTag;
+            }
+
+            console.log(tags)
+
             let img = new Image();
             img.src = photoUrl;
             console.log(appendPost, appendTitel, appendPhoto, postId);
-            let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId);
+            let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId, tags);
             nieuwePost.appendChild(costumElement);
+            appendTag = "";
         }
     }).fail(function (reason) {
         console.log(reason);
