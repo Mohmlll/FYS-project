@@ -6,6 +6,10 @@
     display: none !important;
 }
 
+.skiptranslate {
+    content: "Vraag";
+}
+
 body {
     top: 0px !important;
 }

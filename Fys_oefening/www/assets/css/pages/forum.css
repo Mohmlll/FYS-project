@@ -2,13 +2,12 @@
 forummain
  */
 .forum_main {
-    height: 80%;
     background-color: indianred;
     border-radius: 15px;
     padding: 2%;
     flex-wrap: wrap;
     display: flex;
-    margin: auto auto 5% auto;
+    margin: 0 auto auto auto;
 }
 
 /*
@@ -70,6 +69,7 @@ right menu - aanbevolen
     flex-wrap: wrap;
     display: flex;
     margin-bottom: 5%;
+    cursor: pointer;
 
 }
 
@@ -144,6 +144,7 @@ post
     width: 10%;
     border-radius: 50%;
     order: 0;
+    cursor: pointer;
 }
 
 
@@ -184,7 +185,7 @@ post
     width: 100%;
 }
 
-#content_text {
+#content_text, #tags {
     max-width: 70ch;
     font-size: 12px;
     overflow: hidden;

@@ -82,3 +82,24 @@ about us card
     color: black;
     transform: rotateY(180deg);
 }
+
+.overBox {
+    height: 60%;
+    width: 100%;
+    max-width: 650px;
+    order: 0;
+    padding: 0 5% 5%;
+    background-color: white;
+    margin: auto;
+    border-top: 1px white;
+    border-radius: 25px;
+    margin-bottom: 40px;
+}
+
+.overBox h1 {
+    color: deepskyblue;
+}
+
+.overBox p {
+    max-width: 75ch;
+}

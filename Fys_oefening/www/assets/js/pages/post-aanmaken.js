@@ -21,10 +21,11 @@ $(document).ready(function () {
                 [postContent, titel, sessionStorage.getItem("userId")]
             ).done(function (data) {
                 console.log(data);
+                let postId = data.insertId
 
                 FYSCloud.API.queryDatabase(
-                    "INSERT INTO post_tags SET explorer = ?, sportieveling = ?, relaxer = ?, partygoer = ? , wintersport = ?, tropisch = ?, backpacker= ?, resort= ?, idgebruiker = ?",
-                    [tagExplorer, tagSportieveling, tagRelaxer, tagPartygoer, tagWinterSport, tagTropisch, tagBackpacker, tagResort, sessionStorage.getItem("userId")]
+                    "INSERT INTO post_tags SET idforum_post = ?, explorer = ?, sportieveling = ?, relaxer = ?, partygoer = ? , wintersport = ?, tropisch = ?, backpacker= ?, resort= ?, idgebruiker = ?",
+                    [postId, tagExplorer, tagSportieveling, tagRelaxer, tagPartygoer, tagWinterSport, tagTropisch, tagBackpacker, tagResort, sessionStorage.getItem("userId")]
                 ).done(function (data) {
                     console.log(data);
                     location.href = 'forum-homepagina.html';
@@ -58,6 +59,10 @@ $(document).ready(function () {
         }
     })
 
+    $("#post_annuleren").on("click", function (annuleren) {
+        annuleren.preventDefault();
+        location.href = "forum-homepagina.html";
+    })
 
 });
 
