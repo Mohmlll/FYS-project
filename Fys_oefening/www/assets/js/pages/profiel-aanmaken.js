@@ -36,7 +36,6 @@ $(document).ready(function () {
             var woonplaats = document.getElementById('woonplaats').value;
             var telefoonNummer = document.getElementById('telefoon').value;
             var bio = document.getElementById('bio').value;
-            // var foto = document.getElementById("profilePicture").value;
             var fotoStatus = "geenFoto";
 
 

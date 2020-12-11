@@ -41,6 +41,13 @@ $(document).ready(function () {
     let appendTag = document.getElementById("tags");
     let tags = "";
 
+    function filter() {
+        let filter = "";
+        $("#filter_all").on("click", function (filter) {
+            filter = ""
+        })
+    }
+
 
     FYSCloud.API.queryDatabase(
         "SELECT * FROM forum_post, post_tags WHERE forum_post.idforum_post = post_tags.idforum_post"
@@ -48,11 +55,8 @@ $(document).ready(function () {
         var noOfTemplates = data.length;
         console.log(noOfTemplates)
         for (let i = 0; i < noOfTemplates; i++) {
-            console.log(data[i]);
             let postId = data[i]['idgebruiker'];
             let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
-            let idForumPost = data[i]["idforum_post"]
-            console.log(idForumPost)
             appendTitel = data[i]['titel'];
             appendPost = data[i]['post'];
             appendPostId = postId;
@@ -96,11 +100,8 @@ $(document).ready(function () {
                 tags = appendTag;
             }
 
-            console.log(tags)
-
             let img = new Image();
             img.src = photoUrl;
-            console.log(appendPost, appendTitel, appendPhoto, postId);
             let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId, tags);
             nieuwePost.appendChild(costumElement);
             appendTag = "";
