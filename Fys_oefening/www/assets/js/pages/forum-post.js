@@ -155,4 +155,7 @@ $(document).ready(function () {
         location.reload()
     })
 
+    var img = new Image()
+    img.src = "https://dev-is106-3.fys.cloud/uploads/133.png"
+    console.log("height = " + img.height);
 });

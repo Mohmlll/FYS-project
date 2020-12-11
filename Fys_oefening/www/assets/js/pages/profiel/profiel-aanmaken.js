@@ -121,13 +121,6 @@ $(document).ready(function () {
             } else {
                 document.getElementById("geenGeslacht").style.display = "none";
             }
-            //if (!geslachtValid) {
-            //    document.getElementById("").style.borderColor = "red";
-            //   document.getElementById("").style.display = "block";
-            //} else {
-            //    document.getElementById("").style.borderColor = "black";
-            //    document.getElementById("").style.display = "none";
-            // }
             if (!geboorteDatumValid) {
                 document.getElementById("geboortedatum").style.borderColor = "red";
                 document.getElementById("geenGeboorteDatum").style.display = "block";

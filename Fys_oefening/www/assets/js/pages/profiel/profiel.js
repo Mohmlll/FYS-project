@@ -18,6 +18,17 @@ $(document).ready(function () {
         document.getElementById("profiel_input_voornaam").setAttribute("placeholder", data[0]["voornaam"]);
         document.getElementById("profiel_input_achternaam").setAttribute("placeholder", data[0]["achternaam"]);
         document.getElementById("profiel_input_geslacht").setAttribute("placeholder", data[0]["geslacht"]);
+        FYSCloud.API.queryDatabase(
+            // de 2 staat voor geaccepteerde contact verzoeken
+            "SELECT  gebruikerid_een = ?, gebruikerid_twee = ? FROM matches WHERE matchstatus = 2",
+            [sessionStorage.getItem("userId"), profielId]
+        ).done(function (data) {
+            console.log(data);
+            let statusCheck = data[0]['gebruikerid_twee'];
+        }).fail(function (data) {
+            console.log(data);
+            console.log("fout")
+        })
         // document.getElementById("profiel_input_woonplaats").setAttribute("placeholder", data[0]["woonplaats"]);
         // document.getElementById("profiel_input_telefoonnr").setAttribute("placeholder", data[0]["telefoon_nummer"]);
         document.getElementById("profiel_input_bio").setAttribute("placeholder", data[0]["bio"]);
@@ -25,7 +36,6 @@ $(document).ready(function () {
         console.log(reason);
         console.log("fout");
     })
-
     FYSCloud.API.queryDatabase(
         "SELECT * FROM interesse WHERE idgebruiker = ?",
         [profielId]
@@ -33,6 +43,7 @@ $(document).ready(function () {
         console.log(data);
         console.log(data[0])
         $(".tag_div").hide();
+
         if (data[0]["backpacker"] === 1) {
             document.getElementById("tag_backpacker").checked = true;
             document.getElementById("backpacker").style.display = "block";
@@ -69,11 +80,14 @@ $(document).ready(function () {
         console.log(reason);
     })
 
-
+// hier word een contact verzoek verzonden
+// de code hier onder is nog niet af want hij maakt nog duplicates
     $("#contact_verzoek").click(function (contact) {
         contact.preventDefault();
         console.log("test");
+        //de 1 staat voor request in database, dus als de matchstatus 1 is dan is er een request.
         let matchStatusRequested = 1;
+
         FYSCloud.API.queryDatabase(
             "INSERT INTO matches SET gebruikerid_een = ?, gebruikerid_twee=?, matchstatus=?",
             [sessionStorage.getItem("userId"), profielId, matchStatusRequested]

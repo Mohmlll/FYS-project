@@ -1,9 +1,12 @@
 $(document).ready(function () {
-    console.log(sessionStorage.getItem("userId"));
+    let userId = sessionStorage.getItem("userId");
+
+    // de code hier onder is voor inkomende matches die een template invullen op de profiel.htm pagina.
+    //
     var template;
     var nieuweInkomende = document.getElementById("inkomende_aanvraag");
 
-    function makeAnElement(foto, gebruikerId, content) {
+    function makeAnElement(foto, gebruikerId) {
         template = document.importNode(document.getElementById("template_inkomende").content, true);
         template.getElementById("foto_gebruiker_inkomend").src = foto;
         let btn_accept = template.getElementById("accepteer_inkomende");
@@ -15,7 +18,6 @@ $(document).ready(function () {
                 id: gebruikerId
             })
         })
-
         btn_accept.addEventListener('click', (event) => {
             if (inkomende.className === "inkomende") {
                 inkomende.className = " hide_inkomende";
@@ -24,7 +26,7 @@ $(document).ready(function () {
             let matchstatus = 2;
             console.log("test")
             FYSCloud.API.queryDatabase(
-                "UPDATE matches SET matchstatus = ? WHERE gebruikerid_twee = ?",
+                "UPDATE matches SET matchstatus = ? WHERE gebruikerid_een = ?",
                 [matchstatus, gebruikerId]
             ).done(function (data) {
                 console.log(data);
@@ -41,7 +43,7 @@ $(document).ready(function () {
             // 0 staat voor geweigerde/neutrale status
             let matchstatus = 0;
             FYSCloud.API.queryDatabase(
-                "UPDATE matches SET matchstatus = ? WHERE gebruikerid_twee = ?",
+                "UPDATE matches SET matchstatus = ? WHERE gebruikerid_een = ?",
                 [matchstatus, gebruikerId]
             ).done(function (data) {
                 console.log(data);
@@ -57,17 +59,24 @@ $(document).ready(function () {
     let appendGebruikerId;
 
     FYSCloud.API.queryDatabase(
-        "SELECT  gebruikerid_een = ?, gebruikerid_twee FROM matches WHERE matchstatus = 1",
-        [sessionStorage.getItem("userId")]
+        "SELECT  gebruikerid_een, gebruikerid_twee = ? FROM matches WHERE matchstatus = 1",
+        [userId]
     ).done(function (data) {
-        console.log(data);
-        let inkomendeGebruiker = data[0]['gebruikerid_twee'];
-        let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + inkomendeGebruiker + ".png";
-        appendPhoto = photoUrl;
-        appendGebruikerId = data[0]['gebruikerid_twee'];
-        console.log(appendPhoto);
-        let costumElement = makeAnElement(appendPhoto);
-        nieuweInkomende.appendChild(costumElement);
+        var noOfTemplates_inkomende = data.length;
+        for (let i = 0; i < noOfTemplates_inkomende; i++) {
+            console.log(data);
+            let inkomendeGebruiker = data[i]['gebruikerid_een'];
+            // let check = data[i]['gebruikerid_twee'];
+            //probeerde hier de eigen userid er uit te filteren maar dat lukte niet.
+            if (inkomendeGebruiker !== userId) {
+                let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + inkomendeGebruiker + ".png";
+                appendPhoto = photoUrl;
+                appendGebruikerId = inkomendeGebruiker;
+                console.log(appendPhoto);
+                let costumElement = makeAnElement(appendPhoto, appendGebruikerId);
+                nieuweInkomende.appendChild(costumElement);
+            }
+        }
     }).fail(function (data) {
         console.log(data);
         console.log("fout")
