@@ -65,9 +65,9 @@ $(document).ready(function () {
                     appendVoornaam = data[0]['voornaam'];
                     appendAchternaam = data[0]['achternaam'];
                     appendPostId = postId;
-                    console.log(appendVoornaam, appendAchternaam, photoUrl, postId,appendPostId);
+                    console.log(appendVoornaam, appendAchternaam, photoUrl, postId, appendPostId);
 
-                    let costumElement = makeAnElement(appendVoornaam, appendAchternaam, photoUrl,appendPostId);
+                    let costumElement = makeAnElement(appendVoornaam, appendAchternaam, photoUrl, appendPostId);
                     nieuweAanbevolen.appendChild(costumElement);
                 }).fail(function (reason) {
                     console.log(reason);

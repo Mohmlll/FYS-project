@@ -95,7 +95,7 @@ Profiel Overzicht
 }
 
 
-.inkomende_aanvraag_berkay, .inkomende_aanvraag_marvin {
+.foto_gebruiker_uitgaand, .foto_gebruiker_inkomend,.foto_gebruiker_lopende {
     border-top: 1px solid black;
     margin-bottom: 10px;
 }
@@ -134,7 +134,7 @@ Profiel Overzicht
     padding-top: 15px
 }
 
-.foto_eerst_inkomende_match img, .foto_berkay_inkomend img, .foto_marvin_inkomend img, .foto_dylan_inkomend img, .foto_mo_uitgaand img {
+.foto_gebruiker_uitgaand img, .foto_gebruiker_inkomend img,.foto_gebruiker_lopende img{
     width: 100px;
     height: auto;
     border-radius: 25px;
@@ -254,4 +254,9 @@ table .radiobutton {
     border-radius: 30px;
     padding: 5%;
 }
-
+.hide_inkomende{
+    display: none;
+}
+.inkomende{
+    display: block;
+}
