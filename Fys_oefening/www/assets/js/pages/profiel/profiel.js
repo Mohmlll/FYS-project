@@ -19,17 +19,6 @@ $(document).ready(function () {
         document.getElementById("profiel_input_voornaam").setAttribute("placeholder", data[0]["voornaam"]);
         document.getElementById("profiel_input_achternaam").setAttribute("placeholder", data[0]["achternaam"]);
         document.getElementById("profiel_input_geslacht").setAttribute("placeholder", data[0]["geslacht"]);
-        FYSCloud.API.queryDatabase(
-            // de 2 staat voor geaccepteerde contact verzoeken
-            "SELECT  gebruikerid_een = ?, gebruikerid_twee = ? FROM matches WHERE matchstatus = 2",
-            [sessionStorage.getItem("userId"), profielId]
-        ).done(function (data) {
-            console.log(data);
-            let statusCheck = data[0]['gebruikerid_twee'];
-        }).fail(function (data) {
-            console.log(data);
-            console.log("fout")
-        })
         // document.getElementById("profiel_input_woonplaats").setAttribute("placeholder", data[0]["woonplaats"]);
         // document.getElementById("profiel_input_telefoonnr").setAttribute("placeholder", data[0]["telefoon_nummer"]);
         document.getElementById("profiel_input_bio").setAttribute("placeholder", data[0]["bio"]);
@@ -86,9 +75,35 @@ $(document).ready(function () {
         [userId, profielId]
     ).done(function (data) {
         console.log(data);
-        if (data[0]['matchstatus'] === 1) {
+        if (data.length === 0) {
+            FYSCloud.API.queryDatabase(
+                "SELECT matchstatus FROM matches WHERE gebruikerid_een = ? AND gebruikerid_twee = ? ",
+                [profielId, userId]
+            ).done(function (data) {
+                console.log(data);
+                if (data.length === 0) {
+                    console.log("nog geen verzoek")
+                } else if (data[0]['matchstatus'] === 1) {
+                    document.getElementById("contact_verzoek").style.display = "none";
+                    document.getElementById("al_gematched").style.display = "none";
+                    document.getElementById("verzoek_feedback").style.display = "block";
+                } else  if (data[0]['matchstatus'] === 2) {
+                    document.getElementById("contact_verzoek").style.display = "none";
+                    document.getElementById("verzoek_feedback").style.display = "none";
+                    document.getElementById("al_gematched").style.display = "block";
+                }
+            }).fail(function (reason) {
+                console.log(reason);
+                console.log("fout")
+            })
+        } else if (data[0]['matchstatus'] === 1) {
             document.getElementById("contact_verzoek").style.display = "none";
+            document.getElementById("al_gematched").style.display = "none";
             document.getElementById("verzoek_feedback").style.display = "block";
+        } else  if (data[0]['matchstatus'] === 2) {
+            document.getElementById("contact_verzoek").style.display = "none";
+            document.getElementById("verzoek_feedback").style.display = "none";
+            document.getElementById("al_gematched").style.display = "block";
         }
     }).fail(function (reason) {
         console.log(reason);

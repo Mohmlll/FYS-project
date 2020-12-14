@@ -30,6 +30,7 @@ $(document).ready(function () {
                 [matchstatus, gebruikerId]
             ).done(function (data) {
                 console.log(data);
+                location.reload();
             }).fail(function (data) {
                 console.log(data);
                 console.log("fout")
@@ -47,6 +48,7 @@ $(document).ready(function () {
                 [matchstatus, gebruikerId]
             ).done(function (data) {
                 console.log(data);
+                location.reload();
             }).fail(function (data) {
                 console.log(data);
                 console.log("fout")

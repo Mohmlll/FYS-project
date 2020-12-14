@@ -182,7 +182,7 @@ table .radiobutton {
     width: 100%;
 }
 
-.gegevens_button,#verzoek_feedback {
+.gegevens_button, #verzoek_feedback, #al_gematched {
     position: relative;
     width: 60%;
     padding: 2%;
@@ -195,7 +195,7 @@ table .radiobutton {
     text-align: center;
 
 }
-#verzoek_feedback{
+#verzoek_feedback, #al_gematched{
     display:none;
 }
 

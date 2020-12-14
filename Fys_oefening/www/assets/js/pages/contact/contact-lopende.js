@@ -22,7 +22,7 @@ $(document).ready(function () {
 
     FYSCloud.API.queryDatabase(
         // de 2 staat voor geaccepteerde contact verzoeken
-        "SELECT  gebruikerid_een, gebruikerid_twee = ? FROM matches WHERE matchstatus = 2",
+        "SELECT  gebruikerid_een FROM matches WHERE matchstatus = 2 AND gebruikerid_twee = ?",
         [sessionStorage.getItem("userId")]
     ).done(function (data) {
         let noOfTemplates = data.length;
