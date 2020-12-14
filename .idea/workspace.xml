@@ -88,17 +88,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/Fys_oefening/package.json" />
       <command value="run" />
@@ -172,6 +161,8 @@
       <workItem from="1607600422989" duration="2381000" />
       <workItem from="1607602837099" duration="1163000" />
       <workItem from="1607608424344" duration="2205000" />
+      <workItem from="1607855912367" duration="189000" />
+      <workItem from="1607939623014" duration="373000" />
     </task>
     <servers />
   </component>
@@ -189,5 +180,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="662" y="320" key="new project wizard" timestamp="1607856101447">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="662" y="320" key="new project wizard/0.0.2560.1400@0.0.2560.1400" timestamp="1607856101447" />
   </component>
 </project>
