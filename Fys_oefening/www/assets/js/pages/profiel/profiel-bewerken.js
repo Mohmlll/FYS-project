@@ -1,7 +1,8 @@
 $(document).ready(function () {
+    let userId = sessionStorage.getItem('userId');
     FYSCloud.API.queryDatabase(
         "SELECT * FROM interesse WHERE idgebruiker = ?",
-        [sessionStorage.getItem("userId")]
+        [userId]
     ).done(function (data) {
         console.log(data);
         console.log(data[0])
@@ -71,7 +72,7 @@ $(document).ready(function () {
         if (voornaam !== "") {
             FYSCloud.API.queryDatabase(
                 "UPDATE gebruiker_profiel SET voornaam = ? WHERE gebruikerid = ?",
-                [voornaam, sessionStorage.getItem("userId")]
+                [voornaam, userId]
             ).done(function (data) {
                 console.log(data);
             }).fail(function (reason) {
@@ -81,7 +82,7 @@ $(document).ready(function () {
         if (achternaam !== "") {
             FYSCloud.API.queryDatabase(
                 "UPDATE gebruiker_profiel SET achternaam = ? WHERE gebruikerid = ?",
-                [achternaam, sessionStorage.getItem("userId")]
+                [achternaam, userId]
             ).done(function (data) {
                 console.log(data);
             }).fail(function (reason) {
@@ -91,7 +92,7 @@ $(document).ready(function () {
         if (geboortedatum !== "") {
             FYSCloud.API.queryDatabase(
                 "UPDATE gebruiker_profiel SET geboorte_datum = ? WHERE gebruikerid = ?",
-                [geboortedatum, sessionStorage.getItem("userId")]
+                [geboortedatum, userId]
             ).done(function (data) {
                 console.log(data);
             }).fail(function (reason) {
@@ -101,7 +102,7 @@ $(document).ready(function () {
         if (woonplaats !== "") {
             FYSCloud.API.queryDatabase(
                 "UPDATE gebruiker_profiel SET woonplaats = ? WHERE gebruikerid = ?",
-                [woonplaats, sessionStorage.getItem("userId")]
+                [woonplaats, userId]
             ).done(function (data) {
                 console.log(data);
             }).fail(function (reason) {
@@ -111,7 +112,7 @@ $(document).ready(function () {
         if (telefoonnr !== "") {
             FYSCloud.API.queryDatabase(
                 "UPDATE gebruiker_profiel SET telefoon_nummer = ? WHERE gebruikerid = ?",
-                [telefoonnr, sessionStorage.getItem("userId")]
+                [telefoonnr, userId]
             ).done(function (data) {
                 console.log(data);
             }).fail(function (reason) {
@@ -121,7 +122,7 @@ $(document).ready(function () {
         if (bio !== "") {
             FYSCloud.API.queryDatabase(
                 "UPDATE gebruiker_profiel SET bio = ? WHERE gebruikerid = ?",
-                [bio, sessionStorage.getItem("userId")]
+                [bio, userId]
             ).done(function (data) {
                 console.log(data);
             }).fail(function (reason) {
@@ -145,7 +146,7 @@ $(document).ready(function () {
             console.log(tagExplorer)
             FYSCloud.API.queryDatabase(
                 "SELECT * FROM interesse WHERE idgebruiker = ?",
-                [sessionStorage.getItem("userId")]
+                [userId]
             ).done(function (data) {
                 console.log(data);
                 console.log(data[0])

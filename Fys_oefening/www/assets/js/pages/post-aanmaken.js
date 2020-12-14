@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    let userId = sessionStorage.getItem('userId');
+
     $("#post_aanmakenId").on("click", function (post) {
         post.preventDefault();
         var titel = document.getElementById("post_titel_id").value;
@@ -18,7 +20,7 @@ $(document).ready(function () {
             FYSCloud.API.queryDatabase(
                 "INSERT INTO forum_post (post, titel, idgebruiker )" +
                 "VALUES(?,?,?)",
-                [postContent, titel, sessionStorage.getItem("userId")]
+                [postContent, titel, userId]
             ).done(function (data) {
                 console.log(data);
                 let postId = data.insertId

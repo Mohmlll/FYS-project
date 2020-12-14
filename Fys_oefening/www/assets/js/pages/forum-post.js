@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    console.log(sessionStorage.getItem("userId"));
+    let userId = sessionStorage.getItem('userId');
+    console.log(userId);
+
 
     //dit is een functie waarbij een template elke keer gevuld wordt in een loop.
     //als je een filter aan heb staan, wordt die meegegeven en daardoor komen alleen de resultaten terug die voldoen aan jouw filter

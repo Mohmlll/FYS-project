@@ -21,7 +21,21 @@
   <component name="ChangeListManager">
     <list default="true" id="dd1b4a5e-81ef-4d27-bb4e-611f7a2431ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-inkomende.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-inkomende.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-lopende.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-lopende.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-uitgaande.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-uitgaande.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/forum-post.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/forum-post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/matching.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/matching.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/post-aanmaken.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/post-aanmaken.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel-aanmaken.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel-aanmaken.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel-bewerken.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel-bewerken.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel_overzicht.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel_overzicht.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/registreer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/registreer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/tagbuttons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/post-aanmaken.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/post-aanmaken.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/profiel-aanmaken.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/profiel-aanmaken.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/profiel-overzicht.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/profiel-overzicht.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +91,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/Fys_oefening/package.json" />
       <command value="run" />
@@ -169,11 +194,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="662" y="320" key="new project wizard" timestamp="1607856101447">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="662" y="320" key="new project wizard/0.0.2560.1400@0.0.2560.1400" timestamp="1607856101447" />
   </component>
 </project>

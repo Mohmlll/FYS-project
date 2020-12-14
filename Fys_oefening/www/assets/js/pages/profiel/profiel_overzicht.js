@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    console.log(sessionStorage.getItem("userId"));
+    let userId = sessionStorage.getItem('userId');
+    console.log(userId);
+
 
     function date() {
         var minimaleLeeftijd = 18
@@ -19,15 +21,15 @@ $(document).ready(function () {
         return vandaag
     }
 
-    if (sessionStorage.getItem("userId") !== null) {
+    if (userId !== null) {
         document.getElementById("profielFoto").setAttribute("src", "https://dev-is106-3.fys.cloud/uploads/" + sessionStorage.getItem("userId") + ".png");
-        console.log("src", "https://dev-is106-3.fys.cloud/uploads/" + sessionStorage.getItem("userId") + ".png");
+        console.log("src", "https://dev-is106-3.fys.cloud/uploads/" + userId + ".png");
     }
 
 
     FYSCloud.API.queryDatabase(
         "SELECT profiel_foto, voornaam, achternaam, geslacht, DATE (geboorte_datum), woonplaats, telefoon_nummer, interesse, bio FROM gebruiker_profiel WHERE gebruikerid = ?",
-        [sessionStorage.getItem('userId')]
+        [userId]
     ).done(function (data) {
         console.log(data)
         let datum = data[0]["DATE (geboorte_datum)"];
@@ -56,7 +58,7 @@ $(document).ready(function () {
     })
     FYSCloud.API.queryDatabase(
         "SELECT emailadres FROM gebruiker WHERE gebruikerid = ?",
-        [sessionStorage.getItem('userId')]
+        [userId]
     ).done(function (data) {
         console.log(data)
         document.getElementById("profiel_input_email").setAttribute("placeholder", data[0]["emailadres"]);

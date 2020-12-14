@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    let userId = sessionStorage.getItem("userId");
+    let userId = sessionStorage.getItem('userId');
+
     let template;
     let nieuweUitgaande = document.getElementById("uitgaande_aanvraag");
 

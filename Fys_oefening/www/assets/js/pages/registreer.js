@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    let userId = sessionStorage.getItem('userId');
 
 
     $(".button-box").on("change", function (e) {
@@ -31,7 +32,6 @@ $(document).ready(function () {
             ).done(function (data) {
                 console.log(data);
                 sessionStorage.setItem("userId", data[0]["gebruikerid"])
-                console.log(sessionStorage.getItem("userId"));
                 if (data[0]["COUNT(*)"] === 1 && data[0]["status"] === "volledig_profiel") {
                     console.log(data[0]["gebruikerid"])
                     console.log(data[0]["gebruikers_naam"])
@@ -90,7 +90,6 @@ $(document).ready(function () {
             ).done(function (data) {
                 console.log(data);
                 sessionStorage.setItem("userId", data.insertId);
-                console.log(sessionStorage.getItem("userId"));
                 location.href = "profiel-aanmaken.html";
             }).fail(function (reason) {
                 console.log(reason);
