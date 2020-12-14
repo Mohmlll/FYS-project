@@ -124,17 +124,7 @@ $(document).ready(function () {
                     [profielId, userId]
                 ).done(function (data) {
                     console.log(data);
-                    if (data[0]["matchstatus"] === 1) {
-                        FYSCloud.API.queryDatabase(
-                            "UPDATE matches SET matchstatus = 2 WHERE gebruikerid_een = ? AND gebruikerid_twee = ? ",
-                            [profielId, userId]
-                        ).done(function (data) {
-                            console.log(data)
-                        }).fail(function (reason) {
-                            console.log(reason);
-                            console.log("fout");
-                        })
-                    } else {
+                    if (data.length === 0) {
                         FYSCloud.API.queryDatabase(
                             "INSERT INTO matches SET gebruikerid_een = ?, gebruikerid_twee=?, matchstatus=?",
                             [userId, profielId, matchStatusRequested]
@@ -142,6 +132,16 @@ $(document).ready(function () {
                             console.log(data)
                             document.getElementById("contact_verzoek").style.display = "none";
                             document.getElementById("verzoek_feedback").style.display = "block";
+                        }).fail(function (reason) {
+                            console.log(reason);
+                            console.log("fout");
+                        })
+                    } else if (data[0]["matchstatus"] === 1) {
+                        FYSCloud.API.queryDatabase(
+                            "UPDATE matches SET matchstatus = 2 WHERE gebruikerid_een = ? AND gebruikerid_twee = ? ",
+                            [profielId, userId]
+                        ).done(function (data) {
+                            console.log(data)
                         }).fail(function (reason) {
                             console.log(reason);
                             console.log("fout");
