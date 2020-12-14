@@ -182,12 +182,11 @@ table .radiobutton {
     width: 100%;
 }
 
-.gegevens_button {
+.gegevens_button,#verzoek_feedback {
     position: relative;
     width: 60%;
     padding: 2%;
     cursor: pointer;
-    display: block;
     margin: 2% auto;
     background: linear-gradient(to right, #ff7b68, #ffffff);
     outline: none;
@@ -195,6 +194,9 @@ table .radiobutton {
     border: solid 1px #ff7b68;
     text-align: center;
 
+}
+#verzoek_feedback{
+    display:none;
 }
 
 #profile img {

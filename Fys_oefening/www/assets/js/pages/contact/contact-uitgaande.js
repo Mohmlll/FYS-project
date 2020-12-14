@@ -18,7 +18,7 @@ $(document).ready(function () {
     let appendPhoto;
     let appendGebruikerId;
     FYSCloud.API.queryDatabase(
-        "SELECT  gebruikerid_een = ?, gebruikerid_twee FROM matches WHERE matchstatus = 1",
+        "SELECT gebruikerid_twee FROM matches WHERE matchstatus = 1 AND gebruikerid_een = ?",
         [userId]
     ).done(function (data) {
         console.log(data);

@@ -59,7 +59,7 @@ $(document).ready(function () {
     let appendGebruikerId;
 
     FYSCloud.API.queryDatabase(
-        "SELECT  gebruikerid_een, gebruikerid_twee = ? FROM matches WHERE matchstatus = 1",
+        "SELECT  gebruikerid_een FROM matches WHERE matchstatus = 1 AND gebruikerid_twee = ?",
         [userId]
     ).done(function (data) {
         var noOfTemplates_inkomende = data.length;

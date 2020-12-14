@@ -1,5 +1,6 @@
 $(document).ready(function () {
     console.log(sessionStorage.getItem("userId"));
+    let userId = sessionStorage.getItem('userId');
     var profielId = FYSCloud.URL.queryString("id", 0);
     console.log(profielId + "check");
     FYSCloud.API.queryDatabase(
@@ -80,6 +81,19 @@ $(document).ready(function () {
         console.log(reason);
     })
 
+    FYSCloud.API.queryDatabase(
+        "SELECT matchstatus FROM matches WHERE gebruikerid_een = ? AND gebruikerid_twee = ? ",
+        [userId, profielId]
+    ).done(function (data) {
+        console.log(data);
+        if (data[0]['matchstatus'] === 1) {
+            document.getElementById("contact_verzoek").style.display = "none";
+            document.getElementById("verzoek_feedback").style.display = "block";
+        }
+    }).fail(function (reason) {
+        console.log(reason);
+        console.log("fout")
+    })
 // hier word een contact verzoek verzonden
 // de code hier onder is nog niet af want hij maakt nog duplicates
     $("#contact_verzoek").click(function (contact) {
@@ -87,16 +101,42 @@ $(document).ready(function () {
         console.log("test");
         //de 1 staat voor request in database, dus als de matchstatus 1 is dan is er een request.
         let matchStatusRequested = 1;
-
         FYSCloud.API.queryDatabase(
-            "INSERT INTO matches SET gebruikerid_een = ?, gebruikerid_twee=?, matchstatus=?",
-            [sessionStorage.getItem("userId"), profielId, matchStatusRequested]
+            "SELECT matchstatus FROM matches WHERE gebruikerid_een = ? AND gebruikerid_twee = ? ",
+            [userId, profielId]
         ).done(function (data) {
-            console.log(data)
+            console.log(data);
+            if (data.length === 0) {
+                FYSCloud.API.queryDatabase(
+                    "INSERT INTO matches SET gebruikerid_een = ?, gebruikerid_twee=?, matchstatus=?",
+                    [userId, profielId, matchStatusRequested]
+                ).done(function (data) {
+                    console.log(data)
+                    document.getElementById("contact_verzoek").style.display = "none";
+                    document.getElementById("verzoek_feedback").style.display = "block";
+                }).fail(function (reason) {
+                    console.log(reason);
+                    console.log("fout");
+                })
+            } else if (data[0]['matchstatus'] !== 1) {
+                FYSCloud.API.queryDatabase(
+                    "INSERT INTO matches SET gebruikerid_een = ?, gebruikerid_twee=?, matchstatus=?",
+                    [userId, profielId, matchStatusRequested]
+                ).done(function (data) {
+                    console.log(data)
+                    document.getElementById("contact_verzoek").style.display = "none";
+                }).fail(function (reason) {
+                    console.log(reason);
+                    console.log("fout");
+                })
+            } else {
+                console.log("duplicate verzoek")
+            }
         }).fail(function (reason) {
             console.log(reason);
             console.log("fout");
         })
+
     })
 
 });
