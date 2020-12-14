@@ -21,12 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dd1b4a5e-81ef-4d27-bb4e-611f7a2431ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/profiel.css" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/profiel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-inkomende.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-inkomende.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-uitgaande.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-uitgaande.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/forum-homepagina.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/forum-homepagina.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/profiel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/profiel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-lopende.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-lopende.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

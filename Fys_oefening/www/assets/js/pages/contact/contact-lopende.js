@@ -20,6 +20,17 @@ $(document).ready(function () {
     let appendPhoto;
     let appendGebruikerId;
 
+    function matches(lopendeGebruiker) {
+        if (lopendeGebruiker !== sessionStorage.getItem("userId")) {
+            let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + lopendeGebruiker + ".png";
+            appendPhoto = photoUrl;
+            appendGebruikerId = lopendeGebruiker
+            console.log(appendPhoto);
+            let costumElement = makeAnElement(appendPhoto, appendGebruikerId);
+            nieuwLopende.appendChild(costumElement);
+        }
+    }
+
     FYSCloud.API.queryDatabase(
         // de 2 staat voor geaccepteerde contact verzoeken
         "SELECT  gebruikerid_een FROM matches WHERE matchstatus = 2 AND gebruikerid_twee = ?",
@@ -30,41 +41,26 @@ $(document).ready(function () {
         for (let i = 0; i < noOfTemplates; i++) {
             console.log(data);
             let lopendeGebruiker = data[i]['gebruikerid_een'];
-            if (lopendeGebruiker !== sessionStorage.getItem("userId")) {
-                let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + lopendeGebruiker + ".png";
-                appendPhoto = photoUrl;
-                appendGebruikerId = lopendeGebruiker
-                console.log(appendPhoto);
-                let costumElement = makeAnElement(appendPhoto, appendGebruikerId);
-                nieuwLopende.appendChild(costumElement);
-            } else {
-                FYSCloud.API.queryDatabase(
-                    "SELECT  gebruikerid_twee FROM matches WHERE matchstatus = 2 AND gebruikerid_een = ?",
-                    [sessionStorage.getItem("userId")]
-                ).done(function (data) {
-                    let noOfTemplates = data.length;
-                    console.log(noOfTemplates)
-                    for (let i = 0; i < noOfTemplates; i++) {
-                        console.log(data);
-                        let lopendeGebruiker = data[i]['gebruikerid_een'];
-                        if (lopendeGebruiker !== sessionStorage.getItem("userId")) {
-                            let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + lopendeGebruiker + ".png";
-                            appendPhoto = photoUrl;
-                            appendGebruikerId = lopendeGebruiker
-                            console.log(appendPhoto);
-                            let costumElement = makeAnElement(appendPhoto, appendGebruikerId);
-                            nieuwLopende.appendChild(costumElement);
-                        }
-                    }
-                }).fail(function (data) {
-                    console.log(data);
-                    console.log("fout")
-                })
-            }
+            matches(lopendeGebruiker);
         }
     }).fail(function (data) {
         console.log(data);
         console.log("fout")
     })
 
+    FYSCloud.API.queryDatabase(
+        "SELECT  gebruikerid_twee FROM matches WHERE matchstatus = 2 AND gebruikerid_een = ?",
+        [sessionStorage.getItem("userId")]
+    ).done(function (data) {
+        let noOfTemplates = data.length;
+        console.log(noOfTemplates)
+        for (let i = 0; i < noOfTemplates; i++) {
+            console.log(data);
+            let lopendeGebruiker = data[i]['gebruikerid_twee'];
+            matches(lopendeGebruiker);
+        }
+    }).fail(function (data) {
+        console.log(data);
+        console.log("fout")
+    })
 });
