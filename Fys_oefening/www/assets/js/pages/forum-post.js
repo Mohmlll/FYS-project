@@ -62,7 +62,7 @@ $(document).ready(function () {
                 var sportieveling = data[i]["sportieveling"];
                 var relaxer = data[i]["relaxer"];
                 var partygoer = data[i]["partygoer"];
-                var winterSport = data[i]["winterSport"];
+                var winterSport = data[i]["wintersport"];
                 var tropisch = data[i]["tropisch"];
                 var backpacker = data[i]["backpacker"];
                 var resort = data[i]["resort"];
@@ -80,7 +80,7 @@ $(document).ready(function () {
                     appendTag += " partygoer ";
                 }
                 if (winterSport === 1) {
-                    appendTag += " winterSport ";
+                    appendTag += " wintersport ";
                 }
                 if (tropisch === 1) {
                     appendTag += " tropisch ";
