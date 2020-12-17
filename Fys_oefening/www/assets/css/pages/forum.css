@@ -95,7 +95,6 @@ right menu - aanbevolen
     width: 3em;
     height: 3em;
     order: 0;
-
 }
 
 .aanbevolen_profiel_foto img {
@@ -103,8 +102,7 @@ right menu - aanbevolen
     height: 100%;
     border-radius: 50%;
     border: solid 1px black;
-
-
+    object-fit: cover;
 }
 
 .aanbevolen_vnaam {
@@ -169,6 +167,7 @@ post
     height: 100%;
     border-radius: 50%;
     border: solid 1px black;
+    object-fit: cover;
 }
 
 .front_post_title {
