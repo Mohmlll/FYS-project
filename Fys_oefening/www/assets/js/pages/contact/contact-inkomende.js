@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let userId = sessionStorage.getItem("userId");
+    let userId = sessionStorage.getItem('userId');
 
     // de code hier onder is voor inkomende matches die een template invullen op de profiel.htm pagina.
     //
@@ -68,7 +68,6 @@ $(document).ready(function () {
         for (let i = 0; i < noOfTemplates_inkomende; i++) {
             console.log(data);
             let inkomendeGebruiker = data[i]['gebruikerid_een'];
-            // let check = data[i]['gebruikerid_twee'];
             //probeerde hier de eigen userid er uit te filteren maar dat lukte niet.
             if (inkomendeGebruiker !== userId) {
                 let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + inkomendeGebruiker + ".png";

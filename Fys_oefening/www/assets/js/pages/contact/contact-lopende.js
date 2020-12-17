@@ -1,9 +1,10 @@
 $(document).ready(function () {
 
     //de code hieronder is voor lopende matches. De matches worden door de code hier onder weergeven.
-    console.log(sessionStorage.getItem("userId"));
+    let userId = sessionStorage.getItem('userId');
+
     let template;
-    let nieuwLopende = document.getElementById("lopende_aanvraag");
+    let nieuwLopende = document.getElementById("lopende_match");
 
     function makeAnElement(foto, gebruikerId) {
         template = document.importNode(document.getElementById("template_lopende").content, true);
@@ -21,7 +22,7 @@ $(document).ready(function () {
     let appendGebruikerId;
 
     function matches(lopendeGebruiker) {
-        if (lopendeGebruiker !== sessionStorage.getItem("userId")) {
+        if (lopendeGebruiker !== userId ){
             let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + lopendeGebruiker + ".png";
             appendPhoto = photoUrl;
             appendGebruikerId = lopendeGebruiker
@@ -34,7 +35,7 @@ $(document).ready(function () {
     FYSCloud.API.queryDatabase(
         // de 2 staat voor geaccepteerde contact verzoeken
         "SELECT  gebruikerid_een FROM matches WHERE matchstatus = 2 AND gebruikerid_twee = ?",
-        [sessionStorage.getItem("userId")]
+        [userId]
     ).done(function (data) {
         let noOfTemplates = data.length;
         console.log(noOfTemplates)
@@ -50,7 +51,7 @@ $(document).ready(function () {
 
     FYSCloud.API.queryDatabase(
         "SELECT  gebruikerid_twee FROM matches WHERE matchstatus = 2 AND gebruikerid_een = ?",
-        [sessionStorage.getItem("userId")]
+        [userId]
     ).done(function (data) {
         let noOfTemplates = data.length;
         console.log(noOfTemplates)

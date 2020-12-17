@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    let userId = sessionStorage.getItem('userId');
+    console.log(userId);
 
     $(".gegevens_opslaan").on("click", function (gegevens) {
         gegevens.preventDefault();
@@ -21,7 +23,6 @@ $(document).ready(function () {
         var profielcheck = document.getElementById("profilePicture").files.length
 
         if (voornaamValid && achternaamValid && geboorteDatumValid && woonplaatsValid && telefoonValid && profielcheck !== 0) {
-            console.log(sessionStorage.getItem("userId"));
             var voornaam = document.getElementById('voornaam').value;
             var achternaam = document.getElementById('achternaam').value;
             var geslachtValue;
@@ -42,7 +43,7 @@ $(document).ready(function () {
             //(voornaam, achternaam, geboortedatum, woonplaats, telefoonnummeer, bio)
             FYSCloud.API.queryDatabase(
                 "UPDATE gebruiker SET status = 'volledig_profiel' WHERE gebruikerid = ?",
-                [sessionStorage.getItem("userId")]
+                [userId]
             ).done(function (data) {
                 console.log(data);
             }).fail(function (reason) {
@@ -73,7 +74,7 @@ $(document).ready(function () {
                                 .done(function (data) {
                                     if (data.isImage) {
                                         FYSCloud.API.uploadFile(
-                                            sessionStorage.getItem("userId") + ".png",
+                                           userId + ".png",
                                             data.url
                                         ).done(function (data) {
                                             console.log(data);
@@ -166,7 +167,7 @@ $(document).ready(function () {
     }
 
     datum();
-    console.log(sessionStorage.getItem("userId"));
+
 
 
     $(function () {

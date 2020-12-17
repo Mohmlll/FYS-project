@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    let userId = sessionStorage.getItem('userId');
+
     $("#post_aanmakenId").on("click", function (post) {
         post.preventDefault();
         var titel = document.getElementById("post_titel_id").value;
@@ -16,16 +18,16 @@ $(document).ready(function () {
 
 
             FYSCloud.API.queryDatabase(
-                "INSERT INTO forum_post (post, titel, idgebruiker )" +
-                "VALUES(?,?,?)",
-                [postContent, titel, sessionStorage.getItem("userId")]
+                "INSERT INTO forum_post (post, titel, idgebruiker, datum )" +
+                "VALUES(?,?,?, NOW())",
+                [postContent, titel, userId]
             ).done(function (data) {
                 console.log(data);
                 let postId = data.insertId
 
                 FYSCloud.API.queryDatabase(
                     "INSERT INTO post_tags SET idforum_post = ?, explorer = ?, sportieveling = ?, relaxer = ?, partygoer = ? , wintersport = ?, tropisch = ?, backpacker= ?, resort= ?, idgebruiker = ?",
-                    [postId, tagExplorer, tagSportieveling, tagRelaxer, tagPartygoer, tagWinterSport, tagTropisch, tagBackpacker, tagResort, sessionStorage.getItem("userId")]
+                    [postId, tagExplorer, tagSportieveling, tagRelaxer, tagPartygoer, tagWinterSport, tagTropisch, tagBackpacker, tagResort, userId]
                 ).done(function (data) {
                     console.log(data);
                     location.href = 'forum-homepagina.html';

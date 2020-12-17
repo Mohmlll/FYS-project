@@ -28,7 +28,6 @@
     <script src="assets/js/pages/contact/contact-inkomende.js"></script>
     <script src="assets/js/pages/contact/contact-uitgaande.js"></script>
     <script src="assets/js/pages/contact/contact-lopende.js"></script>
-    <script crossorigin="anonymous" src="https://kit.fontawesome.com/f7a7c0104b.js"></script>
     <script src="assets/js/pages/translate.js"></script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
             type="text/javascript"></script>
@@ -78,7 +77,7 @@
                                 <tr>
                                     <td>Foto van jezelf:</td>
                                     <td>
-                                        <img id="profielFoto" src="assets/img/AboutUsFotos/Mohammed.png">
+                                        <img id="profielFoto" src="">
                                     </td>
                                 </tr>
                                 <tr>
@@ -119,7 +118,7 @@
                                 </tr>
                                 <tr>
                                     <td>Soort vakantieganger:</td>
-                                    <td>
+                                    <td class="td_tags">
                                         <div class="create_post_tags">
                                             <div class="tag_div" id="explorer">
                                                 <label for="tag_explorer">
@@ -194,30 +193,28 @@
                                 </tr>
 
                             </table>
-                            <button class="gegevens_button" id="gegevens_bewerken" type="submit">Bewerken</button>
-                            <button class="gegevens_button" id="gegevens_opslaan" type="submit">Opslaan</button>
                         </label>
                     </form>
+                    <button class="gegevens_button" id="gegevens_bewerken" type="submit">Bewerken</button>
+                    <button class="gegevens_button" id="gegevens_opslaan" type="submit">Opslaan</button>
                 </div>
                 <div class="tabcontent" id="Lopende_Matches">
                     <h3>Lopende Matches</h3>
-                    <p>TODO: Kan lopende match nog niet annuleren + contact info is nog niet zichtbaar bij een lopende
-                        match </p>
-                    <div class="eerste_match" id="lopende_aanvraag">
+
+                    <div class="lopende_match" id="lopende_match">
                         <template id="template_lopende">
-                            <div class="foto_gebruiker_lopende">
+                            <div class="gebruiker_lopende">
                                 <img id="foto_gebruiker_lopende" src="">
+                                <button class="verwijder" id="verwijder_lopende">
+                                    verwijder
+                                </button>
                             </div>
-                            <div class="tekst_eerste_match">
-                                <p>Match Tropische vakantie | Backpacken</p>
-                                <p>Email: dylan.kroon@hva.nl</p>
-                            </div>
+
                         </template>
                     </div>
                 </div>
                 <div class="tabcontent" id="Inkomende_Matches">
                     <h3>Inkomende Matches</h3>
-                    <p>TODO: bug die eigen id nog een keer laat zien</p>
                     <div class="aanvraag" id="inkomende_aanvraag">
                         <template id="template_inkomende">
                             <div class="inkomende" id="inkomende">
@@ -226,18 +223,15 @@
                                         <td>
                                             <div class="foto_gebruiker_inkomend">
                                                 <img id="foto_gebruiker_inkomend" src="">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <button class="accepteer" id="accepteer_inkomende">
-                                                Accepteer
-                                            </button>
 
-                                            <button class="weiger" id="weiger_inkomende">
-                                                Weiger
-                                            </button>
+                                                <button class="accepteer" id="accepteer_inkomende">
+                                                    Accepteer
+                                                </button>
+
+                                                <button class="weiger" id="weiger_inkomende">
+                                                    Weiger
+                                                </button>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
@@ -255,15 +249,10 @@
                                     <td>
                                         <div class="foto_gebruiker_uitgaand">
                                             <img id="foto_gebruiker_uitgaande" src="">
+                                            <p>
+                                                Wachtend op Bevestiging!
+                                            </p>
                                         </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <p>
-                                            Wachtend op Bevestiging!
-                                        </p>
                                     </td>
                                 </tr>
                             </table>

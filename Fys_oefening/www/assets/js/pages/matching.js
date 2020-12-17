@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    console.log(sessionStorage.getItem("userId"));
+    let userId = sessionStorage.getItem('userId');
+
 
     var nieuweAanbevolen = document.getElementById("aanbevolen");
     var template;
@@ -23,7 +24,7 @@ $(document).ready(function () {
 
     FYSCloud.API.queryDatabase(
         "SELECT * FROM interesse WHERE idgebruiker = ?",
-        [sessionStorage.getItem("userId")]
+        [userId]
     ).done(function (data) {
         console.log(data);
         var backpacker = data[0]["backpacker"];
@@ -42,7 +43,7 @@ $(document).ready(function () {
             "if(resort = ?, 1, 0)) as score, gebruikers_naam, idgebruiker FROM interesse " +
             "JOIN gebruiker  ON (idgebruiker = gebruikerid) " +
             "WHERE idgebruiker != ? ORDER BY score  DESC, gebruikers_naam LIMIT ?",
-            [backpacker, explorer, sportieveling, relaxer, partygoer, wintersport, tropisch, resort, sessionStorage.getItem("userId"), noOfTemplates]
+            [backpacker, explorer, sportieveling, relaxer, partygoer, wintersport, tropisch, resort, userId, noOfTemplates]
         ).done(function (data) {
             console.log(data);
             let gegevens = data;

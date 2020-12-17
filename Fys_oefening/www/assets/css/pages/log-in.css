@@ -52,14 +52,17 @@
 .login_button, .register_button {
     position: relative;
     width: 60%;
-    padding: 5%;
+    padding: 2%;
     cursor: pointer;
     display: block;
     margin: auto;
-    background: linear-gradient(to right, #ff7b68, #ffffff);
+    background-color: red;
+    color: #ffffff;
     outline: none;
-    border-radius: 30px;
-    border: solid 1px #ff7b68;
+    border-radius: 5%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    border: 0;
+    font-size: 17px;
 }
 
 .login_button:hover, .register_button:hover {

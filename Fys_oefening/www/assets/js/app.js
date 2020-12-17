@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    console.log(sessionStorage.getItem("userId"));
+    let userId = sessionStorage.getItem("userId")
+
+    console.log(userId);
     //
     // var forumLogin = location.href.includes("forum-homepagina.html");
     // var postLogin = location.href.includes("post.html");
@@ -12,16 +14,15 @@ $(document).ready(function () {
     // }
 
     function menuSelectie() {
-        var id = sessionStorage.getItem("userId")
         var pagina = location.href
         console.log(pagina)
         FYSCloud.API.queryDatabase(
             "SELECT status FROM gebruiker WHERE gebruikerid = ?",
-            [id]
+            [userId]
         ).done(function (data) {
             console.log(data);
             console.log(data[0]);
-            if (id === null || pagina.includes("profiel-aanmaken.html") && data[0]["status"] === "geenGegevens") {
+            if (userId === null || pagina.includes("profiel-aanmaken.html") && data[0]["status"] === "geenGegevens") {
                 document.getElementById("logged_out").style.display = "block";
                 document.getElementById("logged_in").style.display = "none";
                 console.log("0")
@@ -29,7 +30,7 @@ $(document).ready(function () {
                 document.getElementById("logged_out").style.display = "block";
                 document.getElementById("logged_in").style.display = "none";
                 console.log("1")
-            } else if (id !== null && data[0]["status"] === "volledig_profiel") {
+            } else if (userId !== null && data[0]["status"] === "volledig_profiel") {
                 document.getElementById("logged_out").style.display = "none";
                 document.getElementById("logged_in").style.display = "block";
                 console.log("2")

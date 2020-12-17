@@ -1,24 +1,24 @@
 /*
 Profiel Overzicht
  */
+#profielFoto ,.tabcontent img{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 
+}
+#profielFoto{
+    border-radius: 5%;
+    float: left;
+
+}
 .profiel_input {
-    width: 90%;
-    padding: 10px 0;
-    margin: 5px 0;
+    width: 100%;
+    margin: 1% auto;
     border-left: 0;
     border-top: 0;
     border-right: 0;
     border-bottom: 1px solid #999;
     outline: none;
     background: transparent;
-}
-
-.soort_vakantieganger, .soort_klimaat, .soort_leeftijdsvoorkeur {
-    padding: 2%;
-    background-color: white;
-    border-radius: 25px;
-    height: 5%;
 }
 
 .voorkeuren_user table {
@@ -40,7 +40,7 @@ Profiel Overzicht
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
-    background-color: palevioletred;
+    background-color: white;
     border-radius: 25px;
     width: 100%;
     align-content: center;
@@ -72,14 +72,12 @@ Profiel Overzicht
 }
 
 .tab button.active {
-    background-color: lawngreen;
+    background-color: yellow;
     border-radius: 25px;
 }
 
 .tabcontent {
-    flex-wrap: wrap;
-    display: flex;
-    padding: 6px 12px;
+    padding: 5%;
     border: 0 solid #ccc;
     border-top: none;
     animation: fadeEffect 1.2s;
@@ -95,12 +93,41 @@ Profiel Overzicht
 }
 
 
-.foto_gebruiker_uitgaand, .foto_gebruiker_inkomend, .foto_gebruiker_lopende {
-    border-top: 1px solid black;
-    margin-bottom: 10px;
+.foto_gebruiker_uitgaand, .foto_gebruiker_inkomend, .gebruiker_lopende {
+    border-bottom: 1px solid gray;
+    padding: 5%;
+    flex-wrap: wrap;
+    display: flex;
+    order: 0;
+    margin: auto auto 5% auto;
+    width: 80%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 }
+.accepteer, .weiger, .verwijder{
+    display: block;
+    background-color: red;
+    color: white;
+    border-radius: 5%;
+    border: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    margin: auto;
+    cursor: pointer;
+    padding: 2%;
+    width: 8em;
+}
+.accepteer:hover, .weiger:hover, .verwijder:hover, .gegevens_button:hover{
+    background: linear-gradient(to right, red, #ffffff);
+}
+.accepteer{
+    order: 1;
 
-
+}
+.weiger{
+    order: 2;
+}
+.foto_gebruiker_uitgaand p{
+    margin: auto;
+}
 #Inkomende_Matches, #Uitgaande_Matches {
     width: 100%;
     align-content: center;
@@ -111,7 +138,7 @@ Profiel Overzicht
     margin: auto;
 }
 
-.eerste_match {
+.lopende_match {
     border-top: solid 1px black;
 
 }
@@ -121,15 +148,16 @@ Profiel Overzicht
 
 }
 
-.foto_gebruiker_uitgaand img, .foto_gebruiker_inkomend img, .foto_gebruiker_lopende img {
-    width: 100px;
-    height: auto;
-    border-radius: 25px;
+.foto_gebruiker_uitgaand img, .foto_gebruiker_inkomend img, .gebruiker_lopende img {
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    margin: auto;
+
 }
 
 .aanvraag {
     border-top: 2px solid black;
-    padding: 20px;
 }
 
 .info_user {
@@ -153,12 +181,12 @@ table .radiobutton {
     text-align: center;
 }
 
-.tekstbox, .profiel_text {
-    width: 90%;
+.tekstbox {
+    width: 100%;
     padding: 10px 0;
     margin: 5px 0;
     border-left: 0;
-    border-top: 0;
+    border-top: 1px solid #999;
     border-right: 0;
     border-bottom: 1px solid #999;
     outline: none;
@@ -171,29 +199,31 @@ table .radiobutton {
     border-radius: 25px;
     height: 5%;
 }
+.input {
 
+}
 .input table {
     width: 100%;
-    margin: auto;
+
 }
 
 .input textarea {
-    height: 50px;
+    min-height: 80px;
     width: 100%;
 }
 
 .gegevens_button, #verzoek_feedback, #al_gematched {
-    position: relative;
-    width: 60%;
-    padding: 2%;
+    background-color: red;
+    color: white;
+    border-radius: 5%;
+    border: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    margin: auto;
     cursor: pointer;
-    margin: 2% auto;
-    background: linear-gradient(to right, #ff7b68, #ffffff);
-    outline: none;
-    border-radius: 30px;
-    border: solid 1px #ff7b68;
-    text-align: center;
-
+    padding: 2%;
+    height: 3em;
+    width: 50%;
+    position: relative;
 }
 #verzoek_feedback, #al_gematched{
     display:none;
@@ -206,7 +236,9 @@ table .radiobutton {
 #gegevens_opslaan {
     display: none;
 }
-
+.td_tags{
+    margin-left: auto;
+}
 .tag_div {
     margin: 5px;
     border: 1px solid black;

@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    console.log(sessionStorage.getItem("userId"));
+    let userId = sessionStorage.getItem('userId');
+    console.log(userId);
+
 
     document.getElementById("volgorde").onchange = function () {
         let value = document.getElementById("volgorde").value
@@ -42,10 +44,11 @@ $(document).ready(function () {
         }
         console.log(selectVolgorde)
 
-        function makeAnElement(titel, content, foto, postId, tag) {
+        function makeAnElement(titel, content, foto, postId, tag, date) {
             template = document.importNode(document.getElementById("post_template").content, true);
             let post_header_titel = template.getElementById("post_header_titel");
             template.getElementById("post_profiel_img").src = foto;
+            let content_date = template.getElementById("post_date");
             let content_text_div = template.getElementById("post_content");
             let content_text = template.getElementById("content_text");
             let content_tag = template.getElementById("tags");
@@ -57,6 +60,7 @@ $(document).ready(function () {
                 })
             })
 
+            content_date.innerHTML = date
             post_header_titel.innerHTML = titel
             content_text.innerHTML = content
             content_tag.innerHTML = tag
@@ -77,6 +81,7 @@ $(document).ready(function () {
         let appendPostId;
         let appendTag = document.getElementById("tags");
         let tags = "";
+        let appendDate;
 
         FYSCloud.API.queryDatabase(
             "SELECT * FROM interesse WHERE idgebruiker = ?",
@@ -92,10 +97,9 @@ $(document).ready(function () {
             var tropisch = data[0]["tropisch"];
             var resort = data[0]["resort"];
             var noOfTemplates = 5;
-            var geenTags = ""
 
             FYSCloud.API.queryDatabase(
-                "SELECT forum_post.idgebruiker, titel, post, post_tags.explorer, post_tags.sportieveling, " +
+                "SELECT forum_post.idgebruiker, titel, post, datum, post_tags.explorer, post_tags.sportieveling, " +
                 "post_tags.relaxer, post_tags.partygoer, post_tags.wintersport, post_tags.tropisch, post_tags.backpacker, " +
                 "post_tags.resort , (if(post_tags.explorer = 0 AND post_tags.sportieveling = 0 AND " +
                 "post_tags.relaxer = 0 AND post_tags.partygoer = 0 AND post_tags.wintersport = 0 AND post_tags.tropisch = 0 AND post_tags.backpacker = 0 AND " +
@@ -169,15 +173,16 @@ $(document).ready(function () {
 
                     let img = new Image();
                     img.src = photoUrl;
-                    let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId, tags);
+                    appendDate = data[i]["datum"];
+                    console.log(appendDate);
+                    let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId, tags, appendDate);
                     nieuwePost.appendChild(costumElement);
                     appendTag = "";
-                }
+                } appendTag = "";
             }).fail(function (reason) {
                 console.log(reason);
                 console.log("fout");
             })
-
         }).fail(function (reason) {
             console.log(reason);
         })
