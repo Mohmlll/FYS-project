@@ -21,20 +21,15 @@
   <component name="ChangeListManager">
     <list default="true" id="dd1b4a5e-81ef-4d27-bb4e-611f7a2431ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-inkomende.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-inkomende.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/css/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/forum.css" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/forum.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/log-in.css" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/log-in.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/profiel.css" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/profiel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/reponsive/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/reponsive/responsive.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-lopende.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-lopende.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-uitgaande.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-uitgaande.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/forum-post.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/forum-post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/matching.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/matching.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/post-aanmaken.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/post-aanmaken.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel-aanmaken.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel-aanmaken.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel-bewerken.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel-bewerken.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel_overzicht.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel_overzicht.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/registreer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/registreer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/tagbuttons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/post-aanmaken.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/post-aanmaken.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/profiel-aanmaken.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/profiel-aanmaken.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/forum-homepagina.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/forum-homepagina.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fys_oefening/www/profiel-overzicht.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/profiel-overzicht.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,6 +172,8 @@
       <workItem from="1607608424344" duration="2205000" />
       <workItem from="1607855912367" duration="189000" />
       <workItem from="1607939623014" duration="4296000" />
+      <workItem from="1607955385628" duration="46000" />
+      <workItem from="1608203605373" duration="11339000" />
     </task>
     <servers />
   </component>

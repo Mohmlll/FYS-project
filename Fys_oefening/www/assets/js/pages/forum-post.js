@@ -12,10 +12,11 @@ $(document).ready(function () {
             filter = ""
         }
 
-        function makeAnElement(titel, content, foto, postId, tag) {
+        function makeAnElement(titel, content, foto, postId, tag, date) {
             template = document.importNode(document.getElementById("post_template").content, true);
             let post_header_titel = template.getElementById("post_header_titel");
             template.getElementById("post_profiel_img").src = foto;
+            let content_date = template.getElementById("post_date");
             let content_text_div = template.getElementById("post_content");
             let content_text = template.getElementById("content_text");
             let content_tag = template.getElementById("tags");
@@ -27,6 +28,7 @@ $(document).ready(function () {
                 })
             })
 
+            content_date.innerHTML = date
             post_header_titel.innerHTML = titel
             content_text.innerHTML = content
             content_tag.innerHTML = tag
@@ -47,6 +49,7 @@ $(document).ready(function () {
         let appendPostId;
         let appendTag = document.getElementById("tags");
         let tags = "";
+        let appendDate;
 
         FYSCloud.API.queryDatabase(
             "SELECT * FROM forum_post, post_tags WHERE forum_post.idforum_post = post_tags.idforum_post" + filter
@@ -59,7 +62,7 @@ $(document).ready(function () {
                 appendTitel = data[i]['titel'];
                 appendPost = data[i]['post'];
                 appendPostId = postId;
-
+                appendDate = data[i]['datum'];
                 var explorer = data[i]["explorer"];
                 var sportieveling = data[i]["sportieveling"];
                 var relaxer = data[i]["relaxer"];
@@ -68,7 +71,7 @@ $(document).ready(function () {
                 var tropisch = data[i]["tropisch"];
                 var backpacker = data[i]["backpacker"];
                 var resort = data[i]["resort"];
-
+                console.log("lorem");
                 if (explorer === 1) {
                     appendTag += " explorer ";
                 }
@@ -101,7 +104,8 @@ $(document).ready(function () {
 
                 let img = new Image();
                 img.src = photoUrl;
-                let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId, tags);
+                console.log(appendDate);
+                let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId, tags, appendDate);
                 nieuwePost.appendChild(costumElement);
                 appendTag = "";
             }

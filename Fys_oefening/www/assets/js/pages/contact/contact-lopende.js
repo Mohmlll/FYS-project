@@ -4,7 +4,7 @@ $(document).ready(function () {
     let userId = sessionStorage.getItem('userId');
 
     let template;
-    let nieuwLopende = document.getElementById("lopende_aanvraag");
+    let nieuwLopende = document.getElementById("lopende_match");
 
     function makeAnElement(foto, gebruikerId) {
         template = document.importNode(document.getElementById("template_lopende").content, true);

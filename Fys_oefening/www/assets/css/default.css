@@ -118,7 +118,7 @@ header {
     display: flex;
     width: 100%;
     order: 1;
-    background-color: #ff7b68;
+    background-color: red;
     height: 80%;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -152,8 +152,9 @@ header {
 
 .welkombox, .uitleg_video, .info1, .info2, .inlog-box, .flip_card_front,
 .flip_card_back, .post_latest, .forum_topics__options,
-.container_create_post, .forum_aanbevolen, .forum_main_options, .buttonpagina_totaal, .forum_main, .profielUser, .overBox {
+.container_create_post, .forum_aanbevolen, .forum_main_options, .buttonpagina_totaal, .post, .profielUser, .overBox {
     -webkit-box-shadow: 12px 10px 15px 0 rgba(0, 0, 0, 0.75);
+    border: red solid 1px;
 }
 
 .footer_main, .container__main {
@@ -287,7 +288,6 @@ contact popup
     width: 100%;
     flex-wrap: wrap;
     display: flex;
-    margin-bottom: 5%;
 
 }
 
@@ -354,3 +354,4 @@ contact popup
 .tag_div span {
     padding: 8px;
 }
+

@@ -18,8 +18,8 @@ $(document).ready(function () {
 
 
             FYSCloud.API.queryDatabase(
-                "INSERT INTO forum_post (post, titel, idgebruiker )" +
-                "VALUES(?,?,?)",
+                "INSERT INTO forum_post (post, titel, idgebruiker, datum )" +
+                "VALUES(?,?,?, NOW())",
                 [postContent, titel, userId]
             ).done(function (data) {
                 console.log(data);
@@ -27,7 +27,7 @@ $(document).ready(function () {
 
                 FYSCloud.API.queryDatabase(
                     "INSERT INTO post_tags SET idforum_post = ?, explorer = ?, sportieveling = ?, relaxer = ?, partygoer = ? , wintersport = ?, tropisch = ?, backpacker= ?, resort= ?, idgebruiker = ?",
-                    [postId, tagExplorer, tagSportieveling, tagRelaxer, tagPartygoer, tagWinterSport, tagTropisch, tagBackpacker, tagResort, sessionStorage.getItem("userId")]
+                    [postId, tagExplorer, tagSportieveling, tagRelaxer, tagPartygoer, tagWinterSport, tagTropisch, tagBackpacker, tagResort, userId]
                 ).done(function (data) {
                     console.log(data);
                     location.href = 'forum-homepagina.html';
