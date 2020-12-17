@@ -21,7 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="dd1b4a5e-81ef-4d27-bb4e-611f7a2431ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-lopende.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-lopende.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/profiel.css" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/css/pages/profiel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-inkomende.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-inkomende.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-uitgaande.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/contact/contact-uitgaande.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/assets/js/pages/profiel/profiel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/forum-homepagina.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/forum-homepagina.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fys_oefening/www/profiel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fys_oefening/www/profiel.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +156,9 @@
       <workItem from="1607602837099" duration="1163000" />
       <workItem from="1607608424344" duration="2205000" />
       <workItem from="1607855912367" duration="189000" />
-      <workItem from="1607939623014" duration="4296000" />
+      <workItem from="1607939623014" duration="5172000" />
+      <workItem from="1607955253589" duration="98000" />
+      <workItem from="1608203643116" duration="14496000" />
     </task>
     <servers />
   </component>
@@ -175,5 +182,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="662" y="320" key="new project wizard/0.0.2560.1400@0.0.2560.1400" timestamp="1607856101447" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1608216715797">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608216715797" />
   </component>
 </project>

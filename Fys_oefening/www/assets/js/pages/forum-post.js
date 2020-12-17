@@ -1,14 +1,46 @@
 $(document).ready(function () {
     console.log(sessionStorage.getItem("userId"));
 
+    document.getElementById("volgorde").onchange = function () {
+        let value = document.getElementById("volgorde").value
+        console.log(value)
+        if (value === "nieuw_volgorde") {
+            sessionStorage.setItem("volgorde", "datum DESC")
+            location.reload()
+        } else if (value === "aanbevolen_volgorde") {
+            sessionStorage.setItem("volgorde", "score DESC")
+            location.reload()
+        } else if (value === "beste_volgorde") {
+            sessionStorage.setItem("volgorde", "post")
+            location.reload()
+        } else {
+            console.log("Error")
+        }
+        console.log(sessionStorage.getItem("volgorde"))
+    }
+
     //dit is een functie waarbij een template elke keer gevuld wordt in een loop.
     //als je een filter aan heb staan, wordt die meegegeven en daardoor komen alleen de resultaten terug die voldoen aan jouw filter
     function forum(filter) {
         var nieuwePost = document.getElementById("forum_main_id");
         var template;
+        let volgorde = sessionStorage.getItem("volgorde");
         if (filter === null) {
             filter = ""
         }
+        if (volgorde === null) {
+            volgorde = "datum DESC"
+        }
+
+        let selectVolgorde = sessionStorage.getItem("volgorde")
+        if (selectVolgorde === "datum DESC") {
+            document.getElementById("nieuw_volgorde").selected = true;
+        } else if (selectVolgorde === "score DESC") {
+            document.getElementById("aanbevolen_volgorde").selected = true;
+        } else if (selectVolgorde === "post") {
+            document.getElementById("beste_volgorde").selected = true;
+        }
+        console.log(selectVolgorde)
 
         function makeAnElement(titel, content, foto, postId, tag) {
             template = document.importNode(document.getElementById("post_template").content, true);
@@ -47,66 +79,109 @@ $(document).ready(function () {
         let tags = "";
 
         FYSCloud.API.queryDatabase(
-            "SELECT * FROM forum_post, post_tags WHERE forum_post.idforum_post = post_tags.idforum_post" + filter
+            "SELECT * FROM interesse WHERE idgebruiker = ?",
+            [sessionStorage.getItem("userId")]
         ).done(function (data) {
-            var noOfTemplates = data.length;
-            console.log(noOfTemplates)
-            for (let i = 0; i < noOfTemplates; i++) {
-                let postId = data[i]['idgebruiker'];
-                let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
-                appendTitel = data[i]['titel'];
-                appendPost = data[i]['post'];
-                appendPostId = postId;
+            console.log(data);
+            var backpacker = data[0]["backpacker"];
+            var explorer = data[0]["explorer"];
+            var sportieveling = data[0]["sportieveling"];
+            var relaxer = data[0]["relaxer"];
+            var partygoer = data[0]["partygoer"];
+            var wintersport = data[0]["wintersport"];
+            var tropisch = data[0]["tropisch"];
+            var resort = data[0]["resort"];
+            var noOfTemplates = 5;
+            var geenTags = ""
 
-                var explorer = data[i]["explorer"];
-                var sportieveling = data[i]["sportieveling"];
-                var relaxer = data[i]["relaxer"];
-                var partygoer = data[i]["partygoer"];
-                var winterSport = data[i]["wintersport"];
-                var tropisch = data[i]["tropisch"];
-                var backpacker = data[i]["backpacker"];
-                var resort = data[i]["resort"];
+            FYSCloud.API.queryDatabase(
+                "SELECT forum_post.idgebruiker, titel, post, post_tags.explorer, post_tags.sportieveling, " +
+                "post_tags.relaxer, post_tags.partygoer, post_tags.wintersport, post_tags.tropisch, post_tags.backpacker, " +
+                "post_tags.resort , (if(post_tags.explorer = 0 AND post_tags.sportieveling = 0 AND " +
+                "post_tags.relaxer = 0 AND post_tags.partygoer = 0 AND post_tags.wintersport = 0 AND post_tags.tropisch = 0 AND post_tags.backpacker = 0 AND " +
+                "post_tags.resort = 0, -10, 10) + " +
+                "if(post_tags.backpacker = ?, 1, 0) + if(post_tags.backpacker = ? AND post_tags.backpacker = 1, 10, 0) + " +
+                "if(post_tags.explorer = ?, 1, 0) + if(post_tags.explorer = ? AND post_tags.explorer = 1, 10, 0) +" +
+                "if(post_tags.sportieveling = ?, 1, 0) + if(post_tags.sportieveling = ? AND post_tags.sportieveling = 1, 10, 0) + " +
+                "if(post_tags.relaxer = ?, 1, 0) + if(post_tags.relaxer = ? AND post_tags.relaxer = 1, 10, 0) + " +
+                "if(post_tags.partygoer = ?, 1, 0) + if(post_tags.partygoer = ? AND post_tags.partygoer = 1, 10, 0) + " +
+                "if(post_tags.wintersport = ?, 1, 0) + if(post_tags.wintersport = ? AND post_tags.wintersport = 1, 10, 0) + " +
+                "if(post_tags.tropisch = ?, 1, 0) + if(post_tags.tropisch = ? AND post_tags.tropisch = 1, 10, 0) + " +
+                "if(post_tags.resort = ?, 1, 0) + if(post_tags.resort = ? AND post_tags.resort = 1, 10, 0)) " +
+                "as score FROM interesse " +
+                "JOIN gebruiker ON (idgebruiker = gebruikerid) " +
+                "JOIN forum_post ON (forum_post.idgebruiker = interesse.idgebruiker) " +
+                "JOIN post_tags ON (forum_post.idforum_post = post_tags.idforum_post) " +
+                "WHERE interesse.idgebruiker != ?"
+                + filter + " ORDER BY " + volgorde,
+                [backpacker, backpacker, explorer, explorer, sportieveling, sportieveling, relaxer, relaxer,
+                    partygoer, partygoer, wintersport, wintersport, tropisch, tropisch, resort, resort, sessionStorage.getItem("userId")]
+            ).done(function (data) {
+                var noOfTemplates = data.length;
+                console.log(noOfTemplates)
+                console.log(data)
+                for (let i = 0; i < noOfTemplates; i++) {
+                    let postId = data[i]['idgebruiker'];
+                    let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
+                    appendTitel = data[i]['titel'];
+                    appendPost = data[i]['post'];
+                    appendPostId = postId;
+                    var explorer = data[i]["explorer"];
+                    var sportieveling = data[i]["sportieveling"];
+                    var relaxer = data[i]["relaxer"];
+                    var partygoer = data[i]["partygoer"];
+                    var winterSport = data[i]["wintersport"];
+                    var tropisch = data[i]["tropisch"];
+                    var backpacker = data[i]["backpacker"];
+                    var resort = data[i]["resort"];
 
-                if (explorer === 1) {
-                    appendTag += " explorer ";
-                }
-                if (sportieveling === 1) {
-                    appendTag += " sportieveling ";
-                }
-                if (relaxer === 1) {
-                    appendTag += " relaxer ";
-                }
-                if (partygoer === 1) {
-                    appendTag += " partygoer ";
-                }
-                if (winterSport === 1) {
-                    appendTag += " wintersport ";
-                }
-                if (tropisch === 1) {
-                    appendTag += " tropisch ";
-                }
-                if (backpacker === 1) {
-                    appendTag += " backpacker ";
-                }
-                if (resort === 1) {
-                    appendTag += " resort ";
-                }
-                if (appendTag.includes("null")) {
-                    tags = appendTag.replace("null ", "")
-                } else {
-                    tags = appendTag;
-                }
+                    appendTag = "";
+                    if (explorer === 1) {
+                        appendTag += " explorer ";
+                    }
+                    if (sportieveling === 1) {
+                        appendTag += " sportieveling ";
+                    }
+                    if (relaxer === 1) {
+                        appendTag += " relaxer ";
+                    }
+                    if (partygoer === 1) {
+                        appendTag += " partygoer ";
+                    }
+                    if (winterSport === 1) {
+                        appendTag += " wintersport ";
+                    }
+                    if (tropisch === 1) {
+                        appendTag += " tropisch ";
+                    }
+                    if (backpacker === 1) {
+                        appendTag += " backpacker ";
+                    }
+                    if (resort === 1) {
+                        appendTag += " resort ";
+                    }
+                    console.log(appendTag)
+                    if (appendTag.includes("null")) {
+                        tags = appendTag.replace("null ", "")
+                    } else {
+                        tags = appendTag;
+                    }
 
-                let img = new Image();
-                img.src = photoUrl;
-                let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId, tags);
-                nieuwePost.appendChild(costumElement);
-                appendTag = "";
-            }
+                    let img = new Image();
+                    img.src = photoUrl;
+                    let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId, tags);
+                    nieuwePost.appendChild(costumElement);
+                    appendTag = "";
+                }
+            }).fail(function (reason) {
+                console.log(reason);
+                console.log("fout");
+            })
+
         }).fail(function (reason) {
             console.log(reason);
-            console.log("fout");
         })
+
 
 
         var img = new Image()
@@ -161,4 +236,5 @@ $(document).ready(function () {
     var img = new Image()
     img.src = "https://dev-is106-3.fys.cloud/uploads/133.png"
     console.log("height = " + img.height);
+
 });
