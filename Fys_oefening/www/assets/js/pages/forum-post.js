@@ -104,14 +104,14 @@ $(document).ready(function () {
                 "post_tags.resort , (if(post_tags.explorer = 0 AND post_tags.sportieveling = 0 AND " +
                 "post_tags.relaxer = 0 AND post_tags.partygoer = 0 AND post_tags.wintersport = 0 AND post_tags.tropisch = 0 AND post_tags.backpacker = 0 AND " +
                 "post_tags.resort = 0, -10, 10) + " +
-                "if(post_tags.backpacker = ?, 1, 0) + if(post_tags.backpacker = ? AND post_tags.backpacker = 1, 10, 0) + " +
-                "if(post_tags.explorer = ?, 1, 0) + if(post_tags.explorer = ? AND post_tags.explorer = 1, 10, 0) +" +
-                "if(post_tags.sportieveling = ?, 1, 0) + if(post_tags.sportieveling = ? AND post_tags.sportieveling = 1, 10, 0) + " +
-                "if(post_tags.relaxer = ?, 1, 0) + if(post_tags.relaxer = ? AND post_tags.relaxer = 1, 10, 0) + " +
-                "if(post_tags.partygoer = ?, 1, 0) + if(post_tags.partygoer = ? AND post_tags.partygoer = 1, 10, 0) + " +
-                "if(post_tags.wintersport = ?, 1, 0) + if(post_tags.wintersport = ? AND post_tags.wintersport = 1, 10, 0) + " +
-                "if(post_tags.tropisch = ?, 1, 0) + if(post_tags.tropisch = ? AND post_tags.tropisch = 1, 10, 0) + " +
-                "if(post_tags.resort = ?, 1, 0) + if(post_tags.resort = ? AND post_tags.resort = 1, 10, 0)) " +
+                "if(post_tags.backpacker = ?, 1, 0) +       if(post_tags.backpacker = ? AND post_tags.backpacker = 1, 10, 0) + " +
+                "if(post_tags.explorer = ?, 1, 0) +         if(post_tags.explorer = ? AND post_tags.explorer = 1, 10, 0) +" +
+                "if(post_tags.sportieveling = ?, 1, 0) +    if(post_tags.sportieveling = ? AND post_tags.sportieveling = 1, 10, 0) + " +
+                "if(post_tags.relaxer = ?, 1, 0) +          if(post_tags.relaxer = ? AND post_tags.relaxer = 1, 10, 0) + " +
+                "if(post_tags.partygoer = ?, 1, 0) +        if(post_tags.partygoer = ? AND post_tags.partygoer = 1, 10, 0) + " +
+                "if(post_tags.wintersport = ?, 1, 0) +      if(post_tags.wintersport = ? AND post_tags.wintersport = 1, 10, 0) + " +
+                "if(post_tags.tropisch = ?, 1, 0) +         if(post_tags.tropisch = ? AND post_tags.tropisch = 1, 10, 0) + " +
+                "if(post_tags.resort = ?, 1, 0) +           if(post_tags.resort = ? AND post_tags.resort = 1, 10, 0)) " +
                 "as score FROM interesse " +
                 "JOIN gebruiker ON (idgebruiker = gebruikerid) " +
                 "JOIN forum_post ON (forum_post.idgebruiker = interesse.idgebruiker) " +
@@ -206,35 +206,35 @@ $(document).ready(function () {
         location.reload()
     })
     $("#filter_explorer").on("click", function () {
-        sessionStorage.setItem("filter", " AND explorer = 1")
+        sessionStorage.setItem("filter", " AND post_tags.explorer = 1")
         location.reload()
     })
     $("#filter_sportieveling").on("click", function () {
-        sessionStorage.setItem("filter", " AND sportieveling = 1")
+        sessionStorage.setItem("filter", " AND post_tags.sportieveling = 1")
         location.reload()
     })
     $("#filter_relaxer").on("click", function () {
-        sessionStorage.setItem("filter", " AND relaxer = 1")
+        sessionStorage.setItem("filter", " AND post_tags.relaxer = 1")
         location.reload()
     })
     $("#filter_partygoer").on("click", function () {
-        sessionStorage.setItem("filter", " AND partygoer = 1")
+        sessionStorage.setItem("filter", " AND post_tags.partygoer = 1")
         location.reload()
     })
     $("#filter_backpacker").on("click", function () {
-        sessionStorage.setItem("filter", " AND backpacker = 1")
+        sessionStorage.setItem("filter", " AND post_tags.backpacker = 1")
         location.reload()
     })
     $("#filter_wintersport").on("click", function () {
-        sessionStorage.setItem("filter", " AND wintersport = 1")
+        sessionStorage.setItem("filter", " AND post_tags.wintersport = 1")
         location.reload()
     })
     $("#filter_tropisch").on("click", function () {
-        sessionStorage.setItem("filter", " AND tropisch = 1")
+        sessionStorage.setItem("filter", " AND post_tags.tropisch = 1")
         location.reload()
     })
     $("#filter_resort").on("click", function () {
-        sessionStorage.setItem("filter", " AND resort = 1")
+        sessionStorage.setItem("filter", " AND post_tags.resort = 1")
         location.reload()
     })
 

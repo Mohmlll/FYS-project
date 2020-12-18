@@ -51,7 +51,6 @@ right menu
 }
 .forum_main_options label{
     float: right;
-    background-color: red;
 }
 .forum_topics__options, .forum_aanbevolen {
     background-color: white;
@@ -263,4 +262,14 @@ post
 
 #contact_verzoek_button:hover {
     background: linear-gradient(to right, red, #ffffff);
+}
+
+#volgorde {
+    background-color: white;
+    margin-left: 20px;
+    padding: 5px;
+    border: solid 1px gray;
+    cursor: pointer;
+    border-radius: 5px;
+    float: left;
 }

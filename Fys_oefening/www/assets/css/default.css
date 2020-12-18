@@ -78,14 +78,6 @@ header {
  * body
  *
  */
-#volgorde {
-    background-color: white;
-    padding: 5px;
-    border: solid 1px gray;
-    cursor: pointer;
-    border-radius: 5px;
-    float: left;
-}
 
 .uitschuiven a {
     display: block;

@@ -159,7 +159,7 @@
       <workItem from="1607939623014" duration="5172000" />
       <workItem from="1607955253589" duration="98000" />
       <workItem from="1608203643116" duration="16401000" />
-      <workItem from="1608282424280" duration="1541000" />
+      <workItem from="1608282424280" duration="7021000" />
     </task>
     <servers />
   </component>
@@ -179,6 +179,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1608286049105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608286049105" />
     <state x="662" y="320" key="new project wizard" timestamp="1607856101447">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

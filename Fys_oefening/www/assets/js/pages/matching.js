@@ -38,12 +38,22 @@ $(document).ready(function () {
         var noOfTemplates = 5;
 
         FYSCloud.API.queryDatabase(
-            "SELECT (if(backpacker = ?, 1, 0) + if(explorer = ?, 1, 0) + if(sportieveling = ?, 1, 0) + " +
-            "if(relaxer = ?, 1, 0) + if(partygoer = ?, 1, 0) + if(wintersport = ?, 1, 0) + if(tropisch = ?, 1, 0) + " +
-            "if(resort = ?, 1, 0)) as score, gebruikers_naam, idgebruiker FROM interesse " +
+            "SELECT (if(explorer = 0 AND sportieveling = 0 AND " +
+            "relaxer = 0 AND partygoer = 0 AND wintersport = 0 AND tropisch = 0 AND backpacker = 0 AND " +
+            "resort = 0, -10, 10) + " +
+            "if(backpacker = ?, 1, 0) +     if(backpacker = ? AND backpacker = 1, 10, 0) + " +
+            "if(explorer = ?, 1, 0) +       if(explorer = ? AND explorer = 1, 10, 0) +" +
+            "if(sportieveling = ?, 1, 0) +  if(sportieveling = ? AND sportieveling = 1, 10, 0) + " +
+            "if(relaxer = ?, 1, 0) +        if(relaxer = ? AND relaxer = 1, 10, 0) + " +
+            "if(partygoer = ?, 1, 0) +      if(partygoer = ? AND partygoer = 1, 10, 0) + " +
+            "if(wintersport = ?, 1, 0) +    if(wintersport = ? AND wintersport = 1, 10, 0) + " +
+            "if(tropisch = ?, 1, 0) +       if(tropisch = ? AND tropisch = 1, 10, 0) + " +
+            "if(resort = ?, 1, 0) +         if(resort = ? AND resort = 1, 10, 0)) " +
+            "as score, gebruikers_naam, idgebruiker FROM interesse " +
             "JOIN gebruiker  ON (idgebruiker = gebruikerid) " +
             "WHERE idgebruiker != ? ORDER BY score  DESC, gebruikers_naam LIMIT ?",
-            [backpacker, explorer, sportieveling, relaxer, partygoer, wintersport, tropisch, resort, userId, noOfTemplates]
+            [backpacker, backpacker, explorer, explorer, sportieveling, sportieveling, relaxer, relaxer,
+                partygoer, partygoer, wintersport, wintersport, tropisch, tropisch, resort, resort, userId, noOfTemplates]
         ).done(function (data) {
             console.log(data);
             let gegevens = data;

@@ -8,9 +8,37 @@
  */
 
 body {
-    top: 0px !important;
+    top: 0 !important;
 }
 
 .goog-te-banner-frame.skiptranslate {
     display: none !important;
+}
+
+.goog-te-gadget-simple {
+    background-color: black !important;
+    border: none !important;
+    width: 164px !important;
+    overflow: hidden !important;
+}
+
+
+
+.goog-te-gadget-simple .goog-te-menu-value {
+    color: white !important;
+    font-size: 20px !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value:hover {
+    color: red !important;
+}
+
+@media screen and (max-width: 500px) {
+    .goog-te-gadget-simple .goog-te-menu-value {
+        font-size: 15px !important;
+    }
+
+    .goog-te-gadget-simple {
+        width: 124px !important;
+    }
 }
