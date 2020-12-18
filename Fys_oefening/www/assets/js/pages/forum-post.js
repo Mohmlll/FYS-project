@@ -21,6 +21,44 @@ $(document).ready(function () {
         console.log(sessionStorage.getItem("volgorde"))
     }
 
+    function tijdGeleden(oudeDatum) {
+        let datum = new Date(Date.parse(oudeDatum))
+        console.log(datum);
+        let datumNu = new Date()
+        console.log(datumNu);
+        let datumVerschil = datumNu.getTime() - datum.getTime() + 3600000;
+        console.log(datumVerschil)
+
+        if (datumVerschil < 1000) { // less than 1 second
+            return 'Nu';
+        }
+
+        let sec = Math.floor(datumVerschil / 1000); // convert diff to seconds
+
+        if (sec < 60) {
+            return sec + ' seconden geleden';
+        }
+
+        let min = Math.floor(sec / 60); // convert diff to minutes
+        if (min < 60) {
+            return min + ' minuten geleden';
+        }
+
+        let uur = Math.floor(min / 60); // convert diff to minutes
+        if (uur < 24) {
+            return uur + ' uur geleden';
+        }
+
+        let dag = Math.floor(uur / 24); // convert diff to minutes
+        if (dag) {
+            return dag + ' dagen geleden';
+        }
+
+
+        console.log(datumVerschil)
+        return datumVerschil
+    }
+
     //dit is een functie waarbij een template elke keer gevuld wordt in een loop.
     //als je een filter aan heb staan, wordt die meegegeven en daardoor komen alleen de resultaten terug die voldoen aan jouw filter
     function forum(filter) {
@@ -174,8 +212,8 @@ $(document).ready(function () {
                     let img = new Image();
                     img.src = photoUrl;
                     appendDate = data[i]["datum"];
-                    console.log(appendDate);
-                    let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId, tags, appendDate);
+                    let tijd = tijdGeleden(appendDate)
+                    let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId, tags, tijd);
                     nieuwePost.appendChild(costumElement);
                     appendTag = "";
                 }

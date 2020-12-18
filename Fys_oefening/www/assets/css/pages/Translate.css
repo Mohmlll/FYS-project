@@ -16,7 +16,7 @@ body {
 }
 
 .goog-te-gadget-simple {
-    background-color: black !important;
+    background-color: #d81e05 !important;
     border: none !important;
     width: 164px !important;
     overflow: hidden !important;
@@ -30,7 +30,7 @@ body {
 }
 
 .goog-te-gadget-simple .goog-te-menu-value:hover {
-    color: red !important;
+    color: black !important;
 }
 
 @media screen and (max-width: 500px) {
