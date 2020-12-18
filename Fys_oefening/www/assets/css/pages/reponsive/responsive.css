@@ -87,7 +87,8 @@
     .uitklappen .bottom_menu {
         transform: translateY(-12px) rotate(-135deg);
     }
-    .menu{
+
+    .menu {
         opacity: 0.8;
     }
 }

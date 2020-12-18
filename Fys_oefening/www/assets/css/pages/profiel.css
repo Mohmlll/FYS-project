@@ -1,15 +1,17 @@
 /*
 Profiel Overzicht
  */
-#profielFoto ,.tabcontent img{
+#profielFoto, .tabcontent img {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 
 }
-#profielFoto{
+
+#profielFoto {
     border-radius: 5%;
     float: left;
 
 }
+
 .profiel_input {
     width: 100%;
     margin: 1% auto;
@@ -103,9 +105,10 @@ Profiel Overzicht
     width: 80%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 }
-.accepteer, .weiger, .verwijder{
+
+.accepteer, .weiger, .verwijder {
     display: block;
-    background-color: red;
+    background-color: #d81e05;
     color: white;
     border-radius: 5%;
     border: 0;
@@ -115,19 +118,24 @@ Profiel Overzicht
     padding: 2%;
     width: 8em;
 }
-.accepteer:hover, .weiger:hover, .verwijder:hover, .gegevens_button:hover{
+
+.accepteer:hover, .weiger:hover, .verwijder:hover, .gegevens_button:hover {
     background: linear-gradient(to right, red, #ffffff);
 }
-.accepteer{
+
+.accepteer {
     order: 1;
 
 }
-.weiger{
+
+.weiger {
     order: 2;
 }
-.foto_gebruiker_uitgaand p{
+
+.foto_gebruiker_uitgaand p {
     margin: auto;
 }
+
 #Inkomende_Matches, #Uitgaande_Matches {
     width: 100%;
     align-content: center;
@@ -199,9 +207,11 @@ table .radiobutton {
     border-radius: 25px;
     height: 5%;
 }
+
 .input {
 
 }
+
 .input table {
     width: 100%;
 
@@ -213,7 +223,7 @@ table .radiobutton {
 }
 
 .gegevens_button, #verzoek_feedback, #al_gematched {
-    background-color: red;
+    background-color: #d81e05;
     color: white;
     border-radius: 5%;
     border: 0;
@@ -225,8 +235,9 @@ table .radiobutton {
     width: 50%;
     position: relative;
 }
-#verzoek_feedback, #al_gematched{
-    display:none;
+
+#verzoek_feedback, #al_gematched {
+    display: none;
 }
 
 #profile img {
@@ -236,9 +247,11 @@ table .radiobutton {
 #gegevens_opslaan {
     display: none;
 }
-.td_tags{
+
+.td_tags {
     margin-left: auto;
 }
+
 .tag_div {
     margin: 5px;
     border: 1px solid black;
@@ -248,7 +261,7 @@ table .radiobutton {
 }
 
 .tag_div input:checked + span {
-    background-color: red;
+    background-color: #d81e05;
 }
 
 .tag_div input {

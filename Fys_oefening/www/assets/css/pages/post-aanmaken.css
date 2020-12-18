@@ -55,11 +55,16 @@
     position: relative;
     padding: 2%;
     cursor: pointer;
-    margin: auto auto 3% auto;
-    background: linear-gradient(to right, #ff7b68, #ffffff);
-    border: solid 1px #ff7b68;
     outline: none;
-    border-radius: 30px;
+    display: block;
+    background-color: #d81e05;
+    color: white;
+    border-radius: 5%;
+    border: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    margin: auto auto 5% 3%;
+    width: 8em;
+    float: left;
 }
 
 .form_create_post_buttons button:hover {

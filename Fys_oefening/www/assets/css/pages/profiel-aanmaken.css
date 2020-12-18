@@ -37,12 +37,12 @@ table p {
 }
 
 #man {
-    border-color: red;
+    border-color: #d81e05;
 }
 
 .inputAlert {
     display: none;
-    color: red;
+    color: #d81e05;
 }
 
 .inputAlert p {

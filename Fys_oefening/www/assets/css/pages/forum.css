@@ -34,7 +34,7 @@ right menu
     position: relative;
     cursor: pointer;
     float: left;
-    background-color: red;
+    background-color: #d81e05;
     color: white;
     border: solid 1px #ff7b68;
     outline: none;
@@ -49,10 +49,12 @@ right menu
 .start_post_button:hover {
     background: linear-gradient(to right, red, #ffffff);
 }
-.forum_main_options label{
+
+.forum_main_options label {
     float: right;
-    background-color: red;
+    background-color: #d81e05;
 }
+
 .forum_topics__options, .forum_aanbevolen {
     background-color: white;
     border-radius: 25px;
@@ -147,7 +149,7 @@ post
     width: 100%;
 }
 
-#post_date{
+#post_date {
     font-size: 0.8em;
     float: right;
 }
@@ -185,7 +187,7 @@ post
     cursor: pointer;
     display: block;
     margin: auto;
-    background-color: red;
+    background-color: #d81e05;
     color: #ffffff;
     outline: none;
     border-radius: 5%;
@@ -218,9 +220,11 @@ post
     overflow: hidden;
 
 }
+
 .post_content hr {
     margin-top: 5%;
 }
+
 .expand {
     display: block;
 }
