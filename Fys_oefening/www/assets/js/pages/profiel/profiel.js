@@ -20,6 +20,7 @@ $(document).ready(function () {
         document.getElementById("profiel_input_voornaam").setAttribute("placeholder", data[0]["voornaam"]);
         document.getElementById("profiel_input_achternaam").setAttribute("placeholder", data[0]["achternaam"]);
         document.getElementById("profiel_input_geslacht").setAttribute("placeholder", data[0]["geslacht"]);
+        document.getElementById("profiel_input_bio").setAttribute("placeholder", data[0]["bio"]);
 
         let woonplaats = data[0]["woonplaats"];
         let telefoonnr = data[0]["telefoon_nummer"];

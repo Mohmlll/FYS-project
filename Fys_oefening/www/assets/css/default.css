@@ -65,9 +65,6 @@ button, table {
 
 }
 
-#google_translate_element {
-
-}
 
 .taal_inhoud {
     display: none;
@@ -315,6 +312,8 @@ contact popup
     float: left;
     margin-right: 2px;
 }
+
+
 
 
 .tag_div {

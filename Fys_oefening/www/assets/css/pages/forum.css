@@ -264,3 +264,7 @@ post
 #post_template {
     order: 0;
 }
+
+#contact_verzoek_button:hover {
+    background: linear-gradient(to right, red, #ffffff);
+}
