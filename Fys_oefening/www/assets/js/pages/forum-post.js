@@ -178,7 +178,8 @@ $(document).ready(function () {
                     let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId, tags, appendDate);
                     nieuwePost.appendChild(costumElement);
                     appendTag = "";
-                } appendTag = "";
+                }
+                appendTag = "";
             }).fail(function (reason) {
                 console.log(reason);
                 console.log("fout");
@@ -186,7 +187,6 @@ $(document).ready(function () {
         }).fail(function (reason) {
             console.log(reason);
         })
-
 
 
         var img = new Image()

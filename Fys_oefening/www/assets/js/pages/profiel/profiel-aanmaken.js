@@ -74,7 +74,7 @@ $(document).ready(function () {
                                 .done(function (data) {
                                     if (data.isImage) {
                                         FYSCloud.API.uploadFile(
-                                           userId + ".png",
+                                            userId + ".png",
                                             data.url
                                         ).done(function (data) {
                                             console.log(data);
@@ -167,7 +167,6 @@ $(document).ready(function () {
     }
 
     datum();
-
 
 
     $(function () {

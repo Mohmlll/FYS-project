@@ -26,8 +26,8 @@ $(document).ready(function () {
         let telefoonnr = data[0]["telefoon_nummer"];
         FYSCloud.API.queryDatabase(
             "SELECT emailadres FROM gebruiker WHERE gebruikerid = ?",
-        [profielId]
-        ).done(function (data){
+            [profielId]
+        ).done(function (data) {
             console.log(data);
             let emailadres = data[0]['emailadres'];
 
@@ -36,14 +36,14 @@ $(document).ready(function () {
                 [profielId]
             ).done(function (data) {
                 console.log(data);
-                if(data.length === 0){
+                if (data.length === 0) {
                     FYSCloud.API.queryDatabase(
                         "SELECT  matchstatus FROM matches WHERE gebruikerid_een = ? ",
                         [profielId]
                     ).done(function (data) {
                         console.log(data);
                         let matchStatus = data[0]['matchstatus'];
-                        if (matchStatus === 2 ){
+                        if (matchStatus === 2) {
                             document.getElementById("profiel_input_woonplaats").setAttribute("placeholder", woonplaats);
                             document.getElementById("profiel_input_telefoonnr").setAttribute("placeholder", telefoonnr);
                             document.getElementById("profiel_input_email").setAttribute("placeholder", emailadres);
@@ -52,8 +52,7 @@ $(document).ready(function () {
                         console.log(data);
                         console.log("fout")
                     })
-                }
-                else if (data[0]['matchstatus'] === 2 ){
+                } else if (data[0]['matchstatus'] === 2) {
                     document.getElementById("profiel_input_woonplaats").setAttribute("placeholder", woonplaats);
                     document.getElementById("profiel_input_telefoonnr").setAttribute("placeholder", telefoonnr);
                     document.getElementById("profiel_input_email").setAttribute("placeholder", emailadres);
@@ -63,7 +62,7 @@ $(document).ready(function () {
                 console.log("fout")
             })
 
-        }).fail(function (reason){
+        }).fail(function (reason) {
             console.log(reason);
             console.log("fout")
         })
@@ -131,7 +130,7 @@ $(document).ready(function () {
                 console.log(data);
                 if (data.length === 0) {
                     console.log("nog geen verzoek")
-                } else  if (data[0]['matchstatus'] === 2) {
+                } else if (data[0]['matchstatus'] === 2) {
                     document.getElementById("contact_verzoek").style.display = "none";
                     document.getElementById("verzoek_feedback").style.display = "none";
                     document.getElementById("al_gematched").style.display = "block";
@@ -144,7 +143,7 @@ $(document).ready(function () {
             document.getElementById("contact_verzoek").style.display = "none";
             document.getElementById("al_gematched").style.display = "none";
             document.getElementById("verzoek_feedback").style.display = "block";
-        } else  if (data[0]['matchstatus'] === 2) {
+        } else if (data[0]['matchstatus'] === 2) {
             document.getElementById("contact_verzoek").style.display = "none";
             document.getElementById("verzoek_feedback").style.display = "none";
             document.getElementById("al_gematched").style.display = "block";

@@ -22,7 +22,7 @@ $(document).ready(function () {
     let appendGebruikerId;
 
     function matches(lopendeGebruiker) {
-        if (lopendeGebruiker !== userId ){
+        if (lopendeGebruiker !== userId) {
             let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + lopendeGebruiker + ".png";
             appendPhoto = photoUrl;
             appendGebruikerId = lopendeGebruiker
