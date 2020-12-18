@@ -29,27 +29,27 @@ $(document).ready(function () {
         let datumVerschil = datumNu.getTime() - datum.getTime() + 3600000;
         console.log(datumVerschil)
 
-        if (datumVerschil < 1000) { // less than 1 second
+        if (datumVerschil < 1000) {
             return 'Nu';
         }
 
-        let sec = Math.floor(datumVerschil / 1000); // convert diff to seconds
+        let sec = Math.floor(datumVerschil / 1000);
 
         if (sec < 60) {
             return sec + ' seconden geleden';
         }
 
-        let min = Math.floor(sec / 60); // convert diff to minutes
+        let min = Math.floor(sec / 60);
         if (min < 60) {
             return min + ' minuten geleden';
         }
 
-        let uur = Math.floor(min / 60); // convert diff to minutes
+        let uur = Math.floor(min / 60);
         if (uur < 24) {
             return uur + ' uur geleden';
         }
 
-        let dag = Math.floor(uur / 24); // convert diff to minutes
+        let dag = Math.floor(uur / 24);
         if (dag) {
             return dag + ' dagen geleden';
         }
