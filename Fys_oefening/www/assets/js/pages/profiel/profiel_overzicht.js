@@ -67,4 +67,108 @@ $(document).ready(function () {
         console.log("fout");
     })
 
+    /*
+privacy
+ */
+    function getSelectOptions(sel) {
+
+    }
+
+    FYSCloud.API.queryDatabase(
+        "SELECT woonplaats, email, geboortedatum, geslacht FROM privacy WHERE gebruikerid = ?",
+        [userId]
+    ).done(function (data) {
+        console.log(data);
+        switch (data[0]['woonplaats']) {
+            case 'Iedereen':
+                document.getElementById("woonplaats_iedereen").selected = true;
+                break;
+            case 'Niemand':
+                document.getElementById("woonplaats_niemand").selected = true;
+                break;
+            case 'Matches':
+                document.getElementById("woonplaats_matches").selected = true;
+                break;
+        }
+        switch (data[0]['email']) {
+            case 'Iedereen':
+                document.getElementById("email_iedereen").selected = true;
+                break;
+            case 'Niemand':
+                document.getElementById("email_niemand").selected = true;
+                break;
+            case 'Matches':
+                document.getElementById("email_matches").selected = true;
+                break;
+        }
+        switch (data[0]['geboortedatum']) {
+            case 'Iedereen':
+                document.getElementById("geboortedatum_iedereen").selected = true;
+                break;
+            case 'Niemand':
+                document.getElementById("geboortedatum_niemand").selected = true;
+                break;
+            case 'Matches':
+                document.getElementById("geboortedatum_matches").selected = true;
+                break;
+        }
+        switch (data[0]['geslacht']) {
+            case 'Iedereen':
+                document.getElementById("geslacht_iedereen").selected = true;
+                break;
+            case 'Niemand':
+                document.getElementById("geslacht_niemand").selected = true;
+                break;
+            case 'Matches':
+                document.getElementById("geslacht_matches").selected = true;
+                break;
+        }
+    }).fail(function (reason) {
+        console.log(reason);
+        console.log("fout")
+    })
+
+    $('.privacy_opslaan').on('click', function (privacy) {
+        privacy.preventDefault();
+        let selWoonplaats = document.getElementById('privacy_woonplaats').value;
+        let selEmail = document.getElementById('privacy_email').value;
+        let selGeboortedatum = document.getElementById('privacy_geboortedatum').value;
+        let selGeslacht = document.getElementById('privacy_geslacht').value;
+
+
+        FYSCloud.API.queryDatabase(
+            "SELECT COUNT(*) FROM privacy WHERE gebruikerid = ?",
+            [userId]
+        ).done(function (data) {
+            console.log(data);
+            if (data[0]['COUNT(*)'] === 0) {
+                FYSCloud.API.queryDatabase(
+                    "INSERT INTO privacy SET gebruikerid = ?, woonplaats = ?, email = ?, geboortedatum = ?, geslacht = ?",
+                    [userId, selWoonplaats, selEmail, selGeboortedatum, selGeslacht]
+                ).done(function (data) {
+                    console.log(data);
+
+                }).fail(function (reason) {
+                    console.log(reason);
+                })
+            } else {
+                FYSCloud.API.queryDatabase(
+                    "UPDATE privacy SET woonplaats = ?, email = ?, geboortedatum = ?, geslacht = ? WHERE gebruikerid = ?",
+                    [selWoonplaats, selEmail, selGeboortedatum, selGeslacht, userId]
+                ).done(function (data) {
+                    console.log(data);
+
+                }).fail(function (reason) {
+                    console.log(reason);
+                    console.log("fout")
+                })
+            }
+        }).fail(function (reason) {
+            console.log(reason);
+            console.log("fout")
+        })
+
+
+    })
+
 });

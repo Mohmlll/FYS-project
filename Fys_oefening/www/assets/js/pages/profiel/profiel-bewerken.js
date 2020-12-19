@@ -47,11 +47,22 @@ $(document).ready(function () {
     $('#gegevens_bewerken').on("click", function (bewerken) {
         bewerken.preventDefault();
         var readonlycheck = document.getElementsByClassName("profiel_input");
+        document.getElementById("profiel_input_voornaam").className = "profiel_input_bewerken";
+        document.getElementById("profiel_input_achternaam").className = "profiel_input_bewerken";
+        document.getElementById("profiel_input_geslacht").className = "profiel_input_bewerken";
+        document.getElementById("profiel_input_geboortedatum").className = "profiel_input_bewerken";
+        document.getElementById("profiel_input_woonplaats").className = "profiel_input_bewerken";
+        document.getElementById("profiel_input_telefoonnr").className = "profiel_input_bewerken";
+        document.getElementById("profiel_input_email").className = "profiel_input_bewerken";
+        document.getElementById("profiel_input_bio").className = "tekstbox_bewerken";
 
+        document.getElementById("nieuw_wachtwoord").style.display = "block";
+        document.getElementById("nieuw_wachtwoordh").style.display = "block";
         if (readonlycheck) {
             $(".profiel_input").attr("readonly", false);
             document.getElementById("gegevens_opslaan").style.display = "block";
             document.getElementById("gegevens_bewerken").style.display = "none";
+
         }
 
         $(".tag_div").show();
@@ -62,6 +73,7 @@ $(document).ready(function () {
 
     $("#gegevens_opslaan").on("click", function (opslaan) {
         opslaan.preventDefault();
+
         var voornaam = document.getElementById("profiel_input_voornaam").value;
         var achternaam = document.getElementById("profiel_input_achternaam").value;
         var geboortedatum = document.getElementById("profiel_input_geboortedatum").value;
@@ -194,7 +206,17 @@ $(document).ready(function () {
         document.getElementById("gegevens_bewerken").style.display = "block";
         document.getElementById("gegevens_opslaan").style.display = "none";
 
+        document.getElementById("profiel_input_voornaam").className = "profiel_input";
+        document.getElementById("profiel_input_achternaam").className = "profiel_input";
+        document.getElementById("profiel_input_geslacht").className = "profiel_input";
+        document.getElementById("profiel_input_geboortedatum").className = "profiel_input";
+        document.getElementById("profiel_input_woonplaats").className = "profiel_input";
+        document.getElementById("profiel_input_telefoonnr").className = "profiel_input";
+        document.getElementById("profiel_input_email").className = "profiel_input";
+        document.getElementById("profiel_input_bio").className = "tekstbox";
 
+        document.getElementById("nieuw_wachtwoord").style.display = "none";
+        document.getElementById("nieuw_wachtwoordh").style.display = "none";
         // FYSCloud.API.queryDatabase(
         //     "UPDATE gebruiker SET status = 'volledig_profiel' WHERE gebruikerid = ?",
         //     [sessionStorage.getItem("userId")]

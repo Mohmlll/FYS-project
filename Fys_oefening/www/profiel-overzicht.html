@@ -71,8 +71,8 @@
             </div>
             <div class="button_inhoudt">
                 <div class="tabcontent" id="Profiel">
-                    <form class="input" id="profile">
-                        <label>
+                    <div class="profiel_overzicht">
+                        <form class="input" id="profile">
                             <table>
                                 <tr>
                                     <td>Foto van jezelf:</td>
@@ -82,24 +82,32 @@
                                 </tr>
                                 <tr>
                                     <td>Voornaam:</td>
-                                    <td><input class="profiel_input" id="profiel_input_voornaam" readonly
-                                               type="text"></td>
+                                    <td><label for="profiel_input_voornaam"></label><input class="profiel_input"
+                                                                                           id="profiel_input_voornaam"
+                                                                                           readonly
+                                                                                           type="text"></td>
                                 </tr>
                                 <tr>
                                     <td>Achternaam:</td>
-                                    <td><input class="profiel_input" id="profiel_input_achternaam" readonly
-                                               type="text"></td>
+                                    <td><label for="profiel_input_achternaam"></label><input class="profiel_input"
+                                                                                             id="profiel_input_achternaam"
+                                                                                             readonly
+                                                                                             type="text"></td>
                                 </tr>
                                 <tr>
                                     <td>Geslacht:</td>
-                                    <td><input class="profiel_input" id="profiel_input_geslacht" readonly
-                                               type="text">
+                                    <td><label for="profiel_input_geslacht"></label><input class="profiel_input"
+                                                                                           id="profiel_input_geslacht"
+                                                                                           readonly
+                                                                                           type="text">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Geboortedatum:</td>
-                                    <td><input class="profiel_input" id="profiel_input_geboortedatum" readonly
-                                               type="text"></td>
+                                    <td><label for="profiel_input_geboortedatum"></label><input class="profiel_input"
+                                                                                                id="profiel_input_geboortedatum"
+                                                                                                readonly
+                                                                                                type="text"></td>
                                 </tr>
                                 <tr>
                                     <td>Woonplaats:</td>
@@ -108,13 +116,50 @@
                                 </tr>
                                 <tr>
                                     <td>Telefoonnummer:</td>
-                                    <td><input class="profiel_input" id="profiel_input_telefoonnr" readonly
-                                               type="tel"></td>
+                                    <td><label for="profiel_input_telefoonnr"></label><input class="profiel_input"
+                                                                                             id="profiel_input_telefoonnr"
+                                                                                             readonly
+                                                                                             type="tel"></td>
                                 </tr>
                                 <tr>
                                     <td>E-mailadres:</td>
-                                    <td><input class="profiel_input" id="profiel_input_email" readonly
-                                               type="email"></td>
+                                    <td><label for="profiel_input_email"></label><input class="profiel_input"
+                                                                                        id="profiel_input_email"
+                                                                                        readonly
+                                                                                        type="email"></td>
+                                </tr>
+                                <tr>
+                                    <td>Nieuwe wachtwoord:</td>
+                                    <td id="nieuw_wachtwoord"><label for="profiel_input_wachtwoord"></label><input
+                                            class="nieuw_wachtwoord"
+                                            id="profiel_input_wachtwoord"
+                                            placeholder="Wachtwoord"
+                                            required
+                                            type="password">
+                                        <div class="inputAlert" id="geenWachtwoord">
+                                            <p>
+                                                Vul hier een geldig wachtwoord in volgens de voorwaarde <br>
+
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <br>
+                                <tr>
+                                    <td>Wachtwoord herhalen:</td>
+                                    <td id="nieuw_wachtwoordh"><label for="profiel_input_wachtwoordh"></label><input
+                                            class="nieuw_wachtwoordh"
+                                            id="profiel_input_wachtwoordh"
+                                            placeholder="Wachtwoord herhalen"
+                                            required
+                                            type="password">
+                                        <div class="inputAlert" id="geenWachtwoordCheck">
+                                            <p>
+                                                wachtwoorden komen niet overeen <br>
+
+                                            </p>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Soort vakantieganger:</td>
@@ -188,15 +233,72 @@
                                 <tr>
                                     <td>iets leuks over jezelf: <br><br></td>
                                     <td>
-                                        <textarea class="tekstbox" id="profiel_input_bio" readonly></textarea>
+                                        <label for="profiel_input_bio"></label><textarea class="tekstbox"
+                                                                                         id="profiel_input_bio"
+                                                                                         readonly></textarea>
                                     </td>
                                 </tr>
 
                             </table>
-                        </label>
-                    </form>
-                    <button class="gegevens_button" id="gegevens_bewerken" type="submit">Bewerken</button>
-                    <button class="gegevens_button" id="gegevens_opslaan" type="submit">Opslaan</button>
+                        </form>
+                        <div class="profiel_instellingen">
+                            <h3>Instellingen</h3>
+
+                            <button class="gegevens_button" id="gegevens_bewerken" type="submit">Profiel bewerken
+                            </button>
+                            <button class="gegevens_button" id="gegevens_opslaan" type="submit">Opslaan</button>
+                            <h4>Privacy: </h4>
+                            <form>
+                                <table>
+                                    <tr>
+                                        <td><label>Zichtbaarheid: </label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Woonplaats</label></td>
+                                        <td><label>
+                                            <select name="Woonplaats" id="privacy_woonplaats">
+                                                <option value="Iedereen" id="woonplaats_iedereen">Iedereen</option>
+                                                <option value="Matches" id="woonplaats_matches">Matches</option>
+                                                <option value="Niemand" id="woonplaats_niemand">Niemand</option>
+                                            </select>
+                                        </label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>E-mail</label></td>
+                                        <td><label>
+                                            <select name="E-mail" id="privacy_email">
+                                                <option value="Iedereen" id="email_iedereen">Iedereen</option>
+                                                <option value="Matches" id="email_matches">Matches</option>
+                                                <option value="Niemand" id="email_niemand">Niemand</option>
+                                            </select>
+                                        </label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Geboortedatum</label></td>
+                                        <td><label>
+                                            <select name="Geboortedatum" id="privacy_geboortedatum">
+                                                <option value="Iedereen" id="geboortedatum_iedereen">Iedereen</option>
+                                                <option value="Matches" id="geboortedatum_matches">Matches</option>
+                                                <option value="Niemand" id="geboortedatum_niemand">Niemand</option>
+                                            </select>
+                                        </label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Geslacht</label></td>
+                                        <td><label>
+                                            <select name="Geslacht" id="privacy_geslacht">
+                                                <option value="Iedereen" id="geslacht_iedereen">Iedereen</option>
+                                                <option value="Matches" id="geslacht_matches">Matches</option>
+                                                <option value="Niemand" id="geslacht_niemand">Niemand</option>
+                                            </select>
+                                        </label></td>
+                                    </tr>
+                                </table>
+                                <button class="privacy_opslaan" id="privacy_opslaan" type="button">Opslaan</button>
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="tabcontent" id="Lopende_Matches">
                     <h3>Lopende Matches</h3>
