@@ -132,4 +132,95 @@ $(document).ready(function () {
             }
         }
     })
+
+    function vergeten(soort) {
+
+    }
+
+    let gebruikersnaamVergeten = false;
+    let wachtwoordVergeten = false;
+
+    function loginVergetenStyle() {
+        document.getElementById("vergeten_input").style.display = "block";
+        document.getElementById("vergeten_button").style.display = "block";
+        document.getElementById("annuleren_button").style.display = "block";
+        document.getElementById("inlogNaam").style.display = "none"
+        document.getElementById("gebruikersnaam_vergeten").style.display = "none"
+        document.getElementById("geenInlogNaam").style.display = "none"
+        document.getElementById("inlogWachtwoord").style.display = "none"
+        document.getElementById("wachtwoord_vergeten").style.display = "none"
+        document.getElementById("geenInlogWachtwoord").style.display = "none"
+        document.getElementById("verkeerdWachtwoord").style.display = "none"
+        document.getElementById("gegevens_herinneren").style.display = "none"
+        document.getElementById("login_button").style.display = "none"
+    }
+
+    $("#wachtwoord_vergeten").on("click", function (wachtwoordVergetenFunctie) {
+        wachtwoordVergetenFunctie.preventDefault();
+        loginVergetenStyle()
+        document.getElementById("inlogNaam").style.display = "block"
+
+
+        gebruikersnaamVergeten = false;
+        wachtwoordVergeten = true;
+    })
+
+    $("#gebruikersnaam_vergeten").on("click", function (gebruikersnaamVergetenFunctie) {
+        gebruikersnaamVergetenFunctie.preventDefault();
+        loginVergetenStyle()
+        document.getElementById("inlogWachtwoord").style.display = "block"
+        wachtwoordVergeten = false;
+        gebruikersnaamVergeten = true;
+    })
+
+    function wachtwoordAanmaken() {
+        var wachtwoord = "";
+        var tekens = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$";
+
+        for (let i = 1; i <= 12; i++) {
+            var uitgekozen = Math.floor(Math.random()
+                * tekens.length + 1);
+            wachtwoord += tekens.charAt(uitgekozen)
+        }
+
+        return wachtwoord;
+    }
+
+    let wachtwoord = wachtwoordAanmaken();
+
+    $("#vergeten_button").on("click", function (vergeten) {
+        vergeten.preventDefault();
+        let bevestiging;
+        if (gebruikersnaamVergeten) {
+            bevestiging = confirm("Weet je zeker dat je je gebruikersnaam wilt vervangen?")
+            if (bevestiging) {
+                console.log("e-mail versturen (gebruikersnaam)")
+            } else {
+                console.log("geen e-mail versturen (gebruikersnaam)")
+            }
+        } else if (wachtwoordVergeten) {
+            bevestiging = confirm("Weet je zeker dat je je wachtwoord wilt vervangen?")
+            if (bevestiging) {
+                console.log("e-mail versturen (wachtwoord) + " + wachtwoord)
+                
+            } else {
+                console.log("geen e-mail versturen (wachtwoord)")
+            }
+        }
+    })
+
+    $("#annuleren_button").on("click", function (annuleren) {
+        annuleren.preventDefault();
+        document.getElementById("vergeten_input").style.display = "none";
+        document.getElementById("vergeten_button").style.display = "none";
+        document.getElementById("annuleren_button").style.display = "none";
+        document.getElementById("inlogNaam").style.display = "block"
+        document.getElementById("gebruikersnaam_vergeten").style.display = "block"
+        document.getElementById("inlogWachtwoord").style.display = "block"
+        document.getElementById("wachtwoord_vergeten").style.display = "block"
+        document.getElementById("gegevens_herinneren").style.display = "block"
+        document.getElementById("login_button").style.display = "block"
+        wachtwoordVergeten = false;
+        gebruikersnaamVergeten = false;
+    })
 });
