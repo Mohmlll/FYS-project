@@ -49,7 +49,7 @@
     background: transparent;
 }
 
-.login_button, .register_button {
+.login_button, .register_button, #vergeten_button, #annuleren_button {
     position: relative;
     width: 60%;
     padding: 2%;
@@ -65,7 +65,7 @@
     font-size: 17px;
 }
 
-.login_button:hover, .register_button:hover {
+.login_button:hover, .register_button:hover, #vergeten_button:hover, #annuleren_button:hover {
     background: linear-gradient(to right, red, #ffffff);
 }
 
@@ -152,3 +152,19 @@ input:checked + .slider:before {
     float: right;
 }
 
+#wachtwoord_vergeten, #gebruikersnaam_vergeten {
+    width: 100%;
+    color: green;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#vergeten_input {
+    margin-top: 20px;
+    display: none;
+}
+
+#vergeten_button, #annuleren_button {
+    margin-top: 10px;
+    display: none;
+}

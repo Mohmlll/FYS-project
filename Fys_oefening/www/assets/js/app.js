@@ -54,15 +54,15 @@ $(document).ready(function () {
         "<div class=\"center_menu\"></div>" +
         "<div class=\"bottom_menu\"></div>"
     document.getElementById("logged_out").innerHTML =
-        "<a href=\"index.html\">Home</a>" +
-        "<a href=\"over-ons.html\">Over ons</a>" +
+        "<a class=\"home_menu\" href=\"index.html\">Home</a>" +
+        "<a class=\"over_ons_menu\" href=\"over-ons.html\">Over ons</a>" +
         "<a class=\"js-logged-out\" href=\"log-in.html\">Aanmelden</a>"
     document.getElementById("logged_in").innerHTML =
-        "<a href=\"index.html\">Home</a>" +
-        "<a href=\"over-ons.html\">Over ons</a>" +
-        "<a class=\"js-logged-in\" href=\"profiel-overzicht.html\">Profiel</a>" +
-        "<a class=\"js-logged-in\" href=\"forum-homepagina.html\">Forum</a>" +
-        "<a class=\"js-uitloggen\">Uitloggen</a>"
+        "<a class=\"home_menu_in\" href=\"index.html\">Home</a>" +
+        "<a class=\"over_ons_menu_in\" href=\"over-ons.html\">Over ons</a>" +
+        "<a class=\"js-logged-in\" id=\"profiel_menu_in\" href=\"profiel-overzicht.html\">Profiel</a>" +
+        "<a class=\"js-logged-in\" id=\"forum_menu_in\" href=\"forum-homepagina.html\">Forum</a>" +
+        "<a class=\"js-uitloggen\" id=\"uit_menu_in\" >Uitloggen</a>"
 
 
     $(".js-uitloggen").on("click", function (logUit) {

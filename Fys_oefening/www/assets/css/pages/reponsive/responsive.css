@@ -1,5 +1,61 @@
 /* Menu */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1500px) {
+    a.home_menu {
+        left: 35%;
+    }
+    a.over_ons_menu {
+        left: 45%;
+    }
+    a.js-logged-out{
+        left: 55%;
+    }
+
+    a.home_menu_in {
+        left: 25%;
+    }
+    a.over_ons_menu_in {
+        left: 35%;
+    }
+    a#profiel_menu_in{
+        left: 45%;
+    }
+    a#forum_menu_in{
+        left: 55%;
+    }
+    a#uit_menu_in{
+        left: 65%;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+    a.home_menu {
+        left: 30%;
+    }
+    a.over_ons_menu {
+        left: 45%;
+    }
+    a.js-logged-out{
+        left: 60%;
+    }
+
+    a.home_menu_in {
+        left: 25%;
+    }
+    a.over_ons_menu_in {
+        left: 35%;
+    }
+    a#profiel_menu_in{
+        left: 45%;
+    }
+    a#forum_menu_in{
+        left: 55%;
+    }
+    a#uit_menu_in{
+        left: 65%;
+    }
+}
+
+@media screen and (min-width: 1200px){
     .menu a {
         margin: auto;
     }
@@ -22,9 +78,15 @@
         display: none;
     }
 
+    #logged_in a, #logged_out a {
+        margin-top: -12px;
+        position: fixed;
+        width: 10%;
+    }
+
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
     .menu .menu_groot a {
         display: none;
     }
@@ -90,6 +152,12 @@
 
     .menu {
         opacity: 0.8;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .menu a {
+        top: 200px;
     }
 }
 
