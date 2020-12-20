@@ -97,15 +97,15 @@ privacy
                 document.getElementById("nr_matches").selected = true;
                 break;
         }
-        switch (data[0]['geboortedatum']) {
+        switch (data[0]['leeftijd']) {
             case 'Iedereen':
-                document.getElementById("geboortedatum_iedereen").selected = true;
+                document.getElementById("leeftijd_iedereen").selected = true;
                 break;
             case 'Niemand':
-                document.getElementById("geboortedatum_niemand").selected = true;
+                document.getElementById("leeftijd_niemand").selected = true;
                 break;
             case 'Matches':
-                document.getElementById("geboortedatum_matches").selected = true;
+                document.getElementById("leeftijd_matches").selected = true;
                 break;
         }
         switch (data[0]['geslacht']) {

@@ -80,6 +80,8 @@ $(document).ready(function () {
         var woonplaats = document.getElementById("profiel_input_woonplaats").value;
         var telefoonnr = document.getElementById("profiel_input_telefoonnr").value;
         var bio = document.getElementById("profiel_input_bio").value;
+        var wachtwoord = document.getElementById("profiel_input_wachtwoord").value;
+        var wachtwoordh = document.getElementById("profiel_input_wachtwoordh").value;
 
         if (voornaam !== "") {
             FYSCloud.API.queryDatabase(
@@ -135,6 +137,16 @@ $(document).ready(function () {
             FYSCloud.API.queryDatabase(
                 "UPDATE gebruiker_profiel SET bio = ? WHERE gebruikerid = ?",
                 [bio, userId]
+            ).done(function (data) {
+                console.log(data);
+            }).fail(function (reason) {
+                console.log(reason);
+            })
+        }
+        if (wachtwoord !== "") {
+            FYSCloud.API.queryDatabase(
+                "UPDATE gebruiker SET wachtwoord = SHA(?) WHERE gebruikerid = ?",
+                [wachtwoord, userId]
             ).done(function (data) {
                 console.log(data);
             }).fail(function (reason) {
