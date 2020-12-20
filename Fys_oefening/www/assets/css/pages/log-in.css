@@ -168,3 +168,9 @@ input:checked + .slider:before {
     margin-top: 10px;
     display: none;
 }
+
+#gebruikersnaam_uitleg, #wachtwoord_uitleg {
+    display: none;
+    font-size: 14px;
+    color: red;
+}
