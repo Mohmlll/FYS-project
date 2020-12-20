@@ -70,12 +70,8 @@ $(document).ready(function () {
     /*
 privacy
  */
-    function getSelectOptions(sel) {
-
-    }
-
     FYSCloud.API.queryDatabase(
-        "SELECT woonplaats, email, geboortedatum, geslacht FROM privacy WHERE gebruikerid = ?",
+        "SELECT woonplaats, telefoonnr, leeftijd, geslacht FROM privacy WHERE gebruikerid = ?",
         [userId]
     ).done(function (data) {
         console.log(data);
@@ -90,15 +86,15 @@ privacy
                 document.getElementById("woonplaats_matches").selected = true;
                 break;
         }
-        switch (data[0]['email']) {
+        switch (data[0]['telefoonnr']) {
             case 'Iedereen':
-                document.getElementById("email_iedereen").selected = true;
+                document.getElementById("nr_iedereen").selected = true;
                 break;
             case 'Niemand':
-                document.getElementById("email_niemand").selected = true;
+                document.getElementById("nr_niemand").selected = true;
                 break;
             case 'Matches':
-                document.getElementById("email_matches").selected = true;
+                document.getElementById("nr_matches").selected = true;
                 break;
         }
         switch (data[0]['geboortedatum']) {
@@ -131,8 +127,8 @@ privacy
     $('.privacy_opslaan').on('click', function (privacy) {
         privacy.preventDefault();
         let selWoonplaats = document.getElementById('privacy_woonplaats').value;
-        let selEmail = document.getElementById('privacy_email').value;
-        let selGeboortedatum = document.getElementById('privacy_geboortedatum').value;
+        let selNr = document.getElementById('privacy_nr').value;
+        let selLeeftijd = document.getElementById('privacy_geboortedatum').value;
         let selGeslacht = document.getElementById('privacy_geslacht').value;
 
 
@@ -143,8 +139,8 @@ privacy
             console.log(data);
             if (data[0]['COUNT(*)'] === 0) {
                 FYSCloud.API.queryDatabase(
-                    "INSERT INTO privacy SET gebruikerid = ?, woonplaats = ?, email = ?, geboortedatum = ?, geslacht = ?",
-                    [userId, selWoonplaats, selEmail, selGeboortedatum, selGeslacht]
+                    "INSERT INTO privacy SET gebruikerid = ?, woonplaats = ?, telefoonnr = ?, leeftijd = ?, geslacht = ?",
+                    [userId, selWoonplaats, selNr, selLeeftijd, selGeslacht]
                 ).done(function (data) {
                     console.log(data);
 
@@ -153,8 +149,8 @@ privacy
                 })
             } else {
                 FYSCloud.API.queryDatabase(
-                    "UPDATE privacy SET woonplaats = ?, email = ?, geboortedatum = ?, geslacht = ? WHERE gebruikerid = ?",
-                    [selWoonplaats, selEmail, selGeboortedatum, selGeslacht, userId]
+                    "UPDATE privacy SET woonplaats = ?, telefoonnr = ?, leeftijd = ?, geslacht = ? WHERE gebruikerid = ?",
+                    [selWoonplaats, selNr, selLeeftijd, selGeslacht, userId]
                 ).done(function (data) {
                     console.log(data);
 

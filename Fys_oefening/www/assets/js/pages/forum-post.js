@@ -54,6 +54,20 @@ $(document).ready(function () {
             return dag + ' dagen geleden';
         }
 
+        let week = Math.floor(dag / 7);
+        if (week) {
+            return week + ' week geleden';
+        }
+
+        let maand = Math.floor(week / (52*12));
+        if (maand) {
+            return maand + ' maand geleden';
+        }
+
+        let jaar = Math.floor(maand / 12);
+        if (jaar) {
+            return jaar + ' jaar geleden';
+        }
 
         console.log(datumVerschil)
         return datumVerschil

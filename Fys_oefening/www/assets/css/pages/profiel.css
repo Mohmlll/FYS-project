@@ -26,14 +26,11 @@ Profiel Overzicht
     margin-right: 2%;
 
 }
-
 .profiel_input {
     width: 100%;
-    margin: 1% auto;
-    border-left: 0;
-    border-top: 0;
-    border-right: 0;
-    border-bottom: 1px solid #999;
+    padding: 5px;
+    margin: auto;
+    border: 0;
     outline: none;
     background: transparent;
 }
@@ -49,10 +46,7 @@ Profiel Overzicht
     width: 100%;
     padding: 10px 0;
     margin: 5px 0;
-    border-left: 0;
-    border-top: 1px solid #999;
-    border-right: 0;
-    border-bottom: 1px solid #999;
+    border: 0;
     outline: none;
     background: transparent;
 }
@@ -129,6 +123,7 @@ Profiel Overzicht
     border: 0 solid #ccc;
     border-top: none;
     animation: fadeEffect 1.2s;
+    min-height: 800px;
 }
 
 @keyframes fadeEffect {
