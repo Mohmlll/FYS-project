@@ -133,9 +133,6 @@ $(document).ready(function () {
         }
     })
 
-    function vergeten(soort) {
-
-    }
 
     let gebruikersnaamVergeten = false;
     let wachtwoordVergeten = false;
@@ -158,9 +155,7 @@ $(document).ready(function () {
     $("#wachtwoord_vergeten").on("click", function (wachtwoordVergetenFunctie) {
         wachtwoordVergetenFunctie.preventDefault();
         loginVergetenStyle()
-        document.getElementById("inlogNaam").style.display = "block"
-
-
+        document.getElementById("wachtwoord_uitleg").style.display = "block"
         gebruikersnaamVergeten = false;
         wachtwoordVergeten = true;
     })
@@ -168,7 +163,7 @@ $(document).ready(function () {
     $("#gebruikersnaam_vergeten").on("click", function (gebruikersnaamVergetenFunctie) {
         gebruikersnaamVergetenFunctie.preventDefault();
         loginVergetenStyle()
-        document.getElementById("inlogWachtwoord").style.display = "block"
+        document.getElementById("gebruikersnaam_uitleg").style.display = "block"
         wachtwoordVergeten = false;
         gebruikersnaamVergeten = true;
     })
@@ -188,29 +183,58 @@ $(document).ready(function () {
 
     let wachtwoord = wachtwoordAanmaken();
 
-    $("#vergeten_button").on("click", function (vergeten) {
-        vergeten.preventDefault();
-        let bevestiging;
-        if (gebruikersnaamVergeten) {
-            bevestiging = confirm("Weet je zeker dat je je gebruikersnaam wilt vervangen?")
-            if (bevestiging) {
-                console.log("e-mail versturen (gebruikersnaam)")
-            } else {
-                console.log("geen e-mail versturen (gebruikersnaam)")
-            }
-        } else if (wachtwoordVergeten) {
-            bevestiging = confirm("Weet je zeker dat je je wachtwoord wilt vervangen?")
-            if (bevestiging) {
-                console.log("e-mail versturen (wachtwoord) + " + wachtwoord)
-                
-            } else {
-                console.log("geen e-mail versturen (wachtwoord)")
-            }
-        }
-    })
+    function vergetenFunctie(soortVergeten, email, wachtwoordFunction) {
 
-    $("#annuleren_button").on("click", function (annuleren) {
-        annuleren.preventDefault();
+        FYSCloud.API.queryDatabase(
+            "SELECT emailadres, voornaam, achternaam, gebruiker.gebruikerid, gebruikers_naam FROM gebruiker " +
+            "JOIN gebruiker_profiel ON (gebruiker.gebruikerid = gebruiker_profiel.gebruikerid) WHERE emailadres = ? LIMIT 1",
+            [email]
+        ).done(function (data) {
+            console.log(data);
+            var id = data[0]["gebruikerid"]
+            let voornaam = data[0]["voornaam"]
+            let achternaam = data[0]["achternaam"]
+            var gebruikersnaam = data[0]["gebruikers_naam"]
+            FYSCloud.API.sendEmail({
+                from: {
+                    name: "TravelBud",
+                    address: "is106-3@fys.cloud"
+                },
+                to: [
+                    {
+                        name: voornaam + " " + achternaam,
+                        address: email
+                    }
+                ],
+                subject: "Just a test!",
+                html: "<h1>Hallo</h1><p>This is an email :)</p>" + gebruikersnaam + "<br>" + wachtwoordFunction + "<br>"
+            }).done(function(data) {
+                console.log(data);
+                console.log("De e-mail is verstuurd")
+                if (soortVergeten === "wachtwoord") {
+                    FYSCloud.API.queryDatabase(
+                        "UPDATE gebruiker SET wachtwoord = SHA(?) WHERE gebruikerid = ?",
+                        [wachtwoord, id]
+                    ).done(function (data) {
+                        console.log(data);
+                        console.log("wachtwoord verstuurd ")
+                    }).fail(function (reason) {
+                        console.log(reason);
+                    })
+                } else if (soortVergeten === "gebruikersnaam") {
+                    console.log("gebruikersnaam verstuurd")
+                }
+
+            }).fail(function(reason) {
+                console.log(reason);
+            });
+        }).fail(function (reason) {
+            console.log(reason);
+            console.log("fout");
+        })
+    }
+
+    function terugInloggen() {
         document.getElementById("vergeten_input").style.display = "none";
         document.getElementById("vergeten_button").style.display = "none";
         document.getElementById("annuleren_button").style.display = "none";
@@ -220,7 +244,39 @@ $(document).ready(function () {
         document.getElementById("wachtwoord_vergeten").style.display = "block"
         document.getElementById("gegevens_herinneren").style.display = "block"
         document.getElementById("login_button").style.display = "block"
+        document.getElementById("wachtwoord_uitleg").style.display = "none"
+        document.getElementById("gebruikersnaam_uitleg").style.display = "none"
         wachtwoordVergeten = false;
         gebruikersnaamVergeten = false;
+    }
+
+    $("#vergeten_button").on("click", function (vergeten) {
+        vergeten.preventDefault();
+        let bevestiging;
+        var emailAdres = document.getElementById('vergeten_input').value;
+        if (gebruikersnaamVergeten) {
+            bevestiging = confirm("Weet je zeker dat je je gebruikersnaam wilt vervangen?")
+            if (bevestiging) {
+                console.log("e-mail versturen (gebruikersnaam)")
+                vergetenFunctie("gebruikersnaam", emailAdres, "")
+                terugInloggen()
+            } else {
+                console.log("geen e-mail versturen (gebruikersnaam)")
+            }
+        } else if (wachtwoordVergeten) {
+            bevestiging = confirm("Weet je zeker dat je je wachtwoord wilt vervangen?")
+            if (bevestiging) {
+                console.log("e-mail versturen (wachtwoord) + " + wachtwoord)
+                vergetenFunctie("wachtwoord", emailAdres, wachtwoord)
+                terugInloggen()
+            } else {
+                console.log("geen e-mail versturen (wachtwoord)")
+            }
+        }
+    })
+
+    $("#annuleren_button").on("click", function (annuleren) {
+        annuleren.preventDefault();
+        terugInloggen()
     })
 });
