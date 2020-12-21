@@ -61,13 +61,12 @@ button, table {
 
 .taal {
     display: inline-block;
-    position: relative;
-
+    position: fixed;
+    top: 10px;
 }
 
-.taal_inhoud {
-    display: none;
-    position: absolute;
+.skiptranslate.goog-te-gadget {
+    position: relative;
 }
 
 
