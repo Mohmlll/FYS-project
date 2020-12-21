@@ -6,6 +6,28 @@ $(document).ready(function () {
     var template;
     var nieuweInkomende = document.getElementById("inkomende_aanvraag");
 
+    function updateMatchstatus(matchstatus, gebruikerId) {
+        FYSCloud.API.queryDatabase(
+            "UPDATE matches SET matchstatus = ? WHERE gebruikerid_een = ? AND gebruikerid_twee = ?",
+            [matchstatus, gebruikerId, userId]
+        ).done(function (data) {
+            console.log(data);
+            FYSCloud.API.queryDatabase(
+                "UPDATE matches SET matchstatus = ? WHERE gebruikerid_een = ? AND gebruikerid_twee = ?",
+                [matchstatus, userId, gebruikerId]
+            ).done(function (data) {
+                console.log(data);
+                location.reload();
+            }).fail(function (data) {
+                console.log(data);
+                console.log("fout")
+            })
+        }).fail(function (data) {
+            console.log(data);
+            console.log("fout")
+        })
+    }
+
     function makeAnElement(foto, gebruikerId) {
         template = document.importNode(document.getElementById("template_inkomende").content, true);
         template.getElementById("foto_gebruiker_inkomend").src = foto;
@@ -23,14 +45,16 @@ $(document).ready(function () {
                 inkomende.className = " hide_inkomende";
             }
             // 2 staat voor geaccepteerde status
-            let matchstatus = 2;
-            console.log("test")
             FYSCloud.API.queryDatabase(
-                "UPDATE matches SET matchstatus = ? WHERE gebruikerid_een = ?",
-                [matchstatus, gebruikerId]
+                "SELECT matchstatus FROM matches WHERE gebruikerid_een = ? AND gebruikerid_twee = ?",
+                [gebruikerId, userId]
             ).done(function (data) {
                 console.log(data);
-                location.reload();
+                let matchstatus = data[0]['matchstatus'];
+                if (matchstatus !== 0 && matchstatus !== 2) {
+                    let matchstatusNieuw = 2;
+                    updateMatchstatus(matchstatusNieuw, gebruikerId);
+                }
             }).fail(function (data) {
                 console.log(data);
                 console.log("fout")
@@ -43,16 +67,7 @@ $(document).ready(function () {
             }
             // 0 staat voor geweigerde/neutrale status
             let matchstatus = 0;
-            FYSCloud.API.queryDatabase(
-                "UPDATE matches SET matchstatus = ? WHERE gebruikerid_een = ?",
-                [matchstatus, gebruikerId]
-            ).done(function (data) {
-                console.log(data);
-                location.reload();
-            }).fail(function (data) {
-                console.log(data);
-                console.log("fout")
-            })
+            updateMatchstatus(matchstatus, gebruikerId);
         })
         return template.firstElementChild;
     }
@@ -68,7 +83,6 @@ $(document).ready(function () {
         for (let i = 0; i < noOfTemplates_inkomende; i++) {
             console.log(data);
             let inkomendeGebruiker = data[i]['gebruikerid_een'];
-            //probeerde hier de eigen userid er uit te filteren maar dat lukte niet.
             if (inkomendeGebruiker !== userId) {
                 let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + inkomendeGebruiker + ".png";
                 appendPhoto = photoUrl;

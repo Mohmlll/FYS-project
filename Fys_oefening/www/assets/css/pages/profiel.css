@@ -325,6 +325,13 @@ table .radiobutton {
     display: block;
 }
 
+.hide_lopende{
+    display: none;
+}
+
+.lopende{
+    display: block;
+}
 #profielfoto_wijzigen {
     float: left;
     width: auto;

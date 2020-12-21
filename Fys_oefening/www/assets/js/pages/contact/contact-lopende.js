@@ -10,9 +10,34 @@ $(document).ready(function () {
         template = document.importNode(document.getElementById("template_lopende").content, true);
         template.getElementById("foto_gebruiker_lopende").src = foto;
         let profiel_button = template.getElementById("foto_gebruiker_lopende");
+        let btn_verwijder = template.getElementById("verwijder_lopende");
+        let lopende = template.getElementById('lopende');
         profiel_button.addEventListener('click', (event) => {
             FYSCloud.URL.redirect("profiel.html", {
                 id: gebruikerId
+            })
+        })
+        btn_verwijder.addEventListener('click', (event)=>{
+            if (lopende.className === "lopende") {
+                lopende.className = "hide_lopende";
+            }
+            FYSCloud.API.queryDatabase(
+                "DELETE FROM matches WHERE  gebruikerid_een = ? AND gebruikerid_twee = ?",
+                [userId,gebruikerId]
+            ).done(function (data){
+                console.log(data);
+                FYSCloud.API.queryDatabase(
+                    "DELETE FROM matches WHERE gebruikerid_twee = ? AND gebruikerid_een = ?",
+                    [userId,gebruikerId]
+                ).done(function (data){
+                    console.log(data);
+                }).fail(function (reason){
+                    console.log(reason);
+                    console.log("fout");
+                })
+            }).fail(function (reason){
+                console.log(reason);
+                console.log("fout");
             })
         })
         return template.firstElementChild;
