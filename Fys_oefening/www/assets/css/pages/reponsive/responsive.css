@@ -67,7 +67,7 @@
     }
 
     .taal {
-        float: right;
+        right: 0;
     }
 
     .voorkeuren_user, .voorkeuren_user table {
