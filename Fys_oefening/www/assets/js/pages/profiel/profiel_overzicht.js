@@ -75,50 +75,53 @@ privacy
         [userId]
     ).done(function (data) {
         console.log(data);
-        switch (data[0]['woonplaats']) {
-            case 'Iedereen':
-                document.getElementById("woonplaats_iedereen").selected = true;
-                break;
-            case 'Niemand':
-                document.getElementById("woonplaats_niemand").selected = true;
-                break;
-            case 'Matches':
-                document.getElementById("woonplaats_matches").selected = true;
-                break;
+        if (data.length !== 0) {
+            switch (data[0]['woonplaats']) {
+                case 'Iedereen':
+                    document.getElementById("woonplaats_iedereen").selected = true;
+                    break;
+                case 'Niemand':
+                    document.getElementById("woonplaats_niemand").selected = true;
+                    break;
+                case 'Matches':
+                    document.getElementById("woonplaats_matches").selected = true;
+                    break;
+            }
+            switch (data[0]['telefoonnr']) {
+                case 'Iedereen':
+                    document.getElementById("nr_iedereen").selected = true;
+                    break;
+                case 'Niemand':
+                    document.getElementById("nr_niemand").selected = true;
+                    break;
+                case 'Matches':
+                    document.getElementById("nr_matches").selected = true;
+                    break;
+            }
+            switch (data[0]['leeftijd']) {
+                case 'Iedereen':
+                    document.getElementById("leeftijd_iedereen").selected = true;
+                    break;
+                case 'Niemand':
+                    document.getElementById("leeftijd_niemand").selected = true;
+                    break;
+                case 'Matches':
+                    document.getElementById("leeftijd_matches").selected = true;
+                    break;
+            }
+            switch (data[0]['geslacht']) {
+                case 'Iedereen':
+                    document.getElementById("geslacht_iedereen").selected = true;
+                    break;
+                case 'Niemand':
+                    document.getElementById("geslacht_niemand").selected = true;
+                    break;
+                case 'Matches':
+                    document.getElementById("geslacht_matches").selected = true;
+                    break;
+            }
         }
-        switch (data[0]['telefoonnr']) {
-            case 'Iedereen':
-                document.getElementById("nr_iedereen").selected = true;
-                break;
-            case 'Niemand':
-                document.getElementById("nr_niemand").selected = true;
-                break;
-            case 'Matches':
-                document.getElementById("nr_matches").selected = true;
-                break;
-        }
-        switch (data[0]['leeftijd']) {
-            case 'Iedereen':
-                document.getElementById("leeftijd_iedereen").selected = true;
-                break;
-            case 'Niemand':
-                document.getElementById("leeftijd_niemand").selected = true;
-                break;
-            case 'Matches':
-                document.getElementById("leeftijd_matches").selected = true;
-                break;
-        }
-        switch (data[0]['geslacht']) {
-            case 'Iedereen':
-                document.getElementById("geslacht_iedereen").selected = true;
-                break;
-            case 'Niemand':
-                document.getElementById("geslacht_niemand").selected = true;
-                break;
-            case 'Matches':
-                document.getElementById("geslacht_matches").selected = true;
-                break;
-        }
+
     }).fail(function (reason) {
         console.log(reason);
         console.log("fout")
@@ -128,7 +131,7 @@ privacy
         privacy.preventDefault();
         let selWoonplaats = document.getElementById('privacy_woonplaats').value;
         let selNr = document.getElementById('privacy_nr').value;
-        let selLeeftijd = document.getElementById('privacy_geboortedatum').value;
+        let selLeeftijd = document.getElementById('privacy_leeftijd').value;
         let selGeslacht = document.getElementById('privacy_geslacht').value;
 
 

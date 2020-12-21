@@ -1,5 +1,6 @@
 $(document).ready(function () {
     let userId = sessionStorage.getItem('userId');
+
     FYSCloud.API.queryDatabase(
         "SELECT * FROM interesse WHERE idgebruiker = ?",
         [userId]
@@ -47,6 +48,12 @@ $(document).ready(function () {
     $('#gegevens_bewerken').on("click", function (bewerken) {
         bewerken.preventDefault();
         var readonlycheck = document.getElementsByClassName("profiel_input");
+        if (readonlycheck) {
+            $(".profiel_input").attr("readonly", false);
+            document.getElementById("gegevens_opslaan").style.display = "block";
+            document.getElementById("gegevens_bewerken").style.display = "none";
+            console.log("2")
+        }
         document.getElementById("profiel_input_voornaam").className = "profiel_input_bewerken";
         document.getElementById("profiel_input_achternaam").className = "profiel_input_bewerken";
         document.getElementById("profiel_input_geslacht").className = "profiel_input_bewerken";
@@ -54,22 +61,30 @@ $(document).ready(function () {
         document.getElementById("profiel_input_woonplaats").className = "profiel_input_bewerken";
         document.getElementById("profiel_input_telefoonnr").className = "profiel_input_bewerken";
         document.getElementById("profiel_input_email").className = "profiel_input_bewerken";
-        document.getElementById("profiel_input_bio").className = "tekstbox_bewerken";
+        document.getElementById("profiel_input_bio").className = "profiel_input_bewerken";
+        console.log("1")
 
         document.getElementById("nieuw_wachtwoord").style.display = "block";
         document.getElementById("nieuw_wachtwoordh").style.display = "block";
-        if (readonlycheck) {
-            $(".profiel_input").attr("readonly", false);
-            document.getElementById("gegevens_opslaan").style.display = "block";
-            document.getElementById("gegevens_bewerken").style.display = "none";
-
-        }
-
+        document.getElementById("nieuw_wachtwoord_tekst").style.display = "block";
+        document.getElementById("nieuw_wachtwoordh_tekst").style.display = "block";
+        document.getElementById("profielfoto_wijzigen").style.display = "block";
         $(".tag_div").show();
         $(".tag_button").removeAttr("disabled")
 
 
     })
+
+    function tagUpdate(updateSoort, varNaam) {
+        FYSCloud.API.queryDatabase(
+            "UPDATE gebruiker_profiel SET " + updateSoort + " = ? WHERE gebruikerid = ?",
+            [varNaam, userId]
+        ).done(function (data) {
+            console.log(data);
+        }).fail(function (reason) {
+            console.log(reason);
+        })
+    }
 
     $("#gegevens_opslaan").on("click", function (opslaan) {
         opslaan.preventDefault();
@@ -84,64 +99,22 @@ $(document).ready(function () {
         var wachtwoordh = document.getElementById("profiel_input_wachtwoordh").value;
 
         if (voornaam !== "") {
-            FYSCloud.API.queryDatabase(
-                "UPDATE gebruiker_profiel SET voornaam = ? WHERE gebruikerid = ?",
-                [voornaam, userId]
-            ).done(function (data) {
-                console.log(data);
-            }).fail(function (reason) {
-                console.log(reason);
-            })
+            tagUpdate("voornaam", voornaam);
         }
         if (achternaam !== "") {
-            FYSCloud.API.queryDatabase(
-                "UPDATE gebruiker_profiel SET achternaam = ? WHERE gebruikerid = ?",
-                [achternaam, userId]
-            ).done(function (data) {
-                console.log(data);
-            }).fail(function (reason) {
-                console.log(reason);
-            })
+            tagUpdate("achternaam", achternaam)
         }
         if (geboortedatum !== "") {
-            FYSCloud.API.queryDatabase(
-                "UPDATE gebruiker_profiel SET geboorte_datum = ? WHERE gebruikerid = ?",
-                [geboortedatum, userId]
-            ).done(function (data) {
-                console.log(data);
-            }).fail(function (reason) {
-                console.log(reason);
-            })
+            tagUpdate("geboorte_datum", geboortedatum)
         }
         if (woonplaats !== "") {
-            FYSCloud.API.queryDatabase(
-                "UPDATE gebruiker_profiel SET woonplaats = ? WHERE gebruikerid = ?",
-                [woonplaats, userId]
-            ).done(function (data) {
-                console.log(data);
-            }).fail(function (reason) {
-                console.log(reason);
-            })
+            tagUpdate("woonplaats", woonplaats)
         }
         if (telefoonnr !== "") {
-            FYSCloud.API.queryDatabase(
-                "UPDATE gebruiker_profiel SET telefoon_nummer = ? WHERE gebruikerid = ?",
-                [telefoonnr, userId]
-            ).done(function (data) {
-                console.log(data);
-            }).fail(function (reason) {
-                console.log(reason);
-            })
+            tagUpdate("telefoon_nummer", telefoonnr)
         }
         if (bio !== "") {
-            FYSCloud.API.queryDatabase(
-                "UPDATE gebruiker_profiel SET bio = ? WHERE gebruikerid = ?",
-                [bio, userId]
-            ).done(function (data) {
-                console.log(data);
-            }).fail(function (reason) {
-                console.log(reason);
-            })
+            tagUpdate("bio", bio)
         }
         if (wachtwoord !== "") {
             FYSCloud.API.queryDatabase(
@@ -229,6 +202,9 @@ $(document).ready(function () {
 
         document.getElementById("nieuw_wachtwoord").style.display = "none";
         document.getElementById("nieuw_wachtwoordh").style.display = "none";
+        document.getElementById("nieuw_wachtwoord_tekst").style.display = "none";
+        document.getElementById("nieuw_wachtwoordh_tekst").style.display = "none";
+        document.getElementById("profielfoto_wijzigen").style.display = "none";
         // FYSCloud.API.queryDatabase(
         //     "UPDATE gebruiker SET status = 'volledig_profiel' WHERE gebruikerid = ?",
         //     [sessionStorage.getItem("userId")]

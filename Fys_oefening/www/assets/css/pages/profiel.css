@@ -34,7 +34,7 @@ Profiel Overzicht
     outline: none;
     background: transparent;
 }
-.profiel_input_bewerken, .nieuw_wachtwoord, .nieuw_wachtwoordh {
+.profiel_input_bewerken, .nieuw_wachtwoord, .nieuw_wachtwoordh{
     width: 100%;
     padding: 5px;
     margin: 1% auto;
@@ -58,7 +58,7 @@ Profiel Overzicht
     background: transparent;
 }
 
-#nieuw_wachtwoord, #nieuw_wachtwoordh{
+#nieuw_wachtwoord, #nieuw_wachtwoordh, #nieuw_wachtwoord_tekst, #nieuw_wachtwoordh_tekst {
     display: none;
     width: 100%;
 }
@@ -160,7 +160,7 @@ Profiel Overzicht
     width: 8em;
 }
 
-.accepteer:hover, .weiger:hover, .verwijder:hover, .gegevens_button:hover, .privacy_opslaan:hover {
+.accepteer:hover, .weiger:hover, .verwijder:hover, .gegevens_button:hover, .privacy_opslaan:hover, #profielfoto_wijzigen:hover {
     background: linear-gradient(to right, red, #ffffff);
 }
 
@@ -249,7 +249,7 @@ table .radiobutton {
     width: 100%;
 }
 
-.gegevens_button, #verzoek_feedback, #al_gematched {
+.gegevens_button, #verzoek_feedback, #al_gematched, #profielfoto_wijzigen {
     background-color: #d81e05;
     color: white;
     border-radius: 5%;
@@ -323,4 +323,10 @@ table .radiobutton {
 
 .inkomende {
     display: block;
+}
+
+#profielfoto_wijzigen {
+    float: left;
+    width: auto;
+    display: none;
 }
