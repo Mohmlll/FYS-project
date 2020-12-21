@@ -324,3 +324,11 @@ table .radiobutton {
 .inkomende {
     display: block;
 }
+
+.hide_lopende{
+    display: none;
+}
+
+.lopende{
+    display: block;
+}

@@ -57,25 +57,41 @@ $(document).ready(function () {
     console.log(profielId)
     /////////////////////
     let matchstatus;
-    FYSCloud.API.queryDatabase(
-        "SELECT  matchstatus, COUNT(*) FROM matches WHERE gebruikerid_twee = ? AND gebruikerid_een = ?",
-        [profielId, userId]
-    ).done(function (data) {
-        console.log(data);
-        if (data.length === 0) {
-            FYSCloud.API.queryDatabase(
-                "SELECT  matchstatus, COUNT(*) FROM matches WHERE gebruikerid_een = ? AND gebruikerid_twee = ?",
-                [profielId, userId]
-            ).done(function (data) {
-                console.log(data);
-                matchstatus = data[0]['matchstatus']
-            }).fail(function (reason) {
-                console.log(reason);
-                console.log("fout");
-            })
-        } else {
-            matchstatus = data[0]['matchstatus'];
-        }
+
+    function getMatchstatus() {
+
+        FYSCloud.API.queryDatabase(
+            "SELECT  matchstatus, COUNT(*) FROM matches WHERE gebruikerid_twee = ? AND gebruikerid_een = ?",
+            [profielId, userId]
+        ).done(function (data) {
+            console.log(data);
+            if (data[0]['COUNT(*)'] === 0) {
+                FYSCloud.API.queryDatabase(
+                    "SELECT  matchstatus, COUNT(*) FROM matches WHERE gebruikerid_een = ? AND gebruikerid_twee = ?",
+                    [profielId, userId]
+                ).done(function (data) {
+                    console.log(data);
+                    matchstatus = data[0]['matchstatus']
+                    buttonStatus(matchstatus);
+                }).fail(function (reason) {
+                    console.log(reason);
+                    console.log("fout");
+                })
+            } else {
+                matchstatus = data[0]['matchstatus'];
+                buttonStatus(matchstatus);
+            }
+
+        }).fail(function (reason) {
+            console.log(reason);
+            console.log("fout");
+        })
+        return matchstatus;
+    }
+
+    getMatchstatus();
+
+    function buttonStatus(matchstatus) {
         if (matchstatus === 2) {
             document.getElementById("contact_verzoek").style.display = "none";
             document.getElementById("verzoek_feedback").style.display = "none";
@@ -89,11 +105,8 @@ $(document).ready(function () {
             document.getElementById("al_gematched").style.display = "none";
             document.getElementById("verzoek_feedback").style.display = "none";
         }
+    }
 
-    }).fail(function (reason) {
-        console.log(reason);
-        console.log("fout");
-    })
 
     /////////////////////
 
@@ -273,87 +286,37 @@ $(document).ready(function () {
         console.log(reason);
     })
 
-
+    console.log(matchstatus + "WWWWWWWWWOW");
 // hier word een contact verzoek verzonden
 // de code hier onder is nog niet af want hij maakt nog duplicates
     $("#contact_verzoek").click(function (contact) {
         contact.preventDefault();
-        console.log("test");
-        //de 1 staat voor request in database, dus als de matchstatus 1 is dan is er een request.
+        getMatchstatus()
         let matchStatusRequested = 1;
-        FYSCloud.API.queryDatabase(
-            "SELECT matchstatus FROM matches WHERE gebruikerid_een = ? AND gebruikerid_twee = ? ",
-            [userId, profielId]
-        ).done(function (data) {
-            console.log(data);
-            if (data.length === 0) {
+        //de 1 staat voor request in database, dus als de matchstatus 1 is dan is er een request.
+        if (matchstatus !== 2 && matchstatus !== 1) {
+            FYSCloud.API.queryDatabase(
+                "INSERT INTO matches SET gebruikerid_een = ?, gebruikerid_twee = ?, matchstatus = ?",
+                [userId, profielId, matchStatusRequested]
+            ).done(function (data) {
+                console.log(data)
+                document.getElementById("contact_verzoek").style.display = "none";
+                document.getElementById("verzoek_feedback").style.display = "block";
+            }).fail(function (reason) {
+                console.log(reason);
+                console.log("fout");
+            })
+        } else if (matchstatus === 1) {
+            FYSCloud.API.queryDatabase(
+                "UPDATE matches SET matchstatus = 2 WHERE gebruikerid_een = ? AND gebruikerid_twee = ? ",
+                [profielId, userId]
+            ).done(function (data) {
+                console.log(data)
 
-                FYSCloud.API.queryDatabase(
-                    "SELECT matchstatus FROM matches WHERE gebruikerid_een = ? AND gebruikerid_twee = ? ",
-                    [profielId, userId]
-                ).done(function (data) {
-                    console.log(data);
-                    if (data.length === 0) {
-                        FYSCloud.API.queryDatabase(
-                            "INSERT INTO matches SET gebruikerid_een = ?, gebruikerid_twee=?, matchstatus=?",
-                            [userId, profielId, matchStatusRequested]
-                        ).done(function (data) {
-                            console.log(data)
-                            document.getElementById("contact_verzoek").style.display = "none";
-                            document.getElementById("verzoek_feedback").style.display = "block";
-                        }).fail(function (reason) {
-                            console.log(reason);
-                            console.log("fout");
-                        })
-                    } else if (data[0]["matchstatus"] === 1) {
-                        FYSCloud.API.queryDatabase(
-                            "UPDATE matches SET matchstatus = 2 WHERE gebruikerid_een = ? AND gebruikerid_twee = ? ",
-                            [profielId, userId]
-                        ).done(function (data) {
-                            console.log(data)
-
-                        }).fail(function (reason) {
-                            console.log(reason);
-                            console.log("fout");
-                        })
-                    }else if (matchstatus === 0){
-                        FYSCloud.API.queryDatabase(
-                            "UPDATE matches SET matchstatus = ? WHERE gebruikerid_een = ? AND gebruikerid_twee = ? ",
-                            [matchStatusRequested, profielId, userId]
-                        ).done(function (data) {
-                            console.log(data)
-                            document.getElementById("contact_verzoek").style.display = "none";
-                            document.getElementById("verzoek_feedback").style.display = "block";
-                        }).fail(function (reason) {
-                            console.log(reason);
-                            console.log("fout");
-                        })
-                    }
-                }).fail(function (reason) {
-                    console.log(reason);
-                    console.log("fout");
-                })
-
-            } else if (data[0]['matchstatus'] !== 1) {
-                FYSCloud.API.queryDatabase(
-                    "INSERT INTO matches SET gebruikerid_een = ?, gebruikerid_twee=?, matchstatus=?",
-                    [userId, profielId, matchStatusRequested]
-                ).done(function (data) {
-                    console.log(data)
-
-                }).fail(function (reason) {
-                    console.log(reason);
-                    console.log("fout");
-                })
-            } else {
-                console.log("duplicate verzoek")
-            }
-        }).fail(function (reason) {
-            console.log(reason);
-            console.log("fout");
-        })
-
+            }).fail(function (reason) {
+                console.log(reason);
+                console.log("fout");
+            })
+        }
     })
-
-
 });
