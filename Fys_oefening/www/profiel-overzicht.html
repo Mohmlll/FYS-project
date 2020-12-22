@@ -75,6 +75,10 @@
                         <form class="input" id="profile">
                             <table>
                                 <tr>
+                                    <td></td>
+                                    <td><button id="profielfoto_wijzigen">Profielfoto wijzigen</button></td>
+                                </tr>
+                                <tr>
                                     <td>Foto van jezelf:</td>
                                     <td>
                                         <img id="profielFoto" src="">
@@ -129,7 +133,7 @@
                                                                                         type="email"></td>
                                 </tr>
                                 <tr>
-                                    <td>Nieuwe wachtwoord:</td>
+                                    <td><div id="nieuw_wachtwoord_tekst">Nieuwe wachtwoord:</div></td>
                                     <td id="nieuw_wachtwoord"><label for="profiel_input_wachtwoord"></label><input
                                             class="nieuw_wachtwoord"
                                             id="profiel_input_wachtwoord"
@@ -146,7 +150,7 @@
                                 </tr>
                                 <br>
                                 <tr>
-                                    <td>Wachtwoord herhalen:</td>
+                                    <td><div id="nieuw_wachtwoordh_tekst">Wachtwoord herhalen:</div></td>
                                     <td id="nieuw_wachtwoordh"><label for="profiel_input_wachtwoordh"></label><input
                                             class="nieuw_wachtwoordh"
                                             id="profiel_input_wachtwoordh"
@@ -233,7 +237,7 @@
                                 <tr>
                                     <td>iets leuks over jezelf: <br><br></td>
                                     <td>
-                                        <label for="profiel_input_bio"></label><textarea class="tekstbox"
+                                        <label for="profiel_input_bio"></label><textarea class="profiel_input"
                                                                                          id="profiel_input_bio"
                                                                                          readonly></textarea>
                                     </td>
@@ -308,9 +312,12 @@
                             <div class="lopende" id="lopende">
                                 <div class="gebruiker_lopende">
                                     <img id="foto_gebruiker_lopende" src="">
-                                    <button class="verwijder" id="verwijder_lopende" type="submit">
-                                        verwijder
-                                    </button>
+                                    <div class="lopende_rechts"><span id="naam_lopende"></span>
+                                        <button class="verwijder" id="verwijder_lopende" type="submit">
+                                            verwijder
+                                        </button>
+                                    </div>
+
                                 </div>
                             </div>
                         </template>
@@ -326,7 +333,7 @@
                                         <td>
                                             <div class="foto_gebruiker_inkomend">
                                                 <img id="foto_gebruiker_inkomend" src="">
-
+                                                <span id="naam_inkomende"></span>
                                                 <button class="accepteer" id="accepteer_inkomende" type="submit">
                                                     Accepteer
                                                 </button>
@@ -351,6 +358,7 @@
                                     <td>
                                         <div class="foto_gebruiker_uitgaand">
                                             <img id="foto_gebruiker_uitgaande" src="">
+                                            <span id="naam_uitgaande"></span>
                                             <p>
                                                 Wachtend op Bevestiging!
                                             </p>

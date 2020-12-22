@@ -324,7 +324,7 @@ contact popup
 }
 
 .tag_div input:checked + span {
-    background-color: #d81e05;
+    background-color: green;
 }
 
 .tag_div input[type="checkbox"] {
