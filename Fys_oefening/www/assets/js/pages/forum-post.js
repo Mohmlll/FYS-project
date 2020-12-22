@@ -13,7 +13,7 @@ $(document).ready(function () {
             sessionStorage.setItem("volgorde", "score DESC")
             location.reload()
         } else if (value === "beste_volgorde") {
-            sessionStorage.setItem("volgorde", "post")
+            sessionStorage.setItem("volgorde", "aantal_bekijks DESC")
             location.reload()
         } else {
             console.log("Error")
@@ -23,9 +23,7 @@ $(document).ready(function () {
 
     function tijdGeleden(oudeDatum) {
         let datum = new Date(Date.parse(oudeDatum))
-        console.log(datum);
         let datumNu = new Date()
-        console.log(datumNu);
         let datumVerschil = datumNu.getTime() - datum.getTime() + 3600000;
         console.log(datumVerschil)
 
@@ -73,6 +71,30 @@ $(document).ready(function () {
         return datumVerschil
     }
 
+    function aantalBekijks(idPost, idforumPost) {
+        console.log(idPost)
+        FYSCloud.API.queryDatabase(
+            "SELECT aantal_bekijks FROM forum_post WHERE idforum_post = ?",
+            [idforumPost]
+        ).done(function (data) {
+            console.log(data);
+            let bekijkAantal = data[0]["aantal_bekijks"] + 1;
+            FYSCloud.API.queryDatabase(
+                "UPDATE forum_post SET aantal_bekijks = ? WHERE idforum_post = ?",
+                [bekijkAantal, idforumPost]
+            ).done(function (data) {
+                console.log(data);
+                FYSCloud.URL.redirect("profiel.html", {
+                    id: idPost
+                })
+            }).fail(function (reason) {
+                console.log(reason);
+            });
+        }).fail(function (reason) {
+            console.log(reason);
+        });
+    }
+
     //dit is een functie waarbij een template elke keer gevuld wordt in een loop.
     //als je een filter aan heb staan, wordt die meegegeven en daardoor komen alleen de resultaten terug die voldoen aan jouw filter
     function forum(filter) {
@@ -91,12 +113,12 @@ $(document).ready(function () {
             document.getElementById("nieuw_volgorde").selected = true;
         } else if (selectVolgorde === "score DESC") {
             document.getElementById("aanbevolen_volgorde").selected = true;
-        } else if (selectVolgorde === "post") {
+        } else if (selectVolgorde === "aantal_bekijks DESC") {
             document.getElementById("beste_volgorde").selected = true;
         }
         console.log(selectVolgorde)
 
-        function makeAnElement(titel, content, foto, postId, tag, date) {
+        function makeAnElement(titel, content, foto, postId, tag, date, idforumPost) {
             template = document.importNode(document.getElementById("post_template").content, true);
             let post_header_titel = template.getElementById("post_header_titel");
             template.getElementById("post_profiel_img").src = foto;
@@ -107,15 +129,11 @@ $(document).ready(function () {
             let btn = template.getElementById("post_header");
             let contact_button = template.getElementById("contact_verzoek_button");
             contact_button.addEventListener('click', (event) => {
-                FYSCloud.URL.redirect("profiel.html", {
-                    id: postId
-                })
+                aantalBekijks(postId, idforumPost)
             })
             let post_profiel_foto = template.getElementById("post_profiel_foto");
             post_profiel_foto.addEventListener('click', (event) => {
-                FYSCloud.URL.redirect("profiel.html", {
-                    id: postId
-                })
+                aantalBekijks(postId, idforumPost)
             })
             content_date.innerHTML = date
             post_header_titel.innerHTML = titel
@@ -156,7 +174,7 @@ $(document).ready(function () {
             var noOfTemplates = 5;
 
             FYSCloud.API.queryDatabase(
-                "SELECT forum_post.idgebruiker, titel, post, datum, post_tags.explorer, post_tags.sportieveling, " +
+                "SELECT forum_post.idgebruiker, forum_post.idforum_post, titel, post, datum, post_tags.explorer, post_tags.sportieveling, " +
                 "post_tags.relaxer, post_tags.partygoer, post_tags.wintersport, post_tags.tropisch, post_tags.backpacker, " +
                 "post_tags.resort , (if(post_tags.explorer = 0 AND post_tags.sportieveling = 0 AND " +
                 "post_tags.relaxer = 0 AND post_tags.partygoer = 0 AND post_tags.wintersport = 0 AND post_tags.tropisch = 0 AND post_tags.backpacker = 0 AND " +
@@ -183,6 +201,7 @@ $(document).ready(function () {
                 console.log(data)
                 for (let i = 0; i < noOfTemplates; i++) {
                     let postId = data[i]['idgebruiker'];
+                    let idforumPost = data[i]["idforum_post"];
                     let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
                     appendTitel = data[i]['titel'];
                     appendPost = data[i]['post'];
@@ -221,7 +240,6 @@ $(document).ready(function () {
                     if (resort === 1) {
                         appendTag += " resort ";
                     }
-                    console.log(appendTag)
                     if (appendTag.includes("null")) {
                         tags = appendTag.replace("null ", "")
                     } else {
@@ -232,7 +250,7 @@ $(document).ready(function () {
                     img.src = photoUrl;
                     appendDate = data[i]["datum"];
                     let tijd = tijdGeleden(appendDate)
-                    let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId, tags, tijd);
+                    let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId, tags, tijd, idforumPost);
                     nieuwePost.appendChild(costumElement);
                     appendTag = "";
                 }
