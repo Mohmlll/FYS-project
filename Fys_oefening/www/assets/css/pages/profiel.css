@@ -157,7 +157,6 @@ Profiel Overzicht
     margin: auto;
     cursor: pointer;
     padding: 2%;
-    width: 8em;
 }
 
 .accepteer:hover, .weiger:hover, .verwijder:hover, .gegevens_button:hover, .privacy_opslaan:hover, #profielfoto_wijzigen:hover {
@@ -198,13 +197,30 @@ Profiel Overzicht
 }
 
 .foto_gebruiker_uitgaand img, .foto_gebruiker_inkomend img, .gebruiker_lopende img {
-    width: 6em;
-    height: 6em;
+    width: 40%;
     border-radius: 50%;
-    margin: auto;
+    margin: 5%;
+    cursor: pointer;
 
 }
+.foto_gebruiker_uitgaand img:hover, .foto_gebruiker_inkomend img:hover, .gebruiker_lopende img:hover {
+    opacity: 0.5;
+    background-color: lightyellow;
+}
+.lopende_rechts{
+    width: 50%;
+    flex-wrap: wrap;
+    display: flex;
+}
 
+#naam_lopende{
+    width: 100%;
+    margin: auto;
+}
+
+.verwijder{
+    width: 50%;
+}
 .aanvraag {
     border-top: 2px solid black;
 }
@@ -288,7 +304,7 @@ table .radiobutton {
 }
 
 .tag_div input:checked + span {
-    background-color: #d81e05;
+    background-color: #21a64b;
 }
 
 .tag_div input {

@@ -111,7 +111,12 @@ $(document).ready(function () {
                     id: postId
                 })
             })
-
+            let post_profiel_foto = template.getElementById("post_profiel_foto");
+            post_profiel_foto.addEventListener('click', (event) => {
+                FYSCloud.URL.redirect("profiel.html", {
+                    id: postId
+                })
+            })
             content_date.innerHTML = date
             post_header_titel.innerHTML = titel
             content_text.innerHTML = content
