@@ -160,7 +160,7 @@ Profiel Overzicht
     width: 8em;
 }
 
-.accepteer:hover, .weiger:hover, .verwijder:hover, .gegevens_button:hover, .privacy_opslaan:hover, #profielfoto_wijzigen:hover {
+.accepteer:hover, .weiger:hover, .verwijder:hover, .gegevens_button:hover, .privacy_opslaan:hover, #profielfoto_wijzigen_div label:hover {
     background: linear-gradient(to right, red, #ffffff);
 }
 
@@ -249,7 +249,7 @@ table .radiobutton {
     width: 100%;
 }
 
-.gegevens_button, #verzoek_feedback, #al_gematched, #profielfoto_wijzigen {
+.gegevens_button, #verzoek_feedback, #al_gematched, #profielfoto_wijzigen_div label {
     background-color: #d81e05;
     color: white;
     border-radius: 5%;
@@ -336,4 +336,20 @@ table .radiobutton {
     float: left;
     width: auto;
     display: none;
+}
+
+
+/*#profielfoto_wijzigen {*/
+/*    visibility: hidden;*/
+/*    width: 0;*/
+/*    height: 0;*/
+/*}*/
+
+#profielfoto_wijzigen_div {
+    display: none;
+}
+
+#profielfoto_wijzigen_div label {
+    float: left;
+    height: auto;
 }

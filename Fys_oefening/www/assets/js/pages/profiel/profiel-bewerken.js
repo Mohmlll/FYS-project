@@ -68,7 +68,7 @@ $(document).ready(function () {
         document.getElementById("nieuw_wachtwoordh").style.display = "block";
         document.getElementById("nieuw_wachtwoord_tekst").style.display = "block";
         document.getElementById("nieuw_wachtwoordh_tekst").style.display = "block";
-        document.getElementById("profielfoto_wijzigen").style.display = "block";
+        document.getElementById("profielfoto_wijzigen_div").style.display = "block";
         $(".tag_div").show();
         $(".tag_button").removeAttr("disabled")
 
@@ -204,7 +204,7 @@ $(document).ready(function () {
         document.getElementById("nieuw_wachtwoordh").style.display = "none";
         document.getElementById("nieuw_wachtwoord_tekst").style.display = "none";
         document.getElementById("nieuw_wachtwoordh_tekst").style.display = "none";
-        document.getElementById("profielfoto_wijzigen").style.display = "none";
+        document.getElementById("profielfoto_wijzigen_div").style.display = "none";
         // FYSCloud.API.queryDatabase(
         //     "UPDATE gebruiker SET status = 'volledig_profiel' WHERE gebruikerid = ?",
         //     [sessionStorage.getItem("userId")]
@@ -214,6 +214,46 @@ $(document).ready(function () {
         //     console.log(reason);
         // })
     })
+
+    $("#profielfoto_wijzigen").on("change", function () {
+        console.log("foto wijzigen")
+        FYSCloud.Utils
+            .getDataUrl($("#profielfoto_wijzigen"))
+            .done(function (data) {
+                if (data.isImage) {
+                    FYSCloud.API.deleteFile(
+                        userId + ".png"
+                    ).done(function (data) {
+                        console.log(data)
+
+                        FYSCloud.Utils
+                            .getDataUrl($("#profielfoto_wijzigen"))
+                            .done(function (data) {
+                                if (data.isImage) {
+                                    FYSCloud.API.uploadFile(
+                                        userId + ".png",
+                                        data.url
+                                    ).done(function (data) {
+                                        console.log(data);
+                                        document.getElementById("profielFoto").setAttribute("src", "https://dev-is106-3.fys.cloud/uploads/" + userId+ ".png");
+                                        console.log("test")
+                                    }).fail(function (reason) {
+                                        console.log(reason);
+                                    });
+                                }
+                            }).fail(function (reason) {
+                            console.log(reason);
+                        })
+                    }).fail(function (reason) {
+                        console.log(reason)
+                    });
+
+                }
+            }).fail(function (reason) {
+            console.log(reason);
+        });
+    })
+
 
 
 });

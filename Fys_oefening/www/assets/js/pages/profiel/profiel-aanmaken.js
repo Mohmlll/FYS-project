@@ -187,7 +187,7 @@ $(document).ready(function () {
 
     });
 
-    $("#profilePicture").on("change", function (foto) {
+    $("#profilePicture").on("change", function () {
 
         FYSCloud.Utils
             .getDataUrl($("#profilePicture"))

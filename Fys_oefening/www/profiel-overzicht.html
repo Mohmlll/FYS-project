@@ -75,8 +75,18 @@
                         <form class="input" id="profile">
                             <table>
                                 <tr>
+<!--                                    <label>-->
+<!--                                        <input id="profilePicture" type="file">-->
+<!--                                        <img id="imagePreview" src="">-->
+<!--                                    </label>-->
                                     <td></td>
-                                    <td><button id="profielfoto_wijzigen">Profielfoto wijzigen</button></td>
+                                    <td>
+                                        <div id="profielfoto_wijzigen_div">
+                                            <label>Profielfoto wijzigen
+                                                <input id="profielfoto_wijzigen" type="file">
+                                            </label>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Foto van jezelf:</td>
@@ -138,7 +148,6 @@
                                             class="nieuw_wachtwoord"
                                             id="profiel_input_wachtwoord"
                                             placeholder="Wachtwoord"
-                                            required
                                             type="password">
                                         <div class="inputAlert" id="geenWachtwoord">
                                             <p>
@@ -155,7 +164,6 @@
                                             class="nieuw_wachtwoordh"
                                             id="profiel_input_wachtwoordh"
                                             placeholder="Wachtwoord herhalen"
-                                            required
                                             type="password">
                                         <div class="inputAlert" id="geenWachtwoordCheck">
                                             <p>

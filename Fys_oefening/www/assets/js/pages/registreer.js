@@ -255,23 +255,13 @@ $(document).ready(function () {
         let bevestiging;
         var emailAdres = document.getElementById('vergeten_input').value;
         if (gebruikersnaamVergeten) {
-            bevestiging = confirm("Weet je zeker dat je je gebruikersnaam wilt vervangen?")
-            if (bevestiging) {
-                console.log("e-mail versturen (gebruikersnaam)")
-                vergetenFunctie("gebruikersnaam", emailAdres, "")
-                terugInloggen()
-            } else {
-                console.log("geen e-mail versturen (gebruikersnaam)")
-            }
+            console.log("e-mail versturen (gebruikersnaam)")
+            vergetenFunctie("gebruikersnaam", emailAdres, "")
+            terugInloggen()
         } else if (wachtwoordVergeten) {
-            bevestiging = confirm("Weet je zeker dat je je wachtwoord wilt vervangen?")
-            if (bevestiging) {
-                console.log("e-mail versturen (wachtwoord) + " + wachtwoord)
-                vergetenFunctie("wachtwoord", emailAdres, wachtwoord)
-                terugInloggen()
-            } else {
-                console.log("geen e-mail versturen (wachtwoord)")
-            }
+            console.log("e-mail versturen (wachtwoord) + " + wachtwoord)
+            vergetenFunctie("wachtwoord", emailAdres, wachtwoord)
+            terugInloggen()
         }
     })
 
