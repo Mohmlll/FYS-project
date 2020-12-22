@@ -28,9 +28,10 @@ $(document).ready(function () {
         })
     }
 
-    function makeAnElement(foto, gebruikerId) {
+    function makeAnElement(foto, gebruikerId, voornaam) {
         template = document.importNode(document.getElementById("template_inkomende").content, true);
         template.getElementById("foto_gebruiker_inkomend").src = foto;
+        let naam = template.getElementById("naam_inkomende");
         let btn_accept = template.getElementById("accepteer_inkomende");
         let btn_weiger = template.getElementById("weiger_inkomende");
         let profiel_button = template.getElementById("foto_gebruiker_inkomend");
@@ -40,6 +41,7 @@ $(document).ready(function () {
                 id: gebruikerId
             })
         })
+        naam.innerHTML = voornaam;
         btn_accept.addEventListener('click', (event) => {
             if (inkomende.className === "inkomende") {
                 inkomende.className = " hide_inkomende";
@@ -74,6 +76,7 @@ $(document).ready(function () {
 
     let appendPhoto;
     let appendGebruikerId;
+    let appendVoornaam;
 
     FYSCloud.API.queryDatabase(
         "SELECT  gebruikerid_een FROM matches WHERE matchstatus = 1 AND gebruikerid_twee = ?",
@@ -84,12 +87,26 @@ $(document).ready(function () {
             console.log(data);
             let inkomendeGebruiker = data[i]['gebruikerid_een'];
             if (inkomendeGebruiker !== userId) {
-                let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + inkomendeGebruiker + ".png";
-                appendPhoto = photoUrl;
-                appendGebruikerId = inkomendeGebruiker;
-                console.log(appendPhoto);
-                let costumElement = makeAnElement(appendPhoto, appendGebruikerId);
-                nieuweInkomende.appendChild(costumElement);
+                FYSCloud.API.queryDatabase(
+                    "SELECT voornaam FROM gebruiker_profiel WHERE gebruikerid = ?",
+                    [inkomendeGebruiker]
+                ).done(function (data) {
+                    let noOfTemplates = data.length;
+                    for (let i = 0; i < noOfTemplates; i++) {
+                        console.log(data);
+                        appendVoornaam = data[0]['voornaam'];
+                        let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + inkomendeGebruiker + ".png";
+                        appendPhoto = photoUrl;
+                        appendGebruikerId = inkomendeGebruiker;
+                        console.log(appendPhoto);
+                        let costumElement = makeAnElement(appendPhoto, appendGebruikerId, appendVoornaam);
+                        nieuweInkomende.appendChild(costumElement);
+                    }
+                }).fail(function (reason){
+                    console.log(reason);
+                    console.log("fout");
+                })
+
             }
         }
     }).fail(function (data) {

@@ -141,7 +141,6 @@ $(document).ready(function () {
         ).done(function (data) {
             console.log(data);
             if (data[0]['COUNT(*)'] !== 0) {
-                matchstatus = 0
                 let privacyWoonplaats = data[0]['woonplaats'];
                 let privacyTelefoonnr = data[0]['telefoonnr'];
                 let privacyLeeftijd = data[0]['leeftijd'];
