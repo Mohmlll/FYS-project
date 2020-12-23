@@ -11,8 +11,7 @@ Profiel Overzicht
     float: left;
 
 }
-
-.profiel_instellingen {
+.profiel_instellingen{
     width: 30%;
     order: 1;
     margin: 0 0 0 auto;
@@ -24,7 +23,6 @@ Profiel Overzicht
     margin-right: 2%;
 
 }
-
 .profiel_input {
     width: 100%;
     padding: 5px;
@@ -33,8 +31,7 @@ Profiel Overzicht
     outline: none;
     background: transparent;
 }
-
-.profiel_input_bewerken, .nieuw_wachtwoord, .nieuw_wachtwoordh {
+.profiel_input_bewerken, .nieuw_wachtwoord, .nieuw_wachtwoordh{
     width: 100%;
     padding: 5px;
     margin: 1% auto;
@@ -50,8 +47,7 @@ Profiel Overzicht
     outline: none;
     background: transparent;
 }
-
-.tekstbox_bewerken {
+.tekstbox_bewerken{
     width: 100%;
     padding: 10px 0;
     margin: 5px 0;
@@ -131,12 +127,10 @@ Profiel Overzicht
     width: 80%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 }
-
-.foto_gebruiker_uitgaand p {
+.foto_gebruiker_uitgaand p{
     text-align: center;
 }
-
-.accepteer, .weiger, .verwijder, .privacy_opslaan {
+.accepteer, .weiger, .verwijder,.privacy_opslaan {
     display: block;
     background-color: #d81e05;
     color: white;
@@ -148,11 +142,10 @@ Profiel Overzicht
 
 }
 
-.weiger, .accepteer, .verwijder {
+.weiger,.accepteer,.verwijder{
     width: 19em;
     padding: 5%;
 }
-
 .accepteer:hover, .weiger:hover, .verwijder:hover, .gegevens_button:hover, .privacy_opslaan:hover, #profielfoto_wijzigen_div label:hover {
     background: linear-gradient(to right, red, #ffffff);
 }
@@ -202,19 +195,17 @@ Profiel Overzicht
     object-fit: cover;
 
 }
-
 .foto_gebruiker_uitgaand img:hover, .foto_gebruiker_inkomend img:hover, .gebruiker_lopende img:hover {
     opacity: 0.5;
     background-color: lightyellow;
 }
-
-.rechts_info {
+.rechts_info{
     width: 50%;
     flex-wrap: wrap;
     display: flex;
 }
 
-#naam_lopende, #naam_inkomende, #naam_uitgaande {
+#naam_lopende ,#naam_inkomende, #naam_uitgaande{
     width: 100%;
     margin: auto;
     text-align: center;
@@ -255,8 +246,7 @@ table .radiobutton {
     border-radius: 25px;
     height: 5%;
 }
-
-.profiel_overzicht {
+.profiel_overzicht{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -283,26 +273,23 @@ table .radiobutton {
     text-align: center;
     align-content: center;
 }
-
-.gegevens_button {
+.gegevens_button{
     background-color: #d81e05;
 }
-
-#al_gematched {
+#al_gematched{
     background-color: #21a64b;
 }
 
-#verzoek_feedback {
+#verzoek_feedback{
     background-color: yellow;
     color: black;
 }
-
 #verzoek_feedback, #al_gematched {
     display: none;
 }
 
 
-#profielFoto {
+#profielFoto{
     width: 35%;
 }
 
@@ -362,16 +349,16 @@ table .radiobutton {
     width: 50%;
 }
 
-.hide_lopende {
+.hide_lopende{
     display: none;
 }
 
-.lopende {
+.lopende{
     display: block;
     width: 50%;
 }
 
-.uitgaande {
+.uitgaande{
     display: block;
     width: 50%;
 }

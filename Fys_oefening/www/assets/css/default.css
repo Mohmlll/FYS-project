@@ -319,6 +319,10 @@ contact popup
     border: 1px solid black;
     border-radius: 10px;
     overflow: hidden;
+
+}
+.tag_div label input {
+    display:none;
 }
 
 .tag_div input:checked + span {
