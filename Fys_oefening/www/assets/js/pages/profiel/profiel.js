@@ -35,7 +35,7 @@ $(document).ready(function () {
         }
 
         let week = Math.floor(dag / 7);
-        if (week < 4) {
+        if (week < week / 12 * 52.1429) {
             return week + ' week geleden';
         }
 
