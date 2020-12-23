@@ -67,6 +67,15 @@ $(document).ready(function () {
 
     })
 
+    function get_action() {
+        var v = grecaptcha.getResponse();
+        if (v.length === 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     $(".register_button").on("click", function (gegevens) {
         gegevens.preventDefault();
         var gebruikersnaamValid = $("#gebruikersnaam").is(":valid");
@@ -88,9 +97,7 @@ $(document).ready(function () {
             document.getElementById("geenWachtwoordCheck").style.display = "none";
         }
 
-        if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && voorwaardeCheckValid) {
-
-
+        if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && voorwaardeCheckValid && get_action()) {
             FYSCloud.API.queryDatabase(
                 "INSERT INTO gebruiker( gebruikers_naam, emailadres, wachtwoord, status)" +
                 "VALUES(?,?,SHA(?),?)",
@@ -103,6 +110,12 @@ $(document).ready(function () {
                 console.log(reason);
             })
         } else {
+            if (get_action()) {
+                document.getElementById('captcha').innerHTML = "Captcha compleet";
+                document.getElementById('captcha').style.color = "black";
+            } else {
+                document.getElementById('captcha').innerHTML = "Check de captcha eerst AUB";
+            }
             if (!gebruikersnaamValid) {
                 document.getElementById("gebruikersnaam").style.borderColor = "red";
                 document.getElementById("geenGebruikersNaam").style.display = "block";
