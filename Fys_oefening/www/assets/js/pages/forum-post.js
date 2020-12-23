@@ -48,17 +48,17 @@ $(document).ready(function () {
         }
 
         let dag = Math.floor(uur / 24);
-        if (dag) {
+        if (dag < 7) {
             return dag + ' dagen geleden';
         }
 
         let week = Math.floor(dag / 7);
-        if (week) {
+        if (week < week / 12 * 52.1429) {
             return week + ' week geleden';
         }
 
-        let maand = Math.floor(week / (52*12));
-        if (maand) {
+        let maand = Math.floor(week / 52.1429*12);
+        if (maand < 12) {
             return maand + ' maand geleden';
         }
 

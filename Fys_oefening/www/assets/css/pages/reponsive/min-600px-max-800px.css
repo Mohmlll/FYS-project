@@ -75,7 +75,26 @@
         padding: 15px;
 
     }
+}
 
+@media screen and (max-width: 800px) {
+    #gegevens_links, #gegevens_rechts, #match_status {
+        float: none;
+        width: 100%;
+    }
 
+    #gegevens_links{
+        border-bottom: lightgray solid 2px;
+        width: 100%;
+    }
+
+    #gegevens_links table{
+        width: 70%;
+        margin: auto;
+    }
+
+    .gegevens_button, #verzoek_feedback, #al_gematched {
+        width: 80%;
+    }
 }
 
