@@ -57,7 +57,7 @@ $(document).ready(function () {
             return week + ' week geleden';
         }
 
-        let maand = Math.floor(week / (52*12));
+        let maand = Math.floor(week / (52 * 12));
         if (maand) {
             return maand + ' maand geleden';
         }

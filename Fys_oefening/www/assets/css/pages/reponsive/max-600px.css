@@ -20,16 +20,19 @@
         order: 0;
         margin: auto;
     }
-    .profiel_instellingen{
+
+    .profiel_instellingen {
         width: 100%;
         order: 1;
         margin: auto;
 
     }
-    .profiel_instellingen form{
+
+    .profiel_instellingen form {
         margin: auto;
     }
 }
+
 @media screen and (max-width: 600px) {
     .info1 {
         min-width: 85%;

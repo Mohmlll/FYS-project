@@ -75,10 +75,6 @@
                         <form class="input" id="profile">
                             <table>
                                 <tr>
-<!--                                    <label>-->
-<!--                                        <input id="profilePicture" type="file">-->
-<!--                                        <img id="imagePreview" src="">-->
-<!--                                    </label>-->
                                     <td></td>
                                     <td>
                                         <div id="profielfoto_wijzigen_div">
@@ -98,18 +94,34 @@
                                     <td>Voornaam:</td>
                                     <td><label for="profiel_input_voornaam"></label><input class="profiel_input"
                                                                                            id="profiel_input_voornaam"
+                                                                                           pattern="[a-zA-Z]+"
                                                                                            readonly
-                                                                                           type="text"></td>
+                                                                                           type="text">
+                                        <div class="inputAlert" id="geenVoornaam">
+                                            <p>
+                                                Vul hier een geldige voornaam in <br>
+                                            </p>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Achternaam:</td>
                                     <td><label for="profiel_input_achternaam"></label><input class="profiel_input"
                                                                                              id="profiel_input_achternaam"
+                                                                                             pattern="[a-zA-Z]+"
                                                                                              readonly
-                                                                                             type="text"></td>
+                                                                                             type="text">
+                                        <div class="inputAlert" id="geenAchternaam">
+                                            <p>
+                                                Vul hier een geldige achternaam in <br>
+                                            </p>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>Geslacht:</td>
+                                    <td>
+                                        <div id="oud_geslacht_tekst"> Geslacht:</div>
+                                    </td>
                                     <td><label for="profiel_input_geslacht"></label><input class="profiel_input"
                                                                                            id="profiel_input_geslacht"
                                                                                            readonly
@@ -125,49 +137,79 @@
                                 </tr>
                                 <tr>
                                     <td>Woonplaats:</td>
-                                    <td><input class="profiel_input" id="profiel_input_woonplaats" readonly
-                                               type="text"></td>
+                                    <td><input class="profiel_input" id="profiel_input_woonplaats" pattern="[a-zA-Z]+"
+                                               readonly
+                                               type="text">
+                                        <div class="inputAlert" id="geenWoonplaats">
+                                            <p>
+                                                Vul hier een geldige woonplaats in <br>
+
+                                            </p>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Telefoonnummer:</td>
                                     <td><label for="profiel_input_telefoonnr"></label><input class="profiel_input"
                                                                                              id="profiel_input_telefoonnr"
+                                                                                             pattern="[0-9]{2}-[0-9]{8}"
                                                                                              readonly
-                                                                                             type="tel"></td>
+                                                                                             type="tel">
+                                        <div class="inputAlert" id="geenTelefoon">
+                                            <p>
+                                                Vul hier een nummer in met de volgende volgorde: <br>
+                                                xx-xxxxxxxx
+                                            </p>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>E-mailadres:</td>
                                     <td><label for="profiel_input_email"></label><input class="profiel_input"
                                                                                         id="profiel_input_email"
+                                                                                        pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+
                                                                                         readonly
-                                                                                        type="email"></td>
+                                                                                        type="email">
+                                        <div class="inputAlert" id="geenEmailAdres">
+                                            <p>
+                                                Vul hier een geldig e-mailadres in <br>
+
+                                            </p>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td><div id="nieuw_wachtwoord_tekst">Nieuwe wachtwoord:</div></td>
+                                    <td>
+                                        <div id="nieuw_wachtwoord_tekst">Nieuwe wachtwoord:</div>
+                                    </td>
                                     <td id="nieuw_wachtwoord"><label for="profiel_input_wachtwoord"></label><input
                                             class="nieuw_wachtwoord"
                                             id="profiel_input_wachtwoord"
+                                            pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$"
                                             placeholder="Wachtwoord"
                                             type="password">
-                                        <div class="inputAlert" id="geenWachtwoord">
+                                        <div class="inputAlert" id="geenWachtwoordp">
                                             <p>
-                                                Vul hier een geldig wachtwoord in volgens de voorwaarde <br>
-
+                                                Vul hier een geldig wachtwoord in <br>
+                                                (mininmaal 1 hoofdletter, kleine letter en cijfer)
                                             </p>
                                         </div>
                                     </td>
                                 </tr>
                                 <br>
                                 <tr>
-                                    <td><div id="nieuw_wachtwoordh_tekst">Wachtwoord herhalen:</div></td>
+                                    <td>
+                                        <div id="nieuw_wachtwoordh_tekst">Wachtwoord herhalen:</div>
+                                    </td>
                                     <td id="nieuw_wachtwoordh"><label for="profiel_input_wachtwoordh"></label><input
                                             class="nieuw_wachtwoordh"
                                             id="profiel_input_wachtwoordh"
                                             placeholder="Wachtwoord herhalen"
                                             type="password">
-                                        <div class="inputAlert" id="geenWachtwoordCheck">
+                                        <div class="inputAlert" id="geenWachtwoordCheckp">
                                             <p>
-                                                wachtwoorden komen niet overeen <br>
+                                                Wachtwoorden komen niet overeen<br>
 
                                             </p>
                                         </div>
@@ -268,20 +310,20 @@
                                     <tr>
                                         <td><label>Woonplaats:</label></td>
                                         <td><label>
-                                            <select name="Woonplaats" id="privacy_woonplaats">
+                                            <select id="privacy_woonplaats" name="Woonplaats">
                                                 <option id="woonplaats_matches" value="Matches">Matches</option>
-                                                <option value="Iedereen" id="woonplaats_iedereen">Iedereen</option>
-                                                <option value="Niemand" id="woonplaats_niemand">Niemand</option>
+                                                <option id="woonplaats_iedereen" value="Iedereen">Iedereen</option>
+                                                <option id="woonplaats_niemand" value="Niemand">Niemand</option>
                                             </select>
                                         </label></td>
                                     </tr>
                                     <tr>
                                         <td><label>Telefoon nr:</label></td>
                                         <td><label>
-                                            <select name="Telefoon nummer" id="privacy_nr">
+                                            <select id="privacy_nr" name="Telefoon nummer">
                                                 <option id="nr_niemand" value="Niemand">Niemand</option>
-                                                <option value="Iedereen" id="nr_iedereen">Iedereen</option>
-                                                <option value="Matches" id="nr_matches">Matches</option>
+                                                <option id="nr_iedereen" value="Iedereen">Iedereen</option>
+                                                <option id="nr_matches" value="Matches">Matches</option>
                                             </select>
                                         </label></td>
                                     </tr>
@@ -298,10 +340,10 @@
                                     <tr>
                                         <td><label>Geslacht:</label></td>
                                         <td><label>
-                                            <select name="Geslacht" id="privacy_geslacht">
-                                                <option value="Iedereen" id="geslacht_iedereen">Iedereen</option>
-                                                <option value="Matches" id="geslacht_matches">Matches</option>
-                                                <option value="Niemand" id="geslacht_niemand">Niemand</option>
+                                            <select id="privacy_geslacht" name="Geslacht">
+                                                <option id="geslacht_iedereen" value="Iedereen">Iedereen</option>
+                                                <option id="geslacht_matches" value="Matches">Matches</option>
+                                                <option id="geslacht_niemand" value="Niemand">Niemand</option>
                                             </select>
                                         </label></td>
                                     </tr>
@@ -320,9 +362,9 @@
                             <div class="lopende" id="lopende">
                                 <div class="gebruiker_lopende">
                                     <img id="foto_gebruiker_lopende" src="">
-                                    <div class="lopende_rechts"><span id="naam_lopende"></span>
+                                    <div class="rechts_info"><span id="naam_lopende"></span>
                                         <button class="verwijder" id="verwijder_lopende" type="submit">
-                                            verwijder
+                                            Verwijder
                                         </button>
                                     </div>
 
@@ -336,44 +378,35 @@
                     <div class="aanvraag" id="inkomende_aanvraag">
                         <template id="template_inkomende">
                             <div class="inkomende" id="inkomende">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <div class="foto_gebruiker_inkomend">
-                                                <img id="foto_gebruiker_inkomend" src="">
-                                                <span id="naam_inkomende"></span>
-                                                <button class="accepteer" id="accepteer_inkomende" type="submit">
-                                                    Accepteer
-                                                </button>
-                                                <button class="weiger" id="weiger_inkomende" type="submit">
-                                                    Weiger
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                                <div class="foto_gebruiker_inkomend">
+                                    <img id="foto_gebruiker_inkomend" src="">
+                                    <div class="rechts_info">
+                                        <span id="naam_inkomende"></span>
+                                        <button class="accepteer" id="accepteer_inkomende" type="submit">
+                                            Accepteer
+                                        </button>
+                                        <button class="weiger" id="weiger_inkomende" type="submit">
+                                            Weiger
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </template>
                     </div>
                 </div>
                 <div class="tabcontent" id="Uitgaande_Matches">
                     <h3>Uitgaande Matches</h3>
-
                     <div class="aanvraag" id="uitgaande_aanvraag">
                         <template id="template_uitgaande">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <div class="foto_gebruiker_uitgaand">
-                                            <img id="foto_gebruiker_uitgaande" src="">
-                                            <span id="naam_uitgaande"></span>
-                                            <p>
-                                                Wachtend op Bevestiging!
-                                            </p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
+                            <div class="uitgaande" id="uitgaande">
+                                <div class="foto_gebruiker_uitgaand">
+                                    <img id="foto_gebruiker_uitgaande" src="">
+                                    <div class="rechts_info">
+                                        <span id="naam_uitgaande"></span>
+                                        <p>Wachtend op Bevestiging!</p>
+                                    </div>
+                                </div>
+                            </div>
                         </template>
                     </div>
                 </div>

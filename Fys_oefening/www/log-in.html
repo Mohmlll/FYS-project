@@ -125,10 +125,12 @@
 
                         </p>
                     </div>
-                    <input class="tekstbox" id="wachtwoord" placeholder="Wachtwoord" required type="password">
+                    <input class="tekstbox" id="wachtwoord" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$"
+                           placeholder="Wachtwoord" required type="password">
                     <div class="inputAlert" id="geenWachtwoord">
                         <p>
-                            Vul hier een geldig wachtwoord in volgens de voorwaarde <br>
+                            Vul hier een geldig wachtwoord in <br>
+                            (mininmaal 1 hoofdletter, kleine letter en cijfer)
 
                         </p>
                     </div>
@@ -147,7 +149,7 @@
 
                         </p>
                     </div>
-                    <button class="register_button" data-translate="register.button" type="submit">Registreer</button>
+                    <button class="register_button" type="submit">Registreer</button>
                 </label>
             </form>
         </div>
