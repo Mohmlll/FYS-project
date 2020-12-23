@@ -73,234 +73,247 @@
                 <div class="tabcontent" id="Profiel">
                     <div class="profiel_overzicht">
                         <form class="input" id="profile">
-                            <table>
-                                <tr>
-                                    <td></td>
-                                    <td>
-                                        <div id="profielfoto_wijzigen_div">
-                                            <label>Profielfoto wijzigen
-                                                <input id="profielfoto_wijzigen" type="file">
-                                            </label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Foto van jezelf:</td>
-                                    <td>
-                                        <img id="profielFoto" src="">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Voornaam:</td>
-                                    <td><label for="profiel_input_voornaam"></label><input class="profiel_input"
-                                                                                           id="profiel_input_voornaam"
-                                                                                           pattern="[a-zA-Z]+"
-                                                                                           readonly
-                                                                                           type="text">
-                                        <div class="inputAlert" id="geenVoornaam">
-                                            <p>
-                                                Vul hier een geldige voornaam in <br>
-                                            </p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Achternaam:</td>
-                                    <td><label for="profiel_input_achternaam"></label><input class="profiel_input"
-                                                                                             id="profiel_input_achternaam"
-                                                                                             pattern="[a-zA-Z]+"
-                                                                                             readonly
-                                                                                             type="text">
-                                        <div class="inputAlert" id="geenAchternaam">
-                                            <p>
-                                                Vul hier een geldige achternaam in <br>
-                                            </p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div id="oud_geslacht_tekst"> Geslacht:</div>
-                                    </td>
-                                    <td><label for="profiel_input_geslacht"></label><input class="profiel_input"
-                                                                                           id="profiel_input_geslacht"
-                                                                                           readonly
-                                                                                           type="text">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Geboortedatum:</td>
-                                    <td><label for="profiel_input_geboortedatum"></label><input class="profiel_input"
-                                                                                                id="profiel_input_geboortedatum"
-                                                                                                readonly
-                                                                                                type="text"></td>
-                                </tr>
-                                <tr>
-                                    <td>Woonplaats:</td>
-                                    <td><input class="profiel_input" id="profiel_input_woonplaats" pattern="[a-zA-Z]+"
-                                               readonly
-                                               type="text">
-                                        <div class="inputAlert" id="geenWoonplaats">
-                                            <p>
-                                                Vul hier een geldige woonplaats in <br>
-
-                                            </p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Telefoonnummer:</td>
-                                    <td><label for="profiel_input_telefoonnr"></label><input class="profiel_input"
-                                                                                             id="profiel_input_telefoonnr"
-                                                                                             pattern="[0-9]{2}-[0-9]{8}"
-                                                                                             readonly
-                                                                                             type="tel">
-                                        <div class="inputAlert" id="geenTelefoon">
-                                            <p>
-                                                Vul hier een nummer in met de volgende volgorde: <br>
-                                                xx-xxxxxxxx
-                                            </p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>E-mailadres:</td>
-                                    <td><label for="profiel_input_email"></label><input class="profiel_input"
-                                                                                        id="profiel_input_email"
-                                                                                        pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
-
-                                                                                        readonly
-                                                                                        type="email">
-                                        <div class="inputAlert" id="geenEmailAdres">
-                                            <p>
-                                                Vul hier een geldig e-mailadres in <br>
-
-                                            </p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div id="nieuw_wachtwoord_tekst">Nieuwe wachtwoord:</div>
-                                    </td>
-                                    <td id="nieuw_wachtwoord"><label for="profiel_input_wachtwoord"></label><input
-                                            class="nieuw_wachtwoord"
-                                            id="profiel_input_wachtwoord"
-                                            pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$"
-                                            placeholder="Wachtwoord"
-                                            type="password">
-                                        <div class="inputAlert" id="geenWachtwoordp">
-                                            <p>
-                                                Vul hier een geldig wachtwoord in <br>
-                                                (mininmaal 1 hoofdletter, kleine letter en cijfer)
-                                            </p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <br>
-                                <tr>
-                                    <td>
-                                        <div id="nieuw_wachtwoordh_tekst">Wachtwoord herhalen:</div>
-                                    </td>
-                                    <td id="nieuw_wachtwoordh"><label for="profiel_input_wachtwoordh"></label><input
-                                            class="nieuw_wachtwoordh"
-                                            id="profiel_input_wachtwoordh"
-                                            placeholder="Wachtwoord herhalen"
-                                            type="password">
-                                        <div class="inputAlert" id="geenWachtwoordCheckp">
-                                            <p>
-                                                Wachtwoorden komen niet overeen<br>
-
-                                            </p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Soort vakantieganger:</td>
-                                    <td class="td_tags">
-                                        <div class="create_post_tags">
-                                            <div class="tag_div" id="explorer">
-                                                <label for="tag_explorer">
-                                                    <input class="tag_button" disabled id="tag_explorer"
-                                                           type="checkbox">
-                                                    <span>Explorer</span>
+                            <div class="gegevens_links" id="gegevens_links_mij">
+                                <table>
+                                    <tr>
+                                        <td colspan="2">Foto van jezelf:</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div id="profielfoto_wijzigen_div">
+                                                <label>Profielfoto wijzigen
+                                                    <input id="profielfoto_wijzigen" type="file">
                                                 </label>
                                             </div>
-
-                                            <div class="tag_div" id="sportieveling">
-                                                <label for="tag_sportieveling">
-                                                    <input class="tag_button" disabled id="tag_sportieveling"
-                                                           type="checkbox">
-                                                    <span>Sportieveling</span>
-                                                </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div id="profielFoto_td">
+                                                <img id="profielFoto" src="">
                                             </div>
-
-                                            <div class="tag_div" id="relaxer">
-                                                <label for="tag_relaxer">
-                                                    <input class="tag_button" disabled id="tag_relaxer" type="checkbox">
-                                                    <span>Relaxer</span>
-                                                </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Voornaam:</td>
+                                        <td><label for="profiel_input_voornaam"></label><input class="profiel_input"
+                                                                                               id="profiel_input_voornaam"
+                                                                                               pattern="[a-zA-Z]+"
+                                                                                               readonly
+                                                                                               type="text">
+                                            <div class="inputAlert" id="geenVoornaam">
+                                                <p>
+                                                    Vul hier een geldige voornaam in <br>
+                                                </p>
                                             </div>
-
-                                            <div class="tag_div" id="partygoer">
-                                                <label for="tag_partygoer">
-                                                    <input class="tag_button" disabled id="tag_partygoer"
-                                                           type="checkbox">
-                                                    <span>Partygoer</span>
-                                                </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Achternaam:</td>
+                                        <td><label for="profiel_input_achternaam"></label><input class="profiel_input"
+                                                                                                 id="profiel_input_achternaam"
+                                                                                                 pattern="[a-zA-Z]+"
+                                                                                                 readonly
+                                                                                                 type="text">
+                                            <div class="inputAlert" id="geenAchternaam">
+                                                <p>
+                                                    Vul hier een geldige achternaam in <br>
+                                                </p>
                                             </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="gegevens_rechts" id="gegevens_rechts_mij">
 
-                                            <div class="tag_div" id="wintersport">
-                                                <label for="tag_wintersport">
-                                                    <input class="tag_button" disabled id="tag_wintersport"
-                                                           type="checkbox">
-                                                    <span>Wintersport</span>
-                                                </label>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div id="oud_geslacht_tekst"> Geslacht:</div>
+                                        </td>
+                                        <td><label for="profiel_input_geslacht"></label><input class="profiel_input"
+                                                                                               id="profiel_input_geslacht"
+                                                                                               readonly
+                                                                                               type="text">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Geboortedatum:</td>
+                                        <td><label for="profiel_input_geboortedatum"></label><input
+                                                class="profiel_input"
+                                                id="profiel_input_geboortedatum"
+                                                readonly
+                                                type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Woonplaats:</td>
+                                        <td><input class="profiel_input" id="profiel_input_woonplaats"
+                                                   pattern="[a-zA-Z]+"
+                                                   readonly
+                                                   type="text">
+                                            <div class="inputAlert" id="geenWoonplaats">
+                                                <p>
+                                                    Vul hier een geldige woonplaats in <br>
+
+                                                </p>
                                             </div>
-
-                                            <div class="tag_div" id="tropisch">
-                                                <label for="tag_tropisch">
-                                                    <input class="tag_button" disabled id="tag_tropisch"
-                                                           type="checkbox">
-                                                    <span>Tropische</span>
-                                                </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Telefoonnummer:</td>
+                                        <td><label for="profiel_input_telefoonnr"></label><input class="profiel_input"
+                                                                                                 id="profiel_input_telefoonnr"
+                                                                                                 pattern="[0-9]{2}-[0-9]{8}"
+                                                                                                 readonly
+                                                                                                 type="tel">
+                                            <div class="inputAlert" id="geenTelefoon">
+                                                <p>
+                                                    Vul hier een nummer in met de volgende volgorde: <br>
+                                                    xx-xxxxxxxx
+                                                </p>
                                             </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>E-mailadres:</td>
+                                        <td><label for="profiel_input_email"></label><input class="profiel_input"
+                                                                                            id="profiel_input_email"
+                                                                                            pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
 
-                                            <div class="tag_div" id="backpacker">
-                                                <label for="tag_backpacker">
-                                                    <input class="tag_button" disabled id="tag_backpacker"
-                                                           type="checkbox">
-                                                    <span>Backpacker</span>
-                                                </label>
+                                                                                            readonly
+                                                                                            type="email">
+                                            <div class="inputAlert" id="geenEmailAdres">
+                                                <p>
+                                                    Vul hier een geldig e-mailadres in <br>
+
+                                                </p>
                                             </div>
-
-                                            <div class="tag_div" id="resort">
-                                                <label for="tag_resort">
-                                                    <input class="tag_button" disabled id="tag_resort" type="checkbox">
-                                                    <span>Resort</span>
-                                                </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="nieuw_wachtwoord_tekst">Nieuwe wachtwoord:</div>
+                                        </td>
+                                        <td id="nieuw_wachtwoord"><label for="profiel_input_wachtwoord"></label><input
+                                                class="nieuw_wachtwoord"
+                                                id="profiel_input_wachtwoord"
+                                                pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$"
+                                                placeholder="Wachtwoord"
+                                                type="password">
+                                            <div class="inputAlert" id="geenWachtwoordp">
+                                                <p>
+                                                    Vul hier een geldig wachtwoord in <br>
+                                                    (mininmaal 1 hoofdletter, kleine letter en cijfer)
+                                                </p>
                                             </div>
+                                        </td>
+                                    </tr>
+                                    <br>
+                                    <tr>
+                                        <td>
+                                            <div id="nieuw_wachtwoordh_tekst">Wachtwoord herhalen:</div>
+                                        </td>
+                                        <td id="nieuw_wachtwoordh"><label for="profiel_input_wachtwoordh"></label><input
+                                                class="nieuw_wachtwoordh"
+                                                id="profiel_input_wachtwoordh"
+                                                placeholder="Wachtwoord herhalen"
+                                                type="password">
+                                            <div class="inputAlert" id="geenWachtwoordCheckp">
+                                                <p>
+                                                    Wachtwoorden komen niet overeen<br>
 
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>iets leuks over jezelf: <br><br></td>
-                                    <td>
-                                        <label for="profiel_input_bio"></label><textarea class="profiel_input"
-                                                                                         id="profiel_input_bio"
-                                                                                         readonly></textarea>
-                                    </td>
-                                </tr>
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Soort vakantieganger:</td>
+                                        <td class="td_tags">
+                                            <div class="create_post_tags">
+                                                <div class="tag_div" id="explorer">
+                                                    <label for="tag_explorer">
+                                                        <input class="tag_button" disabled id="tag_explorer"
+                                                               type="checkbox">
+                                                        <span>Explorer</span>
+                                                    </label>
+                                                </div>
 
-                            </table>
+                                                <div class="tag_div" id="sportieveling">
+                                                    <label for="tag_sportieveling">
+                                                        <input class="tag_button" disabled id="tag_sportieveling"
+                                                               type="checkbox">
+                                                        <span>Sportieveling</span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="tag_div" id="relaxer">
+                                                    <label for="tag_relaxer">
+                                                        <input class="tag_button" disabled id="tag_relaxer"
+                                                               type="checkbox">
+                                                        <span>Relaxer</span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="tag_div" id="partygoer">
+                                                    <label for="tag_partygoer">
+                                                        <input class="tag_button" disabled id="tag_partygoer"
+                                                               type="checkbox">
+                                                        <span>Partygoer</span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="tag_div" id="wintersport">
+                                                    <label for="tag_wintersport">
+                                                        <input class="tag_button" disabled id="tag_wintersport"
+                                                               type="checkbox">
+                                                        <span>Wintersport</span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="tag_div" id="tropisch">
+                                                    <label for="tag_tropisch">
+                                                        <input class="tag_button" disabled id="tag_tropisch"
+                                                               type="checkbox">
+                                                        <span>Tropische</span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="tag_div" id="backpacker">
+                                                    <label for="tag_backpacker">
+                                                        <input class="tag_button" disabled id="tag_backpacker"
+                                                               type="checkbox">
+                                                        <span>Backpacker</span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="tag_div" id="resort">
+                                                    <label for="tag_resort">
+                                                        <input class="tag_button" disabled id="tag_resort"
+                                                               type="checkbox">
+                                                        <span>Resort</span>
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>iets leuks over jezelf: <br><br></td>
+                                        <td>
+                                            <label for="profiel_input_bio"></label><textarea class="profiel_input"
+                                                                                             id="profiel_input_bio"
+                                                                                             readonly></textarea>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </div>
                         </form>
+                        <button class="gegevens_button" id="gegevens_bewerken" type="submit">Profiel bewerken
+                        </button>
+                        <button class="gegevens_button" id="gegevens_opslaan" type="submit">Opslaan</button>
                         <div class="profiel_instellingen">
                             <h3>Instellingen</h3>
-
-                            <button class="gegevens_button" id="gegevens_bewerken" type="submit">Profiel bewerken
-                            </button>
-                            <button class="gegevens_button" id="gegevens_opslaan" type="submit">Opslaan</button>
                             <h4>Privacy: </h4>
                             <form>
                                 <table>
@@ -347,8 +360,12 @@
                                             </select>
                                         </label></td>
                                     </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <button class="privacy_opslaan" id="privacy_opslaan" type="button">Opslaan</button>
+                                        </td>
+                                    </tr>
                                 </table>
-                                <button class="privacy_opslaan" id="privacy_opslaan" type="button">Opslaan</button>
                             </form>
                         </div>
                     </div>

@@ -13,7 +13,8 @@ Profiel Overzicht
 }
 
 .profiel_instellingen {
-    width: 30%;
+    width: 100%;
+    height: 20%;
     order: 1;
     margin: 0 0 0 auto;
 }
@@ -32,6 +33,10 @@ Profiel Overzicht
     border: 0;
     outline: none;
     background: transparent;
+}
+
+#profile {
+    width: 100%;
 }
 
 .profiel_input_bewerken, .nieuw_wachtwoord, .nieuw_wachtwoordh {
@@ -148,6 +153,12 @@ Profiel Overzicht
 
 }
 
+.privacy_opslaan {
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px 0;
+}
+
 .weiger, .accepteer, .verwijder {
     width: 19em;
     padding: 5%;
@@ -262,6 +273,9 @@ table .radiobutton {
     flex-wrap: wrap;
 }
 
+forum {
+    width: 100%;
+}
 
 .input textarea {
     min-height: 80px;
@@ -285,6 +299,10 @@ table .radiobutton {
 }
 
 .gegevens_button {
+    width: 30%;
+}
+
+.gegevens_button, #profielfoto_wijzigen_div label {
     background-color: #d81e05;
 }
 
@@ -357,7 +375,7 @@ table .radiobutton {
     width: 100%;
 }
 
-#gegevens_links {
+.gegevens_links {
     float: left;
     width: 40%;
     margin-right: 2%;
@@ -370,14 +388,14 @@ table .radiobutton {
     position: relative;
 }
 
-#gegevens_links img {
+#gegevens_links_ander img, #gegevens_links_mij img {
     width: 100%;
     height: 100%;
     position: absolute;
     object-fit: cover;
 }
 
-#gegevens_rechts {
+.gegevens_rechts {
     float: right;
     width: 58%;
 }
@@ -411,23 +429,12 @@ table .radiobutton {
 }
 
 #profielfoto_wijzigen {
-    float: left;
-    width: auto;
     display: none;
 }
-
-
-/*#profielfoto_wijzigen {*/
-/*    visibility: hidden;*/
-/*    width: 0;*/
-/*    height: 0;*/
-/*}*/
 
 #profielfoto_wijzigen_div {
     display: none;
+    width: 100%;
+    margin: 10px 0;
 }
 
-#profielfoto_wijzigen_div label {
-    float: left;
-    height: auto;
-}
