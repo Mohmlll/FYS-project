@@ -78,18 +78,23 @@
 }
 
 @media screen and (max-width: 800px) {
-    #gegevens_links, #gegevens_rechts, #match_status {
+    .gegevens_links, .gegevens_rechts, #match_status {
         float: none;
         width: 100%;
     }
 
-    #gegevens_links{
+    .gegevens_links{
         border-bottom: lightgray solid 2px;
         width: 100%;
     }
 
-    #gegevens_links table{
+    #gegevens_links_ander table{
         width: 70%;
+        margin: auto;
+    }
+
+    #gegevens_links_mij table{
+        width: 40%;
         margin: auto;
     }
 
