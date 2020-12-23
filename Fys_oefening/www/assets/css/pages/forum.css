@@ -98,12 +98,10 @@ right menu - aanbevolen
     height: 3em;
     order: 0;
 }
-
-.aanbevolen_profiel_foto:hover {
+.aanbevolen_profiel_foto:hover{
     opacity: 0.5;
     background-color: lightyellow;
 }
-
 .aanbevolen_profiel_foto img {
     width: 100%;
     height: 100%;
@@ -112,15 +110,12 @@ right menu - aanbevolen
     object-fit: cover;
 
 }
-
-.post_header:active {
+.post_header:active{
     background-color: lightgrey;
 
 }
-
 .aanbevolen_vnaam {
     width: 80%;
-
     font-size: 14px;
 }
 
@@ -173,8 +168,7 @@ post
     cursor: pointer;
     margin: auto;
 }
-
-.post_profiel_foto:hover {
+.post_profiel_foto:hover{
     opacity: 0.5;
     background-color: lightyellow;
 }

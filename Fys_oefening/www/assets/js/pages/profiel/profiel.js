@@ -134,6 +134,21 @@ $(document).ready(function () {
         document.getElementById("profiel_input_voornaam").setAttribute("placeholder", voornaam);
         document.getElementById("profiel_input_achternaam").setAttribute("placeholder", achternaam);
         document.getElementById("profiel_input_bio").setAttribute("placeholder", bio);
+        let textArea = document.getElementById("profiel_input_bio");
+        let textCopy = document.getElementById("textCopy");
+        document.addEventListener('DOMContentLoaded', () => {
+            textArea.addEventListener('change', autosize, false)
+            textArea.addEventListener('keydown', autosize, false)
+            textArea.addEventListener('keyup', autosize, false)
+            autosize()
+        }, false)
+
+        function autosize() {
+            // Copy textarea contents to div browser will calculate correct height
+            // of copy, which will make overall container taller, which will make
+            // textarea taller.
+            textCopy.innerHTML = textArea.value.replace(/\n/g, '<br/>')
+        }
 
         FYSCloud.API.queryDatabase(
             "SELECT woonplaats, telefoonnr, leeftijd, geslacht, COUNT(*)  FROM privacy WHERE gebruikerid = ?",
