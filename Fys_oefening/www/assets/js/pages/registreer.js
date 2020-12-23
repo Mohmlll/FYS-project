@@ -72,15 +72,23 @@ $(document).ready(function () {
         var gebruikersnaamValid = $("#gebruikersnaam").is(":valid");
         var emailAdresValid = $("#emailadres").is(":valid");
         var wachtwoordValid = $("#wachtwoord").is(":valid");
-        var wachtwoordCheckValid = $("#wachtwoordCheck").is(":valid");
+
         var voorwaardeCheckValid = $("#voorwaardeCheck").is(":valid");
 
-        if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && wachtwoordCheckValid && voorwaardeCheckValid) {
+        var gebruikersNaam = document.getElementById('gebruikersnaam').value;
+        var emailAdres = document.getElementById('emailadres').value;
+        var wachtwoord = document.getElementById('wachtwoord').value;
+        var wachtwoordCheck = document.getElementById('wachtwoordCheck').value;
+        var status = "geen gegevens";
+        if (wachtwoord !== wachtwoordCheck) {
+            document.getElementById("wachtwoordCheck").style.borderColor = "red";
+            document.getElementById("geenWachtwoordCheck").style.display = "block";
+        } else {
+            document.getElementById("wachtwoordCheck").style.borderColor = "black";
+            document.getElementById("geenWachtwoordCheck").style.display = "none";
+        }
 
-            var gebruikersNaam = document.getElementById('gebruikersnaam').value;
-            var emailAdres = document.getElementById('emailadres').value;
-            var wachtwoord = document.getElementById('wachtwoord').value;
-            var status = "geenGegevens";
+        if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && voorwaardeCheckValid) {
 
 
             FYSCloud.API.queryDatabase(
@@ -115,13 +123,6 @@ $(document).ready(function () {
             } else {
                 document.getElementById("wachtwoord").style.borderColor = "black";
                 document.getElementById("geenWachtwoord").style.display = "none";
-            }
-            if (!wachtwoordCheckValid) {
-                document.getElementById("wachtwoordCheck").style.borderColor = "red";
-                document.getElementById("geenWachtwoordCheck").style.display = "block";
-            } else {
-                document.getElementById("wachtwoordCheck").style.borderColor = "black";
-                document.getElementById("geenWachtwoordCheck").style.display = "none";
             }
             if (!voorwaardeCheckValid) {
                 document.getElementById("voorwaardeCheck").style.borderColor = "red";
@@ -208,7 +209,7 @@ $(document).ready(function () {
                 ],
                 subject: "Just a test!",
                 html: "<h1>Hallo</h1><p>This is an email :)</p>" + gebruikersnaam + "<br>" + wachtwoordFunction + "<br>"
-            }).done(function(data) {
+            }).done(function (data) {
                 console.log(data);
                 console.log("De e-mail is verstuurd")
                 if (soortVergeten === "wachtwoord") {
@@ -225,7 +226,7 @@ $(document).ready(function () {
                     console.log("gebruikersnaam verstuurd")
                 }
 
-            }).fail(function(reason) {
+            }).fail(function (reason) {
                 console.log(reason);
             });
         }).fail(function (reason) {

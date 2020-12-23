@@ -102,7 +102,7 @@ $(document).ready(function () {
                         let costumElement = makeAnElement(appendPhoto, appendGebruikerId, appendVoornaam);
                         nieuweInkomende.appendChild(costumElement);
                     }
-                }).fail(function (reason){
+                }).fail(function (reason) {
                     console.log(reason);
                     console.log("fout");
                 })

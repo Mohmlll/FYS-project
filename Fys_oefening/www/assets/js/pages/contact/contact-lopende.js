@@ -31,14 +31,14 @@ $(document).ready(function () {
                 console.log(data);
                 FYSCloud.API.queryDatabase(
                     "DELETE FROM matches WHERE gebruikerid_twee = ? AND gebruikerid_een = ?",
-                    [userId,gebruikerId]
-                ).done(function (data){
+                    [userId, gebruikerId]
+                ).done(function (data) {
                     console.log(data);
-                }).fail(function (reason){
+                }).fail(function (reason) {
                     console.log(reason);
                     console.log("fout");
                 })
-            }).fail(function (reason){
+            }).fail(function (reason) {
                 console.log(reason);
                 console.log("fout");
             })
@@ -67,7 +67,7 @@ $(document).ready(function () {
                     let costumElement = makeAnElement(appendPhoto, appendGebruikerId, appendVoornaam);
                     nieuwLopende.appendChild(costumElement);
                 }
-            }).fail(function (reason){
+            }).fail(function (reason) {
                 console.log(reason);
                 console.log("fout");
             })
