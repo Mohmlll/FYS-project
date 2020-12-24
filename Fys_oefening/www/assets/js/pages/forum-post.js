@@ -269,49 +269,107 @@ $(document).ready(function () {
         console.log("height = " + img.height);
     }
 
+
+
     //Hier voeg ik een waarde toe aan de session storage zodat je alleen maar de resultaten van de DB terug krijgt, die voldoen aan jouw filter.
     console.log(sessionStorage.getItem("filter"))
     forum(sessionStorage.getItem("filter"))
-    $("#filter_all").on("click", function () {
+    function filterForum() {
+        sessionStorage.setItem("zoekTekst", null)
         sessionStorage.setItem("filter", "")
+
+        let input = document.getElementById("zoekfunctie").value;
+        let explorer = document.getElementById("filter_explorer").checked;
+        let sportieveling = document.getElementById("filter_sportieveling").checked;
+        let relaxer = document.getElementById("filter_relaxer").checked;
+        let partygoer = document.getElementById("filter_partygoer").checked;
+        let backpacker = document.getElementById("filter_backpacker").checked;
+        let wintersport = document.getElementById("filter_wintersport").checked;
+        let tropisch = document.getElementById("filter_tropisch").checked;
+        let resort = document.getElementById("filter_resort").checked;
+
+        let filters = "";
+
+        console.log(input)
+        if (input !== "") {
+            filters += " AND (post LIKE '%" + input + "%' OR titel LIKE '%" + input + "%')";
+        }
+        if (explorer) {
+            filters += " AND post_tags.explorer = 1";
+        }
+        if (sportieveling) {
+            filters += " AND post_tags.sportieveling = 1";
+        }
+        if (relaxer) {
+            filters += " AND post_tags.relaxer = 1";
+        }
+        if (partygoer) {
+            filters += " AND post_tags.partygoer = 1";
+        }
+        if (backpacker) {
+            filters += " AND post_tags.backpacker = 1";
+        }
+        if (wintersport) {
+            filters += " AND post_tags.wintersport = 1";
+        }
+        if (tropisch) {
+            filters += " AND post_tags.tropisch = 1";
+        }
+        if (resort) {
+            filters += " AND post_tags.resort = 1";
+        }
+        console.log(filters);
+        sessionStorage.setItem("zoekTekst", input)
+        sessionStorage.setItem("filter", filters);
         location.reload()
+    }
+
+    function filterChecked() {
+        let filters = sessionStorage.getItem("filter");
+        let input = sessionStorage.getItem("zoekTekst");
+
+        document.getElementById("zoekfunctie").setAttribute("value", input);
+        if (filters.includes("explorer")) {
+            document.getElementById("filter_explorer").checked = true;
+        }
+        if (filters.includes("sportieveling")) {
+            document.getElementById("filter_sportieveling").checked = true;
+        }
+        if (filters.includes("relaxer")) {
+            document.getElementById("filter_relaxer").checked = true;
+        }
+        if (filters.includes("partygoer")) {
+            document.getElementById("filter_partygoer").checked = true;
+        }
+        if (filters.includes("backpacker")) {
+            document.getElementById("filter_backpacker").checked = true;
+        }
+        if (filters.includes("wintersport")) {
+            document.getElementById("filter_wintersport").checked = true;
+        }
+        if (filters.includes("tropisch")) {
+            document.getElementById("filter_tropisch").checked = true;
+        }
+        if (filters.includes("resort")) {
+            document.getElementById("filter_resort").checked = true;
+        }
+    }
+
+    filterChecked()
+    let input = document.getElementById("zoekfunctie");
+    input.addEventListener("keyup", function (zoeken) {
+        if (zoeken.key === "Enter") {
+            zoeken.preventDefault();
+            console.log(input.value)
+        }
     })
-    $("#filter_volgend").on("click", function () {
-        sessionStorage.setItem("filter", "")
-        location.reload()
+
+    $("#filteren").on("click", function (zoeken) {
+        zoeken.preventDefault();
+        console.log(input.value)
+        filterForum()
     })
-    $("#filter_explorer").on("click", function () {
-        sessionStorage.setItem("filter", " AND post_tags.explorer = 1")
-        location.reload()
-    })
-    $("#filter_sportieveling").on("click", function () {
-        sessionStorage.setItem("filter", " AND post_tags.sportieveling = 1")
-        location.reload()
-    })
-    $("#filter_relaxer").on("click", function () {
-        sessionStorage.setItem("filter", " AND post_tags.relaxer = 1")
-        location.reload()
-    })
-    $("#filter_partygoer").on("click", function () {
-        sessionStorage.setItem("filter", " AND post_tags.partygoer = 1")
-        location.reload()
-    })
-    $("#filter_backpacker").on("click", function () {
-        sessionStorage.setItem("filter", " AND post_tags.backpacker = 1")
-        location.reload()
-    })
-    $("#filter_wintersport").on("click", function () {
-        sessionStorage.setItem("filter", " AND post_tags.wintersport = 1")
-        location.reload()
-    })
-    $("#filter_tropisch").on("click", function () {
-        sessionStorage.setItem("filter", " AND post_tags.tropisch = 1")
-        location.reload()
-    })
-    $("#filter_resort").on("click", function () {
-        sessionStorage.setItem("filter", " AND post_tags.resort = 1")
-        location.reload()
-    })
+    console.log(sessionStorage.getItem("filter"))
 
     var img = new Image()
     img.src = "https://dev-is106-3.fys.cloud/uploads/133.png"

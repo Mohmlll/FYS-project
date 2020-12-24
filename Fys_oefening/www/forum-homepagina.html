@@ -113,19 +113,68 @@
             </div>
             <div class="forum_topics__options">
                 <p>Filter:</p>
-                <input class="forum_search" placeholder="Zoeken" title="=Search on forum" type="text">
+                <input class="forum_search" id="zoekfunctie" placeholder="Zoeken" title="zoeken" type="text">
                 <hr>
                 <div class="forum_filter" id="myBtnContainer">
-                    <button class="btn" id="filter_all"><p>Alle posts</p></button>
-                    <button class="btn" id="filter_explorer"><p>Explorer</p></button>
-                    <button class="btn" id="filter_sportieveling"><p>Sportieveling</p></button>
-                    <button class="btn" id="filter_relaxer"><p>Relaxer</p></button>
-                    <button class="btn" id="filter_partygoer"><p>Partygoer</p></button>
-                    <button class="btn" id="filter_backpacker"><p>Backpacker</p></button>
-                    <button class="btn" id="filter_wintersport"><p>Wintersport</p></button>
-                    <button class="btn" id="filter_tropisch"><p>Tropisch</p></button>
-                    <button class="btn" id="filter_resort"><p>Resort</p></button>
+                    <div class="div_btn">
+                        <label for="filter_explorer">
+                            <input class="btn" id="filter_explorer" type="checkbox">
+                            <span>Explorer</span>
+                        </label>
+                    </div>
+
+                    <div class="div_btn">
+                        <label for="filter_sportieveling">
+                            <input class="btn" id="filter_sportieveling" type="checkbox">
+                            <span>Sportieveling</span>
+                        </label>
+                    </div>
+
+                    <div class="div_btn">
+                        <label for="filter_relaxer">
+                            <input class="btn" id="filter_relaxer" type="checkbox">
+                            <span>Relaxer</span>
+                        </label>
+                    </div>
+
+                    <div class="div_btn">
+                        <label for="filter_partygoer">
+                            <input class="btn" id="filter_partygoer" type="checkbox">
+                            <span>Partygoer</span>
+                        </label>
+                    </div>
+
+                    <div class="div_btn">
+                        <label for="filter_backpacker">
+                            <input class="btn" id="filter_backpacker" type="checkbox">
+                            <span>Backpacker</span>
+                        </label>
+                    </div>
+
+                    <div class="div_btn">
+                        <label for="filter_wintersport">
+                            <input class="btn" id="filter_wintersport" type="checkbox">
+                            <span>Wintersport</span>
+                        </label>
+                    </div>
+
+                    <div class="div_btn">
+                        <label for="filter_tropisch">
+                            <input class="btn" id="filter_tropisch" type="checkbox">
+                            <span>Tropisch</span>
+                        </label>
+                    </div>
+
+                    <div class="div_btn">
+                        <label for="filter_resort">
+                            <input class="btn" id="filter_resort" type="checkbox">
+                            <span>Resort</span>
+                        </label>
+                    </div>
+
                 </div>
+                <hr>
+                <button id="filteren">Bevestigen</button>
             </div>
         </div>
 

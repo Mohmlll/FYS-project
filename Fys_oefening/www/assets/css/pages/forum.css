@@ -125,10 +125,24 @@ right menu - aanbevolen
     font-size: 14px;
 }
 
-.forum_filter {
-    list-style-type: none;
-    padding: 0;
-    margin: 10% 0 0 0;
+.forum_filter input {
+    display: none;
+}
+
+.forum_filter span {
+    border: 1px solid #ddd;
+    background-color: #f6f6f6;
+    padding: 5px;
+    display: block;
+    font-size: 13px;
+    width: 90%;
+    cursor: pointer;
+    text-align: center;
+    margin: auto;
+}
+
+.div_btn input:checked + span {
+    background-color: #21a64b;
 }
 
 .forum_filter button {
@@ -189,8 +203,7 @@ post
     margin: auto;
 }
 
-.contact_button {
-    width: 50%;
+.contact_button, #filteren {
     padding: 2%;
     position: relative;
     cursor: pointer;
@@ -204,6 +217,13 @@ post
     border: 0;
 }
 
+.contact_button {
+    width: 50%;
+}
+
+#filteren {
+    width: 100%;
+}
 
 .post_header {
     width: 100%;
@@ -239,7 +259,7 @@ post
 }
 
 .forum_search {
-    width: 100%;
+    width: 90%;
 }
 
 .forum_page_selector {
@@ -274,7 +294,7 @@ post
     order: 0;
 }
 
-#contact_verzoek_button:hover {
+#contact_verzoek_button:hover, #filteren:hover {
     background: linear-gradient(to right, red, #ffffff);
 }
 
