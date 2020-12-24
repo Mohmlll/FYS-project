@@ -134,6 +134,7 @@ $(document).ready(function () {
         document.getElementById("profiel_input_voornaam").setAttribute("placeholder", voornaam);
         document.getElementById("profiel_input_achternaam").setAttribute("placeholder", achternaam);
         document.getElementById("profiel_input_bio").setAttribute("placeholder", bio);
+        //de code hieronder tot regel152 zorgt er voor dat de textarea van bio uitgerekt wordt.
         let textArea = document.getElementById("profiel_input_bio");
         let textCopy = document.getElementById("textCopy");
         document.addEventListener('DOMContentLoaded', () => {
