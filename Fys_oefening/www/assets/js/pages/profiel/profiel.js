@@ -13,40 +13,16 @@ $(document).ready(function () {
         if (datumVerschil < 1000) {
             return 'Nu';
         }
-        let sec = Math.floor(datumVerschil / 1000);
 
-        if (sec < 60) {
-            return sec + ' seconden geleden';
-        }
-
-        let min = Math.floor(sec / 60);
-        if (min < 60) {
-            return min + ' minuten geleden';
-        }
-
-        let uur = Math.floor(min / 60);
-        if (uur < 24) {
-            return uur + ' uur geleden';
-        }
-
-        let dag = Math.floor(uur / 24);
-        if (dag < 7) {
-            return dag + ' dagen geleden';
-        }
-
-        let week = Math.floor(dag / 7);
-        if (week < week / 12 * 52.1429) {
-            return week + ' week geleden';
-        }
-
-        let maand = Math.floor(week / 52.1429 * 12);
-        if (maand < 12) {
-            return maand + ' maand geleden';
-        }
-
-        let jaar = Math.floor(maand / 12);
+        let sec = datumVerschil / 1000;
+        let min = sec / 60;
+        let uur = min / 60;
+        let dag = uur / 24;
+        let week = dag / 7;
+        let maand = week / 52.1429 * 12;
+        let jaar = maand / 12;
         if (jaar) {
-            return jaar + ' jaar';
+            return Math.floor(jaar) + ' jaar';
         }
 
         console.log(datumVerschil)

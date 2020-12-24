@@ -211,8 +211,6 @@ $(document).ready(function () {
             }).fail(function (reason) {
                 console.log(reason);
             })
-
-            $(".profiel_input").attr("readonly", true);
             document.getElementById("gegevens_bewerken").style.display = "block";
             document.getElementById("gegevens_opslaan").style.display = "none";
 
@@ -228,8 +226,8 @@ $(document).ready(function () {
             document.getElementById("nieuw_wachtwoord_tekst").style.display = "none";
             document.getElementById("nieuw_wachtwoordh_tekst").style.display = "none";
             document.getElementById("profielfoto_wijzigen_div").style.display = "none";
+            $(".profiel_input").attr("readonly", true);
         }
-
     })
 
     $("#profielfoto_wijzigen").on("change", function () {
