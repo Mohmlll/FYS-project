@@ -83,7 +83,8 @@
 
 @media screen and (max-width: 450px) {
     .uitleg_video {
-        height: 200px;
+        height: 13em;
+        width: 100%;
     }
 
     .info1 p, .info2 p {

@@ -118,11 +118,12 @@ $(document).ready(function () {
         }
         console.log(selectVolgorde)
 
-        function makeAnElement(titel, content, foto, postId, tag, date, idforumPost) {
+        function makeAnElement(titel, content, foto, postId, tag, date, idforumPost, voornaam) {
             template = document.importNode(document.getElementById("post_template").content, true);
             let post_header_titel = template.getElementById("post_header_titel");
             template.getElementById("post_profiel_img").src = foto;
             let content_date = template.getElementById("post_date");
+            let content_naam = template.getElementById("voornaam_post");
             let content_text_div = template.getElementById("post_content");
             let content_text = template.getElementById("content_text");
             let content_tag = template.getElementById("tags");
@@ -139,6 +140,7 @@ $(document).ready(function () {
             post_header_titel.innerHTML = titel
             content_text.innerHTML = content
             content_tag.innerHTML = tag
+            content_naam.innerHTML = voornaam
 
 
             btn.addEventListener('click', (event) => {
@@ -157,10 +159,12 @@ $(document).ready(function () {
         let appendTag = document.getElementById("tags");
         let tags = "";
         let appendDate;
+        let appendVoornaam;
+
 
         FYSCloud.API.queryDatabase(
             "SELECT * FROM interesse WHERE idgebruiker = ?",
-            [sessionStorage.getItem("userId")]
+            [userId]
         ).done(function (data) {
             console.log(data);
             var backpacker = data[0]["backpacker"];
@@ -174,7 +178,7 @@ $(document).ready(function () {
             var noOfTemplates = 5;
 
             FYSCloud.API.queryDatabase(
-                "SELECT forum_post.idgebruiker, forum_post.idforum_post, titel, post, datum, post_tags.explorer, post_tags.sportieveling, " +
+                "SELECT voornaam, forum_post.idgebruiker, forum_post.idforum_post, titel, post, datum, post_tags.explorer, post_tags.sportieveling, " +
                 "post_tags.relaxer, post_tags.partygoer, post_tags.wintersport, post_tags.tropisch, post_tags.backpacker, " +
                 "post_tags.resort , (if(post_tags.explorer = 0 AND post_tags.sportieveling = 0 AND " +
                 "post_tags.relaxer = 0 AND post_tags.partygoer = 0 AND post_tags.wintersport = 0 AND post_tags.tropisch = 0 AND post_tags.backpacker = 0 AND " +
@@ -191,6 +195,7 @@ $(document).ready(function () {
                 "JOIN gebruiker ON (idgebruiker = gebruikerid) " +
                 "JOIN forum_post ON (forum_post.idgebruiker = interesse.idgebruiker) " +
                 "JOIN post_tags ON (forum_post.idforum_post = post_tags.idforum_post) " +
+                "JOIN gebruiker_profiel ON (gebruiker_profiel.gebruikerid = interesse.idgebruiker) " +
                 "WHERE interesse.idgebruiker != ?"
                 + filter + " ORDER BY " + volgorde,
                 [backpacker, backpacker, explorer, explorer, sportieveling, sportieveling, relaxer, relaxer,
@@ -245,12 +250,13 @@ $(document).ready(function () {
                     } else {
                         tags = appendTag;
                     }
+                    appendVoornaam = data[i]['voornaam'];
 
                     let img = new Image();
                     img.src = photoUrl;
                     appendDate = data[i]["datum"];
                     let tijd = tijdGeleden(appendDate)
-                    let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId, tags, tijd, idforumPost);
+                    let costumElement = makeAnElement(appendTitel, appendPost, photoUrl, appendPostId, tags, tijd, idforumPost, appendVoornaam);
                     nieuwePost.appendChild(costumElement);
                     appendTag = "";
                 }

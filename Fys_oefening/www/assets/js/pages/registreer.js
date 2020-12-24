@@ -196,8 +196,13 @@ $(document).ready(function () {
     }
 
     let wachtwoord = wachtwoordAanmaken();
+    let subject;
+    let subjectInMail1;
+    let subjectInMail2;
+    let advies;
+    let gebruikersnaam;
 
-    function vergetenFunctie(soortVergeten, email, wachtwoordFunction) {
+    function vergetenFunctie(soortVergeten, email, gebruikersnaam, wachtwoordFunction, subject, subjectInMail, subjectInMail2, advies) {
 
         FYSCloud.API.queryDatabase(
             "SELECT emailadres, voornaam, achternaam, gebruiker.gebruikerid, gebruikers_naam FROM gebruiker " +
@@ -208,7 +213,7 @@ $(document).ready(function () {
             var id = data[0]["gebruikerid"]
             let voornaam = data[0]["voornaam"]
             let achternaam = data[0]["achternaam"]
-            var gebruikersnaam = data[0]["gebruikers_naam"]
+            gebruikersnaam = data[0]["gebruikers_naam"]
             FYSCloud.API.sendEmail({
                 from: {
                     name: "TravelBud",
@@ -220,8 +225,10 @@ $(document).ready(function () {
                         address: email
                     }
                 ],
-                subject: "Just a test!",
-                html: "<h1>Hallo</h1><p>This is an email :)</p>" + gebruikersnaam + "<br>" + wachtwoordFunction + "<br>"
+                subject: "Travelbud: " + subject,
+                html: "<h4>Hallo,</h4><p>Het lijkt er op dat er een verzoek is om jou " + subjectInMail1 + " Was jij dit niet? Neem dan zo spoedig mogelijk contact op met onze klantenservice!" +
+                    " Hierbij jou " + subjectInMail2 + " </p><p>" + gebruikersnaam + "</p><p>" + wachtwoordFunction + "</p>" +
+                    "<p>"+advies+"</p><h4>Met vriendelijke groet, <br><br> Team Travelbud</h4>"
             }).done(function (data) {
                 console.log(data);
                 console.log("De e-mail is verstuurd")
@@ -267,20 +274,30 @@ $(document).ready(function () {
     $("#vergeten_button").on("click", function (vergeten) {
         vergeten.preventDefault();
         let bevestiging;
+
         var emailAdres = document.getElementById('vergeten_input').value;
         if (gebruikersnaamVergeten) {
+            subject = "Gebruikersnaam vergeten";
+            subjectInMail1 = "gebruikersnaam op te vragen.";
+            subjectInMail2 = "gebruikersnaam:";
+            advies = "";
             console.log("e-mail versturen (gebruikersnaam)")
-            vergetenFunctie("gebruikersnaam", emailAdres, "")
-            terugInloggen()
+            vergetenFunctie("gebruikersnaam", emailAdres, gebruikersnaam, "", subject, subjectInMail1, subjectInMail2, advies)
+            terugInloggen();
         } else if (wachtwoordVergeten) {
+            subject = "Wachtwoord reset";
+            subjectInMail1 = "wachtwoord te resetten.";
+            subjectInMail2 = "nieuwe wachtwoord:";
+            advies = "Wij raden je aan om je eigen wachtwoord aan te maken zodra je bent ingelogd. Dit kan je doen bij het bewerken van je profiel";
+            gebruikersnaam = ""
             console.log("e-mail versturen (wachtwoord) + " + wachtwoord)
-            vergetenFunctie("wachtwoord", emailAdres, wachtwoord)
+            vergetenFunctie("wachtwoord", emailAdres, gebruikersnaam, wachtwoord, subject, subjectInMail1, subjectInMail2, advies)
             terugInloggen()
         }
     })
 
     $("#annuleren_button").on("click", function (annuleren) {
         annuleren.preventDefault();
-        terugInloggen()
+        terugInloggen();
     })
 });
