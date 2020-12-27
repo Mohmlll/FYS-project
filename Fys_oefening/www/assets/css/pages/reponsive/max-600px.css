@@ -4,13 +4,7 @@
     }
 
     .uitleg_video {
-        padding: 10px 5px;
-    }
-}
-
-@media screen and (min-width: 450px) and (max-width: 600px) {
-    .uitleg_video {
-        height: 300px;
+        padding: 10px;
     }
 }
 
@@ -82,10 +76,6 @@
 }
 
 @media screen and (max-width: 450px) {
-    .uitleg_video {
-        height: 13em;
-        width: 100%;
-    }
 
     .info1 p, .info2 p {
         font-size: 16px;
