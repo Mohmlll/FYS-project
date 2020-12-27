@@ -357,8 +357,10 @@ $(document).ready(function () {
         let input = sessionStorage.getItem("zoekTekst");
         if(filters === null) {
             filters = "";
+        } else {
+            document.getElementById("zoekfunctie").setAttribute("value", input);
         }
-        document.getElementById("zoekfunctie").setAttribute("value", input);
+
         if (filters.includes("explorer")) {
             document.getElementById("filter_explorer").checked = true;
         }
