@@ -93,5 +93,95 @@ $(document).ready(function () {
         popup.classList.toggle("show");
     })
 
+    //advertenties
+
+    document.getElementById("wintersportad").innerHTML =
+        "<div class=\"left__ad\" id=\"banner_ad_left\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>" +
+        "<div class=\"right__ad\" id=\"banner_ad_right\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>"
+    document.getElementById("resortad").innerHTML =
+        "<div class=\"left__ad\" id=\"banner_ad_left\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>" +
+        "<div class=\"right__ad\" id=\"banner_ad_right\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>"
+    document.getElementById("explorerad").innerHTML =
+        "<div class=\"left__ad\" id=\"banner_ad_left\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>" +
+        "<div class=\"right__ad\" id=\"banner_ad_right\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>"
+    document.getElementById("sportievelingad").innerHTML =
+        "<div class=\"left__ad\" id=\"banner_ad_left\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>" +
+        "<div class=\"right__ad\" id=\"banner_ad_right\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>"
+    document.getElementById("backpackerad").innerHTML =
+        "<div class=\"left__ad\" id=\"banner_ad_left\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>" +
+        "<div class=\"right__ad\" id=\"banner_ad_right\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>"
+    document.getElementById("relaxerad").innerHTML =
+        "<div class=\"left__ad\" id=\"banner_ad_left\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>" +
+        "<div class=\"right__ad\" id=\"banner_ad_right\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>"
+    document.getElementById("partygoerad").innerHTML =
+        "<div class=\"left__ad\" id=\"banner_ad_left\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>" +
+        "<div class=\"right__ad\" id=\"banner_ad_right\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>"
+    document.getElementById("tropischad").innerHTML =
+        "<div class=\"left__ad\" id=\"banner_ad_left\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>" +
+        "<div class=\"right__ad\" id=\"banner_ad_right\">" +
+        "   <a href=\"https://www.corendon.nl/\">" +
+        "       <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   </a>" +
+        "</div>"
 
 });
