@@ -97,74 +97,74 @@ $(document).ready(function () {
 
     document.getElementById("banner_ad_left_wintersport").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/wintersport.png\">" +
         "</a>"
     document.getElementById("banner_ad_right_wintersport").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/wintersport.png\">" +
         "</a>"
 
     document.getElementById("banner_ad_left_explorer").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/explorer.png\">" +
         "</a>"
     document.getElementById("banner_ad_right_explorer").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/explorer.png\">" +
         "</a>"
 
     document.getElementById("banner_ad_left_sportieveling").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/sportieveling.png\">" +
         "</a>"
     document.getElementById("banner_ad_right_sportieveling").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/sportieveling.png\">" +
         "</a>"
 
     document.getElementById("banner_ad_left_relaxer").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/relaxer.png\">" +
         "</a>"
     document.getElementById("banner_ad_right_relaxer").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/relaxer.png\">" +
         "</a>"
 
     document.getElementById("banner_ad_left_partygoer").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/partygoer.png\">" +
         "</a>"
     document.getElementById("banner_ad_right_partygoer").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/partygoer.png\">" +
         "</a>"
 
     document.getElementById("banner_ad_left_backpacker").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/backpacker.png\">" +
         "</a>"
     document.getElementById("banner_ad_right_backpacker").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/backpacker.png\">" +
         "</a>"
 
     document.getElementById("banner_ad_left_tropisch").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/tropisch.png\">" +
         "</a>"
     document.getElementById("banner_ad_right_tropisch").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/tropisch.png\">" +
         "</a>"
 
     document.getElementById("banner_ad_left_resort").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/resort.png\">" +
         "</a>"
     document.getElementById("banner_ad_right_resort").innerHTML =
         "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/advertentie2.png\">" +
+        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/resort.png\">" +
         "</a>"
 
     function showAds() {
