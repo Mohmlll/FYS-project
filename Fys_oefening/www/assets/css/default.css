@@ -346,3 +346,6 @@ contact popup
     padding: 8px;
 }
 
+#wintersportad, #resortad, #explorerad, #sportievelingad, #backpackerad, #relaxerad, #partygoerad, #tropischad{
+    display: none;
+}

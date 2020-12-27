@@ -53,3 +53,17 @@ table p {
     margin-top: 2px;
     max-width: 100%;
 }
+
+.gegevens_opslaan{
+    display: block;
+    background-color: #d81e05;
+    color: white;
+    border-radius: 5%;
+    border: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    margin: auto;
+    cursor: pointer;
+    width: 50%;
+    padding: 2%;
+
+}

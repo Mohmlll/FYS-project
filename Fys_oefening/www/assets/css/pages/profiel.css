@@ -301,9 +301,8 @@ forum {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
     margin: auto;
     cursor: pointer;
-    padding: 2%;
-    height: 3em;
-    width: 40%;
+    padding: 1%;
+    width: 30%;
     position: relative;
     text-align: center;
     align-content: center;
