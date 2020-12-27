@@ -355,7 +355,9 @@ $(document).ready(function () {
     function filterChecked() {
         let filters = sessionStorage.getItem("filter");
         let input = sessionStorage.getItem("zoekTekst");
-
+        if(filters === null) {
+            filters = "";
+        }
         document.getElementById("zoekfunctie").setAttribute("value", input);
         if (filters.includes("explorer")) {
             document.getElementById("filter_explorer").checked = true;
