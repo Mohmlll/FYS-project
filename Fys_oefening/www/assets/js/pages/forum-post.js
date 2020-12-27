@@ -39,7 +39,7 @@ $(document).ready(function () {
 
         let min = sec / 60;
         if (min < 60) {
-            if (min === 1) {
+            if (min < 2) {
                 return Math.floor(min) + ' minuut geleden';
             } else {
                 return Math.floor(min) + ' minuten geleden';
@@ -53,7 +53,7 @@ $(document).ready(function () {
 
         let dag = uur / 24;
         if (dag < 7) {
-            if (dag === 1) {
+            if (dag < 2) {
                 return Math.floor(dag) + ' dag geleden';
             } else {
                 return Math.floor(dag) + ' dagen geleden';
@@ -62,7 +62,7 @@ $(document).ready(function () {
 
         let week = dag / 7;
         if (week < 52.1429 / 12) {
-            if (week === 1) {
+            if (week < 2) {
                 return Math.floor(week) + ' week geleden';
             } else {
                 return Math.floor(week) + ' weken geleden';
@@ -71,7 +71,7 @@ $(document).ready(function () {
 
         let maand = week / 52.1429 * 12;
         if (maand < 12) {
-            if (maand === 1) {
+            if (maand < 2) {
                 return Math.floor(maand) + ' maand geleden';
             } else {
                 console.log(maand)
@@ -81,7 +81,12 @@ $(document).ready(function () {
 
         let jaar = maand / 12;
         if (jaar) {
-            return Math.floor(jaar) + ' jaaren geleden';
+            if (jaar < 2) {
+                return Math.floor(jaar) + ' jaar geleden';
+            } else {
+                return Math.floor(jaar) + ' jaaren geleden';
+            }
+
         }
 
         console.log(datumVerschil)
