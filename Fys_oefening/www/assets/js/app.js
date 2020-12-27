@@ -167,9 +167,7 @@ $(document).ready(function () {
         "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/resort.png\">" +
         "</a>"
 
-    function showAds() {
-        let tagAds = ["backpacker", "explorer", "sportieveling", "relaxer", "partygoer", "wintersport", "tropisch", "resort"]
-        let advertentie = tagAds[Math.floor(Math.random() * (tagAds.length - 1))]
+    function showAds(advertentie) {
         if (advertentie === "backpacker") {
             document.getElementById("banner_ad_left_backpacker").style.display = "block"
             document.getElementById("banner_ad_right_backpacker").style.display = "block"
@@ -195,7 +193,6 @@ $(document).ready(function () {
             document.getElementById("banner_ad_left_resort").style.display = "block"
             document.getElementById("banner_ad_right_resort").style.display = "block"
         }
-
         console.log(advertentie)
     }
 
@@ -207,7 +204,9 @@ $(document).ready(function () {
         console.log(data);
         if (data.length === 0) {
             console.log("geen id")
-            showAds()
+            let tagAds = ["backpacker", "explorer", "sportieveling", "relaxer", "partygoer", "wintersport", "tropisch", "resort"]
+            let advertentie = tagAds[Math.floor(Math.random() * tagAds.length)]
+            showAds(advertentie)
         } else {
             console.log("wel id")
             let backpacker = data[0]["backpacker"];
@@ -218,6 +217,35 @@ $(document).ready(function () {
             let wintersport = data[0]["wintersport"];
             let tropisch = data[0]["tropisch"];
             let resort = data[0]["resort"];
+
+            let tagAds = []
+
+            if (backpacker === 1) {
+                tagAds.push("backpacker")
+            }
+            if (explorer === 1) {
+                tagAds.push("explorer")
+            }
+            if (sportieveling === 1) {
+                tagAds.push("sportieveling")
+            }
+            if (relaxer === 1) {
+                tagAds.push("relaxer")
+            }
+            if (partygoer === 1) {
+                tagAds.push("partygoer")
+            }
+            if (wintersport === 1) {
+                tagAds.push("wintersport")
+            }
+            if (tropisch === 1) {
+                tagAds.push("tropisch")
+            }
+            if (resort === 1) {
+                tagAds.push("resort")
+            }
+            let advertentie = tagAds[Math.floor(Math.random() * tagAds.length)]
+            showAds(advertentie)
         }
     }).fail(function (reason) {
         console.log(reason)
