@@ -214,6 +214,8 @@ $(document).ready(function () {
             let voornaam = data[0]["voornaam"]
             let achternaam = data[0]["achternaam"]
             gebruikersnaam = data[0]["gebruikers_naam"]
+            let gebruikersnaamTekst = "Gebruikersnaam: " + gebruikersnaam
+            let wachtwoordTekst = "Wachtwoord: " + wachtwoordFunction
             FYSCloud.API.sendEmail({
                 from: {
                     name: "TravelBud",
@@ -226,9 +228,9 @@ $(document).ready(function () {
                     }
                 ],
                 subject: "Travelbud: " + subject,
-                html: "<h4>Hallo,</h4><p>Het lijkt er op dat er een verzoek is om jou " + subjectInMail1 + " Was jij dit niet? Neem dan zo spoedig mogelijk contact op met onze klantenservice!" +
-                    " Hierbij jou " + subjectInMail2 + " </p><p>" + gebruikersnaam + "</p><p>" + wachtwoordFunction + "</p>" +
-                    "<p>"+advies+"</p><h4>Met vriendelijke groet, <br><br> Team Travelbud</h4>"
+                html: "<p>Beste " + voornaam + " " + achternaam + ",</p><p>Het lijkt er op dat er een verzoek is om jou " + subjectInMail1 + " </p><p>Was jij dit niet? Neem dan zo spoedig mogelijk contact op met onze klantenservice!" +
+                    " Hierbij jou " + subjectInMail2 + " </p><p>" + gebruikersnaamTekst + "</p><p>" + wachtwoordTekst + "</p>" +
+                    "<p>"+advies+"</p><p>Met vriendelijke groet, <br><br> Team Travelbud</p><br><img alt=\"Corendon TravelBud\" src=\"https://cdn.discordapp.com/attachments/748533956877615196/793069791136186368/Logo_website.png\">"
             }).done(function (data) {
                 console.log(data);
                 console.log("De e-mail is verstuurd")
