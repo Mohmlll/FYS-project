@@ -331,8 +331,9 @@ contact popup
     overflow: hidden;
 
 }
+
 .tag_div label input {
-    display:none;
+    display: none;
 }
 
 .tag_div input:checked + span {

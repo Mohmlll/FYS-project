@@ -14,16 +14,19 @@
         order: 0;
         margin: auto;
     }
-    .profiel_instellingen{
+
+    .profiel_instellingen {
         width: 100%;
         order: 1;
         margin: auto;
 
     }
-    .profiel_instellingen form{
+
+    .profiel_instellingen form {
         margin: auto;
     }
 }
+
 @media screen and (max-width: 600px) {
     .info1 {
         min-width: 85%;
@@ -124,12 +127,12 @@ forum
 
 /*profiel*/
 @media screen and (max-width: 600px) {
-    #gegevens_links_mij table{
+    #gegevens_links_mij table {
         width: 60%;
         margin: auto;
     }
 
-    #gegevens_links_mij #profielFoto_td{
+    #gegevens_links_mij #profielFoto_td {
         width: 100%;
         padding-bottom: 100%;
         margin: auto;

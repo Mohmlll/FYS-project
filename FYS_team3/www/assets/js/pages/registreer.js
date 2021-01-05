@@ -230,7 +230,7 @@ $(document).ready(function () {
                 subject: "Travelbud: " + subject,
                 html: "<p>Beste " + voornaam + " " + achternaam + ",</p><p>Het lijkt er op dat er een verzoek is om jou " + subjectInMail1 + " </p><p>Was jij dit niet? Neem dan zo spoedig mogelijk contact op met onze klantenservice!" +
                     " Hierbij jou " + subjectInMail2 + " </p><p>" + gebruikersnaamTekst + "</p><p>" + wachtwoordTekst + "</p>" +
-                    "<p>"+advies+"</p><p>Met vriendelijke groet, <br><br> Team Travelbud</p><br><img alt=\"Corendon TravelBud\" src=\"https://cdn.discordapp.com/attachments/748533956877615196/793069791136186368/Logo_website.png\">"
+                    "<p>" + advies + "</p><p>Met vriendelijke groet, <br><br> Team Travelbud</p><br><img alt=\"Corendon TravelBud\" src=\"https://cdn.discordapp.com/attachments/748533956877615196/793069791136186368/Logo_website.png\">"
             }).done(function (data) {
                 console.log(data);
                 console.log("De e-mail is verstuurd")
