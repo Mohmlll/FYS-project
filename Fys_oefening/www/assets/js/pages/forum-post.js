@@ -93,6 +93,20 @@ $(document).ready(function () {
         return datumVerschil
     }
 
+    let aantalRecords;
+    let paginaAantal;
+    let noOfTemplates = 2;
+
+    FYSCloud.API.queryDatabase(
+        "SELECT COUNT(*) FROM forum_post WHERE idgebruiker != ?",
+        [userId]
+    ).done(function (data) {
+        console.log(data);
+        aantalRecords = data[0]["COUNT(*)"];
+        paginaAantal = aantalRecords / noOfTemplates;
+    }).fail(function (reason) {
+        console.log(reason);
+    })
     function pagina(kant) {
         let paginanummer = sessionStorage.getItem("pagina")
         if (paginanummer === null) {
@@ -102,16 +116,26 @@ $(document).ready(function () {
         if (kant === "left" && paginanummer > 0) {
             paginanummer --;
             console.log(kant)
+            sessionStorage.setItem("pagina", paginanummer)
+            $("#template_div").load(document.URL + " #template_div")
+            forum(sessionStorage.getItem("filter"))
+            var paginaInt = parseInt(paginanummer)
+            if (paginaInt === 0) {
+                document.getElementById("left_page").style.backgroundColor = "gray";
+                document.getElementById("left_page").style.cursor = "";
+            } else {
+                document.getElementById("left_page").style.backgroundColor = "white";
+                document.getElementById("left_page").style.cursor = "pointer";
+            }
         }
 
-        if (kant === "right") {
+        if (kant === "right" && paginanummer < paginaAantal - 1) {
             paginanummer ++;
             console.log(kant)
+            sessionStorage.setItem("pagina", paginanummer)
+            $("#template_div").load(document.URL + " #template_div")
+            forum(sessionStorage.getItem("filter"))
         }
-        console.log(paginanummer)
-        sessionStorage.setItem("pagina", paginanummer)
-        $("#template_div").load(document.URL + " #template_div")
-        forum(sessionStorage.getItem("filter"))
     }
 
     $("#left_page").on("click", function () {
@@ -123,6 +147,7 @@ $(document).ready(function () {
         pagina("right")
         console.log("rechts")
     })
+
 
     function aantalBekijks(idPost, idforumPost) {
         console.log(idPost)
@@ -257,6 +282,7 @@ $(document).ready(function () {
                 var noOfTemplates = data.length;
                 console.log(noOfTemplates)
                 console.log(data)
+                console.log(" LIMIT " + (paginaNummer * noOfTemplates) + ", " + noOfTemplates)
                 for (let i = 0; i < noOfTemplates; i++) {
                     let postId = data[i]['idgebruiker'];
                     let idforumPost = data[i]["idforum_post"];

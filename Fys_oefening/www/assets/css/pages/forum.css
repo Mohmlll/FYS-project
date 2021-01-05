@@ -316,6 +316,14 @@ post
     color: black;
 }
 
+.forum_page_selector #left_page{
+    background-color: gray;
+}
+
+#right_page {
+    cursor: pointer;
+}
+
 #template_div {
     width: 100%;
     height: 100%;
