@@ -83,12 +83,12 @@
         width: 100%;
     }
 
-    .gegevens_links{
+    .gegevens_links {
         border-bottom: lightgray solid 2px;
         width: 100%;
     }
 
-    #gegevens_links_ander table{
+    #gegevens_links_ander table {
         width: 70%;
         margin: auto;
     }
@@ -97,13 +97,13 @@
         width: 80%;
     }
 
-    .profiel_instellingen table{
+    .profiel_instellingen table {
         margin: auto;
     }
 }
 
 @media screen and (min-width: 600px) and (max-width: 800px) {
-    #gegevens_links_mij table{
+    #gegevens_links_mij table {
         width: 40%;
         margin: auto;
     }

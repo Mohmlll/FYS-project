@@ -100,12 +100,12 @@ $(document).ready(function () {
         }
 
         if (kant === "left" && paginanummer > 0) {
-            paginanummer --;
+            paginanummer--;
             console.log(kant)
         }
 
         if (kant === "right") {
-            paginanummer ++;
+            paginanummer++;
             console.log(kant)
         }
         console.log(paginanummer)
@@ -329,10 +329,10 @@ $(document).ready(function () {
     }
 
 
-
     //Hier voeg ik een waarde toe aan de session storage zodat je alleen maar de resultaten van de DB terug krijgt, die voldoen aan jouw filter.
     console.log(sessionStorage.getItem("filter"))
     forum(sessionStorage.getItem("filter"))
+
     function filterForum() {
         sessionStorage.setItem("zoekTekst", null)
         sessionStorage.setItem("filter", "")
@@ -388,7 +388,7 @@ $(document).ready(function () {
     function filterChecked() {
         let filters = sessionStorage.getItem("filter");
         let input = sessionStorage.getItem("zoekTekst");
-        if(filters === null) {
+        if (filters === null) {
             filters = "";
         } else {
             document.getElementById("zoekfunctie").setAttribute("value", input);

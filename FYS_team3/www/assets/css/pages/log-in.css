@@ -175,7 +175,7 @@ input:checked + .slider:before {
     color: red;
 }
 
-#captcha{
+#captcha {
     color: red;
     text-align: center;
 }
