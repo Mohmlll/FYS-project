@@ -93,6 +93,19 @@ $(document).ready(function () {
         return datumVerschil
     }
 
+    function pagina() {
+        let paginanummer = sessionStorage.getItem("pagina")
+        if (paginanummer === null) {
+            paginanummer = 0;
+        }
+
+        if (links && paginanummer !== 0) {
+            paginanummer -= 1;
+        }
+
+
+    }
+
     function aantalBekijks(idPost, idforumPost) {
         console.log(idPost)
         FYSCloud.API.queryDatabase(
@@ -130,15 +143,14 @@ $(document).ready(function () {
             volgorde = "datum DESC"
         }
 
-        let selectVolgorde = sessionStorage.getItem("volgorde")
-        if (selectVolgorde === "datum DESC") {
+        if (volgorde === "datum DESC") {
             document.getElementById("nieuw_volgorde").selected = true;
-        } else if (selectVolgorde === "score DESC") {
+        } else if (volgorde === "score DESC") {
             document.getElementById("aanbevolen_volgorde").selected = true;
-        } else if (selectVolgorde === "aantal_bekijks DESC") {
+        } else if (volgorde === "aantal_bekijks DESC") {
             document.getElementById("beste_volgorde").selected = true;
         }
-        console.log(selectVolgorde)
+        console.log(volgorde)
 
         function makeAnElement(titel, content, foto, postId, tag, date, idforumPost, voornaam) {
             template = document.importNode(document.getElementById("post_template").content, true);
@@ -198,6 +210,7 @@ $(document).ready(function () {
             var tropisch = data[0]["tropisch"];
             var resort = data[0]["resort"];
             var noOfTemplates = 5;
+            var paginaNummer = 0;
 
             FYSCloud.API.queryDatabase(
                 "SELECT voornaam, forum_post.idgebruiker, forum_post.idforum_post, titel, post, datum, post_tags.explorer, post_tags.sportieveling, " +
@@ -219,7 +232,7 @@ $(document).ready(function () {
                 "JOIN post_tags ON (forum_post.idforum_post = post_tags.idforum_post) " +
                 "JOIN gebruiker_profiel ON (gebruiker_profiel.gebruikerid = interesse.idgebruiker) " +
                 "WHERE interesse.idgebruiker != ?"
-                + filter + " ORDER BY " + volgorde,
+                + filter + " ORDER BY " + volgorde + " LIMIT " + (paginaNummer * noOfTemplates) + ", " + noOfTemplates,
                 [backpacker, backpacker, explorer, explorer, sportieveling, sportieveling, relaxer, relaxer,
                     partygoer, partygoer, wintersport, wintersport, tropisch, tropisch, resort, resort, sessionStorage.getItem("userId")]
             ).done(function (data) {
@@ -349,7 +362,8 @@ $(document).ready(function () {
         console.log(filters);
         sessionStorage.setItem("zoekTekst", input)
         sessionStorage.setItem("filter", filters);
-        location.reload()
+        $("#forum_main_id").load(document.URL + " #forum_main_id")
+        forum(sessionStorage.getItem("filter"))
     }
 
     function filterChecked() {

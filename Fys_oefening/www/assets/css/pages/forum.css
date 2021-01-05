@@ -320,3 +320,9 @@ post
     border-radius: 5px;
     float: left;
 }
+
+#pagination {
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+}

@@ -17,7 +17,6 @@ $(document).ready(function () {
                 [matchstatus, userId, gebruikerId]
             ).done(function (data) {
                 console.log(data);
-                location.reload();
             }).fail(function (data) {
                 console.log(data);
                 console.log("fout")
@@ -78,40 +77,52 @@ $(document).ready(function () {
     let appendGebruikerId;
     let appendVoornaam;
 
-    FYSCloud.API.queryDatabase(
-        "SELECT  gebruikerid_een FROM matches WHERE matchstatus = 1 AND gebruikerid_twee = ?",
-        [userId]
-    ).done(function (data) {
-        var noOfTemplates_inkomende = data.length;
-        for (let i = 0; i < noOfTemplates_inkomende; i++) {
-            console.log(data);
-            let inkomendeGebruiker = data[i]['gebruikerid_een'];
-            if (inkomendeGebruiker !== userId) {
-                FYSCloud.API.queryDatabase(
-                    "SELECT voornaam FROM gebruiker_profiel WHERE gebruikerid = ?",
-                    [inkomendeGebruiker]
-                ).done(function (data) {
-                    let noOfTemplates = data.length;
-                    for (let i = 0; i < noOfTemplates; i++) {
-                        console.log(data);
-                        appendVoornaam = data[0]['voornaam'];
-                        let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + inkomendeGebruiker + ".png";
-                        appendPhoto = photoUrl;
-                        appendGebruikerId = inkomendeGebruiker;
-                        console.log(appendPhoto);
-                        let costumElement = makeAnElement(appendPhoto, appendGebruikerId, appendVoornaam);
-                        nieuweInkomende.appendChild(costumElement);
-                    }
-                }).fail(function (reason) {
-                    console.log(reason);
-                    console.log("fout");
-                })
+    function match() {
+        FYSCloud.API.queryDatabase(
+            "SELECT  gebruikerid_een FROM matches WHERE matchstatus = 1 AND gebruikerid_twee = ?",
+            [userId]
+        ).done(function (data) {
+            var noOfTemplates_inkomende = data.length;
+            for (let i = 0; i < noOfTemplates_inkomende; i++) {
+                console.log(data);
+                let inkomendeGebruiker = data[i]['gebruikerid_een'];
+                if (inkomendeGebruiker !== userId) {
+                    FYSCloud.API.queryDatabase(
+                        "SELECT voornaam FROM gebruiker_profiel WHERE gebruikerid = ?",
+                        [inkomendeGebruiker]
+                    ).done(function (data) {
+                        let noOfTemplates = data.length;
+                        for (let i = 0; i < noOfTemplates; i++) {
+                            console.log(data);
+                            appendVoornaam = data[0]['voornaam'];
+                            let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + inkomendeGebruiker + ".png";
+                            appendPhoto = photoUrl;
+                            appendGebruikerId = inkomendeGebruiker;
+                            console.log(appendPhoto);
+                            let costumElement = makeAnElement(appendPhoto, appendGebruikerId, appendVoornaam);
+                            nieuweInkomende.appendChild(costumElement);
+                        }
+                    }).fail(function (reason) {
+                        console.log(reason);
+                        console.log("fout");
+                    })
 
+                }
             }
-        }
-    }).fail(function (data) {
-        console.log(data);
-        console.log("fout")
-    })
+        }).fail(function (data) {
+            console.log(data);
+            console.log("fout")
+        })
+    }
+
+    match()
+    template = document.importNode(document.getElementById("template_inkomende").content, true);
+    let btn_accept = template.getElementById("accepteer_inkomende").onclick;
+    let btn_weiger = template.getElementById("weiger_inkomende").onclick;
+    if (btn_accept || btn_weiger) {
+        $("#Lopende_Matches").load(document.URL + " #Lopende_Matches")
+        match()
+    }
+
 
 });
