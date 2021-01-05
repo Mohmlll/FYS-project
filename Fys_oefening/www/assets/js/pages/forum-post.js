@@ -93,18 +93,36 @@ $(document).ready(function () {
         return datumVerschil
     }
 
-    function pagina() {
+    function pagina(kant) {
         let paginanummer = sessionStorage.getItem("pagina")
         if (paginanummer === null) {
             paginanummer = 0;
         }
 
-        if (links && paginanummer !== 0) {
-            paginanummer -= 1;
+        if (kant === "left" && paginanummer > 0) {
+            paginanummer --;
+            console.log(kant)
         }
 
-
+        if (kant === "right") {
+            paginanummer ++;
+            console.log(kant)
+        }
+        console.log(paginanummer)
+        sessionStorage.setItem("pagina", paginanummer)
+        $("#template_div").load(document.URL + " #template_div")
+        forum(sessionStorage.getItem("filter"))
     }
+
+    $("#left_page").on("click", function () {
+        pagina("left")
+        console.log("links")
+    })
+
+    $("#right_page").on("click", function () {
+        pagina("right")
+        console.log("rechts")
+    })
 
     function aantalBekijks(idPost, idforumPost) {
         console.log(idPost)
@@ -133,7 +151,7 @@ $(document).ready(function () {
     //dit is een functie waarbij een template elke keer gevuld wordt in een loop.
     //als je een filter aan heb staan, wordt die meegegeven en daardoor komen alleen de resultaten terug die voldoen aan jouw filter
     function forum(filter) {
-        var nieuwePost = document.getElementById("forum_main_id");
+        var nieuwePost = document.getElementById("template_div");
         var template;
         let volgorde = sessionStorage.getItem("volgorde");
         if (filter === null) {
@@ -209,8 +227,8 @@ $(document).ready(function () {
             var wintersport = data[0]["wintersport"];
             var tropisch = data[0]["tropisch"];
             var resort = data[0]["resort"];
-            var noOfTemplates = 5;
-            var paginaNummer = 0;
+            var noOfTemplates = 2;
+            var paginaNummer = sessionStorage.getItem("pagina");
 
             FYSCloud.API.queryDatabase(
                 "SELECT voornaam, forum_post.idgebruiker, forum_post.idforum_post, titel, post, datum, post_tags.explorer, post_tags.sportieveling, " +
@@ -362,7 +380,8 @@ $(document).ready(function () {
         console.log(filters);
         sessionStorage.setItem("zoekTekst", input)
         sessionStorage.setItem("filter", filters);
-        $("#forum_main_id").load(document.URL + " #forum_main_id")
+        $("#template_div").load(document.URL + " #template_div")
+        sessionStorage.setItem("pagina", 0)
         forum(sessionStorage.getItem("filter"))
     }
 

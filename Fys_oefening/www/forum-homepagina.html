@@ -73,33 +73,33 @@
             </form>
         </div>
         <div class="forum_main" id="forum_main_id">
-            <template id="post_template">
-                <div class="post">
-                    <span id="post_date"></span>
-                    <div class="post_header" id="post_header">
-                        <div class="gebruiker_post_info">
-                        <div class="post_profiel_foto" id="post_profiel_foto">
-                            <img id="post_profiel_img">
-                        </div>
-                        <span id="voornaam_post"></span>
-                        </div>
-                        <span class=" front_post_title" id="post_header_titel"></span>
+            <div id="template_div">
+                <template id="post_template">
+                    <div class="post">
+                        <span id="post_date"></span>
+                        <div class="post_header" id="post_header">
+                            <div class="gebruiker_post_info">
+                                <div class="post_profiel_foto" id="post_profiel_foto">
+                                    <img id="post_profiel_img">
+                                </div>
+                                <span id="voornaam_post"></span>
+                            </div>
+                            <span class=" front_post_title" id="post_header_titel"></span>
 
 
+                        </div>
+                        <div class="post_content" id="post_content">
+                            <hr>
+                            <p id="content_text"></p>
+                            <b><i><p id="tags"></p></i></b>
+                            <button class="contact_button" id="contact_verzoek_button">Contact me!</button>
+                        </div>
                     </div>
-                    <div class="post_content" id="post_content">
-                        <hr>
-                        <p id="content_text"></p>
-                        <b><i><p id="tags"></p></i></b>
-                        <button class="contact_button" id="contact_verzoek_button">Contact me!</button>
-                    </div>
-                </div>
-            </template>
-            <div id="page_selector">
-                <div id="pagination">
-                    <a href="#">&laquo;</a>
-                    <a href="#">&raquo;</a>
-                </div>
+                </template>
+            </div>
+            <div class="forum_page_selector">
+                <div id="left_page">&laquo;</div>
+                <div id="right_page">&raquo;</div>
             </div>
         </div>
         <div class="forum_rightmenu">
