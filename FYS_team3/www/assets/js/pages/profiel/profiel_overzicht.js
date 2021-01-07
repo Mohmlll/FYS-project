@@ -167,7 +167,25 @@ privacy
             console.log("fout")
         })
 
+        /*
+verwijderen
+*/
 
+        if(confirm("weet je zeker dat je profiel verwijdert? Er is geen mogelijkheid om deze actie ongedaan te maken!")) {
+            console.log("Verwijdering succesvol!")
+        } else {
+            console.log("Verwijdering geannuleer, je hoeft niks verder te doen!")
+        }
+
+        //FYSCloud.API.queryDatabase(
+        //             "DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+        //         ).done(function (data) {
+
+
+
+        /*
+        if (confirm("Weet je zeker dat
+        */
     })
 
 });
