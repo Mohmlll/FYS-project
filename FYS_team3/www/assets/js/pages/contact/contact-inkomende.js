@@ -124,5 +124,8 @@ $(document).ready(function () {
         match()
     }
 
-
+    $("#inkomend_tab").on("click", function () {
+        $("#inkomende_aanvraag").load(document.URL + " #inkomende_aanvraag")
+        match()
+    })
 });

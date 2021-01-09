@@ -2,7 +2,6 @@ $(document).ready(function () {
     let userId = sessionStorage.getItem('userId');
     console.log(userId);
 
-
     function date() {
         var minimaleLeeftijd = 18
         var vandaag = new Date();
@@ -169,5 +168,48 @@ privacy
 
 
     })
+
+    function openinhoudt(live, live_kopje) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(live_kopje).style.display = "block";
+        live.currentTarget.className += " active";
+    }
+
+    let tag = "Profiel"
+    $("#profiel_tab").on("click", function () {
+        tag = "Profiel"
+        openinhoudt(event, tag)
+    })
+    $("#lopend_tab").on("click", function () {
+        tag = "Lopende_Matches"
+        openinhoudt(event, tag)
+    })
+    $("#inkomend_tab").on("click", function () {
+        tag = "Inkomende_Matches"
+        openinhoudt(event, tag)
+    })
+    $("#uitgaand_tab").on("click", function () {
+        tag = "Uitgaande_Matches"
+        openinhoudt(event, tag)
+    })
+    //Open profiel automatisch
+    openinhoudt(event, tag)
+    // document.getElementById("profiel_tab").style.backgroundColor = "yellow";
+    document.getElementById("standaard_Openen").click();
 
 });

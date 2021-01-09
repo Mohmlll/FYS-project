@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta content="width=device-width,initial-scale=1" name="viewport">
+    <link rel="icon" href="assets/img/Logo-Tab.png">
     <title>Profiel | Travelbud</title>
 
     <!-- Stylesheets -->
@@ -64,10 +65,10 @@
         <div class="buttonpagina_totaal">
             <!-- Tab links -->
             <div class="tab">
-                <button class="tablinks" id="standaard_Openen" onclick="openinhoudt(event, 'Profiel')">Profiel</button>
-                <button class="tablinks" onclick="openinhoudt(event, 'Lopende_Matches')">Lopende Matches</button>
-                <button class="tablinks" onclick="openinhoudt(event, 'Inkomende_Matches')">Inkomende Matches</button>
-                <button class="tablinks" onclick="openinhoudt(event, 'Uitgaande_Matches')">Uitgaande Matches</button>
+                <button class="tablinks" id="profiel_tab">Profiel</button>
+                <button class="tablinks" id="lopend_tab">Lopende Matches</button>
+                <button class="tablinks" id="inkomend_tab">Inkomende Matches</button>
+                <button class="tablinks" id="uitgaand_tab">Uitgaande Matches</button>
             </div>
             <div class="button_inhoudt">
                 <div class="tabcontent" id="Profiel">
@@ -387,7 +388,7 @@
                         <template id="template_lopende">
                             <div class="lopende" id="lopende">
                                 <div class="gebruiker_lopende">
-                                    <img id="foto_gebruiker_lopende" src="">
+                                    <img id="foto_gebruiker_lopende" src="" alt="Gebruikers-foto">
                                     <div class="rechts_info"><span id="naam_lopende"></span>
                                         <button class="verwijder" id="verwijder_lopende" type="submit">
                                             Verwijder
@@ -405,7 +406,7 @@
                         <template id="template_inkomende">
                             <div class="inkomende" id="inkomende">
                                 <div class="foto_gebruiker_inkomend">
-                                    <img id="foto_gebruiker_inkomend" src="">
+                                    <img id="foto_gebruiker_inkomend" src="" alt="Gebruikers-foto">
                                     <div class="rechts_info">
                                         <span id="naam_inkomende"></span>
                                         <button class="accepteer" id="accepteer_inkomende" type="submit">
@@ -472,31 +473,6 @@
         </div>
         <div class="right_empty_footer"></div>
     </div>
-    <script>
-        function openinhoudt(live, live_kopje) {
-            // Declare all variables
-            var i, tabcontent, tablinks;
-
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            // Get all elements with class="tablinks" and remove the class "active"
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            // Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(live_kopje).style.display = "block";
-            live.currentTarget.className += " active";
-        }
-
-        //Open profiel automatisch
-        document.getElementById("standaard_Openen").click();
-    </script>
 </div>
 </body>
 </html>

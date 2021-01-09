@@ -74,36 +74,44 @@ $(document).ready(function () {
         }
     }
 
-    FYSCloud.API.queryDatabase(
-        // de 2 staat voor geaccepteerde contact verzoeken
-        "SELECT  gebruikerid_een FROM matches WHERE matchstatus = 2 AND gebruikerid_twee = ?",
-        [userId]
-    ).done(function (data) {
-        let noOfTemplates = data.length;
-        console.log(noOfTemplates)
-        for (let i = 0; i < noOfTemplates; i++) {
+    function resultaten() {
+        FYSCloud.API.queryDatabase(
+            // de 2 staat voor geaccepteerde contact verzoeken
+            "SELECT  gebruikerid_een FROM matches WHERE matchstatus = 2 AND gebruikerid_twee = ?",
+            [userId]
+        ).done(function (data) {
+            let noOfTemplates = data.length;
+            console.log(noOfTemplates)
+            for (let i = 0; i < noOfTemplates; i++) {
+                console.log(data);
+                let lopendeGebruiker = data[i]['gebruikerid_een'];
+                matches(lopendeGebruiker);
+            }
+        }).fail(function (data) {
             console.log(data);
-            let lopendeGebruiker = data[i]['gebruikerid_een'];
-            matches(lopendeGebruiker);
-        }
-    }).fail(function (data) {
-        console.log(data);
-        console.log("fout")
-    })
+            console.log("fout")
+        })
 
-    FYSCloud.API.queryDatabase(
-        "SELECT  gebruikerid_twee FROM matches WHERE matchstatus = 2 AND gebruikerid_een = ?",
-        [userId]
-    ).done(function (data) {
-        let noOfTemplates = data.length;
-        console.log(noOfTemplates)
-        for (let i = 0; i < noOfTemplates; i++) {
+        FYSCloud.API.queryDatabase(
+            "SELECT  gebruikerid_twee FROM matches WHERE matchstatus = 2 AND gebruikerid_een = ?",
+            [userId]
+        ).done(function (data) {
+            let noOfTemplates = data.length;
+            console.log(noOfTemplates)
+            for (let i = 0; i < noOfTemplates; i++) {
+                console.log(data);
+                let lopendeGebruiker = data[i]['gebruikerid_twee'];
+                matches(lopendeGebruiker);
+            }
+        }).fail(function (data) {
             console.log(data);
-            let lopendeGebruiker = data[i]['gebruikerid_twee'];
-            matches(lopendeGebruiker);
-        }
-    }).fail(function (data) {
-        console.log(data);
-        console.log("fout")
+            console.log("fout")
+        })
+    }
+
+    resultaten()
+    $("#lopend_tab").on("click", function () {
+        $("#lopende_match").load(document.URL + " #lopende_match")
+        resultaten()
     })
 });
