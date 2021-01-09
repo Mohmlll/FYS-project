@@ -101,106 +101,47 @@ $(document).ready(function () {
         popup.classList.toggle("show");
     })
 
-    //advertenties\
-
-    document.getElementById("banner_ad_left_wintersport").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/wintersport.png\">" +
-        "</a>"
-    document.getElementById("banner_ad_right_wintersport").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/wintersport.png\">" +
-        "</a>"
-
-    document.getElementById("banner_ad_left_explorer").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/explorer.png\">" +
-        "</a>"
-    document.getElementById("banner_ad_right_explorer").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/explorer.png\">" +
-        "</a>"
-
-    document.getElementById("banner_ad_left_sportieveling").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/sportieveling.png\">" +
-        "</a>"
-    document.getElementById("banner_ad_right_sportieveling").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/sportieveling.png\">" +
-        "</a>"
-
-    document.getElementById("banner_ad_left_relaxer").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/relaxer.png\">" +
-        "</a>"
-    document.getElementById("banner_ad_right_relaxer").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/relaxer.png\">" +
-        "</a>"
-
-    document.getElementById("banner_ad_left_partygoer").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/partygoer.png\">" +
-        "</a>"
-    document.getElementById("banner_ad_right_partygoer").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/partygoer.png\">" +
-        "</a>"
-
-    document.getElementById("banner_ad_left_backpacker").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/backpacker.png\">" +
-        "</a>"
-    document.getElementById("banner_ad_right_backpacker").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/backpacker.png\">" +
-        "</a>"
-
-    document.getElementById("banner_ad_left_tropisch").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/tropisch.png\">" +
-        "</a>"
-    document.getElementById("banner_ad_right_tropisch").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/tropisch.png\">" +
-        "</a>"
-
-    document.getElementById("banner_ad_left_resort").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/resort.png\">" +
-        "</a>"
-    document.getElementById("banner_ad_right_resort").innerHTML =
-        "<a href=\"https://www.corendon.nl/\">" +
-        "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/resort.png\">" +
-        "</a>"
+    function soortAdvertentie(url, route) {
+        document.getElementById("left__ad").innerHTML =
+            "<a href=\"https://www.corendon.nl/" + url + "\">" +
+            "   <img alt=\"AD\"  class=\"banner_ad_left\" src=\"assets/img/" + route + ".png\">" +
+            "</a>"
+        document.getElementById("right__ad").innerHTML =
+            "<a href=\"https://www.corendon.nl/" + url + "\">" +
+            "   <img alt=\"AD\"  class=\"banner_ad_right\" src=\"assets/img/" + route + ".png\">" +
+            "</a>"
+    }
 
     function showAds(advertentie) {
-        if (advertentie === "backpacker") {
-            document.getElementById("banner_ad_left_backpacker").style.display = "block"
-            document.getElementById("banner_ad_right_backpacker").style.display = "block"
-        } else if (advertentie === "explorer") {
-            document.getElementById("banner_ad_left_explorer").style.display = "block"
-            document.getElementById("banner_ad_right_explorer").style.display = "block"
-        } else if (advertentie === "sportieveling") {
-            document.getElementById("banner_ad_left_sportieveling").style.display = "block"
-            document.getElementById("banner_ad_right_sportieveling").style.display = "block"
-        } else if (advertentie === "relaxer") {
-            document.getElementById("banner_ad_left_relaxer").style.display = "block"
-            document.getElementById("banner_ad_right_relaxer").style.display = "block"
-        } else if (advertentie === "partygoer") {
-            document.getElementById("banner_ad_left_partygoer").style.display = "block"
-            document.getElementById("banner_ad_right_partygoer").style.display = "block"
-        } else if (advertentie === "wintersport") {
-            document.getElementById("banner_ad_left_wintersport").style.display = "block"
-            document.getElementById("banner_ad_right_wintersport").style.display = "block"
-        } else if (advertentie === "tropisch") {
-            document.getElementById("banner_ad_left_tropisch").style.display = "block"
-            document.getElementById("banner_ad_right_tropisch").style.display = "block"
-        } else if (advertentie === "resort") {
-            document.getElementById("banner_ad_left_resort").style.display = "block"
-            document.getElementById("banner_ad_right_resort").style.display = "block"
+        let url;
+        switch (advertentie) {
+            case "backpacker":
+                url = "spanje/costa-del-sol/estepona/fly-go-colina-del-paraiso"
+                break;
+            case "explorer":
+                url = "sri-lanka/west-sri-lanka/rondreizen-sri-lanka/groepsrondreis-ontdek-sri-lanka?"
+                break;
+            case "sportieveling":
+                url = "spanje/canarische-eilanden/fuerteventura/corralejo/oasis-papagayo-sports-resort?"
+                break;
+            case "relaxer":
+                url = "griekenland/kos/kos-stad/pelagos-suites-hotel-spa"
+                break;
+            case "partygoer":
+                url = "bonaire/kralendijk/delfins-beach-resort-bonaire"
+                break;
+            case "wintersport":
+                url = "bulgarije/skivakanties#map"
+                break;
+            case "tropisch":
+                url = "curacao/mambo-beach/the-beach-house"
+                break;
+            case "resort":
+                url = "italie/sardinie/castelsardo/bajaloglia-resort"
+                break;
         }
+
+        soortAdvertentie(url, advertentie)
         console.log(advertentie)
     }
 
