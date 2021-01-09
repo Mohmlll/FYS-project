@@ -187,7 +187,7 @@ verwijderen
         */
     })
 
-    function openinhoudt(live, live_kopje) {
+    function openinhoudt(live, live_kopje, target) {
         // Declare all variables
         var i, tabcontent, tablinks;
 
@@ -205,29 +205,33 @@ verwijderen
 
         // Show the current tab, and add an "active" class to the button that opened the tab
         document.getElementById(live_kopje).style.display = "block";
-        live.currentTarget.className += " active";
+        if (target === null) {
+            var tag = document.getElementById("profiel_tab");
+            tag.className += " active"
+        } else {
+            live.currentTarget.className += " active";
+        }
     }
 
     let tag = "Profiel"
+    let target = null;
     $("#profiel_tab").on("click", function () {
         tag = "Profiel"
-        openinhoudt(event, tag)
+        openinhoudt(event, tag, target)
     })
     $("#lopend_tab").on("click", function () {
         tag = "Lopende_Matches"
-        openinhoudt(event, tag)
+        openinhoudt(event, tag, target)
     })
     $("#inkomend_tab").on("click", function () {
         tag = "Inkomende_Matches"
-        openinhoudt(event, tag)
+        openinhoudt(event, tag, target)
     })
     $("#uitgaand_tab").on("click", function () {
         tag = "Uitgaande_Matches"
-        openinhoudt(event, tag)
+        openinhoudt(event, tag, target)
     })
     //Open profiel automatisch
-    openinhoudt(event, tag)
-    // document.getElementById("profiel_tab").style.backgroundColor = "yellow";
-    document.getElementById("standaard_Openen").click();
-
+    openinhoudt(event, tag, target)
+    target = ""
 });

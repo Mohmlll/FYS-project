@@ -56,15 +56,21 @@ $(document).ready(function () {
     document.getElementById("logged_out").innerHTML =
         "<div class=\"menu_inhoud\">" +
         "   <a class=\"home_menu\" href=\"index.html\">Home</a>" +
+        "   <b class=\"streep\">/</b>" +
         "   <a class=\"over_ons_menu\" href=\"over-ons.html\">Over ons</a>" +
+        "   <b class=\"streep\">/</b>" +
         "   <a class=\"js-logged-out\" href=\"log-in.html\">Aanmelden</a>" +
         "</div>"
     document.getElementById("logged_in").innerHTML =
         "<div class=\"menu_inhoud\">" +
         "   <a class=\"home_menu_in\" href=\"index.html\">Home</a>" +
+        "   <b class=\"streep\">/</b>" +
         "   <a class=\"over_ons_menu_in\" href=\"over-ons.html\">Over ons</a>" +
+        "   <b class=\"streep\">/</b>" +
         "   <a class=\"js-logged-in\" id=\"profiel_menu_in\" href=\"profiel-overzicht.html\">Profiel</a>" +
+        "   <b class=\"streep\">/</b>" +
         "   <a class=\"js-logged-in\" id=\"forum_menu_in\" href=\"forum-homepagina.html\">Forum</a>" +
+        "   <b class=\"streep\">/</b>" +
         "   <a class=\"js-uitloggen\" id=\"uit_menu_in\" >Uitloggen</a>" +
         "</div>"
 
@@ -81,8 +87,10 @@ $(document).ready(function () {
         var x = document.getElementById("responsivemenu");
         if (x.className === "menu") {
             x.className += " uitklappen";
+            $(".streep").hide();
         } else {
             x.className = "menu";
+            $(".streep").show();
         }
         console.log(x.className)
     })

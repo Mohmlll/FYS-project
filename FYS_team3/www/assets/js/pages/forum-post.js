@@ -95,7 +95,7 @@ $(document).ready(function () {
 
     let aantalRecords;
     let paginaAantal;
-    let noOfTemplates = 2;
+    let noOfTemplates = 5;
 
     FYSCloud.API.queryDatabase(
         "SELECT COUNT(*) FROM forum_post WHERE idgebruiker != ?",
@@ -120,6 +120,7 @@ $(document).ready(function () {
             $("#template_div").load(document.URL + " #template_div")
             forum(sessionStorage.getItem("filter"))
             var paginaInt = parseInt(paginanummer)
+            document.getElementById("paginanr").innerHTML = "<b>" + paginanummer + "</b>"
             if (paginaInt === 0) {
                 document.getElementById("left_page").style.backgroundColor = "gray";
                 document.getElementById("left_page").style.cursor = "";
@@ -252,7 +253,7 @@ $(document).ready(function () {
             var wintersport = data[0]["wintersport"];
             var tropisch = data[0]["tropisch"];
             var resort = data[0]["resort"];
-            var noOfTemplates = 2;
+            var noOfTemplates = 5;
             var paginaNummer = sessionStorage.getItem("pagina");
 
             FYSCloud.API.queryDatabase(
