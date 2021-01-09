@@ -30,47 +30,52 @@ button, table {
 }
 
 .header_img_home {
-    background-image: url("https://images.pexels.com/photos/4275971/pexels-photo-4275971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-image: url("CSS-img/voorblad_home.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     position: relative;
     margin-bottom: 20px;
 }
 
-.header_logo_home {
-    text-align: center;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+@media screen and (min-height: 600px) {
+    .header_img_ander {
+        background-image: url("CSS-img/voorblad.jpg");
+        height: 20%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .header_logo_ander {
+        text-align: center;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .header_logo_ander img {
+        height: 3em;
+    }
+
+    .container {
+        margin-top: 0;
+    }
 }
 
-.header_logo_home img {
-    height: 5em;
-}
+@media screen and (max-height: 600px) {
+    .header_img_ander {
+        display: none;
+    }
 
-.header_img_ander {
-    background-image: url("https://images.pexels.com/photos/4275971/pexels-photo-4275971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-    height: 30%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.header_logo_ander {
-    text-align: center;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.header_logo_ander img {
-    height: 5em;
+    .container {
+        margin-top: 60px;
+    }
 }
 
 /*
@@ -157,7 +162,6 @@ header {
     display: flex;
     max-height: 100%;
     z-index: 1;
-
 }
 
 .container__main {
@@ -256,8 +260,7 @@ header {
 }
 
 .info1 p, .info2 p {
-    margin: 10% 10% 0 10%
-
+    margin: 10%;
 }
 
 .stap2_gif img {
@@ -292,7 +295,8 @@ header {
 
 .stap1_img img {
     width: 100%;
-    margin-bottom: 7%;
+    margin-top: -10%;
+    margin-bottom: -5%;
 }
 
 iframe {
@@ -407,8 +411,4 @@ contact popup
 
 .tag_div span {
     padding: 8px;
-}
-
-.left__ad, .right__ad {
-    display: none;
 }
