@@ -1,6 +1,7 @@
-body {
+
+body  {
     margin: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Work Sans', sans-serif;
     height: 100%;
     width: 100%;
 }
@@ -205,9 +206,13 @@ header {
  *
  */
 
+.post, .forum_aanbevolen, .forum_main_options,.post_latest, .forum_topics__options{
+    position: relative;
+}
+
+
 .welkombox, .uitleg_video, .info1, .info2, .inlog-box, .flip_card_front,
-.flip_card_back, .post_latest, .forum_topics__options,
-.container_create_post, .forum_aanbevolen, .forum_main_options, .buttonpagina_totaal, .post, .profielUser, .overBox {
+.flip_card_back, .container_create_post,  .buttonpagina_totaal , .profielUser, .overBox {
     -webkit-box-shadow: 12px 10px 15px 0 rgba(0, 0, 0, 0.75);
     border: #d81e05 solid 1px;
 }

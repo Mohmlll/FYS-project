@@ -107,38 +107,55 @@ $(document).ready(function () {
     }).fail(function (reason) {
         console.log(reason);
     })
+    let buttn = document.getElementById("expand_filterid");
+    let filter = document.getElementById("forum_filter")
+
+    buttn.addEventListener('click', (event) => {
+        if (filter.className === "forum_topics__options") {
+            filter.className += "block";
+        } else {
+            filter.className = "forum_topics__options";
+        }
+    })
+
+
+
+    function paginationNr(paginanummer) {
+        var paginaInt = parseInt(paginanummer)
+        const paginanr = paginaInt + 1;
+        document.getElementById("paginanr").innerHTML = "<b>" + paginanr + "</b>"
+    }
+
     function pagina(kant) {
         let paginanummer = sessionStorage.getItem("pagina")
         if (paginanummer === null) {
             paginanummer = 0;
         }
 
+        var paginaInt = parseInt(paginanummer)
+        const paginanr = paginaInt + 1;
+        document.getElementById("paginanr").innerHTML = "<b>" + paginanr + "</b>"
         if (kant === "left" && paginanummer > 0) {
             paginanummer--;
             console.log(kant)
             sessionStorage.setItem("pagina", paginanummer)
+            paginationNr(paginanummer);
             $("#template_div").load(document.URL + " #template_div")
             forum(sessionStorage.getItem("filter"))
-            var paginaInt = parseInt(paginanummer)
-            document.getElementById("paginanr").innerHTML = "<b>" + paginanummer + "</b>"
-            if (paginaInt === 0) {
-                document.getElementById("left_page").style.backgroundColor = "gray";
-                document.getElementById("left_page").style.cursor = "";
-            } else {
-                document.getElementById("left_page").style.backgroundColor = "white";
-                document.getElementById("left_page").style.cursor = "pointer";
-            }
         }
 
         if (kant === "right" && paginanummer < paginaAantal - 1) {
-            paginanummer ++;
+            paginanummer++;
             console.log(kant)
             sessionStorage.setItem("pagina", paginanummer)
+            paginationNr(paginanummer);
             $("#template_div").load(document.URL + " #template_div")
             forum(sessionStorage.getItem("filter"))
+
         }
     }
 
+    paginationNr(0);
     $("#left_page").on("click", function () {
         pagina("left")
         console.log("links")
@@ -174,8 +191,8 @@ $(document).ready(function () {
         });
     }
 
-    //dit is een functie waarbij een template elke keer gevuld wordt in een loop.
-    //als je een filter aan heb staan, wordt die meegegeven en daardoor komen alleen de resultaten terug die voldoen aan jouw filter
+//dit is een functie waarbij een template elke keer gevuld wordt in een loop.
+//als je een filter aan heb staan, wordt die meegegeven en daardoor komen alleen de resultaten terug die voldoen aan jouw filter
     function forum(filter) {
         var nieuwePost = document.getElementById("template_div");
         var template;
@@ -220,13 +237,15 @@ $(document).ready(function () {
             content_tag.innerHTML = tag
             content_naam.innerHTML = voornaam
 
-
             btn.addEventListener('click', (event) => {
                 if (content_text_div.className === "post_content") {
-                    content_text_div.className += " expand";
+                    content_text_div.className += "block";
+
                 } else {
                     content_text_div.className = "post_content";
+
                 }
+
             })
             return template.firstElementChild;
         }
@@ -356,7 +375,7 @@ $(document).ready(function () {
     }
 
 
-    //Hier voeg ik een waarde toe aan de session storage zodat je alleen maar de resultaten van de DB terug krijgt, die voldoen aan jouw filter.
+//Hier voeg ik een waarde toe aan de session storage zodat je alleen maar de resultaten van de DB terug krijgt, die voldoen aan jouw filter.
     console.log(sessionStorage.getItem("filter"))
     forum(sessionStorage.getItem("filter"))
 
@@ -467,4 +486,6 @@ $(document).ready(function () {
     img.src = "https://dev-is106-3.fys.cloud/uploads/133.png"
     console.log("height = " + img.height);
 
-});
+
+})
+;
