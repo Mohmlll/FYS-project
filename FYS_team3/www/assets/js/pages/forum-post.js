@@ -287,7 +287,8 @@ $(document).ready(function () {
                 for (let i = 0; i < noOfTemplates; i++) {
                     let postId = data[i]['idgebruiker'];
                     let idforumPost = data[i]["idforum_post"];
-                    let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
+                    let photoUrl = document.URL + postId + ".png";
+                    console.log(document.URL + postId + ".png")
                     appendTitel = data[i]['titel'];
                     appendPost = data[i]['post'];
                     appendPostId = postId;
