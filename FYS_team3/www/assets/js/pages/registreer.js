@@ -188,7 +188,6 @@ $(document).ready(function () {
         document.getElementById("wachtwoord_vergeten").style.display = "none"
         document.getElementById("geenInlogWachtwoord").style.display = "none"
         document.getElementById("verkeerdWachtwoord").style.display = "none"
-        document.getElementById("gegevens_herinneren").style.display = "none"
         document.getElementById("login_button").style.display = "none"
     }
 
@@ -286,7 +285,6 @@ $(document).ready(function () {
         document.getElementById("gebruikersnaam_vergeten").style.display = "block"
         document.getElementById("inlogWachtwoord").style.display = "block"
         document.getElementById("wachtwoord_vergeten").style.display = "block"
-        document.getElementById("gegevens_herinneren").style.display = "block"
         document.getElementById("login_button").style.display = "block"
         document.getElementById("wachtwoord_uitleg").style.display = "none"
         document.getElementById("gebruikersnaam_uitleg").style.display = "none"
