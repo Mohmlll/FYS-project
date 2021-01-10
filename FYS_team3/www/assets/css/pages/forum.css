@@ -19,16 +19,19 @@ right menu
     align-content: center;
 
 }
-.option_buttons{
+
+.option_buttons {
     flex-wrap: wrap;
     display: flex;
     width: 60%;
 }
-.forum_main_options form{
+
+.forum_main_options form {
     width: 25%;
     float: right;
 }
-.expand_filter_button, .start_post_button{
+
+.expand_filter_button, .start_post_button {
     cursor: pointer;
     background-color: #d81e05;
     color: white;
@@ -41,15 +44,18 @@ right menu
     order: 1;
 
 }
-.start_post_button{
+
+.start_post_button {
     margin-bottom: auto;
 }
-.expand_filter_button{
+
+.expand_filter_button {
     top: 0;
     margin-left: 5%;
     text-align: center;
     align-content: center;
 }
+
 .forum_main_options {
     padding: 2%;
     background-color: white;
@@ -62,8 +68,7 @@ right menu
 }
 
 
-
-.start_post_button:hover, .expand_filter_button:hover{
+.start_post_button:hover, .expand_filter_button:hover {
     background: linear-gradient(to right, red, #ffffff);
 }
 
@@ -77,9 +82,10 @@ right menu
 right menu - aanbevolen
  */
 
-.forum_aanbevolen{
+.forum_aanbevolen {
     width: 100%;
 }
+
 .aanbevolen_profiel {
     width: 100%;
 
@@ -145,10 +151,10 @@ right menu - aanbevolen
     display: none;
 }
 
-.forum_filter{
+.forum_filter {
     display: flex;
     flex-wrap: wrap;
- }
+}
 
 .forum_filter span {
     border: 1px solid #ddd;
@@ -366,29 +372,34 @@ post
 }
 
 
-
-.none{
+.none {
     display: none;
 }
-.block{
+
+.block {
     display: block;
 }
-.forum_topics__options{
+
+.forum_topics__options {
     display: none;
     margin: auto;
 }
-.post_content{
+
+.post_content {
     display: none;
     overflow: hidden;
 }
-.aanbolen_templates{
+
+.aanbolen_templates {
     flex-wrap: wrap;
     display: flex;
 
 }
-.aanbevolen_match{
+
+.aanbevolen_match {
     width: 100%;
 }
-hr{
+
+hr {
     width: 100%;
 }

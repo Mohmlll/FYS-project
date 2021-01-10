@@ -30,16 +30,10 @@ $(document).ready(function () {
                 "SELECT gebruikerid, gebruikers_naam, status, COUNT(*) FROM gebruiker WHERE gebruikers_naam = ? and wachtwoord = SHA(?)",
                 [gebruikersnaam, wachtwoord]
             ).done(function (data) {
-                console.log(data);
                 sessionStorage.setItem("userId", data[0]["gebruikerid"])
                 if (data[0]["COUNT(*)"] === 1 && data[0]["status"] === "volledig_profiel") {
-                    console.log(data[0]["gebruikerid"])
-                    console.log(data[0]["gebruikers_naam"])
                     location.href = 'forum-homepagina.html';
                 } else if (data[0]["COUNT(*)"] === 1 && data[0]["status"] === "geenGegevens") {
-                    console.log(data[0]["gebruikerid"])
-                    console.log(data[0]["gebruikers_naam"])
-                    console.log("geen gegevens")
                     location.href = 'profiel-aanmaken.html';
                 } else {
                     document.getElementById("verkeerdWachtwoord").style.display = "block";
@@ -101,12 +95,10 @@ $(document).ready(function () {
             "SELECT emailadres, gebruikers_naam FROM gebruiker WHERE emailadres = ? OR gebruikers_naam = ?",
             [emailAdres, gebruikersNaam]
         ).done(function (data) {
-            console.log(data);
             let emailAdresBestaandeValid = true
             let gebruikersnaamBestaandeValid = true
             for (let i = 0; i < data.length; i++) {
                 if (data[i]["emailadres"] === emailAdres) {
-                    console.log("duplicate mail")
                     emailAdresBestaandeValid = false;
                     document.getElementById("emailadres").style.borderColor = "red";
                     document.getElementById("bestaandeEmail").style.display = "block";
@@ -115,7 +107,6 @@ $(document).ready(function () {
                     document.getElementById("bestaandeEmail").style.display = "none";
                 }
                 if (data[i]["gebruikers_naam"] === gebruikersNaam) {
-                    console.log("duplicate naam")
                     gebruikersnaamBestaandeValid = false
                     document.getElementById("gebruikersnaam").style.borderColor = "red";
                     document.getElementById("bestaandeNaam").style.display = "block";
@@ -128,8 +119,6 @@ $(document).ready(function () {
                 document.getElementById("bestaandeEmail").style.display = "none";
                 document.getElementById("bestaandeNaam").style.display = "none";
             }
-            console.log(emailAdresValid)
-            console.log(gebruikersnaamValid)
 
             if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && voorwaardeCheckValid
                 && emailAdresBestaandeValid && gebruikersnaamBestaandeValid && get_action()) {
@@ -138,7 +127,6 @@ $(document).ready(function () {
                     "VALUES(?,?,SHA(?),?)",
                     [gebruikersNaam, emailAdres, wachtwoord, status]
                 ).done(function (data) {
-                    console.log(data);
                     sessionStorage.setItem("userId", data.insertId);
                     location.href = "profiel-aanmaken.html";
                 }).fail(function (reason) {
@@ -256,7 +244,6 @@ $(document).ready(function () {
             "JOIN gebruiker_profiel ON (gebruiker.gebruikerid = gebruiker_profiel.gebruikerid) WHERE emailadres = ? LIMIT 1",
             [email]
         ).done(function (data) {
-            console.log(data);
             var id = data[0]["gebruikerid"]
             let voornaam = data[0]["voornaam"]
             let achternaam = data[0]["achternaam"]
@@ -279,20 +266,16 @@ $(document).ready(function () {
                     " Hierbij jou " + subjectInMail2 + " </p><p>" + gebruikersnaamTekst + "</p><p>" + wachtwoordTekst + "</p>" +
                     "<p>" + advies + "</p><p>Met vriendelijke groet, <br><br> Team Travelbud</p><br><img alt=\"Corendon TravelBud\" src=\"https://cdn.discordapp.com/attachments/748533956877615196/793069791136186368/Logo_website.png\">"
             }).done(function (data) {
-                console.log(data);
-                console.log("De e-mail is verstuurd")
                 if (soortVergeten === "wachtwoord") {
                     FYSCloud.API.queryDatabase(
                         "UPDATE gebruiker SET wachtwoord = SHA(?) WHERE gebruikerid = ?",
                         [wachtwoord, id]
                     ).done(function (data) {
-                        console.log(data);
-                        console.log("wachtwoord verstuurd ")
                     }).fail(function (reason) {
                         console.log(reason);
                     })
                 } else if (soortVergeten === "gebruikersnaam") {
-                    console.log("gebruikersnaam verstuurd")
+
                 }
 
             }).fail(function (reason) {
@@ -328,7 +311,6 @@ $(document).ready(function () {
             subjectInMail1 = "gebruikersnaam op te vragen.";
             subjectInMail2 = "gebruikersnaam:";
             advies = "";
-            console.log("e-mail versturen (gebruikersnaam)")
             vergetenFunctie("gebruikersnaam", emailAdres, gebruikersnaam, "", subject, subjectInMail1, subjectInMail2, advies)
             terugInloggen();
         } else if (wachtwoordVergeten) {
@@ -337,7 +319,6 @@ $(document).ready(function () {
             subjectInMail2 = "nieuwe wachtwoord:";
             advies = "Wij raden je aan om je eigen wachtwoord aan te maken zodra je bent ingelogd. Dit kan je doen bij het bewerken van je profiel";
             gebruikersnaam = ""
-            console.log("e-mail versturen (wachtwoord) + " + wachtwoord)
             vergetenFunctie("wachtwoord", emailAdres, gebruikersnaam, wachtwoord, subject, subjectInMail1, subjectInMail2, advies)
             terugInloggen()
         }

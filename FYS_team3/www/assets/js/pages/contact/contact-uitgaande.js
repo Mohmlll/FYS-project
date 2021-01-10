@@ -25,9 +25,7 @@ $(document).ready(function () {
         "SELECT gebruikerid_twee FROM matches WHERE matchstatus = 1 AND gebruikerid_een = ?",
         [userId]
     ).done(function (data) {
-        console.log(data);
         var noOfTemplates = data.length;
-        console.log(noOfTemplates)
         for (let i = 0; i < noOfTemplates; i++) {
             let uitgaandeGebruiker = data[i]['gebruikerid_twee'];
             if (uitgaandeGebruiker !== userId) {
@@ -37,9 +35,8 @@ $(document).ready(function () {
                 ).done(function (data) {
                     let noOfTemplates = data.length;
                     for (let i = 0; i < noOfTemplates; i++) {
-                        console.log(data);
                         appendVoornaam = data[0]['voornaam'];
-                        let photoUrl = window.location.protocol+ "//" +window.location.host + "/uploads/" +  uitgaandeGebruiker + ".png";
+                        let photoUrl = window.location.protocol + "//" + window.location.host + "/uploads/" + uitgaandeGebruiker + ".png";
                         appendPhoto = photoUrl;
                         appendGebruikerId = uitgaandeGebruiker
                         let costumElement = makeAnElement(appendPhoto, appendGebruikerId, appendVoornaam);

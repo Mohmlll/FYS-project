@@ -22,14 +22,12 @@ $(document).ready(function () {
                 "VALUES(?,?,?, NOW())",
                 [postContent, titel, userId]
             ).done(function (data) {
-                console.log(data);
                 let postId = data.insertId
 
                 FYSCloud.API.queryDatabase(
                     "INSERT INTO post_tags SET idforum_post = ?, explorer = ?, sportieveling = ?, relaxer = ?, partygoer = ? , wintersport = ?, tropisch = ?, backpacker= ?, resort= ?, idgebruiker = ?",
                     [postId, tagExplorer, tagSportieveling, tagRelaxer, tagPartygoer, tagWinterSport, tagTropisch, tagBackpacker, tagResort, userId]
                 ).done(function (data) {
-                    console.log(data);
                     location.href = 'forum-homepagina.html';
                 }).fail(function (reason) {
                     console.log(reason);
@@ -43,20 +41,16 @@ $(document).ready(function () {
             if (titel === "") {
                 document.getElementById("post_titel_id").style.borderColor = "red";
                 document.getElementById("geenTitel").style.display = "block";
-                console.log("1");
             } else {
                 document.getElementById("post_titel_id").style.borderColor = "black";
                 document.getElementById("geenTitel").style.display = "none";
-                console.log("2");
             }
             if (postContent === "") {
                 document.getElementById("post_content_id").style.borderColor = "red";
                 document.getElementById("geenContent").style.display = "block";
-                console.log("3");
             } else {
                 document.getElementById("post_content_id").style.borderColor = "black";
                 document.getElementById("geenContent").style.display = "none";
-                console.log("4");
             }
         }
     })

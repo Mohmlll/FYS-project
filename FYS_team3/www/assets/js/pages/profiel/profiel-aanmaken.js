@@ -1,6 +1,5 @@
 $(document).ready(function () {
     let userId = sessionStorage.getItem('userId');
-    console.log(userId);
 
     $(".gegevens_opslaan").on("click", function (gegevens) {
         gegevens.preventDefault();
@@ -28,10 +27,8 @@ $(document).ready(function () {
             var geslachtValue;
             if (geslachtMan) {
                 geslachtValue = "Man";
-                console.log(geslachtValue);
             } else {
                 geslachtValue = "Vrouw";
-                console.log(geslachtValue);
             }
             var geboorteDatum = document.getElementById('geboortedatum').value;
             var woonplaats = document.getElementById('woonplaats').value;
@@ -45,7 +42,6 @@ $(document).ready(function () {
                 "UPDATE gebruiker SET status = 'volledig_profiel' WHERE gebruikerid = ?",
                 [userId]
             ).done(function (data) {
-                console.log(data);
             }).fail(function (reason) {
                 console.log(reason);
             })
@@ -54,7 +50,6 @@ $(document).ready(function () {
                 "INSERT INTO interesse SET explorer = ?, sportieveling = ?, relaxer = ?, partygoer = ? , wintersport = ?, tropisch = ?, backpacker= ?, resort= ?, idgebruiker = ?",
                 [tagExplorer, tagSportieveling, tagRelaxer, tagPartygoer, tagWinterSport, tagTropisch, tagBackpacker, tagResort, sessionStorage.getItem("userId")]
             ).done(function (data) {
-                console.log(data);
             }).fail(function (reason) {
                 console.log(reason);
             })
@@ -68,7 +63,6 @@ $(document).ready(function () {
                             "INSERT INTO gebruiker_profiel SET profiel_foto = ?, voornaam = ?, achternaam = ?, geslacht = ?, geboorte_datum = ?, woonplaats = ?, telefoon_nummer = ?, bio = ?, gebruikerid = ?",
                             [fotoStatus, voornaam, achternaam, geslachtValue, geboorteDatum, woonplaats, telefoonNummer, bio, sessionStorage.getItem("userId")]
                         ).done(function (data) {
-                            console.log(data);
                             FYSCloud.Utils
                                 .getDataUrl($("#profilePicture"))
                                 .done(function (data) {
@@ -77,7 +71,6 @@ $(document).ready(function () {
                                             userId + ".png",
                                             data.url
                                         ).done(function (data) {
-                                            console.log(data);
                                             location.href = "index.html";
                                         }).fail(function (reason) {
                                             console.log(reason);
@@ -162,7 +155,6 @@ $(document).ready(function () {
         }
         vandaag = jaar + "-" + maand + "-" + dag;
         document.getElementById("geboortedatum").setAttribute("max", vandaag);
-        console.log(document.getElementById("geboortedatum").getAttribute("max"));
         return vandaag
     }
 
@@ -181,7 +173,6 @@ $(document).ready(function () {
                     }
                 })
                 .fail(function (reason) {
-                    console.log(reason);
                 });
         });
 
@@ -194,10 +185,8 @@ $(document).ready(function () {
             .done(function (data) {
                 if (data.isImage) {
                     $("#imagePreview").attr("src", data.url);
-                    console.log("test")
                 }
             }).fail(function (reason) {
-            console.log(reason);
         });
     })
 

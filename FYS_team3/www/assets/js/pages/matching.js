@@ -26,7 +26,6 @@ $(document).ready(function () {
         "SELECT * FROM interesse WHERE idgebruiker = ?",
         [userId]
     ).done(function (data) {
-        console.log(data);
         var backpacker = data[0]["backpacker"];
         var explorer = data[0]["explorer"];
         var sportieveling = data[0]["sportieveling"];
@@ -55,7 +54,6 @@ $(document).ready(function () {
             [backpacker, backpacker, explorer, explorer, sportieveling, sportieveling, relaxer, relaxer,
                 partygoer, partygoer, wintersport, wintersport, tropisch, tropisch, resort, resort, userId, noOfTemplates]
         ).done(function (data) {
-            console.log(data);
             let gegevens = data;
             let appendVoornaam;
             let appendAchternaam;
@@ -66,17 +64,15 @@ $(document).ready(function () {
                     [gegevens[i]["idgebruiker"]]
                 ).done(function (data) {
                     var postId = gegevens[i]["idgebruiker"];
-                    console.log(postId)
                     var photoUrl = "https://i.imgur.com/b5TbCKd.png";
                     if (data[0]["profiel_foto"] === "foto") {
-                        photoUrl = window.location.protocol+ "//" +window.location.host + "/uploads/" + postId + ".png";
+                        photoUrl = window.location.protocol + "//" + window.location.host + "/uploads/" + postId + ".png";
                     }
                     var img = new Image();
                     img.src = photoUrl;
                     appendVoornaam = data[0]['voornaam'];
                     appendAchternaam = data[0]['achternaam'];
                     appendPostId = postId;
-                    console.log(appendVoornaam, appendAchternaam, photoUrl, postId, appendPostId);
 
                     let costumElement = makeAnElement(appendVoornaam, appendAchternaam, photoUrl, appendPostId);
                     nieuweAanbevolen.appendChild(costumElement);

@@ -1,14 +1,10 @@
 $(document).ready(function () {
     let userId = sessionStorage.getItem('userId');
-    console.log(userId);
 
     function leeftijdBerekenen(oudeDatum) {
         let datum = new Date(Date.parse(oudeDatum))
-        console.log(datum);
         let datumNu = new Date()
-        console.log(datumNu);
         let datumVerschil = datumNu.getTime() - datum.getTime() + 3600000;
-        console.log(datumVerschil)
 
         if (datumVerschil < 1000) {
             return 'Nu';
@@ -24,13 +20,10 @@ $(document).ready(function () {
         if (jaar) {
             return Math.floor(jaar) + ' jaar';
         }
-
-        console.log(datumVerschil)
         return datumVerschil
     }
 
     const profielId = FYSCloud.URL.queryString("id", 0);
-    console.log(profielId)
     /////////////////////
     let matchstatus;
 
@@ -40,13 +33,11 @@ $(document).ready(function () {
             "SELECT  matchstatus, COUNT(*) FROM matches WHERE gebruikerid_twee = ? AND gebruikerid_een = ?",
             [profielId, userId]
         ).done(function (data) {
-            console.log(data);
             if (data[0]['COUNT(*)'] === 0) {
                 FYSCloud.API.queryDatabase(
                     "SELECT  matchstatus, COUNT(*) FROM matches WHERE gebruikerid_een = ? AND gebruikerid_twee = ?",
                     [profielId, userId]
                 ).done(function (data) {
-                    console.log(data);
                     matchstatus = data[0]['matchstatus']
                     buttonStatus(matchstatus);
                 }).fail(function (reason) {
@@ -90,14 +81,12 @@ $(document).ready(function () {
         "SELECT profiel_foto, voornaam, achternaam, geslacht, DATE (geboorte_datum), woonplaats, telefoon_nummer, interesse, bio FROM gebruiker_profiel WHERE gebruikerid = ?",
         [profielId]
     ).done(function (data) {
-        console.log(data)
 
         let datum = data[0]["DATE (geboorte_datum)"];
         datum = datum.slice(0, 10);
         let leeftijd = leeftijdBerekenen(datum);
         if (profielId !== null) {
-            document.getElementById("profielFoto").setAttribute("src", window.location.protocol+ "//" +window.location.host + "/uploads/" + profielId + ".png");
-            console.log("src", window.location.protocol+ "//" +window.location.host + "/uploads/" + profielId + ".png");
+            document.getElementById("profielFoto").setAttribute("src", window.location.protocol + "//" + window.location.host + "/uploads/" + profielId + ".png");
         }
         let voornaam = data[0]["voornaam"];
         let achternaam = data[0]["achternaam"];
@@ -131,7 +120,6 @@ $(document).ready(function () {
             "SELECT woonplaats, telefoonnr, leeftijd, geslacht, COUNT(*)  FROM privacy WHERE gebruikerid = ?",
             [profielId]
         ).done(function (data) {
-            console.log(data);
             if (data[0]['COUNT(*)'] !== 0) {
                 let privacyWoonplaats = data[0]['woonplaats'];
                 let privacyTelefoonnr = data[0]['telefoonnr'];
@@ -190,9 +178,7 @@ $(document).ready(function () {
                     "SELECT emailadres FROM gebruiker WHERE gebruikerid = ?",
                     [profielId]
                 ).done(function (data) {
-                    console.log(data);
                     let emailadres = data[0]['emailadres'];
-                    console.log("test" + matchstatus)
                     if (matchstatus === 2) {
                         document.getElementById('profiel_input_email').setAttribute("placeholder", emailadres);
                     } else {
@@ -237,8 +223,6 @@ $(document).ready(function () {
         "SELECT * FROM interesse WHERE idgebruiker = ?",
         [profielId]
     ).done(function (data) {
-        console.log(data);
-        console.log(data[0])
         $(".tag_div").hide();
 
         if (data[0]["backpacker"] === 1) {
@@ -277,7 +261,6 @@ $(document).ready(function () {
         console.log(reason);
     })
 
-    console.log(matchstatus + "WWWWWWWWWOW");
 // hier word een contact verzoek verzonden
 // de code hier onder is nog niet af want hij maakt nog duplicates
     $("#contact_verzoek").click(function (contact) {
@@ -290,7 +273,6 @@ $(document).ready(function () {
                 "INSERT INTO matches SET gebruikerid_een = ?, gebruikerid_twee = ?, matchstatus = ?",
                 [userId, profielId, matchStatusRequested]
             ).done(function (data) {
-                console.log(data)
                 document.getElementById("contact_verzoek").style.display = "none";
                 document.getElementById("verzoek_feedback").style.display = "block";
             }).fail(function (reason) {
@@ -302,7 +284,6 @@ $(document).ready(function () {
                 "UPDATE matches SET matchstatus = 2 WHERE gebruikerid_een = ? AND gebruikerid_twee = ? ",
                 [profielId, userId]
             ).done(function (data) {
-                console.log(data)
 
             }).fail(function (reason) {
                 console.log(reason);
