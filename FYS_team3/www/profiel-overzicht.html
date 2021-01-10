@@ -17,8 +17,11 @@
     <link href="assets/css/pages/reponsive/min-1000px.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link href="assets/css/pages/Translate.css" rel="stylesheet"/>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
 
     <!-- Javascript -->
+
     <script src="assets/vendors/jquery/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.fys.cloud/fyscloud/0.0.3/fyscloud.bundle.min.js"></script>
     <script src="assets/js/config.js"></script>
@@ -31,6 +34,8 @@
     <script src="assets/js/pages/translate.js"></script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
             type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
 
 
 </head>
@@ -56,7 +61,6 @@
         <img alt="Corendon TravelBud" src="assets/img/Logo_website.png">
     </div>
 </div>
-
 <div class="container">
     <div class="container__main">
 
@@ -319,22 +323,6 @@
                                             <h3>Instellingen</h3>
                                         </td>
                                     </tr>
-
-                                    <tr>
-                                        <td>
-                                            <h3>Profiel Verwijderen</h3>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-
-                                            <button class="gegevens_button" id="gegevens_verwijderen">Delete
-                                            </button>
-
-                                        </td>
-                                    </tr>
-
                                     <tr>
                                         <td>
                                             <h4>Privacy: </h4>
@@ -387,6 +375,21 @@
                                         <td colspan="2">
                                             <button class="privacy_opslaan" id="privacy_opslaan" type="button">Opslaan
                                             </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3>Profiel Verwijderen</h3>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+
+                                            <div class="account_verwijder">
+                                                <a class="cd-popup-trigger" id="gegevens_verwijderen">Verwijder<img class="trashcan" src="assets/img/trash-can_115312.png">
+                                                </a>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
