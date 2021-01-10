@@ -33,7 +33,7 @@
 }
 
 #register {
-    margin-top: -220px;
+    margin-top: -200px;
     margin-bottom: 10px;
 }
 
@@ -69,8 +69,8 @@
     background: linear-gradient(to right, red, #ffffff);
 }
 
-.passwordCheckbox {
-    margin: 30px 10px 30px;
+#login_button {
+    margin-top: 40px;
 }
 
 #login {

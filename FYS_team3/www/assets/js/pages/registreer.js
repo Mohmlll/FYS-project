@@ -82,8 +82,6 @@ $(document).ready(function () {
         var emailAdresValid = $("#emailadres").is(":valid");
         var wachtwoordValid = $("#wachtwoord").is(":valid");
 
-        var voorwaardeCheckValid = $("#voorwaardeCheck").is(":valid");
-
         var gebruikersNaam = document.getElementById('gebruikersnaam').value;
         var emailAdres = document.getElementById('emailadres').value;
         var wachtwoord = document.getElementById('wachtwoord').value;
@@ -131,7 +129,7 @@ $(document).ready(function () {
             console.log(emailAdresValid)
             console.log(gebruikersnaamValid)
 
-            if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && voorwaardeCheckValid
+            if (gebruikersnaamValid && emailAdresValid && wachtwoordValid
                 && emailAdresBestaandeValid && gebruikersnaamBestaandeValid && get_action()) {
                 FYSCloud.API.queryDatabase(
                     "INSERT INTO gebruiker( gebruikers_naam, emailadres, wachtwoord, status)" +
@@ -177,13 +175,6 @@ $(document).ready(function () {
                 } else {
                     document.getElementById("wachtwoord").style.borderColor = "black";
                     document.getElementById("geenWachtwoord").style.display = "none";
-                }
-                if (!voorwaardeCheckValid) {
-                    document.getElementById("voorwaardeCheck").style.borderColor = "red";
-                    document.getElementById("geenVoorwaardeCheck").style.display = "block";
-                } else {
-                    document.getElementById("voorwaardeCheck").style.borderColor = "black";
-                    document.getElementById("geenVoorwaardeCheck").style.display = "none";
                 }
             }
 

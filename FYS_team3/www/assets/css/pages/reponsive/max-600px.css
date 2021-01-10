@@ -9,12 +9,6 @@
 }
 
 @media screen and (max-width: 600px) {
-    .input {
-        width: 100%;
-        order: 0;
-        margin: auto;
-    }
-
     .profiel_instellingen {
         width: 100%;
         order: 1;
@@ -31,10 +25,6 @@
     .info1 {
         min-width: 85%;
         margin: 5% 5% 5% 5%;
-    }
-
-    .inlog-box {
-        margin: 0;
     }
 
     .info2 {
@@ -121,29 +111,6 @@ over ons
     }
 
 }
-
-/*
-login
- */
-
-/*
-forum
- */
-
-@media screen and (max-width: 600px) {
-    .header_logo_ander img {
-        height: 3em;
-        margin-bottom: -61px    ;
-    }
-
-
-   .header_img_ander{
-
-       background-color: white;
-       height: 10%;
-   }
-}
-
 
 /*profiel*/
 @media screen and (max-width: 600px) {
