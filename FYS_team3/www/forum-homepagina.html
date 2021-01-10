@@ -58,20 +58,89 @@
 
 <div class="container">
     <div class="container__main">
-        <div class="forum_main_options">
-            <button class="start_post_button" onclick="location.href='post-aanmaken.html'"> Nieuwe post aanmaken
-            </button>
-            <form>
-                <label for="volgorde">
-                    <select id="volgorde">
-                        <option id="nieuw_volgorde" value="nieuw_volgorde">Nieuwe post</option>
-                        <option id="aanbevolen_volgorde" value="aanbevolen_volgorde">Aanbevolen</option>
-                        <option id="beste_volgorde" value="beste_volgorde">Meest bekeken</option>
-                    </select>
-                </label>
-            </form>
-        </div>
+
         <div class="forum_main" id="forum_main_id">
+            <div class="forum_main_options">
+                <div class="option_buttons">
+                    <button class="start_post_button" onclick="location.href='post-aanmaken.html'"> Nieuwe post aanmaken
+                    </button>
+                    <div class="expand_filter_button" id="expand_filterid">Filter</div>
+                </div>
+                <form>
+                    <label for="volgorde">
+                        <select id="volgorde">
+                            <option id="nieuw_volgorde" value="nieuw_volgorde">Nieuwe post</option>
+                            <option id="aanbevolen_volgorde" value="aanbevolen_volgorde">Aanbevolen</option>
+                            <option id="beste_volgorde" value="beste_volgorde">Meest bekeken</option>
+                        </select>
+                    </label>
+                </form>
+
+
+                <div class="forum_topics__options" id="forum_filter">
+                    <input class="forum_search" id="zoekfunctie" placeholder="Zoeken" title="zoeken" type="text">
+                    <div class="forum_filter" id="myBtnContainer">
+                        <div class="div_btn">
+                            <label for="filter_explorer">
+                                <input class="btn" id="filter_explorer" type="checkbox">
+                                <span>Explorer</span>
+                            </label>
+                        </div>
+
+                        <div class="div_btn">
+                            <label for="filter_sportieveling">
+                                <input class="btn" id="filter_sportieveling" type="checkbox">
+                                <span>Sportieveling</span>
+                            </label>
+                        </div>
+
+                        <div class="div_btn">
+                            <label for="filter_relaxer">
+                                <input class="btn" id="filter_relaxer" type="checkbox">
+                                <span>Relaxer</span>
+                            </label>
+                        </div>
+
+                        <div class="div_btn">
+                            <label for="filter_partygoer">
+                                <input class="btn" id="filter_partygoer" type="checkbox">
+                                <span>Partygoer</span>
+                            </label>
+                        </div>
+
+                        <div class="div_btn">
+                            <label for="filter_backpacker">
+                                <input class="btn" id="filter_backpacker" type="checkbox">
+                                <span>Backpacker</span>
+                            </label>
+                        </div>
+
+                        <div class="div_btn">
+                            <label for="filter_wintersport">
+                                <input class="btn" id="filter_wintersport" type="checkbox">
+                                <span>Wintersport</span>
+                            </label>
+                        </div>
+
+                        <div class="div_btn">
+                            <label for="filter_tropisch">
+                                <input class="btn" id="filter_tropisch" type="checkbox">
+                                <span>Tropisch</span>
+                            </label>
+                        </div>
+
+                        <div class="div_btn">
+                            <label for="filter_resort">
+                                <input class="btn" id="filter_resort" type="checkbox">
+                                <span>Resort</span>
+                            </label>
+                        </div>
+
+                    </div>
+                    <button id="filteren">Bevestigen</button>
+                </div>
+
+            </div>
             <div id="template_div">
                 <template id="post_template">
                     <div class="post" id="post">
@@ -96,94 +165,38 @@
                     </div>
                 </template>
             </div>
-            <div class="forum_page_selector">
-                <div id="left_page">&laquo;</div>
-                <div id="paginanr"></div>
-                <div id="right_page">&raquo;</div>
+            <!--            <div class="forum_page_selector">-->
+            <!--                <div id="left_page">&laquo;</div>-->
+            <!--                <div id="paginanr"></div>-->
+            <!--                <div id="right_page">&raquo;</div>-->
+            <!--            </div>-->
+            <div class="pagination">
+                <a id="left_page" href="#">&laquo;</a>
+                <a id="paginanr" href="#"></a>
+                <a id="right_page" href="#">&raquo;</a>
             </div>
         </div>
+
+
         <div class="forum_rightmenu">
-            <div class="forum_aanbevolen" id="aanbevolen">
+            <div class="forum_aanbevolen">
                 <div class="aanbevolen_profiel">
                     <p>Aanbevolen Matches</p>
                     <hr>
-                    <template id="matching_template">
-                        <div class="aanbevolen_match" id="aanbevolen_match">
-                            <div class="aanbevolen_profiel_foto">
-                                <img id="match_profiel_img">
+                    <div class="aanbolen_templates" id="aanbevolen">
+                        <template id="matching_template" class="matching_template">
+                            <div class="aanbevolen_match" id="aanbevolen_match">
+                                <div class="aanbevolen_profiel_foto">
+                                    <img id="match_profiel_img">
+                                </div>
+                                <form class="aanbevolen_profiel_info">
+                                    <span class="aanbevolen_vnaam" id="match_vnaam"></span>
+                                    <span class="aanbevolen_anaam" id="match_anaam"></span>
+                                </form>
                             </div>
-                            <form class="aanbevolen_profiel_info">
-                                <span class="aanbevolen_vnaam" id="match_vnaam"></span>
-                                <span class="aanbevolen_anaam" id="match_anaam"></span>
-                            </form>
-                        </div>
-                    </template>
+                        </template>
+                    </div>
                 </div>
-            </div>
-            <div class="forum_topics__options">
-                <p>Filter:</p>
-                <input class="forum_search" id="zoekfunctie" placeholder="Zoeken" title="zoeken" type="text">
-                <hr>
-                <div class="forum_filter" id="myBtnContainer">
-                    <div class="div_btn">
-                        <label for="filter_explorer">
-                            <input class="btn" id="filter_explorer" type="checkbox">
-                            <span>Explorer</span>
-                        </label>
-                    </div>
-
-                    <div class="div_btn">
-                        <label for="filter_sportieveling">
-                            <input class="btn" id="filter_sportieveling" type="checkbox">
-                            <span>Sportieveling</span>
-                        </label>
-                    </div>
-
-                    <div class="div_btn">
-                        <label for="filter_relaxer">
-                            <input class="btn" id="filter_relaxer" type="checkbox">
-                            <span>Relaxer</span>
-                        </label>
-                    </div>
-
-                    <div class="div_btn">
-                        <label for="filter_partygoer">
-                            <input class="btn" id="filter_partygoer" type="checkbox">
-                            <span>Partygoer</span>
-                        </label>
-                    </div>
-
-                    <div class="div_btn">
-                        <label for="filter_backpacker">
-                            <input class="btn" id="filter_backpacker" type="checkbox">
-                            <span>Backpacker</span>
-                        </label>
-                    </div>
-
-                    <div class="div_btn">
-                        <label for="filter_wintersport">
-                            <input class="btn" id="filter_wintersport" type="checkbox">
-                            <span>Wintersport</span>
-                        </label>
-                    </div>
-
-                    <div class="div_btn">
-                        <label for="filter_tropisch">
-                            <input class="btn" id="filter_tropisch" type="checkbox">
-                            <span>Tropisch</span>
-                        </label>
-                    </div>
-
-                    <div class="div_btn">
-                        <label for="filter_resort">
-                            <input class="btn" id="filter_resort" type="checkbox">
-                            <span>Resort</span>
-                        </label>
-                    </div>
-
-                </div>
-                <hr>
-                <button id="filteren">Bevestigen</button>
             </div>
         </div>
 

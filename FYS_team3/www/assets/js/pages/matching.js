@@ -35,7 +35,7 @@ $(document).ready(function () {
         var wintersport = data[0]["wintersport"];
         var tropisch = data[0]["tropisch"];
         var resort = data[0]["resort"];
-        var noOfTemplates = 5;
+        var noOfTemplates = 6;
 
         FYSCloud.API.queryDatabase(
             "SELECT (if(explorer = 0 AND sportieveling = 0 AND " +
