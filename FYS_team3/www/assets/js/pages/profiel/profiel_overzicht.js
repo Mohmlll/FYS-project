@@ -212,12 +212,11 @@ privacy
                 "DELETE FROM gebruiker WHERE gebruikerid = ? ",
                 [userId]
             ).done(function (data) {
+                sessionStorage.clear()
                 location.href = "index.html"
             }).fail(function (reason) {
                 console.log(reason);
             });
-            console.log("bevestigd")
-            location.href = "index.html"
         }
     });
 });

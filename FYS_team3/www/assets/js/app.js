@@ -70,7 +70,7 @@ $(document).ready(function () {
 
     $(".js-uitloggen").on("click", function (logUit) {
         logUit.preventDefault()
-        sessionStorage.setItem("userId", null);
+        sessionStorage.clear();
         menuSelectie()
         document.location.href = "index.html"
     })
