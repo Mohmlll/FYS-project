@@ -477,8 +477,5 @@ $(document).ready(function () {
         filterForum()
     })
     console.log(sessionStorage.getItem("filter"))
-
-
-
 })
 ;
