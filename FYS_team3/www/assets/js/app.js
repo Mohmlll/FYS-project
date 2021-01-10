@@ -60,6 +60,8 @@ $(document).ready(function () {
         "   <a class=\"over_ons_menu\" href=\"over-ons.html\">Over ons</a>" +
         "   <b class=\"streep\">/</b>" +
         "   <a class=\"js-logged-out\" href=\"log-in.html\">Aanmelden</a>" +
+        "   <b class=\"streep\">/</b>" +
+        "   <a class=\"contact\" href=\"contact.html\">Contact</a>" +
         "</div>"
     document.getElementById("logged_in").innerHTML =
         "<div class=\"menu_inhoud\">" +
@@ -72,6 +74,8 @@ $(document).ready(function () {
         "   <a class=\"js-logged-in\" id=\"forum_menu_in\" href=\"forum-homepagina.html\">Forum</a>" +
         "   <b class=\"streep\">/</b>" +
         "   <a class=\"js-uitloggen\" id=\"uit_menu_in\" >Uitloggen</a>" +
+        "   <b class=\"streep\">/</b>" +
+        "   <a class=\"contact_in\" href=\"contact.html\">Contact</a>" +
         "</div>"
 
     $(".js-uitloggen").on("click", function (logUit) {
