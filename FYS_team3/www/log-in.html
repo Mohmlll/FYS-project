@@ -115,7 +115,11 @@
                     <div class="inputAlert" id="geenGebruikersNaam">
                         <p>
                             Vul hier een gebruikersnaam in met 4 tot en met 25 karakters <br>
-
+                        </p>
+                    </div>
+                    <div class="inputAlert" id="bestaandeNaam">
+                        <p>
+                            Deze gebruikersnaam bestaat al <br>
                         </p>
                     </div>
                     <input class="tekstbox" id="emailadres" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="E-mail"
@@ -123,7 +127,11 @@
                     <div class="inputAlert" id="geenEmailAdres">
                         <p>
                             Vul hier een geldig e-mailadres in <br>
-
+                        </p>
+                    </div>
+                    <div class="inputAlert" id="bestaandeEmail">
+                        <p>
+                            Dit e-mailadres bestaat al <br>
                         </p>
                     </div>
                     <input class="tekstbox" id="wachtwoord" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$"
@@ -133,8 +141,6 @@
                             Vul hier een geldig wachtwoord in <br>
                             (mininmaal 1 hoofdletter, 1 kleine letter en 1 cijfer.
                             Tuseen de 8 en 32 karakters)
-
-
                         </p>
                     </div>
                     <input class="tekstbox" id="wachtwoordCheck" placeholder="Wachtwoord herhalen" required
@@ -142,7 +148,6 @@
                     <div class="inputAlert" id="geenWachtwoordCheck">
                         <p>
                             wachtwoorden komen niet overeen <br>
-
                         </p>
                     </div>
                     <div class="g-recaptcha brochure__form__captcha" data-sitekey="6LecBBIaAAAAAD2jcQTg42V4LRbf668qbVgsjm91"

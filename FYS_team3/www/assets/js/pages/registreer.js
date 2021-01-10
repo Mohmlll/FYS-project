@@ -97,54 +97,101 @@ $(document).ready(function () {
             document.getElementById("geenWachtwoordCheck").style.display = "none";
         }
 
-        if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && voorwaardeCheckValid && get_action()) {
-            FYSCloud.API.queryDatabase(
-                "INSERT INTO gebruiker( gebruikers_naam, emailadres, wachtwoord, status)" +
-                "VALUES(?,?,SHA(?),?)",
-                [gebruikersNaam, emailAdres, wachtwoord, status]
-            ).done(function (data) {
-                console.log(data);
-                sessionStorage.setItem("userId", data.insertId);
-                location.href = "profiel-aanmaken.html";
-            }).fail(function (reason) {
-                console.log(reason);
-            })
-        } else {
-            if (get_action()) {
-                document.getElementById('captcha').innerHTML = "Captcha compleet";
-                document.getElementById('captcha').style.color = "black";
-            } else {
-                document.getElementById('captcha').innerHTML = "Check de captcha eerst AUB";
+        FYSCloud.API.queryDatabase(
+            "SELECT emailadres, gebruikers_naam FROM gebruiker WHERE emailadres = ? OR gebruikers_naam = ?",
+            [emailAdres, gebruikersNaam]
+        ).done(function (data) {
+            console.log(data);
+            let emailAdresBestaandeValid = true
+            let gebruikersnaamBestaandeValid = true
+            for (let i = 0; i < data.length; i++) {
+                if (data[i]["emailadres"] === emailAdres) {
+                    console.log("duplicate mail")
+                    emailAdresBestaandeValid = false;
+                    document.getElementById("emailadres").style.borderColor = "red";
+                    document.getElementById("bestaandeEmail").style.display = "block";
+                } else {
+                    document.getElementById("emailadres").style.borderColor = "black";
+                    document.getElementById("bestaandeEmail").style.display = "none";
+                }
+                if (data[i]["gebruikers_naam"] === gebruikersNaam) {
+                    console.log("duplicate naam")
+                    gebruikersnaamBestaandeValid = false
+                    document.getElementById("gebruikersnaam").style.borderColor = "red";
+                    document.getElementById("bestaandeNaam").style.display = "block";
+                } else {
+                    document.getElementById("gebruikersnaam").style.borderColor = "black";
+                    document.getElementById("bestaandeNaam").style.display = "none";
+                }
             }
-            if (!gebruikersnaamValid) {
-                document.getElementById("gebruikersnaam").style.borderColor = "red";
-                document.getElementById("geenGebruikersNaam").style.display = "block";
-            } else {
-                document.getElementById("gebruikersnaam").style.borderColor = "black";
-                document.getElementById("geenGebruikersNaam").style.display = "none";
+            if (data.length === 0) {
+                document.getElementById("bestaandeEmail").style.display = "none";
+                document.getElementById("bestaandeNaam").style.display = "none";
             }
-            if (!emailAdresValid) {
-                document.getElementById("emailadres").style.borderColor = "red";
-                document.getElementById("geenEmailAdres").style.display = "block";
+            console.log(emailAdresValid)
+            console.log(gebruikersnaamValid)
+
+            if (gebruikersnaamValid && emailAdresValid && wachtwoordValid && voorwaardeCheckValid
+                && emailAdresBestaandeValid && gebruikersnaamBestaandeValid && get_action()) {
+                FYSCloud.API.queryDatabase(
+                    "INSERT INTO gebruiker( gebruikers_naam, emailadres, wachtwoord, status)" +
+                    "VALUES(?,?,SHA(?),?)",
+                    [gebruikersNaam, emailAdres, wachtwoord, status]
+                ).done(function (data) {
+                    console.log(data);
+                    sessionStorage.setItem("userId", data.insertId);
+                    location.href = "profiel-aanmaken.html";
+                }).fail(function (reason) {
+                    console.log(reason);
+                })
             } else {
-                document.getElementById("emailadres").style.borderColor = "black";
-                document.getElementById("geenEmailAdres").style.display = "none";
+                if (get_action()) {
+                    document.getElementById('captcha').innerHTML = "Captcha compleet";
+                    document.getElementById('captcha').style.color = "black";
+                } else {
+                    document.getElementById('captcha').innerHTML = "Check de captcha eerst AUB";
+                }
+                if (!gebruikersnaamValid) {
+                    document.getElementById("gebruikersnaam").style.borderColor = "red";
+                    document.getElementById("geenGebruikersNaam").style.display = "block";
+                } else if (gebruikersnaamValid && !gebruikersnaamBestaandeValid) {
+                    document.getElementById("gebruikersnaam").style.borderColor = "red";
+                    document.getElementById("geenGebruikersNaam").style.display = "none";
+                } else {
+                    document.getElementById("gebruikersnaam").style.borderColor = "black";
+                    document.getElementById("geenGebruikersNaam").style.display = "none";
+                }
+                if (!emailAdresValid) {
+                    document.getElementById("emailadres").style.borderColor = "red";
+                    document.getElementById("geenEmailAdres").style.display = "block";
+                } else if (emailAdresValid && !emailAdresBestaandeValid) {
+                    document.getElementById("emailadres").style.borderColor = "red";
+                    document.getElementById("geenEmailAdres").style.display = "none";
+                } else {
+                    document.getElementById("emailadres").style.borderColor = "black";
+                    document.getElementById("geenEmailAdres").style.display = "none";
+                }
+                if (!wachtwoordValid) {
+                    document.getElementById("wachtwoord").style.borderColor = "red";
+                    document.getElementById("geenWachtwoord").style.display = "block";
+                } else {
+                    document.getElementById("wachtwoord").style.borderColor = "black";
+                    document.getElementById("geenWachtwoord").style.display = "none";
+                }
+                if (!voorwaardeCheckValid) {
+                    document.getElementById("voorwaardeCheck").style.borderColor = "red";
+                    document.getElementById("geenVoorwaardeCheck").style.display = "block";
+                } else {
+                    document.getElementById("voorwaardeCheck").style.borderColor = "black";
+                    document.getElementById("geenVoorwaardeCheck").style.display = "none";
+                }
             }
-            if (!wachtwoordValid) {
-                document.getElementById("wachtwoord").style.borderColor = "red";
-                document.getElementById("geenWachtwoord").style.display = "block";
-            } else {
-                document.getElementById("wachtwoord").style.borderColor = "black";
-                document.getElementById("geenWachtwoord").style.display = "none";
-            }
-            if (!voorwaardeCheckValid) {
-                document.getElementById("voorwaardeCheck").style.borderColor = "red";
-                document.getElementById("geenVoorwaardeCheck").style.display = "block";
-            } else {
-                document.getElementById("voorwaardeCheck").style.borderColor = "black";
-                document.getElementById("geenVoorwaardeCheck").style.display = "none";
-            }
-        }
+
+        }).fail(function (reason) {
+            console.log(reason);
+        })
+
+
     })
 
 
@@ -275,8 +322,6 @@ $(document).ready(function () {
 
     $("#vergeten_button").on("click", function (vergeten) {
         vergeten.preventDefault();
-        let bevestiging;
-
         var emailAdres = document.getElementById('vergeten_input').value;
         if (gebruikersnaamVergeten) {
             subject = "Gebruikersnaam vergeten";
