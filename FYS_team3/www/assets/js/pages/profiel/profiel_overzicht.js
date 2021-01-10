@@ -205,37 +205,19 @@ privacy
     openinhoudt(event, tag, target)
     target = ""
 
-    jQuery(document).ready(function ($) {
-        //open popup
-        $('.cd-popup-trigger').on('click', function (event) {
-            event.preventDefault();
-            $('.cd-popup').addClass('is-visible');
-        });
-
-        //close popup
-        $('.cd-popup').on('click', function (event) {
-            if ($(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup')) {
-                event.preventDefault();
-                $(this).removeClass('is-visible');
-            }
-        });
-        //close popup when clicking the esc keyboard button
-        $(document).keyup(function (event) {
-            if (event.which == '27') {
-                $('.cd-popup').removeClass('is-visible');
-            }
-        });
-    });
-
-    $("#Verwijder_bevestig").on("click", function () {
-        FYSCloud.API.queryDatabase(
-            "DELETE FROM gebruiker WHERE gebruikerid = ? ",
-            [userId]
-        ).done(function (data) {
+    $(".gegevens_verwijderen").on("click", function (){
+        let bevestigen = confirm("Wilt u uw account verwijderen?")
+        if (bevestigen) {
+            FYSCloud.API.queryDatabase(
+                "DELETE FROM gebruiker WHERE gebruikerid = ? ",
+                [userId]
+            ).done(function (data) {
+                location.href = "index.html"
+            }).fail(function (reason) {
+                console.log(reason);
+            });
+            console.log("bevestigd")
             location.href = "index.html"
-        }).fail(function (reason) {
-            console.log(reason);
-        });
-    })
-
+        }
+    });
 });
