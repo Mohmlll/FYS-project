@@ -1,6 +1,5 @@
 $(document).ready(function () {
     let userId = sessionStorage.getItem('userId');
-    console.log(userId);
 
     function date() {
         var minimaleLeeftijd = 18
@@ -16,13 +15,11 @@ $(document).ready(function () {
         }
         vandaag = jaar + "-" + maand + "-" + dag;
         document.getElementById("profiel_input_geboortedatum").setAttribute("max", vandaag);
-        console.log(document.getElementById("profiel_input_geboortedatum").getAttribute("max"));
         return vandaag
     }
 
     if (userId !== null) {
         document.getElementById("profielFoto").setAttribute("src", window.location.protocol + "//" + window.location.host + "/uploads/" + userId + ".png");
-        console.log("src", "https://dev-is106-3.fys.cloud/uploads/" + userId + ".png");
     }
 
 
@@ -30,7 +27,6 @@ $(document).ready(function () {
         "SELECT profiel_foto, voornaam, achternaam, geslacht, DATE (geboorte_datum), woonplaats, telefoon_nummer, interesse, bio FROM gebruiker_profiel WHERE gebruikerid = ?",
         [userId]
     ).done(function (data) {
-        console.log(data)
         let datum = data[0]["DATE (geboorte_datum)"];
         datum = datum.slice(0, 10);
         document.getElementById("profiel_input_voornaam").setAttribute("placeholder", data[0]["voornaam"]);
@@ -59,7 +55,6 @@ $(document).ready(function () {
         "SELECT emailadres FROM gebruiker WHERE gebruikerid = ?",
         [userId]
     ).done(function (data) {
-        console.log(data)
         document.getElementById("profiel_input_email").setAttribute("placeholder", data[0]["emailadres"]);
     }).fail(function (reason) {
         console.log(reason);
@@ -73,7 +68,6 @@ privacy
         "SELECT woonplaats, telefoonnr, leeftijd, geslacht FROM privacy WHERE gebruikerid = ?",
         [userId]
     ).done(function (data) {
-        console.log(data);
         if (data.length !== 0) {
             switch (data[0]['woonplaats']) {
                 case 'Iedereen':
@@ -138,14 +132,11 @@ privacy
             "SELECT COUNT(*) FROM privacy WHERE gebruikerid = ?",
             [userId]
         ).done(function (data) {
-            console.log(data);
             if (data[0]['COUNT(*)'] === 0) {
                 FYSCloud.API.queryDatabase(
                     "INSERT INTO privacy SET gebruikerid = ?, woonplaats = ?, telefoonnr = ?, leeftijd = ?, geslacht = ?",
                     [userId, selWoonplaats, selNr, selLeeftijd, selGeslacht]
                 ).done(function (data) {
-                    console.log(data);
-
                 }).fail(function (reason) {
                     console.log(reason);
                 })
@@ -154,7 +145,6 @@ privacy
                     "UPDATE privacy SET woonplaats = ?, telefoonnr = ?, leeftijd = ?, geslacht = ? WHERE gebruikerid = ?",
                     [selWoonplaats, selNr, selLeeftijd, selGeslacht, userId]
                 ).done(function (data) {
-                    console.log(data);
 
                 }).fail(function (reason) {
                     console.log(reason);
@@ -165,25 +155,6 @@ privacy
             console.log(reason);
             console.log("fout")
         })
-
-        /*
-verwijderen
-*/
-
-        if (confirm("weet je zeker dat je profiel verwijdert? Er is geen mogelijkheid om deze actie ongedaan te maken!")) {
-            console.log("Verwijdering succesvol!")
-        } else {
-            console.log("Verwijdering geannuleer, je hoeft niks verder te doen!")
-        }
-
-        //FYSCloud.API.queryDatabase(
-        //             "DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
-        //         ).done(function (data) {
-
-
-        /*
-        if (confirm("Weet je zeker dat
-        */
     })
 
     function openinhoudt(live, live_kopje, target) {
@@ -234,37 +205,37 @@ verwijderen
     openinhoudt(event, tag, target)
     target = ""
 
-    jQuery(document).ready(function($){
+    jQuery(document).ready(function ($) {
         //open popup
-        $('.cd-popup-trigger').on('click', function(event){
+        $('.cd-popup-trigger').on('click', function (event) {
             event.preventDefault();
             $('.cd-popup').addClass('is-visible');
         });
 
         //close popup
-        $('.cd-popup').on('click', function(event){
-            if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+        $('.cd-popup').on('click', function (event) {
+            if ($(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup')) {
                 event.preventDefault();
                 $(this).removeClass('is-visible');
             }
         });
         //close popup when clicking the esc keyboard button
-        $(document).keyup(function(event){
-            if(event.which=='27'){
+        $(document).keyup(function (event) {
+            if (event.which == '27') {
                 $('.cd-popup').removeClass('is-visible');
             }
         });
     });
 
-   $("#Verwijder_bevestig").on("click", function () {
-       FYSCloud.API.queryDatabase(
-           "DELETE FROM gebruiker WHERE gebruikerid = ? ",
-           [userId]
-       ).done(function(data) {
-           location.href="index.html"
-       }).fail(function(reason) {
-           console.log(reason);
-       });
-   })
+    $("#Verwijder_bevestig").on("click", function () {
+        FYSCloud.API.queryDatabase(
+            "DELETE FROM gebruiker WHERE gebruikerid = ? ",
+            [userId]
+        ).done(function (data) {
+            location.href = "index.html"
+        }).fail(function (reason) {
+            console.log(reason);
+        });
+    })
 
 });

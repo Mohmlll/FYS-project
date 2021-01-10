@@ -11,12 +11,10 @@ $(document).ready(function () {
             "UPDATE matches SET matchstatus = ? WHERE gebruikerid_een = ? AND gebruikerid_twee = ?",
             [matchstatus, gebruikerId, userId]
         ).done(function (data) {
-            console.log(data);
             FYSCloud.API.queryDatabase(
                 "UPDATE matches SET matchstatus = ? WHERE gebruikerid_een = ? AND gebruikerid_twee = ?",
                 [matchstatus, userId, gebruikerId]
             ).done(function (data) {
-                console.log(data);
             }).fail(function (data) {
                 console.log(data);
                 console.log("fout")
@@ -50,7 +48,6 @@ $(document).ready(function () {
                 "SELECT matchstatus FROM matches WHERE gebruikerid_een = ? AND gebruikerid_twee = ?",
                 [gebruikerId, userId]
             ).done(function (data) {
-                console.log(data);
                 let matchstatus = data[0]['matchstatus'];
                 if (matchstatus !== 0 && matchstatus !== 2) {
                     let matchstatusNieuw = 2;
@@ -84,7 +81,6 @@ $(document).ready(function () {
         ).done(function (data) {
             var noOfTemplates_inkomende = data.length;
             for (let i = 0; i < noOfTemplates_inkomende; i++) {
-                console.log(data);
                 let inkomendeGebruiker = data[i]['gebruikerid_een'];
                 if (inkomendeGebruiker !== userId) {
                     FYSCloud.API.queryDatabase(
@@ -93,12 +89,10 @@ $(document).ready(function () {
                     ).done(function (data) {
                         let noOfTemplates = data.length;
                         for (let i = 0; i < noOfTemplates; i++) {
-                            console.log(data);
                             appendVoornaam = data[0]['voornaam'];
-                            let photoUrl = window.location.protocol+ "//" +window.location.host + "/uploads/" + inkomendeGebruiker + ".png";
+                            let photoUrl = window.location.protocol + "//" + window.location.host + "/uploads/" + inkomendeGebruiker + ".png";
                             appendPhoto = photoUrl;
                             appendGebruikerId = inkomendeGebruiker;
-                            console.log(appendPhoto);
                             let costumElement = makeAnElement(appendPhoto, appendGebruikerId, appendVoornaam);
                             nieuweInkomende.appendChild(costumElement);
                         }

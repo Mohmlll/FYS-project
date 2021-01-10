@@ -28,12 +28,10 @@ $(document).ready(function () {
                 "DELETE FROM matches WHERE  gebruikerid_een = ? AND gebruikerid_twee = ?",
                 [userId, gebruikerId]
             ).done(function (data) {
-                console.log(data);
                 FYSCloud.API.queryDatabase(
                     "DELETE FROM matches WHERE gebruikerid_twee = ? AND gebruikerid_een = ?",
                     [userId, gebruikerId]
                 ).done(function (data) {
-                    console.log(data);
                 }).fail(function (reason) {
                     console.log(reason);
                     console.log("fout");
@@ -58,12 +56,10 @@ $(document).ready(function () {
             ).done(function (data) {
                 let noOfTemplates = data.length;
                 for (let i = 0; i < noOfTemplates; i++) {
-                    console.log(data);
                     appendVoornaam = data[0]['voornaam'];
-                    let photoUrl = window.location.protocol+ "//" +window.location.host + "/uploads/" + lopendeGebruiker + ".png";
+                    let photoUrl = window.location.protocol + "//" + window.location.host + "/uploads/" + lopendeGebruiker + ".png";
                     appendPhoto = photoUrl;
                     appendGebruikerId = lopendeGebruiker
-                    console.log(appendPhoto);
                     let costumElement = makeAnElement(appendPhoto, appendGebruikerId, appendVoornaam);
                     nieuwLopende.appendChild(costumElement);
                 }
@@ -81,9 +77,7 @@ $(document).ready(function () {
             [userId]
         ).done(function (data) {
             let noOfTemplates = data.length;
-            console.log(noOfTemplates)
             for (let i = 0; i < noOfTemplates; i++) {
-                console.log(data);
                 let lopendeGebruiker = data[i]['gebruikerid_een'];
                 matches(lopendeGebruiker);
             }
@@ -97,9 +91,7 @@ $(document).ready(function () {
             [userId]
         ).done(function (data) {
             let noOfTemplates = data.length;
-            console.log(noOfTemplates)
             for (let i = 0; i < noOfTemplates; i++) {
-                console.log(data);
                 let lopendeGebruiker = data[i]['gebruikerid_twee'];
                 matches(lopendeGebruiker);
             }

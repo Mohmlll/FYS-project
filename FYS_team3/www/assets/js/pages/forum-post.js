@@ -1,11 +1,9 @@
 $(document).ready(function () {
     let userId = sessionStorage.getItem('userId');
-    console.log(userId);
 
 
     document.getElementById("volgorde").onchange = function () {
         let value = document.getElementById("volgorde").value
-        console.log(value)
         if (value === "nieuw_volgorde") {
             sessionStorage.setItem("volgorde", "datum DESC")
             location.reload()
@@ -18,14 +16,12 @@ $(document).ready(function () {
         } else {
             console.log("Error")
         }
-        console.log(sessionStorage.getItem("volgorde"))
     }
 
     function tijdGeleden(oudeDatum) {
         let datum = new Date(Date.parse(oudeDatum))
         let datumNu = new Date()
         let datumVerschil = datumNu.getTime() - datum.getTime() + 3600000;
-        console.log(datumVerschil)
 
         if (datumVerschil < 1000) {
             return 'Nu';
@@ -74,7 +70,6 @@ $(document).ready(function () {
             if (maand < 2) {
                 return Math.floor(maand) + ' maand geleden';
             } else {
-                console.log(maand)
                 return Math.floor(maand) + ' maanden geleden';
             }
         }
@@ -88,8 +83,6 @@ $(document).ready(function () {
             }
 
         }
-
-        console.log(datumVerschil)
         return datumVerschil
     }
 
@@ -101,7 +94,6 @@ $(document).ready(function () {
         "SELECT COUNT(*) FROM forum_post WHERE idgebruiker != ?",
         [userId]
     ).done(function (data) {
-        console.log(data);
         aantalRecords = data[0]["COUNT(*)"];
         paginaAantal = aantalRecords / noOfTemplates;
     }).fail(function (reason) {
@@ -117,7 +109,6 @@ $(document).ready(function () {
             filter.className = "forum_topics__options";
         }
     })
-
 
 
     function paginationNr(paginanummer) {
@@ -137,7 +128,6 @@ $(document).ready(function () {
         document.getElementById("paginanr").innerHTML = "<b>" + paginanr + "</b>"
         if (kant === "left" && paginanummer > 0) {
             paginanummer--;
-            console.log(kant)
             sessionStorage.setItem("pagina", paginanummer)
             paginationNr(paginanummer);
             $("#template_div").load(document.URL + " #template_div")
@@ -146,7 +136,6 @@ $(document).ready(function () {
 
         if (kant === "right" && paginanummer < paginaAantal - 1) {
             paginanummer++;
-            console.log(kant)
             sessionStorage.setItem("pagina", paginanummer)
             paginationNr(paginanummer);
             $("#template_div").load(document.URL + " #template_div")
@@ -158,28 +147,23 @@ $(document).ready(function () {
     paginationNr(0);
     $("#left_page").on("click", function () {
         pagina("left")
-        console.log("links")
     })
 
     $("#right_page").on("click", function () {
         pagina("right")
-        console.log("rechts")
     })
 
 
     function aantalBekijks(idPost, idforumPost) {
-        console.log(idPost)
         FYSCloud.API.queryDatabase(
             "SELECT aantal_bekijks FROM forum_post WHERE idforum_post = ?",
             [idforumPost]
         ).done(function (data) {
-            console.log(data);
             let bekijkAantal = data[0]["aantal_bekijks"] + 1;
             FYSCloud.API.queryDatabase(
                 "UPDATE forum_post SET aantal_bekijks = ? WHERE idforum_post = ?",
                 [bekijkAantal, idforumPost]
             ).done(function (data) {
-                console.log(data);
                 FYSCloud.URL.redirect("profiel.html", {
                     id: idPost
                 })
@@ -211,7 +195,6 @@ $(document).ready(function () {
         } else if (volgorde === "aantal_bekijks DESC") {
             document.getElementById("beste_volgorde").selected = true;
         }
-        console.log(volgorde)
 
         function makeAnElement(titel, content, foto, postId, tag, date, idforumPost, voornaam) {
             template = document.importNode(document.getElementById("post_template").content, true);
@@ -263,7 +246,6 @@ $(document).ready(function () {
             "SELECT * FROM interesse WHERE idgebruiker = ?",
             [userId]
         ).done(function (data) {
-            console.log(data);
             var backpacker = data[0]["backpacker"];
             var explorer = data[0]["explorer"];
             var sportieveling = data[0]["sportieveling"];
@@ -300,14 +282,10 @@ $(document).ready(function () {
                     partygoer, partygoer, wintersport, wintersport, tropisch, tropisch, resort, resort, sessionStorage.getItem("userId")]
             ).done(function (data) {
                 var noOfTemplates = data.length;
-                console.log(noOfTemplates)
-                console.log(data)
-                console.log(" LIMIT " + (paginaNummer * noOfTemplates) + ", " + noOfTemplates)
                 for (let i = 0; i < noOfTemplates; i++) {
                     let postId = data[i]['idgebruiker'];
                     let idforumPost = data[i]["idforum_post"];
-                    let photoUrl = window.location.protocol+ "//" +window.location.host + "/uploads/" + postId + ".png";
-                    console.log(photoUrl)
+                    let photoUrl = window.location.protocol + "//" + window.location.host + "/uploads/" + postId + ".png";
                     appendTitel = data[i]['titel'];
                     appendPost = data[i]['post'];
                     appendPostId = postId;
@@ -372,7 +350,6 @@ $(document).ready(function () {
 
 
 //Hier voeg ik een waarde toe aan de session storage zodat je alleen maar de resultaten van de DB terug krijgt, die voldoen aan jouw filter.
-    console.log(sessionStorage.getItem("filter"))
     forum(sessionStorage.getItem("filter"))
 
     function filterForum() {
@@ -391,7 +368,6 @@ $(document).ready(function () {
 
         let filters = "";
 
-        console.log(input)
         if (input !== "") {
             filters += " AND (post LIKE '%" + input + "%' OR titel LIKE '%" + input + "%')";
         }
@@ -419,7 +395,6 @@ $(document).ready(function () {
         if (resort) {
             filters += " AND post_tags.resort = 1";
         }
-        console.log(filters);
         sessionStorage.setItem("zoekTekst", input)
         sessionStorage.setItem("filter", filters);
         $("#template_div").load(document.URL + " #template_div")
@@ -467,15 +442,12 @@ $(document).ready(function () {
     input.addEventListener("keyup", function (zoeken) {
         if (zoeken.key === "Enter") {
             zoeken.preventDefault();
-            console.log(input.value)
         }
     })
 
     $("#filteren").on("click", function (zoeken) {
         zoeken.preventDefault();
-        console.log(input.value)
         filterForum()
     })
-    console.log(sessionStorage.getItem("filter"))
 })
 ;

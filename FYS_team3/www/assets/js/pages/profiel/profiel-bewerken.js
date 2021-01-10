@@ -42,7 +42,6 @@ $(document).ready(function () {
         "SELECT * FROM interesse WHERE idgebruiker = ?",
         [userId]
     ).done(function (data) {
-        console.log(data);
         selectedTags(data[0])
     }).fail(function (reason) {
         console.log(reason);
@@ -56,7 +55,6 @@ $(document).ready(function () {
             $(".profiel_input").attr("readonly", false);
             document.getElementById("gegevens_opslaan").style.display = "block";
             document.getElementById("gegevens_bewerken").style.display = "none";
-            console.log("2")
         }
         document.getElementById("profiel_input_voornaam").className = "profiel_input_bewerken";
         document.getElementById("profiel_input_achternaam").className = "profiel_input_bewerken";
@@ -64,7 +62,6 @@ $(document).ready(function () {
         document.getElementById("profiel_input_telefoonnr").className = "profiel_input_bewerken";
         document.getElementById("profiel_input_email").className = "profiel_input_bewerken";
         document.getElementById("profiel_input_bio").className = "profiel_input_bewerken";
-        console.log("1")
 
         document.getElementById("nieuw_wachtwoord").style.display = "block";
         document.getElementById("nieuw_wachtwoordh").style.display = "block";
@@ -82,7 +79,6 @@ $(document).ready(function () {
             "UPDATE gebruiker_profiel SET " + updateSoort + " = ? WHERE gebruikerid = ?",
             [varNaam, userId]
         ).done(function (data) {
-            console.log(data);
         }).fail(function (reason) {
             console.log(reason);
         })
@@ -179,7 +175,6 @@ $(document).ready(function () {
                     "UPDATE gebruiker SET wachtwoord = SHA(?) WHERE gebruikerid = ?",
                     [wachtwoord, userId]
                 ).done(function (data) {
-                    console.log(data);
                 }).fail(function (reason) {
                     console.log(reason);
                 })
@@ -197,13 +192,10 @@ $(document).ready(function () {
                 "UPDATE interesse SET explorer = ?, sportieveling = ?, relaxer = ?, partygoer = ? , wintersport = ?, tropisch = ?, backpacker= ?, resort= ? WHERE idgebruiker = ?",
                 [tagExplorer, tagSportieveling, tagRelaxer, tagPartygoer, tagWinterSport, tagTropisch, tagBackpacker, tagResort, sessionStorage.getItem("userId")]
             ).done(function (data) {
-                console.log(data);
-                console.log(tagExplorer)
                 FYSCloud.API.queryDatabase(
                     "SELECT * FROM interesse WHERE idgebruiker = ?",
                     [userId]
                 ).done(function (data) {
-                    console.log(data);
                     selectedTags(data[0])
                 }).fail(function (reason) {
                     console.log(reason);
@@ -231,7 +223,6 @@ $(document).ready(function () {
     })
 
     $("#profielfoto_wijzigen").on("change", function () {
-        console.log("foto wijzigen")
         FYSCloud.Utils
             .getDataUrl($("#profielfoto_wijzigen"))
             .done(function (data) {
@@ -239,7 +230,6 @@ $(document).ready(function () {
                     FYSCloud.API.deleteFile(
                         userId + ".png"
                     ).done(function (data) {
-                        console.log(data)
 
                         FYSCloud.Utils
                             .getDataUrl($("#profielfoto_wijzigen"))
@@ -249,9 +239,7 @@ $(document).ready(function () {
                                         userId + ".png",
                                         data.url
                                     ).done(function (data) {
-                                        console.log(data);
-                                        document.getElementById("profielFoto").setAttribute("src", window.location.protocol+ "//" +window.location.host + "/uploads/" + userId + ".png");
-                                        console.log("test")
+                                        document.getElementById("profielFoto").setAttribute("src", window.location.protocol + "//" + window.location.host + "/uploads/" + userId + ".png");
                                     }).fail(function (reason) {
                                         console.log(reason);
                                     });

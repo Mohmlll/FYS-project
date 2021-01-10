@@ -1,8 +1,6 @@
 $(document).ready(function () {
     let userId = sessionStorage.getItem("userId")
 
-    console.log(userId);
-
     var forumLogin = location.href.includes("forum-homepagina.html");
     var postLogin = location.href.includes("post.html");
     var postAanmakenLogin = location.href.includes("post-aanmaken.html");
@@ -15,35 +13,27 @@ $(document).ready(function () {
 
     function menuSelectie() {
         var pagina = location.href
-        console.log(pagina)
         FYSCloud.API.queryDatabase(
             "SELECT status FROM gebruiker WHERE gebruikerid = ?",
             [userId]
         ).done(function (data) {
-            console.log(data);
-            console.log(data[0]);
             if (userId === null || pagina.includes("profiel-aanmaken.html") && data[0]["status"] === "geenGegevens") {
                 document.getElementById("logged_out").style.display = "block";
                 document.getElementById("logged_in").style.display = "none";
-                console.log("0")
             } else if (data[0] === undefined) {
                 document.getElementById("logged_out").style.display = "block";
                 document.getElementById("logged_in").style.display = "none";
-                console.log("1")
             } else if (userId !== null && data[0]["status"] === "volledig_profiel") {
                 document.getElementById("logged_out").style.display = "none";
                 document.getElementById("logged_in").style.display = "block";
-                console.log("2")
             } else {
                 document.getElementById("logged_out").style.display = "block";
                 document.getElementById("logged_in").style.display = "none";
-                console.log("3")
             }
         }).fail(function (reason) {
             console.log(reason);
             document.getElementById("logged_out").style.display = "block";
             document.getElementById("logged_in").style.display = "none";
-            console.log("geen database")
         })
     }
 
@@ -80,7 +70,6 @@ $(document).ready(function () {
 
     $(".js-uitloggen").on("click", function (logUit) {
         logUit.preventDefault()
-        console.log("uitloggen")
         sessionStorage.setItem("userId", null);
         menuSelectie()
         document.location.href = "index.html"
@@ -94,7 +83,6 @@ $(document).ready(function () {
         } else {
             x.className = "menu";
         }
-        console.log(x.className)
     })
 
     $(".contact_button").on("click", function (contact) {
@@ -144,7 +132,6 @@ $(document).ready(function () {
         }
 
         soortAdvertentie(url, advertentie)
-        console.log(advertentie)
     }
 
 
@@ -152,14 +139,11 @@ $(document).ready(function () {
         "SELECT * FROM interesse WHERE idgebruiker = ?",
         [userId]
     ).done(function (data) {
-        console.log(data);
         if (data.length === 0) {
-            console.log("geen id")
             let tagAds = ["backpacker", "explorer", "sportieveling", "relaxer", "partygoer", "wintersport", "tropisch", "resort"]
             let advertentie = tagAds[Math.floor(Math.random() * tagAds.length)]
             showAds(advertentie)
         } else {
-            console.log("wel id")
             let backpacker = data[0]["backpacker"];
             let explorer = data[0]["explorer"];
             let sportieveling = data[0]["sportieveling"];
