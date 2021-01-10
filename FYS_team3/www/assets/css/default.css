@@ -412,3 +412,11 @@ contact popup
 .tag_div span {
     padding: 8px;
 }
+
+.info_Table {
+    margin: 0;
+}
+
+.overBox h3 {
+    color: #d81e05;
+}
