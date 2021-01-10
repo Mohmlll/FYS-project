@@ -49,9 +49,9 @@ $(document).ready(function () {
         "   <b class=\"streep\">/</b>" +
         "   <a class=\"over_ons_menu\" href=\"over-ons.html\">Over ons</a>" +
         "   <b class=\"streep\">/</b>" +
-        "   <a class=\"js-logged-out\" href=\"log-in.html\">Aanmelden</a>" +
-        "   <b class=\"streep\">/</b>" +
         "   <a class=\"contact\" href=\"contact.html\">Contact</a>" +
+        "   <b class=\"streep\">/</b>" +
+        "   <a class=\"js-logged-out\" href=\"log-in.html\">Aanmelden</a>" +
         "</div>"
     document.getElementById("logged_in").innerHTML =
         "<div class=\"menu_inhoud\">" +
