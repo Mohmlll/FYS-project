@@ -32,17 +32,23 @@ right menu
     cursor: pointer;
     background-color: #d81e05;
     color: white;
-    padding: 2%;
+    padding: 3%;
     width: 40%;
-    margin: 0 auto 0 auto;
     outline: none;
     border-radius: 5%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
     border: 0;
-    text-align: center;
-    align-content: center;
     order: 1;
 
+}
+.start_post_button{
+    margin-bottom: auto;
+}
+.expand_filter_button{
+    top: 0;
+    margin-left: 5%;
+    text-align: center;
+    align-content: center;
 }
 .forum_main_options {
     padding: 2%;
