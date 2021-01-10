@@ -42,7 +42,7 @@ button, table {
 
 @media screen and (min-height: 600px) {
     .header_img_ander {
-        background-image: url("CSS-img/voorblad.jpg");
+        background-image: url("CSS-img/voorblad_compressed.jpg");
         height: 20%;
         background-position: center;
         background-repeat: no-repeat;

@@ -105,8 +105,8 @@ $(document).ready(function () {
         let bio = data[0]["bio"];
         let woonplaats = data[0]['woonplaats'];
         let telefoonnr = data[0]['telefoon_nummer'];
-        let info = 'Deze gebruiker heeft besloten om deze informatie te verbergen';
-        let infoGeenMatch = 'verzoek contact om deze informatie te bekijken';
+        let info = 'Privé'
+        let infoGeenMatch = 'Alleen voor matches';
         document.getElementById("profiel_input_voornaam").setAttribute("placeholder", voornaam);
         document.getElementById("profiel_input_achternaam").setAttribute("placeholder", achternaam);
         document.getElementById("profiel_input_bio").setAttribute("placeholder", bio);
