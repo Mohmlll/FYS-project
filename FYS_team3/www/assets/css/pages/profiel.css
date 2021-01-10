@@ -1,7 +1,7 @@
 /*
 Profiel Overzicht
  */
-#profielFoto, .tabcontent img {
+#profielFoto, #foto_gebruiker_lopende, #foto_gebruiker_inkomend, #foto_gebruiker_uitgaande {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 
 }
@@ -92,7 +92,6 @@ Profiel Overzicht
     display: none;
     width: 100%;
 }
-
 
 
 .buttonpagina_totaal {
@@ -186,7 +185,7 @@ Profiel Overzicht
     padding: 5%;
 }
 
-.accepteer:hover, .weiger:hover, .verwijder:hover, .gegevens_button:hover, .privacy_opslaan:hover, #profielfoto_wijzigen_div label:hover {
+.accepteer:hover, .cd-popup-trigger:hover, .weiger:hover, .verwijder:hover, .gegevens_button:hover, .privacy_opslaan:hover, #profielfoto_wijzigen_div label:hover {
     background: linear-gradient(to right, red, #ffffff);
 }
 
@@ -459,3 +458,28 @@ forum {
     margin: 10px 0;
 }
 
+.trashcan {
+    margin-top: 2%;
+    width: 20%;
+}
+
+
+#gegevens_verwijderen {
+    background-color: white;
+    color: red;
+    border: 1px solid #d81e05;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+.cd-popup-trigger {
+    display: block;
+    width: 170px;
+    height: 50px;
+    line-height: 50px;
+    margin: 3em auto;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 50em;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.07);
+}

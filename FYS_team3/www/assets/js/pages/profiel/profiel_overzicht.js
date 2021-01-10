@@ -21,7 +21,7 @@ $(document).ready(function () {
     }
 
     if (userId !== null) {
-        document.getElementById("profielFoto").setAttribute("src", window.location.protocol+ "//" +window.location.host + "/uploads/" + userId + ".png");
+        document.getElementById("profielFoto").setAttribute("src", window.location.protocol + "//" + window.location.host + "/uploads/" + userId + ".png");
         console.log("src", "https://dev-is106-3.fys.cloud/uploads/" + userId + ".png");
     }
 
@@ -170,7 +170,7 @@ privacy
 verwijderen
 */
 
-        if(confirm("weet je zeker dat je profiel verwijdert? Er is geen mogelijkheid om deze actie ongedaan te maken!")) {
+        if (confirm("weet je zeker dat je profiel verwijdert? Er is geen mogelijkheid om deze actie ongedaan te maken!")) {
             console.log("Verwijdering succesvol!")
         } else {
             console.log("Verwijdering geannuleer, je hoeft niks verder te doen!")
@@ -179,7 +179,6 @@ verwijderen
         //FYSCloud.API.queryDatabase(
         //             "DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
         //         ).done(function (data) {
-
 
 
         /*
