@@ -443,6 +443,10 @@ forum {
     width: 50%;
 }
 
+.email::placeholder {
+    color: blue;
+}
+
 .uitgaande {
     display: block;
     width: 50%;
