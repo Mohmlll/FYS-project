@@ -181,6 +181,9 @@ $(document).ready(function () {
                     let emailadres = data[0]['emailadres'];
                     if (matchstatus === 2) {
                         document.getElementById('profiel_input_email').setAttribute("placeholder", emailadres);
+                        document.getElementById("profiel_email_send").href = "mailto:" + emailadres;
+                        document.getElementById("profiel_input_email").style.cursor = "pointer";
+                        $("#profiel_input_email").addClass("email");
                     } else {
                         document.getElementById("profiel_input_email").setAttribute("placeholder", infoGeenMatch);
                     }
