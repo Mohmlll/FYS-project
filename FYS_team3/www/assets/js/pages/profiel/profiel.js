@@ -96,8 +96,8 @@ $(document).ready(function () {
         datum = datum.slice(0, 10);
         let leeftijd = leeftijdBerekenen(datum);
         if (profielId !== null) {
-            document.getElementById("profielFoto").setAttribute("src", "https://dev-is106-3.fys.cloud/uploads/" + profielId + ".png");
-            console.log("src", "https://dev-is106-3.fys.cloud/uploads/" + profielId + ".png");
+            document.getElementById("profielFoto").setAttribute("src", window.location.protocol+ "//" +window.location.host + "/uploads/" + profielId + ".png");
+            console.log("src", window.location.protocol+ "//" +window.location.host + "/uploads/" + profielId + ".png");
         }
         let voornaam = data[0]["voornaam"];
         let achternaam = data[0]["achternaam"];

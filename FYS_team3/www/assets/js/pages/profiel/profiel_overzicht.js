@@ -21,7 +21,7 @@ $(document).ready(function () {
     }
 
     if (userId !== null) {
-        document.getElementById("profielFoto").setAttribute("src", "https://dev-is106-3.fys.cloud/uploads/" + sessionStorage.getItem("userId") + ".png");
+        document.getElementById("profielFoto").setAttribute("src", window.location.protocol+ "//" +window.location.host + "/uploads/" + userId + ".png");
         console.log("src", "https://dev-is106-3.fys.cloud/uploads/" + userId + ".png");
     }
 

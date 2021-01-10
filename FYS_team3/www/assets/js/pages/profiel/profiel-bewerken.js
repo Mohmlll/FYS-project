@@ -250,7 +250,7 @@ $(document).ready(function () {
                                         data.url
                                     ).done(function (data) {
                                         console.log(data);
-                                        document.getElementById("profielFoto").setAttribute("src", "https://dev-is106-3.fys.cloud/uploads/" + userId + ".png");
+                                        document.getElementById("profielFoto").setAttribute("src", window.location.protocol+ "//" +window.location.host + "/uploads/" + userId + ".png");
                                         console.log("test")
                                     }).fail(function (reason) {
                                         console.log(reason);

@@ -306,7 +306,7 @@ $(document).ready(function () {
                 for (let i = 0; i < noOfTemplates; i++) {
                     let postId = data[i]['idgebruiker'];
                     let idforumPost = data[i]["idforum_post"];
-                    let photoUrl = "https://" + window.location.host + "/uploads/" + postId + ".png";
+                    let photoUrl = window.location.protocol+ "//" +window.location.host + "/uploads/" + postId + ".png";
                     console.log(photoUrl)
                     appendTitel = data[i]['titel'];
                     appendPost = data[i]['post'];
