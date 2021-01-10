@@ -95,7 +95,7 @@ $(document).ready(function () {
         let woonplaats = data[0]['woonplaats'];
         let telefoonnr = data[0]['telefoon_nummer'];
         let info = 'Privé'
-        let infoGeenMatch = 'Alleen voor matches';
+        let infoGeenMatch = 'Alleen zichtbaar voor matches';
         document.getElementById("profiel_input_voornaam").setAttribute("placeholder", voornaam);
         document.getElementById("profiel_input_achternaam").setAttribute("placeholder", achternaam);
         document.getElementById("profiel_input_bio").setAttribute("placeholder", bio);

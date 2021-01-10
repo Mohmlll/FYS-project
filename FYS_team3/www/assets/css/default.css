@@ -214,8 +214,8 @@ header {
 
 
 .welkombox, .uitleg_video, .info1, .info2, .inlog-box, .flip_card_front,
-.flip_card_back, .container_create_post, .buttonpagina_totaal, .profielUser, .overBox {
-    -webkit-box-shadow: 12px 10px 15px 0 rgba(0, 0, 0, 0.75);
+.flip_card_back, .container_create_post, .buttonpagina_totaal, .profielUser, .overBox, .forum_main, .forum_rightmenu{
+    box-shadow: -1px 2px 9px -1px rgba(0, 0, 0, 0.26);
     border: #d81e05 solid 1px;
 }
 
