@@ -368,11 +368,6 @@ $(document).ready(function () {
         }).fail(function (reason) {
             console.log(reason);
         })
-
-
-        var img = new Image()
-        img.src = "https://dev-is106-3.fys.cloud/uploads/133.png"
-        console.log("height = " + img.height);
     }
 
 
@@ -482,11 +477,5 @@ $(document).ready(function () {
         filterForum()
     })
     console.log(sessionStorage.getItem("filter"))
-
-    var img = new Image()
-    img.src = "https://dev-is106-3.fys.cloud/uploads/133.png"
-    console.log("height = " + img.height);
-
-
 })
 ;

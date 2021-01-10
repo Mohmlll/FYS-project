@@ -87,10 +87,8 @@ $(document).ready(function () {
         var x = document.getElementById("responsivemenu");
         if (x.className === "menu") {
             x.className += " uitklappen";
-            $(".streep").hide();
         } else {
             x.className = "menu";
-            $(".streep").show();
         }
         console.log(x.className)
     })

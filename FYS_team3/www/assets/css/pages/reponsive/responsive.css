@@ -28,7 +28,7 @@
     }
 
     .menu_inhoud {
-        top: 0;
+        top: 8px;
         width: 100%;
         margin: auto;
         position: fixed;
@@ -105,6 +105,10 @@
 
     .menu {
         opacity: 0.8;
+    }
+
+    .streep {
+        display: none;
     }
 }
 
