@@ -306,7 +306,7 @@ $(document).ready(function () {
                 for (let i = 0; i < noOfTemplates; i++) {
                     let postId = data[i]['idgebruiker'];
                     let idforumPost = data[i]["idforum_post"];
-                    let photoUrl = window.location.host + "/uploads/" + postId + ".png";
+                    let photoUrl = window.location.protocol+ "//" +window.location.host + "/uploads/" + postId + ".png";
                     console.log(photoUrl)
                     appendTitel = data[i]['titel'];
                     appendPost = data[i]['post'];
@@ -368,11 +368,6 @@ $(document).ready(function () {
         }).fail(function (reason) {
             console.log(reason);
         })
-
-
-        var img = new Image()
-        img.src = "https://dev-is106-3.fys.cloud/uploads/133.png"
-        console.log("height = " + img.height);
     }
 
 
@@ -483,9 +478,6 @@ $(document).ready(function () {
     })
     console.log(sessionStorage.getItem("filter"))
 
-    var img = new Image()
-    img.src = "https://dev-is106-3.fys.cloud/uploads/133.png"
-    console.log("height = " + img.height);
 
 
 })

@@ -69,7 +69,7 @@ $(document).ready(function () {
                     console.log(postId)
                     var photoUrl = "https://i.imgur.com/b5TbCKd.png";
                     if (data[0]["profiel_foto"] === "foto") {
-                        photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + postId + ".png";
+                        photoUrl = window.location.protocol+ "//" +window.location.host + "/uploads/" + postId + ".png";
                     }
                     var img = new Image();
                     img.src = photoUrl;

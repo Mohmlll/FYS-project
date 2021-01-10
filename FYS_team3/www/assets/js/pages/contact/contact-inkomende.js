@@ -95,7 +95,7 @@ $(document).ready(function () {
                         for (let i = 0; i < noOfTemplates; i++) {
                             console.log(data);
                             appendVoornaam = data[0]['voornaam'];
-                            let photoUrl = "https://dev-is106-3.fys.cloud/uploads/" + inkomendeGebruiker + ".png";
+                            let photoUrl = window.location.protocol+ "//" +window.location.host + "/uploads/" + inkomendeGebruiker + ".png";
                             appendPhoto = photoUrl;
                             appendGebruikerId = inkomendeGebruiker;
                             console.log(appendPhoto);
