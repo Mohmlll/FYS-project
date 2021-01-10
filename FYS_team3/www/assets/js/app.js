@@ -63,9 +63,9 @@ $(document).ready(function () {
         "   <b class=\"streep\">/</b>" +
         "   <a class=\"js-logged-in\" id=\"forum_menu_in\" href=\"forum-homepagina.html\">Forum</a>" +
         "   <b class=\"streep\">/</b>" +
-        "   <a class=\"js-uitloggen\" id=\"uit_menu_in\" >Uitloggen</a>" +
-        "   <b class=\"streep\">/</b>" +
         "   <a class=\"contact_in\" href=\"contact.html\">Contact</a>" +
+        "   <b class=\"streep\">/</b>" +
+        "   <a class=\"js-uitloggen\" id=\"uit_menu_in\" >Uitloggen</a>" +
         "</div>"
 
     $(".js-uitloggen").on("click", function (logUit) {

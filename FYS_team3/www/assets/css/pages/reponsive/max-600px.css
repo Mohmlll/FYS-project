@@ -40,6 +40,7 @@
     .forum_rightmenu {
         width: 100%;
         order: 0;
+        margin-bottom: 5%;
     }
 
     .front_post_title {

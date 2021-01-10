@@ -2,7 +2,6 @@ $(document).ready(function () {
     let userId = sessionStorage.getItem('userId');
 
     function selectedTags(data) {
-        console.log(data)
         $(".tag_div").hide();
         if (data["backpacker"] === 1) {
             document.getElementById("tag_backpacker").checked = true;

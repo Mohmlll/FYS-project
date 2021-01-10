@@ -17,13 +17,15 @@ right menu
 
 .forum_rightmenu {
     align-content: center;
-
+    padding: 2%;
+    border-radius: 15px;
+    margin: auto;
 }
 
 .option_buttons {
     flex-wrap: wrap;
     display: flex;
-    width: 60%;
+    width: 50%;
 }
 
 .forum_main_options form {
