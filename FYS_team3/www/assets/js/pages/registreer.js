@@ -80,7 +80,7 @@ $(document).ready(function () {
         var emailAdres = document.getElementById('emailadres').value;
         var wachtwoord = document.getElementById('wachtwoord').value;
         var wachtwoordCheck = document.getElementById('wachtwoordCheck').value;
-        var status = "geen gegevens";
+        var status = "geenGegevens";
         if (wachtwoord !== wachtwoordCheck) {
             document.getElementById("wachtwoordCheck").style.borderColor = "red";
             document.getElementById("geenWachtwoordCheck").style.display = "block";
