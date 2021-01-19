@@ -301,6 +301,7 @@ $(document).ready(function () {
                     let tagArray = [explorer, sportieveling, relaxer, partygoer, winterSport, tropisch, backpacker, resort];
                     let tagNaam = ["explorer", "sportieveling", "relaxer", "partygoer", "wintersport", "tropisch", "backpacker", "resort"];
                     appendTag = "";
+
                     for (let j = 0; j < tagArray.length; j++) {
                         if (tagArray[j] === 1) {
                             appendTag += " " + tagNaam[j] + " ";
@@ -353,6 +354,11 @@ $(document).ready(function () {
         let filterTagNaam = [explorer, sportieveling, relaxer, partygoer, backpacker, wintersport, tropisch, resort];
         let filterNaam = ["explorer", "sportieveling", "relaxer", "partygoer", "backpacker", "wintersport", "tropisch", "resort"];
         let filters = "";
+
+        if (input !== "") {
+            filters += " AND (post LIKE '%" + input + "%' OR titel LIKE '%" + input + "%')";
+        }
+
         for (let i = 0; i < filterTagNaam.length; i++) {
             if (filterTagNaam[i]) {
                 filters += " AND post_tags." + filterNaam[i] + " = 1";
