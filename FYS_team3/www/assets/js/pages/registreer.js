@@ -1,6 +1,10 @@
 $(document).ready(function () {
-    let userId = sessionStorage.getItem('userId');
 
+    let id_gebruikersnaam = document.getElementById("inlogNaam");
+    let id_wachtwoord = document.getElementById("inlogWachtwoord");
+
+    let geenGebruikersnaam = document.getElementById("geenInlogNaam");
+    let geenWachtwoord = document.getElementById("geenInlogWachtwoord");
 
     $(".button-box").on("change", function (e) {
         e.preventDefault();
@@ -16,14 +20,25 @@ $(document).ready(function () {
             registreer.style.left = "450px";
         }
     })
+
+    function isValid(id_info, valid, alert) {
+        if (!valid) {
+            id_info.style.borderColor = "red";
+            alert.style.display = "block";
+        } else {
+            id_info.style.borderColor = "black";
+            alert.style.display = "none";
+        }
+    }
+
     $(".login_button").on("click", function (gegevens) {
         gegevens.preventDefault();
         var inlogNaamValid = $("#inlogNaam").is(":valid");
         var inlogWachtwoordValid = $("#inlogWachtwoord").is(":valid");
 
         if (inlogNaamValid && inlogWachtwoordValid) {
-            var gebruikersnaam = document.getElementById("inlogNaam").value;
-            var wachtwoord = document.getElementById("inlogWachtwoord").value;
+            var gebruikersnaam = id_gebruikersnaam.value;
+            var wachtwoord = id_wachtwoord.value;
 
 
             FYSCloud.API.queryDatabase(
@@ -43,22 +58,9 @@ $(document).ready(function () {
                 console.log("fout");
             })
         } else {
-            if (!inlogNaamValid) {
-                document.getElementById("inlogNaam").style.borderColor = "red";
-                document.getElementById("geenInlogNaam").style.display = "block";
-            } else {
-                document.getElementById("inlogNaam").style.borderColor = "black";
-                document.getElementById("geenInlogNaam").style.display = "none";
-            }
-            if (!inlogWachtwoordValid) {
-                document.getElementById("inlogWachtwoord").style.borderColor = "red";
-                document.getElementById("geenInlogWachtwoord").style.display = "block";
-            } else {
-                document.getElementById("inlogWachtwoord").style.borderColor = "black";
-                document.getElementById("geenInlogWachtwoord").style.display = "none";
-            }
+            isValid(id_wachtwoord, inlogWachtwoordValid, geenWachtwoord);
+            isValid(id_gebruikersnaam, inlogNaamValid, geenGebruikersnaam)
         }
-
     })
 
     function get_action() {
@@ -70,23 +72,36 @@ $(document).ready(function () {
         }
     }
 
+    var id_gebuikersNaam = document.getElementById('gebruikersnaam');
+    var id_emailAdres = document.getElementById('emailadres');
+    var id_wachtwoordr = document.getElementById('wachtwoord');
+    var id_wachtwoordCheckr = document.getElementById('wachtwoordCheck');
+
+    var emailBestaat = document.getElementById("bestaandeEmail");
+    var naamBestaat = document.getElementById("bestaandeNaam");
+    var geenWachtwoordCheck = document.getElementById("geenWachtwoordCheck");
+    var geenGebruikersnaamr =  document.getElementById("geenGebruikersNaam");
+    var geenWachtwoordr = document.getElementById("geenWachtwoord");
+    var geenEmail = document.getElementById("geenEmailAdres");
+    
     $(".register_button").on("click", function (gegevens) {
         gegevens.preventDefault();
         var gebruikersnaamValid = $("#gebruikersnaam").is(":valid");
         var emailAdresValid = $("#emailadres").is(":valid");
         var wachtwoordValid = $("#wachtwoord").is(":valid");
 
-        var gebruikersNaam = document.getElementById('gebruikersnaam').value;
-        var emailAdres = document.getElementById('emailadres').value;
-        var wachtwoord = document.getElementById('wachtwoord').value;
-        var wachtwoordCheck = document.getElementById('wachtwoordCheck').value;
+        var gebruikersNaam = id_gebuikersNaam.value;
+        var emailAdres = id_emailAdres.value;
+        var wachtwoord = id_wachtwoordr.value;
+        var wachtwoordCheck = id_wachtwoordCheckr.value;
         var status = "geenGegevens";
+
         if (wachtwoord !== wachtwoordCheck) {
-            document.getElementById("wachtwoordCheck").style.borderColor = "red";
-            document.getElementById("geenWachtwoordCheck").style.display = "block";
+            id_wachtwoordCheckr.style.borderColor = "red";
+            geenWachtwoordCheck.style.display = "block";
         } else {
-            document.getElementById("wachtwoordCheck").style.borderColor = "black";
-            document.getElementById("geenWachtwoordCheck").style.display = "none";
+            id_wachtwoordCheckr.style.borderColor = "black";
+            geenWachtwoordCheck.style.display = "none";
         }
 
         FYSCloud.API.queryDatabase(
@@ -98,24 +113,24 @@ $(document).ready(function () {
             for (let i = 0; i < data.length; i++) {
                 if (data[i]["emailadres"] === emailAdres) {
                     emailAdresBestaandeValid = false;
-                    document.getElementById("emailadres").style.borderColor = "red";
-                    document.getElementById("bestaandeEmail").style.display = "block";
+                    id_emailAdres.style.borderColor = "red";
+                    emailBestaat.style.display = "block";
                 } else {
-                    document.getElementById("emailadres").style.borderColor = "black";
-                    document.getElementById("bestaandeEmail").style.display = "none";
+                    id_emailAdres.style.borderColor = "black";
+                    emailBestaat.style.display = "none";
                 }
                 if (data[i]["gebruikers_naam"] === gebruikersNaam) {
                     gebruikersnaamBestaandeValid = false
-                    document.getElementById("gebruikersnaam").style.borderColor = "red";
-                    document.getElementById("bestaandeNaam").style.display = "block";
+                    id_gebuikersNaam.style.borderColor = "red";
+                    naamBestaat.style.display = "block";
                 } else {
-                    document.getElementById("gebruikersnaam").style.borderColor = "black";
-                    document.getElementById("bestaandeNaam").style.display = "none";
+                    id_gebuikersNaam.style.borderColor = "black";
+                    naamBestaat.style.display = "none";
                 }
             }
             if (data.length === 0) {
-                document.getElementById("bestaandeEmail").style.display = "none";
-                document.getElementById("bestaandeNaam").style.display = "none";
+                emailBestaat.style.display = "none";
+                naamBestaat.style.display = "none";
             }
 
             if (gebruikersnaamValid && emailAdresValid && wachtwoordValid
@@ -138,32 +153,26 @@ $(document).ready(function () {
                     document.getElementById('captcha').innerHTML = "Check de captcha eerst AUB";
                 }
                 if (!gebruikersnaamValid) {
-                    document.getElementById("gebruikersnaam").style.borderColor = "red";
-                    document.getElementById("geenGebruikersNaam").style.display = "block";
+                    id_gebuikersNaam.style.borderColor = "red";
+                    geenGebruikersnaamr.style.display = "block";
                 } else if (gebruikersnaamValid && !gebruikersnaamBestaandeValid) {
-                    document.getElementById("gebruikersnaam").style.borderColor = "red";
-                    document.getElementById("geenGebruikersNaam").style.display = "none";
+                    id_gebuikersNaam.style.borderColor = "red";
+                    geenGebruikersnaamr.style.display = "none";
                 } else {
-                    document.getElementById("gebruikersnaam").style.borderColor = "black";
-                    document.getElementById("geenGebruikersNaam").style.display = "none";
+                    id_gebuikersNaam.style.borderColor = "black";
+                    geenGebruikersnaamr.display = "none";
                 }
                 if (!emailAdresValid) {
-                    document.getElementById("emailadres").style.borderColor = "red";
-                    document.getElementById("geenEmailAdres").style.display = "block";
+                    id_emailAdres.style.borderColor = "red";
+                    geenEmail.style.display = "block";
                 } else if (emailAdresValid && !emailAdresBestaandeValid) {
-                    document.getElementById("emailadres").style.borderColor = "red";
-                    document.getElementById("geenEmailAdres").style.display = "none";
+                    id_emailAdres.style.borderColor = "red";
+                    geenEmail.style.display = "none";
                 } else {
-                    document.getElementById("emailadres").style.borderColor = "black";
-                    document.getElementById("geenEmailAdres").style.display = "none";
+                    id_emailAdres.style.borderColor = "black";
+                    geenEmail.style.display = "none";
                 }
-                if (!wachtwoordValid) {
-                    document.getElementById("wachtwoord").style.borderColor = "red";
-                    document.getElementById("geenWachtwoord").style.display = "block";
-                } else {
-                    document.getElementById("wachtwoord").style.borderColor = "black";
-                    document.getElementById("geenWachtwoord").style.display = "none";
-                }
+                isValid(id_wachtwoordr, wachtwoordValid, geenWachtwoordr);
             }
 
         }).fail(function (reason) {
