@@ -298,31 +298,15 @@ $(document).ready(function () {
                     var backpacker = data[i]["backpacker"];
                     var resort = data[i]["resort"];
 
+                    let tagArray = [explorer, sportieveling, relaxer, partygoer, winterSport, tropisch, backpacker, resort];
+                    let tagNaam = ["explorer", "sportieveling", "relaxer", "partygoer", "wintersport", "tropisch", "backpacker", "resort"];
                     appendTag = "";
-                    if (explorer === 1) {
-                        appendTag += " explorer ";
+                    for (let j = 0; j < tagArray.length; j++) {
+                        if (tagArray[j] === 1) {
+                            appendTag += " " + tagNaam[j] + " ";
+                        }
                     }
-                    if (sportieveling === 1) {
-                        appendTag += " sportieveling ";
-                    }
-                    if (relaxer === 1) {
-                        appendTag += " relaxer ";
-                    }
-                    if (partygoer === 1) {
-                        appendTag += " partygoer ";
-                    }
-                    if (winterSport === 1) {
-                        appendTag += " wintersport ";
-                    }
-                    if (tropisch === 1) {
-                        appendTag += " tropisch ";
-                    }
-                    if (backpacker === 1) {
-                        appendTag += " backpacker ";
-                    }
-                    if (resort === 1) {
-                        appendTag += " resort ";
-                    }
+
                     if (appendTag.includes("null")) {
                         tags = appendTag.replace("null ", "")
                     } else {
@@ -366,35 +350,15 @@ $(document).ready(function () {
         let tropisch = document.getElementById("filter_tropisch").checked;
         let resort = document.getElementById("filter_resort").checked;
 
+        let filterTagNaam = [explorer, sportieveling, relaxer, partygoer, backpacker, wintersport, tropisch, resort];
+        let filterNaam = ["explorer", "sportieveling", "relaxer", "partygoer", "backpacker", "wintersport", "tropisch", "resort"];
         let filters = "";
+        for (let i = 0; i < filterTagNaam.length; i++) {
+            if (filterTagNaam[i]) {
+                filters += " AND post_tags." + filterNaam[i] + " = 1";
+            }
+        }
 
-        if (input !== "") {
-            filters += " AND (post LIKE '%" + input + "%' OR titel LIKE '%" + input + "%')";
-        }
-        if (explorer) {
-            filters += " AND post_tags.explorer = 1";
-        }
-        if (sportieveling) {
-            filters += " AND post_tags.sportieveling = 1";
-        }
-        if (relaxer) {
-            filters += " AND post_tags.relaxer = 1";
-        }
-        if (partygoer) {
-            filters += " AND post_tags.partygoer = 1";
-        }
-        if (backpacker) {
-            filters += " AND post_tags.backpacker = 1";
-        }
-        if (wintersport) {
-            filters += " AND post_tags.wintersport = 1";
-        }
-        if (tropisch) {
-            filters += " AND post_tags.tropisch = 1";
-        }
-        if (resort) {
-            filters += " AND post_tags.resort = 1";
-        }
         sessionStorage.setItem("zoekTekst", input)
         sessionStorage.setItem("filter", filters);
         $("#template_div").load(document.URL + " #template_div")
@@ -409,31 +373,12 @@ $(document).ready(function () {
             filters = "";
         } else {
             document.getElementById("zoekfunctie").setAttribute("value", input);
-        }
-
-        if (filters.includes("explorer")) {
-            document.getElementById("filter_explorer").checked = true;
-        }
-        if (filters.includes("sportieveling")) {
-            document.getElementById("filter_sportieveling").checked = true;
-        }
-        if (filters.includes("relaxer")) {
-            document.getElementById("filter_relaxer").checked = true;
-        }
-        if (filters.includes("partygoer")) {
-            document.getElementById("filter_partygoer").checked = true;
-        }
-        if (filters.includes("backpacker")) {
-            document.getElementById("filter_backpacker").checked = true;
-        }
-        if (filters.includes("wintersport")) {
-            document.getElementById("filter_wintersport").checked = true;
-        }
-        if (filters.includes("tropisch")) {
-            document.getElementById("filter_tropisch").checked = true;
-        }
-        if (filters.includes("resort")) {
-            document.getElementById("filter_resort").checked = true;
+            let filterSelected = ["explorer", "sportieveling", "relaxer", "partygoer", "backpacker", "wintersport", "tropisch", "resort"];
+            for (let i = 0; i < filterSelected.length; i++) {
+                if (filters.includes(filterSelected[i])) {
+                    document.getElementById("filter_" + filterSelected[i]).checked = true;
+                }
+            }
         }
     }
 
