@@ -102,6 +102,7 @@ $(document).ready(function () {
     }
 
     resultaten()
+
     $("#lopend_tab").on("click", function () {
         $("#lopende_match").load(document.URL + " #lopende_match")
         resultaten()

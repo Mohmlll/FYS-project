@@ -205,7 +205,7 @@ privacy
     openinhoudt(event, tag, target)
     target = ""
 
-    $(".gegevens_verwijderen").on("click", function (){
+    $(".gegevens_verwijderen").on("click", function () {
         let bevestigen = confirm("Wilt u uw account verwijderen?")
         if (bevestigen) {
             FYSCloud.API.queryDatabase(

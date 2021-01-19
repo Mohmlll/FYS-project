@@ -26,6 +26,27 @@ $(document).ready(function () {
     const profielId = FYSCloud.URL.queryString("id", 0);
     /////////////////////
     let matchstatus;
+    let matchnummer = 2;
+
+    let verzoek = document.getElementById("contact_verzoek");
+    let feedback = document.getElementById("verzoek_feedback");
+    let matched = document.getElementById("al_gematched");
+
+    function buttonStatus(matchstatus) {
+        if (matchstatus === 2) {
+            verzoek.style.display = "none";
+            feedback.style.display = "none";
+            matched.style.display = "block";
+        } else if (matchstatus === 1) {
+            verzoek.style.display = "none";
+            matched.style.display = "none";
+            feedback.style.display = "block";
+        } else if (matchstatus === 0) {
+            verzoek.style.display = "block";
+            matched.style.display = "none";
+            feedback.style.display = "none";
+        }
+    }
 
     function getMatchstatus() {
 
@@ -58,24 +79,18 @@ $(document).ready(function () {
 
     getMatchstatus();
 
-    function buttonStatus(matchstatus) {
-        if (matchstatus === 2) {
-            document.getElementById("contact_verzoek").style.display = "none";
-            document.getElementById("verzoek_feedback").style.display = "none";
-            document.getElementById("al_gematched").style.display = "block";
-        } else if (matchstatus === 1) {
-            document.getElementById("contact_verzoek").style.display = "none";
-            document.getElementById("al_gematched").style.display = "none";
-            document.getElementById("verzoek_feedback").style.display = "block";
-        } else if (matchstatus === 0) {
-            document.getElementById("contact_verzoek").style.display = "block";
-            document.getElementById("al_gematched").style.display = "none";
-            document.getElementById("verzoek_feedback").style.display = "none";
-        }
+    let id_voornaam = document.getElementById("profiel_input_voornaam");
+    let id_achternaam = document.getElementById("profiel_input_achternaam");
+    let id_bio = document.getElementById("profiel_input_bio");
+    let id_woonplaats = document.getElementById("profiel_input_woonplaats");
+    let id_telefoon = document.getElementById("profiel_input_telefoonnr");
+    let id_geslacht = document.getElementById("profiel_input_geslacht");
+    let id_leeftijd = document.getElementById('profiel_input_leeftijd');
+    let id_email = document.getElementById('profiel_input_email');
+
+    function infoValue(id_info, value) {
+        id_info.setAttribute("placeholder", value);
     }
-
-
-    /////////////////////
 
     FYSCloud.API.queryDatabase(
         "SELECT profiel_foto, voornaam, achternaam, geslacht, DATE (geboorte_datum), woonplaats, telefoon_nummer, interesse, bio FROM gebruiker_profiel WHERE gebruikerid = ?",
@@ -96,9 +111,11 @@ $(document).ready(function () {
         let telefoonnr = data[0]['telefoon_nummer'];
         let info = 'Privé'
         let infoGeenMatch = 'Alleen zichtbaar voor matches';
-        document.getElementById("profiel_input_voornaam").setAttribute("placeholder", voornaam);
-        document.getElementById("profiel_input_achternaam").setAttribute("placeholder", achternaam);
-        document.getElementById("profiel_input_bio").setAttribute("placeholder", bio);
+
+        infoValue(id_voornaam, voornaam);
+        infoValue(id_achternaam, achternaam);
+        infoValue(id_bio, bio);
+
         //de code hieronder tot regel152 zorgt er voor dat de textarea van bio uitgerekt wordt.
         let textArea = document.getElementById("profiel_input_bio");
         let textCopy = document.getElementById("textCopy");
@@ -110,9 +127,6 @@ $(document).ready(function () {
         }, false)
 
         function autosize() {
-            // Copy textarea contents to div browser will calculate correct height
-            // of copy, which will make overall container taller, which will make
-            // textarea taller.
             textCopy.innerHTML = textArea.value.replace(/\n/g, '<br/>')
         }
 
@@ -126,66 +140,37 @@ $(document).ready(function () {
                 let privacyLeeftijd = data[0]['leeftijd'];
                 let privacyGeslacht = data[0]['geslacht'];
 
+                function privacy(privacyInfo, id_info, value) {
+                    if (privacyInfo === 'Iedereen') {
+                        infoValue(id_info, value);
+                    } else if (privacyInfo === 'Matches') {
+                        if (matchstatus === matchnummer) {
+                            infoValue(id_info, value);
+                        } else {
+                            infoValue(id_info, infoGeenMatch);
+                        }
+                    } else if (privacyInfo === 'Niemand') {
+                        infoValue(id_info, info);
+                    }
+                }
 
-                if (privacyWoonplaats === 'Iedereen') {
-                    document.getElementById("profiel_input_woonplaats").setAttribute("placeholder", woonplaats);
-                } else if (privacyWoonplaats === 'Matches') {
-                    if (matchstatus === 2) {
-                        document.getElementById("profiel_input_woonplaats").setAttribute("placeholder", woonplaats);
-                    } else {
-                        document.getElementById("profiel_input_woonplaats").setAttribute("placeholder", infoGeenMatch);
-                    }
-                } else if (privacyWoonplaats === 'Niemand') {
-                    document.getElementById("profiel_input_woonplaats").setAttribute("placeholder", info);
-                }
-                /////////////////////
-                if (privacyTelefoonnr === 'Iedereen') {
-                    document.getElementById("profiel_input_telefoonnr").setAttribute("placeholder", telefoonnr);
-                } else if (privacyTelefoonnr === 'Matches') {
-                    if (matchstatus === 2) {
-                        document.getElementById("profiel_input_telefoonnr").setAttribute("placeholder", telefoonnr);
-                    } else {
-                        document.getElementById("profiel_input_telefoonnr").setAttribute("placeholder", infoGeenMatch);
-                    }
-                } else if (privacyTelefoonnr === 'Niemand') {
-                    document.getElementById("profiel_input_telefoonnr").setAttribute("placeholder", info);
-                }
-                /////////////////////
-                if (privacyGeslacht === 'Iedereen') {
-                    document.getElementById("profiel_input_geslacht").setAttribute("placeholder", geslacht);
-                } else if (privacyGeslacht === 'Matches') {
-                    if (matchstatus === 2) {
-                        document.getElementById("profiel_input_geslacht").setAttribute("placeholder", geslacht);
-                    } else {
-                        document.getElementById("profiel_input_geslacht").setAttribute("placeholder", infoGeenMatch);
-                    }
-                } else if (privacyGeslacht === 'Niemand') {
-                    document.getElementById("profiel_input_geslacht").setAttribute("placeholder", info);
-                }
-                /////////////////////
-                if (privacyLeeftijd === 'Iedereen') {
-                    document.getElementById('profiel_input_leeftijd').setAttribute("placeholder", leeftijd);
-                } else if (privacyLeeftijd === 'Matches') {
-                    if (matchstatus === 2) {
-                        document.getElementById("profiel_input_leeftijd").setAttribute("placeholder", leeftijd);
-                    } else {
-                        document.getElementById("profiel_input_leeftijd").setAttribute("placeholder", infoGeenMatch);
-                    }
-                } else if (privacyLeeftijd === 'Niemand') {
-                    document.getElementById('profiel_input_leeftijd').setAttribute("placeholder", info);
-                }
+                privacy(privacyWoonplaats, id_woonplaats, woonplaats);
+                privacy(privacyTelefoonnr, id_telefoon, telefoonnr);
+                privacy(privacyGeslacht, id_geslacht, geslacht);
+                privacy(privacyLeeftijd, id_leeftijd, leeftijd);
+
                 FYSCloud.API.queryDatabase(
                     "SELECT emailadres FROM gebruiker WHERE gebruikerid = ?",
                     [profielId]
                 ).done(function (data) {
                     let emailadres = data[0]['emailadres'];
                     if (matchstatus === 2) {
-                        document.getElementById('profiel_input_email').setAttribute("placeholder", emailadres);
+                        infoValue(id_email, emailadres);
                         document.getElementById("profiel_email_send").href = "mailto:" + emailadres;
-                        document.getElementById("profiel_input_email").style.cursor = "pointer";
+                        id_email.style.cursor = "pointer";
                         $("#profiel_input_email").addClass("email");
                     } else {
-                        document.getElementById("profiel_input_email").setAttribute("placeholder", infoGeenMatch);
+                        infoValue(id_email, infoGeenMatch);
                     }
                 }).fail(function (reason) {
                     console.log(reason);
@@ -206,11 +191,11 @@ $(document).ready(function () {
                 }).fail(function (reason) {
                     console.log(reason);
                 })
-                document.getElementById('profiel_input_leeftijd').setAttribute("placeholder", info);
-                document.getElementById("profiel_input_geslacht").setAttribute("placeholder", geslacht);
-                document.getElementById("profiel_input_woonplaats").setAttribute("placeholder", infoGeenMatch);
-                document.getElementById("profiel_input_telefoonnr").setAttribute("placeholder", info);
-                document.getElementById('profiel_input_email').setAttribute("placeholder", infoGeenMatch);
+                infoValue(id_leeftijd, info);
+                infoValue(id_geslacht, geslacht);
+                infoValue(id_woonplaats, infoGeenMatch);
+                infoValue(id_telefoon, info);
+                infoValue(id_email, infoGeenMatch);
             }
 
         }).fail(function (reason) {

@@ -48,9 +48,9 @@ $(document).ready(function () {
                 "SELECT matchstatus FROM matches WHERE gebruikerid_een = ? AND gebruikerid_twee = ?",
                 [gebruikerId, userId]
             ).done(function (data) {
+                let matchstatusNieuw = 2;
                 let matchstatus = data[0]['matchstatus'];
-                if (matchstatus !== 0 && matchstatus !== 2) {
-                    let matchstatusNieuw = 2;
+                if (matchstatus !== 0 && matchstatus !== matchstatusNieuw) {
                     updateMatchstatus(matchstatusNieuw, gebruikerId);
                 }
             }).fail(function (data) {
@@ -110,10 +110,12 @@ $(document).ready(function () {
     }
 
     match()
+
     template = document.importNode(document.getElementById("template_inkomende").content, true);
-    let btn_accept = template.getElementById("accepteer_inkomende").onclick;
-    let btn_weiger = template.getElementById("weiger_inkomende").onclick;
-    if (btn_accept || btn_weiger) {
+    let btn_accept_load = template.getElementById("accepteer_inkomende").onclick;
+    let btn_weiger_load = template.getElementById("weiger_inkomende").onclick;
+
+    if (btn_accept_load || btn_weiger_load) {
         $("#Lopende_Matches").load(document.URL + " #Lopende_Matches")
         match()
     }

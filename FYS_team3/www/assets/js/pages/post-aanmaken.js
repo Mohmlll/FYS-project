@@ -1,10 +1,17 @@
 $(document).ready(function () {
     let userId = sessionStorage.getItem('userId');
 
+
     $("#post_aanmakenId").on("click", function (post) {
         post.preventDefault();
-        var titel = document.getElementById("post_titel_id").value;
-        var postContent = document.getElementById("post_content_id").value;
+
+        const titel = document.getElementById("post_titel_id");
+        const postContent = document.getElementById("post_content_id");
+        let titelValue = titel.value;
+        let postContentValue = postContent.value;
+        let titelAlert = document.getElementById("geenTitel");
+        let postAlert = document.getElementById("geenContent");
+
         var tagExplorer = document.getElementById("tag_explorer").checked;
         var tagSportieveling = document.getElementById("tag_sportieveling").checked;
         var tagRelaxer = document.getElementById("tag_relaxer").checked;
@@ -14,13 +21,13 @@ $(document).ready(function () {
         var tagBackpacker = document.getElementById("tag_backpacker").checked;
         var tagResort = document.getElementById("tag_resort").checked;
 
-        if (titel !== "" && postContent !== "") {
+        if (titelValue !== "" && postContentValue !== "") {
 
 
             FYSCloud.API.queryDatabase(
                 "INSERT INTO forum_post (post, titel, idgebruiker, datum )" +
                 "VALUES(?,?,?, NOW())",
-                [postContent, titel, userId]
+                [postContentValue, titelValue, userId]
             ).done(function (data) {
                 let postId = data.insertId
 
@@ -38,19 +45,19 @@ $(document).ready(function () {
                 console.log("fout");
             })
         } else {
-            if (titel === "") {
-                document.getElementById("post_titel_id").style.borderColor = "red";
-                document.getElementById("geenTitel").style.display = "block";
+            if (titelValue === "") {
+                titel.style.borderColor = "red";
+                titelAlert.style.display = "block";
             } else {
-                document.getElementById("post_titel_id").style.borderColor = "black";
-                document.getElementById("geenTitel").style.display = "none";
+                titel.style.borderColor = "black";
+                titelAlert.style.display = "none";
             }
-            if (postContent === "") {
-                document.getElementById("post_content_id").style.borderColor = "red";
-                document.getElementById("geenContent").style.display = "block";
+            if (postContentValue === "") {
+                postContent.style.borderColor = "red";
+                postAlert.style.display = "block";
             } else {
-                document.getElementById("post_content_id").style.borderColor = "black";
-                document.getElementById("geenContent").style.display = "none";
+                postContentValue.style.borderColor = "black";
+                postAlert.style.display = "none";
             }
         }
     })
