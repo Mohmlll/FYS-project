@@ -10,47 +10,38 @@ $(document).ready(function () {
     var id_wachtwoord = document.getElementById("profiel_input_wachtwoord");
     var id_wachtwoordh = document.getElementById("profiel_input_wachtwoordh");
 
-    var tagExplorer = document.getElementById("tag_explorer").checked;
-    var tagSportieveling = document.getElementById("tag_sportieveling").checked;
-    var tagRelaxer = document.getElementById("tag_relaxer").checked;
-    var tagPartygoer = document.getElementById("tag_partygoer").checked;
-    var tagWinterSport = document.getElementById("tag_wintersport").checked;
-    var tagTropisch = document.getElementById("tag_tropisch").checked;
-    var tagBackpacker = document.getElementById("tag_backpacker").checked;
-    var tagResort = document.getElementById("tag_resort").checked;
-
     function selectedTags(data) {
         $(".tag_div").hide();
         if (data["backpacker"] === 1) {
-            tagBackpacker = true;
+            document.getElementById("tag_backpacker").checked = true;
             document.getElementById("backpacker").style.display = "block";
         }
         if (data["explorer"] === 1) {
-            tagExplorer = true;
+            document.getElementById("tag_explorer").checked = true;
             document.getElementById("explorer").style.display = "block";
         }
         if (data["sportieveling"] === 1) {
-            tagSportieveling = true;
+            document.getElementById("tag_sportieveling").checked = true;
             document.getElementById("sportieveling").style.display = "block";
         }
         if (data["relaxer"] === 1) {
-            tagRelaxer = true;
+            document.getElementById("tag_relaxer").checked = true;
             document.getElementById("relaxer").style.display = "block";
         }
         if (data["partygoer"] === 1) {
-            tagPartygoer = true;
+            document.getElementById("tag_partygoer").checked = true;
             document.getElementById("partygoer").style.display = "block";
         }
         if (data["wintersport"] === 1) {
-            tagWinterSport = true;
+            document.getElementById("tag_wintersport").checked = true;
             document.getElementById("wintersport").style.display = "block";
         }
         if (data["tropisch"] === 1) {
-            tagTropisch = true;
+            document.getElementById("tag_tropisch").checked = true;
             document.getElementById("tropisch").style.display = "block";
         }
         if (data["resort"] === 1) {
-            tagResort = true;
+            document.getElementById("tag_resort").checked = true;
             document.getElementById("resort").style.display = "block";
         }
     }
@@ -177,6 +168,15 @@ $(document).ready(function () {
                     console.log(reason);
                 })
             }
+
+            var tagExplorer = document.getElementById("tag_explorer").checked;
+            var tagSportieveling = document.getElementById("tag_sportieveling").checked;
+            var tagRelaxer = document.getElementById("tag_relaxer").checked;
+            var tagPartygoer = document.getElementById("tag_partygoer").checked;
+            var tagWinterSport = document.getElementById("tag_wintersport").checked;
+            var tagTropisch = document.getElementById("tag_tropisch").checked;
+            var tagBackpacker = document.getElementById("tag_backpacker").checked;
+            var tagResort = document.getElementById("tag_resort").checked;
 
             FYSCloud.API.queryDatabase(
                 "UPDATE interesse SET explorer = ?, sportieveling = ?, relaxer = ?, partygoer = ? , wintersport = ?, tropisch = ?, backpacker= ?, resort= ? WHERE idgebruiker = ?",
