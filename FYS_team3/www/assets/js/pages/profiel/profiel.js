@@ -213,37 +213,12 @@ $(document).ready(function () {
     ).done(function (data) {
         $(".tag_div").hide();
 
-        if (data[0]["backpacker"] === 1) {
-            document.getElementById("tag_backpacker").checked = true;
-            document.getElementById("backpacker").style.display = "block";
-        }
-        if (data[0]["explorer"] === 1) {
-            document.getElementById("tag_explorer").checked = true;
-            document.getElementById("explorer").style.display = "block";
-        }
-        if (data[0]["sportieveling"] === 1) {
-            document.getElementById("tag_sportieveling").checked = true;
-            document.getElementById("sportieveling").style.display = "block";
-        }
-        if (data[0]["relaxer"] === 1) {
-            document.getElementById("tag_relaxer").checked = true;
-            document.getElementById("relaxer").style.display = "block";
-        }
-        if (data[0]["partygoer"] === 1) {
-            document.getElementById("tag_partygoer").checked = true;
-            document.getElementById("partygoer").style.display = "block";
-        }
-        if (data[0]["wintersport"] === 1) {
-            document.getElementById("tag_wintersport").checked = true;
-            document.getElementById("wintersport").style.display = "block";
-        }
-        if (data[0]["tropisch"] === 1) {
-            document.getElementById("tag_tropisch").checked = true;
-            document.getElementById("tropisch").style.display = "block";
-        }
-        if (data[0]["resort"] === 1) {
-            document.getElementById("tag_resort").checked = true;
-            document.getElementById("resort").style.display = "block";
+        let tagArray = ["backpacker", "explorer", "sportieveling", "relaxer", "partygoer", "wintersport", "tropisch", "resort"]
+        for (let i = 0; i < tagArray.length; i++) {
+            if (data[0][tagArray[i]] === 1) {
+                document.getElementById("tag_" + tagArray[i]).checked = true;
+                document.getElementById(tagArray[i]).style.display = "block";
+            }
         }
     }).fail(function (reason) {
         console.log(reason);
