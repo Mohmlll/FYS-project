@@ -218,8 +218,7 @@ $(document).ready(function () {
                 if (data.isImage) {
                     FYSCloud.API.deleteFile(
                         userId + ".png"
-                    ).done(function (data) {
-
+                    ).done(function () {
                         FYSCloud.Utils
                             .getDataUrl($("#profielfoto_wijzigen"))
                             .done(function (data) {
@@ -227,7 +226,7 @@ $(document).ready(function () {
                                     FYSCloud.API.uploadFile(
                                         userId + ".png",
                                         data.url
-                                    ).done(function (data) {
+                                    ).done(function () {
                                         document.getElementById("profielFoto").setAttribute("src", window.location.protocol + "//" + window.location.host + "/uploads/" + userId + ".png");
                                     }).fail(function (reason) {
                                         console.log(reason);
