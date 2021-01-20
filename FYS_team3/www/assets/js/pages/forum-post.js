@@ -21,62 +21,70 @@ $(document).ready(function () {
     function tijdGeleden(oudeDatum) {
         let datum = new Date(Date.parse(oudeDatum))
         let datumNu = new Date()
-        let datumVerschil = datumNu.getTime() - datum.getTime() + 3600000;
+        let meerT = 2;
+        let secT = 1000;
+        let minTUurT = 60;
+        let dagT = 24;
+        let weekT = 7;
+        let maandT = 52.1429 / 12;
+        let jaarT = 12;
+        let uurT = 3600000;
+        let datumVerschil = datumNu.getTime() - datum.getTime() + uurT;
 
-        if (datumVerschil < 1000) {
+        if (datumVerschil < secT) {
             return 'Nu';
         }
 
-        let sec = datumVerschil / 1000;
+        let sec = datumVerschil / secT;
 
-        if (sec < 60) {
+        if (sec < minTUurT) {
             return Math.floor(sec) + ' seconden geleden';
         }
 
-        let min = sec / 60;
-        if (min < 60) {
-            if (min < 2) {
+        let min = sec / minTUurT;
+        if (min < minTUurT) {
+            if (min < meerT) {
                 return Math.floor(min) + ' minuut geleden';
             } else {
                 return Math.floor(min) + ' minuten geleden';
             }
         }
 
-        let uur = min / 60;
-        if (uur < 24) {
+        let uur = min / minTUurT;
+        if (uur < dagT) {
             return Math.floor(uur) + ' uur geleden';
         }
 
-        let dag = uur / 24;
-        if (dag < 7) {
-            if (dag < 2) {
+        let dag = uur / dagT;
+        if (dag < weekT) {
+            if (dag < meerT) {
                 return Math.floor(dag) + ' dag geleden';
             } else {
                 return Math.floor(dag) + ' dagen geleden';
             }
         }
 
-        let week = dag / 7;
-        if (week < 52.1429 / 12) {
-            if (week < 2) {
+        let week = dag / weekT;
+        if (week < maandT) {
+            if (week < meerT) {
                 return Math.floor(week) + ' week geleden';
             } else {
                 return Math.floor(week) + ' weken geleden';
             }
         }
 
-        let maand = week / 52.1429 * 12;
-        if (maand < 12) {
-            if (maand < 2) {
+        let maand = week / maandT;
+        if (maand < jaarT) {
+            if (maand < meerT) {
                 return Math.floor(maand) + ' maand geleden';
             } else {
                 return Math.floor(maand) + ' maanden geleden';
             }
         }
 
-        let jaar = maand / 12;
+        let jaar = maand / jaarT;
         if (jaar) {
-            if (jaar < 2) {
+            if (jaar < meerT) {
                 return Math.floor(jaar) + ' jaar geleden';
             } else {
                 return Math.floor(jaar) + ' jaaren geleden';
