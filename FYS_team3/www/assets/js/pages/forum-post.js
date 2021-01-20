@@ -279,7 +279,7 @@ $(document).ready(function () {
                 "WHERE interesse.idgebruiker != ?"
                 + filter + " ORDER BY " + volgorde + " LIMIT " + (paginaNummer * noOfTemplates) + ", " + noOfTemplates,
                 [backpacker, backpacker, explorer, explorer, sportieveling, sportieveling, relaxer, relaxer,
-                    partygoer, partygoer, wintersport, wintersport, tropisch, tropisch, resort, resort, sessionStorage.getItem("userId")]
+                    partygoer, partygoer, wintersport, wintersport, tropisch, tropisch, resort, resort, userId]
             ).done(function (data) {
                 var noOfTemplates = data.length;
                 for (let i = 0; i < noOfTemplates; i++) {
