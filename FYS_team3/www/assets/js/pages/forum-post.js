@@ -375,9 +375,7 @@ $(document).ready(function () {
     function filterChecked() {
         let filters = sessionStorage.getItem("filter");
         let input = sessionStorage.getItem("zoekTekst");
-        if (filters === null) {
-            filters = "";
-        } else {
+        if (filters !== null) {
             document.getElementById("zoekfunctie").setAttribute("value", input);
             let filterSelected = ["explorer", "sportieveling", "relaxer", "partygoer", "backpacker", "wintersport", "tropisch", "resort"];
             for (let i = 0; i < filterSelected.length; i++) {
